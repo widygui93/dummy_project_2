@@ -10,8 +10,4 @@ echo $order->order();
 
 
 
-
-// echo "ini order";
-
-
  ?>
