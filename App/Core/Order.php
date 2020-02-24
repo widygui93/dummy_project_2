@@ -2,7 +2,11 @@
 
 require_once '../init.php';
 
-$order = new ChineseMainCourse("Kwetiau Goreng",35000,"n");
+use App\Menu\ChineseMainCourse as OrderChinese;
+
+
+$order = new OrderChinese("Kwetiau Goreng",35000,"y");
+echo $order->order();
 
 
 

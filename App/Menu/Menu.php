@@ -9,7 +9,7 @@ abstract class Menu {
 		$this->hargaMenu = $hargaMenu;
 	}
 
-	abstract public function tes();
+	abstract public function order();
 
 }
 

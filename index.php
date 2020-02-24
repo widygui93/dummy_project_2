@@ -30,7 +30,7 @@ require_once 'App/init.php';
  				<ul>
  					<li><a href="#">order</a></li>
  					<li><a href="#">cart</a></li>
- 					<li><a href="#">contact</a></li>
+ 					<li><a href="#">account</a></li>
  				</ul>
  			</div>
  			<div class="col-10">
