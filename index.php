@@ -63,32 +63,46 @@ require_once 'App/init.php';
 						</form>
  					</div>
  					<div class="col-sm">
- 						<div class="card" style="width: 18rem;">
-						  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-						  <div class="card-body">
-						    <h5 class="card-title">Kwetiau Goreng</h5>
-						    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-						    <div class="form-check">
-							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							  <label class="form-check-label" for="defaultCheck1">Extra Seafood (+ Rp.10.000)</label>
+ 						<form action="App/Core/Order.php" method="post">
+	 						<div class="card" style="width: 18rem;">
+							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+							  <div class="card-body">
+							    <h5 class="card-title">Kwetiau Goreng</h5>
+							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
+							    <div class="form-check">
+								  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+								  <label class="form-check-label" for="defaultCheck1">Extra Seafood (+ Rp.10.000)</label>
+								</div>
+								<input type="submit" value="Order Now" class="btn btn-success">
+								<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng">
+								<input style="display: none;" type="text" name="harga" value=35000>
+								<input style="display: none;" type="text" name="isExtraSeafood" value="n">
+								<input style="display: none;" type="text" name="tipe" value="chinese">
+							    <!-- <a href="App/Core/Order.php?q=chinese" class="btn btn-success">Order Now</a> -->
+							  </div>
 							</div>
-						    <a href="App/Core/Order.php?q=chinese" class="btn btn-success">Order Now</a>
-						  </div>
-						</div>
+						</form>
  					</div>
  					<div class="col-sm">
- 						<div class="card" style="width: 18rem;">
-						  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-						  <div class="card-body">
-						    <h5 class="card-title">Kwetiau Goreng</h5>
-						    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-						    <div class="form-check">
-							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							  <label class="form-check-label" for="defaultCheck1">Extra Seafood (+ Rp.10.000)</label>
+ 						<form action="App/Core/Order.php" method="post">
+	 						<div class="card" style="width: 18rem;">
+							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+							  <div class="card-body">
+							    <h5 class="card-title">Kwetiau Goreng</h5>
+							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
+							    <div class="form-check">
+								  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+								  <label class="form-check-label" for="defaultCheck1">Extra Seafood (+ Rp.10.000)</label>
+								</div>
+								<input type="submit" value="Order Now" class="btn btn-success">
+								<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng">
+								<input style="display: none;" type="text" name="harga" value=35000>
+								<input style="display: none;" type="text" name="isExtraSeafood" value="n">
+								<input style="display: none;" type="text" name="tipe" value="chinese">
+							    <!-- <a href="App/Core/Order.php?q=chinese" class="btn btn-success">Order Now</a> -->
+							  </div>
 							</div>
-						    <a href="App/Core/Order.php?q=chinese" class="btn btn-success">Order Now</a>
-						  </div>
-						</div>
+						</form>
  					</div>
  				</div>
  				<div class="row">
@@ -111,7 +125,7 @@ require_once 'App/init.php';
 								<input type="submit" value="Order Now" class="btn btn-success">
 								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
 								<input style="display: none;" type="text" name="harga" value=35000>
-								<input style="display: none;" type="text" name="isExtraHam" value="y">
+								<input style="display: none;" type="text" name="isExtraHam" value="n">
 								<input style="display: none;" type="text" name="tipe" value="western">
 							    <!-- <a href="App/Core/Order.php?q=western" class="btn btn-success">Order Now</a> -->
 							  </div>
@@ -119,32 +133,46 @@ require_once 'App/init.php';
 						</form>
  					</div>
  					<div class="col-sm">
- 						<div class="card" style="width: 18rem;">
-						  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-						  <div class="card-body">
-						    <h5 class="card-title">Hamburger Deluxe</h5>
-						    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-						    <div class="form-check">
-							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							  <label class="form-check-label" for="defaultCheck1">Extra Ham (+ Rp.10.000)</label>
+ 						<form action="App/Core/Order.php" method="post">
+	 						<div class="card" style="width: 18rem;">
+							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+							  <div class="card-body">
+							    <h5 class="card-title">Hamburger Deluxe</h5>
+							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
+							    <div class="form-check">
+								  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+								  <label class="form-check-label" for="defaultCheck1">Extra Ham (+ Rp.10.000)</label>
+								</div>
+								<input type="submit" value="Order Now" class="btn btn-success">
+								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
+								<input style="display: none;" type="text" name="harga" value=35000>
+								<input style="display: none;" type="text" name="isExtraHam" value="n">
+								<input style="display: none;" type="text" name="tipe" value="western">
+							    <!-- <a href="App/Core/Order.php?q=western" class="btn btn-success">Order Now</a> -->
+							  </div>
 							</div>
-						    <a href="App/Core/Order.php?q=western" class="btn btn-success">Order Now</a>
-						  </div>
-						</div>
+						</form>
  					</div>
  					<div class="col-sm">
- 						<div class="card" style="width: 18rem;">
-						  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-						  <div class="card-body">
-						    <h5 class="card-title">Hamburger Deluxe</h5>
-						    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-						    <div class="form-check">
-							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							  <label class="form-check-label" for="defaultCheck1">Extra Ham (+ Rp.10.000)</label>
+ 						<form action="App/Core/Order.php" method="post">
+	 						<div class="card" style="width: 18rem;">
+							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+							  <div class="card-body">
+							    <h5 class="card-title">Hamburger Deluxe</h5>
+							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
+							    <div class="form-check">
+								  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+								  <label class="form-check-label" for="defaultCheck1">Extra Ham (+ Rp.10.000)</label>
+								</div>
+								<input type="submit" value="Order Now" class="btn btn-success">
+								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
+								<input style="display: none;" type="text" name="harga" value=35000>
+								<input style="display: none;" type="text" name="isExtraHam" value="n">
+								<input style="display: none;" type="text" name="tipe" value="western">
+							    <!-- <a href="App/Core/Order.php?q=western" class="btn btn-success">Order Now</a> -->
+							  </div>
 							</div>
-						    <a href="App/Core/Order.php?q=western" class="btn btn-success">Order Now</a>
-						  </div>
-						</div>
+						</form>
  					</div>
  				</div>
  				</div>
