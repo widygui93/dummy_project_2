@@ -51,7 +51,7 @@ require_once 'App/init.php';
 							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
 							  <label class="form-check-label" for="defaultCheck1">Extra Seafood (+ Rp.10.000)</label>
 							</div>
-						    <a href="App/Core/Order.php" class="btn btn-success">Order Now</a>
+						    <a href="App/Core/Order.php?q=chinese" class="btn btn-success">Order Now</a>
 						  </div>
 						</div>
  					</div>
