@@ -1,7 +1,7 @@
 <?php namespace App\Menu;
 
 class ChineseMainCourse extends Menu{
-	public $isExtraSeafood;
+	private $isExtraSeafood;
 
 	public function __construct($namaMenu="Nama Menu",$hargaMenu=0,$isExtraSeafood="n",$type="chinese"){
 		parent::__construct($namaMenu, $hargaMenu, $type);

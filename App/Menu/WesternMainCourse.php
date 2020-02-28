@@ -1,7 +1,7 @@
 <?php namespace App\Menu;
 
 class WesternMainCourse extends Menu{
-	public $isExtraHam;
+	private $isExtraHam;
 
 	public function __construct($namaMenu="Nama Menu",$hargaMenu=0,$isExtraHam="n",$type){
 		parent::__construct($namaMenu, $hargaMenu, $type);
