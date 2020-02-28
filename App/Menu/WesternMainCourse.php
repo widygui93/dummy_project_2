@@ -3,8 +3,8 @@
 class WesternMainCourse extends Menu{
 	public $isExtraHam;
 
-	public function __construct($namaMenu="Nama Menu",$hargaMenu=0,$isExtraHam="n"){
-		parent::__construct($namaMenu, $hargaMenu);
+	public function __construct($namaMenu="Nama Menu",$hargaMenu=0,$isExtraHam="n",$type){
+		parent::__construct($namaMenu, $hargaMenu, $type);
 
 		$this->isExtraHam = $isExtraHam;
 	}
@@ -16,7 +16,7 @@ class WesternMainCourse extends Menu{
 			$str = " dengan extra ham";
 			$this->hargaMenu += 10000;
 		}
-		return "user order " . $this->namaMenu . $str . " ( Rp." . $this->hargaMenu . " )";
+		return "user order " . $this->namaMenu . $str . " type " . $this->typeMenu . " ( Rp." . $this->hargaMenu . " )";
 	}
 }
 

@@ -3,8 +3,8 @@
 class ChineseMainCourse extends Menu{
 	public $isExtraSeafood;
 
-	public function __construct($namaMenu="Nama Menu",$hargaMenu=0,$isExtraSeafood="n"){
-		parent::__construct($namaMenu, $hargaMenu);
+	public function __construct($namaMenu="Nama Menu",$hargaMenu=0,$isExtraSeafood="n",$type="chinese"){
+		parent::__construct($namaMenu, $hargaMenu, $type);
 
 		$this->isExtraSeafood = $isExtraSeafood;
 	}
@@ -16,7 +16,7 @@ class ChineseMainCourse extends Menu{
 			$str = " dengan extra seafood";
 			$this->hargaMenu += 10000;
 		}
-		return "user order " . $this->namaMenu . $str . " ( Rp." . $this->hargaMenu . " )";
+		return "user order " . $this->namaMenu . $str . " type " . $this->typeMenu . " ( Rp." . $this->hargaMenu . " )";
 	}
 }
 

@@ -25,11 +25,11 @@ $cost = $_POST['harga'];
 
 if($type == "chinese"){
 	$isExtraSeafood = $_POST['isExtraSeafood'];
-	$order = new Chinese($name,$cost,$isExtraSeafood);
+	$order = new Chinese($name,$cost,$isExtraSeafood,$type);
 	echo $order->order();
 } elseif($type == "western"){
 	$isExtraHam = $_POST['isExtraHam'];
-	$order = new Western($name,$cost,$isExtraHam);
+	$order = new Western($name,$cost,$isExtraHam,$type);
 	echo $order->order();
 } else {
 	echo "tipe menu tidak ditemukan";
