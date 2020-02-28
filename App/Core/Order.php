@@ -2,8 +2,8 @@
 
 require_once '../init.php';
 
-use App\Menu\ChineseMainCourse as OrderChinese;
-use App\Menu\WesternMainCourse as OrderWestern;
+use App\Menu\ChineseMainCourse as Chinese;
+use App\Menu\WesternMainCourse as Western;
 
 // $tipeOrder = $_GET["q"];
 
@@ -25,11 +25,11 @@ $cost = $_POST['harga'];
 
 if($type == "chinese"){
 	$isExtraSeafood = $_POST['isExtraSeafood'];
-	$order = new OrderChinese($name,$cost,$isExtraSeafood);
+	$order = new Chinese($name,$cost,$isExtraSeafood);
 	echo $order->order();
 } elseif($type == "western"){
 	$isExtraHam = $_POST['isExtraHam'];
-	$order = new OrderWestern($name,$cost,$isExtraHam);
+	$order = new Western($name,$cost,$isExtraHam);
 	echo $order->order();
 } else {
 	echo "tipe menu tidak ditemukan";
