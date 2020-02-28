@@ -28,7 +28,7 @@ require_once 'App/init.php';
  			<div class="col-2">
  				<strong>dashboard</strong>
  				<ul>
- 					<li><a href="#">order</a></li>
+ 					<li><a href="#">menu</a></li>
  					<li><a href="#">cart</a></li>
  					<li><a href="#">account</a></li>
  				</ul>
