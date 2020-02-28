@@ -26,14 +26,34 @@ $cost = $_POST['harga'];
 if($type == "chinese"){
 	$isExtraSeafood = $_POST['isExtraSeafood'];
 	$order = new Chinese($name,$cost,$isExtraSeafood,$type);
-	echo $order->order();
+	cekOrder( $order->order() );
 } elseif($type == "western"){
 	$isExtraHam = $_POST['isExtraHam'];
 	$order = new Western($name,$cost,$isExtraHam,$type);
-	echo $order->order();
+	cekOrder( $order->order() );
 } else {
 	echo "tipe menu tidak ditemukan";
 }
+
+function cekOrder($jlhRec){
+	if($jlhRec > 0){
+		echo "
+	        <script>
+	            alert('data sukses masuk ke cart');
+	            document.location.href = '../../index.php';
+	        </script>
+    	";
+	} else {
+		echo "
+	        <script>
+	            alert('data gagal masuk ke cart');
+	            document.location.href = '../../index.php';
+	        </script>
+    	";
+	}
+}
+
+
 
 
 
