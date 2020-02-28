@@ -18,7 +18,7 @@ class ChineseMainCourse extends Menu{
 
 		if($this->isExtraSeafood == 'y'){
 			$str = " dengan extra seafood";
-			// $this->hargaMenu += 10000;
+			
 			$this->priceOfExtraSeafood = 10000;
 			$this->totalPrice = $this->hargaMenu + $this->priceOfExtraSeafood;
 		}
