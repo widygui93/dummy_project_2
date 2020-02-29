@@ -23,7 +23,7 @@ class ChineseMainCourse extends Menu{
 			$this->totalPrice = $this->hargaMenu + $this->priceOfExtraSeafood;
 		} else {
 			$this->priceOfExtraSeafood = 0;
-			$this->totalPrice = $hargaMenu;
+			$this->totalPrice = $this->hargaMenu;
 		}
 	}
 
