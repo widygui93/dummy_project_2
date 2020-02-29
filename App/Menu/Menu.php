@@ -1,6 +1,6 @@
 <?php namespace App\Menu;
 
-abstract class Menu {
+class Menu {
 
 	protected $namaMenu,$hargaMenu,$typeMenu;
 
@@ -10,7 +10,19 @@ abstract class Menu {
 		$this->typeMenu = $type;
 	}
 
-	abstract public function order();
+	public function getNamaMenu(){
+		return $this->namaMenu;
+	}
+
+	public function getHargaMenu(){
+		return $this->hargaMenu;
+	}
+
+	public function getTypeMenu(){
+		return $this->typeMenu;
+	}
+
+	// abstract public function order();
 
 }
 
