@@ -3,7 +3,7 @@
 // require '../Core/Functions.php';
 
 class ChineseMainCourse extends Menu{
-	public $isExtraSeafood,
+	private $isExtraSeafood,
 			$priceOfExtraSeafood,
 			$totalPrice;
 
@@ -25,6 +25,14 @@ class ChineseMainCourse extends Menu{
 			$this->priceOfExtraSeafood = 0;
 			$this->totalPrice = $hargaMenu;
 		}
+	}
+
+	public function getPriceOfExtraSeafood(){
+		return $this->priceOfExtraSeafood;
+	}
+
+	public function getTotalPrice(){
+		return $this->totalPrice;
 	}
 
 	// public function order(){

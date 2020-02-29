@@ -39,8 +39,8 @@ if($type == "chinese"){
 		$menuChinese->getHargaMenu(),
 		"user123",
 		"seafood",
-		$menuChinese->priceOfExtraSeafood,
-		$menuChinese->totalPrice
+		$menuChinese->getPriceOfExtraSeafood(),
+		$menuChinese->getTotalPrice()
 		)
 	);
 } elseif($type == "western"){
