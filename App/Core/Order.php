@@ -38,7 +38,7 @@ if($type == "chinese"){
 		$menuChinese->getNamaMenu(),
 		$menuChinese->getHargaMenu(),
 		"user123",
-		"",
+		"seafood",
 		$menuChinese->getPriceOfExtraSeafood(),
 		$menuChinese->getTotalPrice()
 		)

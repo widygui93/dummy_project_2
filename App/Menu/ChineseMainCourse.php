@@ -17,7 +17,7 @@ class ChineseMainCourse extends Menu{
 		
 	}
 
-	private function cekUseAdditionalItem(){
+	protected function cekUseAdditionalItem(){
 		if($this->isExtraSeafood == 'y'){
 			$this->priceOfExtraSeafood = 10000;
 			$this->totalPrice = $this->hargaMenu + $this->priceOfExtraSeafood;
