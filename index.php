@@ -125,7 +125,7 @@ require_once 'App/init.php';
 								<input type="submit" value="Order Now" class="btn btn-success">
 								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
 								<input style="display: none;" type="text" name="harga" value=35000>
-								<input style="display: none;" type="text" name="isExtraHam" value="n">
+								<input style="display: none;" type="text" name="isExtraHam" value="y">
 								<input style="display: none;" type="text" name="tipe" value="western">
 							    <!-- <a href="App/Core/Order.php?q=western" class="btn btn-success">Order Now</a> -->
 							  </div>

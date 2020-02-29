@@ -3,7 +3,7 @@
 require_once '../init.php';
 
 use App\Menu\ChineseMainCourse as Chinese;
-// use App\Menu\WesternMainCourse as Western;
+use App\Menu\WesternMainCourse as Western;
 
 use App\Db\OrderMenu as TabelOrderMenu;
 
@@ -27,10 +27,7 @@ $cost = $_POST['harga'];
 
 if($type == "chinese"){
 	$isExtraSeafood = $_POST['isExtraSeafood'];
-	// $order = new Chinese($name,$cost,$isExtraSeafood,$type);
-	// cekOrder( $order->order() );
 	$menuChinese = new Chinese($name,$cost,$isExtraSeafood,$type);
-	// $menuChinese->order();
 
 	$addMenuChinese = new TabelOrderMenu();
 	cekOrder($addMenuChinese->createOrder(
@@ -45,8 +42,19 @@ if($type == "chinese"){
 	);
 } elseif($type == "western"){
 	$isExtraHam = $_POST['isExtraHam'];
-	// $order = new Western($name,$cost,$isExtraHam,$type);
-	// cekOrder( $order->order() );
+	$menuWestern = new Western($name,$cost,$isExtraHam,$type);
+
+	$addMenuWestern = new TabelOrderMenu();
+	cekOrder($addMenuWestern->createOrder(
+		$menuWestern->getTypeMenu(),
+		$menuWestern->getNamaMenu(),
+		$menuWestern->getHargaMenu(),
+		"user123",
+		"ham",
+		$menuWestern->getPriceOfExtraHam(),
+		$menuWestern->getTotalPrice()
+		)
+	);
 } else {
 	echo "tipe menu tidak ditemukan";
 }
