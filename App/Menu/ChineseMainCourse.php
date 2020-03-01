@@ -4,36 +4,33 @@
 
 class ChineseMainCourse extends Menu{
 	private $isExtraSeafood,
-			$priceOfExtraSeafood,
-			$totalPrice;
+			$priceOfExtraSeafood;
 
 	public function __construct($namaMenu="Nama Menu",$hargaMenu=0,$isExtraSeafood="n",$type="chinese"){
 		parent::__construct($namaMenu, $hargaMenu, $type);
 
 		$this->isExtraSeafood = $isExtraSeafood;
 
-		$this->cekUseAdditionalItem();
+		$this->priceOfExtraSeafood = $this->cekUseAdditionalItem($this->isExtraSeafood);
 
 		
 	}
 
-	protected function cekUseAdditionalItem(){
-		if($this->isExtraSeafood == 'y'){
-			$this->priceOfExtraSeafood = 10000;
-			$this->totalPrice = $this->hargaMenu + $this->priceOfExtraSeafood;
-		} else {
-			$this->priceOfExtraSeafood = 0;
-			$this->totalPrice = $this->hargaMenu;
-		}
-	}
+	// protected function cekUseAdditionalItem(){
+	// 	if($this->isExtraSeafood == 'y'){
+	// 		$this->priceOfExtraSeafood = 10000;
+	// 		$this->totalPrice = $this->hargaMenu + $this->priceOfExtraSeafood;
+	// 	} else {
+	// 		$this->priceOfExtraSeafood = 0;
+	// 		$this->totalPrice = $this->hargaMenu;
+	// 	}
+	// }
 
 	public function getPriceOfExtraSeafood(){
 		return $this->priceOfExtraSeafood;
 	}
 
-	public function getTotalPrice(){
-		return $this->totalPrice;
-	}
+	
 
 	// public function order(){
 
