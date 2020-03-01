@@ -7,7 +7,7 @@ class OrderMenu extends Db {
 	}
 
 	public function createOrder($typeMenu, $namaMenu, $hargaMenu, $userName, $itemTambahan, $hargaItemTambahan, $totalHarga){
-		$conn = mysqli_connect($this->serverName, $this->userName, $this->password, $this->dbName);
+		$conn = mysqli_connect($this->getServerName(), $this->getUserName(), $this->getPassword(), $this->getDbName());
 
 		// query insert data
 	    $query = " INSERT INTO order_menu
