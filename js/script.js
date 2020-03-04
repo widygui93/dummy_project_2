@@ -13,8 +13,13 @@ $(document).ready(function(){
 
 		if(this.checked){
 			$(this).parent().prev().children().text(formatter.format(total));
+			$(this).parent().next().next().next().next().val("y");
+
 		} else {
+			
 			$(this).parent().prev().children().text(formatter.format(priceOfSelectedItem));
+			$(this).parent().next().next().next().next().val("n");
+
 		}
 	});
 
