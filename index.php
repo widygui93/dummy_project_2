@@ -45,9 +45,9 @@
 							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 							  <div class="card-body">
 							    <h5 class="card-title">Kwetiau Goreng</h5>
-							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
+							    <h3><span class="badge badge-primary">Rp 35.000</span></h3>
 							    <div class="form-check">
-								  <input class="form-check-input" type="checkbox" value="">
+								  <input class="form-check-input" type="checkbox" value=10000>
 								  <label class="form-check-label" for="defaultCheck1">Extra Seafood (+ Rp.10.000)</label>
 								</div>
 								<input type="submit" value="Order Now" class="btn btn-success">
@@ -68,7 +68,7 @@
 							    <h5 class="card-title">Kwetiau Goreng</h5>
 							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
 							    <div class="form-check">
-								  <input class="form-check-input" type="checkbox" value="">
+								  <input class="form-check-input" type="checkbox" value="10000">
 								  <label class="form-check-label" for="defaultCheck1">Extra Seafood (+ Rp.10.000)</label>
 								</div>
 								<input type="submit" value="Order Now" class="btn btn-success">
@@ -89,7 +89,7 @@
 							    <h5 class="card-title">Kwetiau Goreng</h5>
 							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
 							    <div class="form-check">
-								  <input class="form-check-input" type="checkbox" value="">
+								  <input class="form-check-input" type="checkbox" value="10000">
 								  <label class="form-check-label" for="defaultCheck1">Extra Seafood (+ Rp.10.000)</label>
 								</div>
 								<input type="submit" value="Order Now" class="btn btn-success">
@@ -117,7 +117,7 @@
 							    <h5 class="card-title">Hamburger Deluxe</h5>
 							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
 							    <div class="form-check">
-								  <input class="form-check-input" type="checkbox" value="">
+								  <input class="form-check-input" type="checkbox" value="10000">
 								  <label class="form-check-label" for="defaultCheck1">Extra Ham (+ Rp.10.000)</label>
 								</div>
 								<input type="submit" value="Order Now" class="btn btn-success">
@@ -138,7 +138,7 @@
 							    <h5 class="card-title">Hamburger Deluxe</h5>
 							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
 							    <div class="form-check">
-								  <input class="form-check-input" type="checkbox" value="">
+								  <input class="form-check-input" type="checkbox" value="10000">
 								  <label class="form-check-label" for="defaultCheck1">Extra Ham (+ Rp.10.000)</label>
 								</div>
 								<input type="submit" value="Order Now" class="btn btn-success">
@@ -159,7 +159,7 @@
 							    <h5 class="card-title">Hamburger Deluxe</h5>
 							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
 							    <div class="form-check">
-								  <input class="form-check-input" type="checkbox" value="">
+								  <input class="form-check-input" type="checkbox" value="10000">
 								  <label class="form-check-label" for="defaultCheck1">Extra Ham (+ Rp.10.000)</label>
 								</div>
 								<input type="submit" value="Order Now" class="btn btn-success">
