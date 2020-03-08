@@ -18,7 +18,7 @@
  </head>
  <body>
  	<div class="container-fluid">
- 		<div class="row" style="background-color:lightblue">
+ 		<div class="row">
  			<div class="col">
  				<h1>Your Brand</h1>
  			</div>
