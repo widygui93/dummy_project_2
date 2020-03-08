@@ -35,7 +35,7 @@ if($type == "chinese"){
 		$menuChinese->getNamaMenu(),
 		$menuChinese->getHargaMenu(),
 		"user123",
-		($isExtraSeafood == y) ? "seafood" : "",
+		($isExtraSeafood == "y") ? "seafood" : "",
 		$menuChinese->getPriceOfExtraSeafood(),
 		$menuChinese->getTotalPrice()
 		)
@@ -50,7 +50,7 @@ if($type == "chinese"){
 		$menuWestern->getNamaMenu(),
 		$menuWestern->getHargaMenu(),
 		"user123",
-		($isExtraHam == y) ? "ham" : "",
+		($isExtraHam == "y") ? "ham" : "",
 		$menuWestern->getPriceOfExtraHam(),
 		$menuWestern->getTotalPrice()
 		)
@@ -61,19 +61,9 @@ if($type == "chinese"){
 
 function cekOrder($jlhRec){
 	if($jlhRec > 0){
-		echo "
-	        <script>
-	            alert('data sukses masuk ke cart');
-	            document.location.href = '../../index.php';
-	        </script>
-    	";
+		echo "data sukses masuk ke cart";
 	} else {
-		echo "
-	        <script>
-	            alert('data gagal masuk ke cart');
-	            document.location.href = '../../index.php';
-	        </script>
-    	";
+		echo "data gagal masuk ke cart";
 	}
 }
 

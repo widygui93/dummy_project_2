@@ -40,7 +40,7 @@
  				</div>
  				<div class="row">
  					<div class="col-sm">
- 						<form action="App/Core/Order.php" method="post">
+ 						<!-- <form action="App/Core/Order.php" method="post"> -->
 	 						<div class="card" style="width: 18rem;">
 							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 							  <div class="card-body">
@@ -58,10 +58,10 @@
 							    <!-- <a href="App/Core/Order.php?q=chinese" class="btn btn-success">Order Now</a> -->
 							  </div>
 							</div>
-						</form>
+						<!-- </form> -->
  					</div>
  					<div class="col-sm">
- 						<form action="App/Core/Order.php" method="post">
+ 						<!-- <form action="App/Core/Order.php" method="post"> -->
 	 						<div class="card" style="width: 18rem;">
 							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 							  <div class="card-body">
@@ -79,10 +79,10 @@
 							    <!-- <a href="App/Core/Order.php?q=chinese" class="btn btn-success">Order Now</a> -->
 							  </div>
 							</div>
-						</form>
+						<!-- </form> -->
  					</div>
  					<div class="col-sm">
- 						<form action="App/Core/Order.php" method="post">
+ 						<!-- <form action="App/Core/Order.php" method="post"> -->
 	 						<div class="card" style="width: 18rem;">
 							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 							  <div class="card-body">
@@ -100,7 +100,7 @@
 							    <!-- <a href="App/Core/Order.php?q=chinese" class="btn btn-success">Order Now</a> -->
 							  </div>
 							</div>
-						</form>
+						<!-- </form> -->
  					</div>
  				</div>
  				<div class="row">
@@ -110,7 +110,7 @@
  				</div>
  				<div class="row">
  					<div class="col-sm">
- 						<form action="App/Core/Order.php" method="post">
+ 						<!-- <form action="App/Core/Order.php" method="post"> -->
 	 						<div class="card" style="width: 18rem;">
 							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 							  <div class="card-body">
@@ -128,10 +128,10 @@
 							    <!-- <a href="App/Core/Order.php?q=western" class="btn btn-success">Order Now</a> -->
 							  </div>
 							</div>
-						</form>
+						<!-- </form> -->
  					</div>
  					<div class="col-sm">
- 						<form action="App/Core/Order.php" method="post">
+ 						<!-- <form action="App/Core/Order.php" method="post"> -->
 	 						<div class="card" style="width: 18rem;">
 							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 							  <div class="card-body">
@@ -149,10 +149,10 @@
 							    <!-- <a href="App/Core/Order.php?q=western" class="btn btn-success">Order Now</a> -->
 							  </div>
 							</div>
-						</form>
+						<!-- </form> -->
  					</div>
  					<div class="col-sm">
- 						<form action="App/Core/Order.php" method="post">
+ 						<!-- <form action="App/Core/Order.php" method="post"> -->
 	 						<div class="card" style="width: 18rem;">
 							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 							  <div class="card-body">
@@ -170,7 +170,7 @@
 							    <!-- <a href="App/Core/Order.php?q=western" class="btn btn-success">Order Now</a> -->
 							  </div>
 							</div>
-						</form>
+						<!-- </form> -->
  					</div>
  				</div>
  				</div>

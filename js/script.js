@@ -23,6 +23,33 @@ $(document).ready(function(){
 		}
 	});
 
+	$(".btn-success").on('click',function(){
+		const tipe = $(this).next().next().next().next().val();
+		const nama = $(this).next().val();
+		const harga = parseInt($(this).next().next().val());
+		let isExtraSeafood = "n";
+		let isExtraHam = "n";
+
+		if(tipe == "chinese"){
+			isExtraSeafood = $(this).next().next().next().val();
+		} else{
+			isExtraHam = $(this).next().next().next().val();
+		}
+
+		$.post("App/Core/Order.php",
+		{
+			tipe: tipe,
+            nama: nama,
+            harga: harga,
+            isExtraSeafood: isExtraSeafood,
+            isExtraHam: isExtraHam
+		},
+		function(data, status){
+			alert(data);
+			
+		});
+	});
+
 
 
 
