@@ -18,6 +18,12 @@ body {
 
 .col-10 .container-fluid{
 	background-color: #ccf2ff;
+	/*border : 2px solid black;*/
+}
+
+.col-10 {
+	border-left: 2px solid white;
+	background-color: #ccf2ff;
 }
 
 .card {
