@@ -61,9 +61,9 @@ if($type == "chinese"){
 
 function cekOrder($jlhRec){
 	if($jlhRec > 0){
-		echo "data sukses masuk ke cart";
+		echo "orderan sukses masuk ke cart";
 	} else {
-		echo "data gagal masuk ke cart";
+		echo "orderan gagal masuk ke cart";
 	}
 }
 
