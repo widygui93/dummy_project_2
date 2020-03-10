@@ -1,1 +1,7 @@
-<?php  ?>
+<?php 
+
+class Cart {
+	private $jlhItem;
+}
+
+ ?>
