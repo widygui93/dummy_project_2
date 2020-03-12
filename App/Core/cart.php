@@ -1,5 +1,22 @@
 <?php 
 
+require_once '../init.php';
+
+use App\Db\Cart as Cart;
+
+$cart = new Cart();
+
+$items = $cart->getItems();
+
+foreach($items as $item){
+	echo $item["order_id"] . ",";
+	echo $item["nama_menu"] . ",";
+	echo $item["harga_menu"] . ",";
+	echo $item["item_tambahan"] . ",";
+	echo $item["harga_item_tambahan"] . ",";
+	echo $item["total_harga_menu"] . ",";
+	echo "<br>";
+}
 
  ?>
 
