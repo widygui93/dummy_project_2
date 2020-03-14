@@ -27,7 +27,7 @@
  			<div class="col-2">
  				<strong>dashboard</strong>
  				<ul>
- 					<li><a href="#">menu</a></li>
+ 					<li><a href="index.php">menu</a></li>
  					<li><a href="App/Core/cart.php">cart</a></li>
  					<li><a href="#">account</a></li>
  				</ul>

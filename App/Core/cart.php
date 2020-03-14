@@ -44,8 +44,8 @@ foreach($items as $item){
  			<div class="col-2">
  				<strong>dashboard</strong>
  				<ul>
- 					<li><a href="">menu</a></li>
- 					<li><a href="">cart</a></li>
+ 					<li><a href="../../index.php">menu</a></li>
+ 					<li><a href="cart.php">cart</a></li>
  					<li><a href="">account</a></li>
  				</ul>
  			</div>
