@@ -35,7 +35,7 @@ if($type == "chinese"){
 		$menuChinese->getNamaMenu(),
 		$menuChinese->getHargaMenu(),
 		"user123",
-		($isExtraSeafood == "y") ? "seafood" : "",
+		($isExtraSeafood == "y") ? "seafood" : "tanpa extra item",
 		$menuChinese->getPriceOfExtraSeafood(),
 		$menuChinese->getTotalPrice()
 		)
@@ -50,7 +50,7 @@ if($type == "chinese"){
 		$menuWestern->getNamaMenu(),
 		$menuWestern->getHargaMenu(),
 		"user123",
-		($isExtraHam == "y") ? "ham" : "",
+		($isExtraHam == "y") ? "ham" : "tanpa extra item",
 		$menuWestern->getPriceOfExtraHam(),
 		$menuWestern->getTotalPrice()
 		)
