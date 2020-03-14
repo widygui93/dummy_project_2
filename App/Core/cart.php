@@ -8,15 +8,14 @@ $cart = new Cart();
 
 $items = $cart->getItems();
 
+$total = 0;
+
 foreach($items as $item){
-	echo $item["order_id"] . ",";
-	echo $item["nama_menu"] . ",";
-	echo $item["harga_menu"] . ",";
-	echo $item["item_tambahan"] . ",";
-	echo $item["harga_item_tambahan"] . ",";
-	echo $item["total_harga_menu"] . ",";
-	echo "<br>";
+	$total = $item["total_harga_menu"] + $total;
 }
+
+
+
 
  ?>
 
@@ -81,6 +80,11 @@ foreach($items as $item){
  									</tr>
  									<?php $no++; ?>
                         		<?php endforeach; ?>
+                        		<tr>
+                        			<td colspan="3"> 
+										<strong> Total : <?= $total; ?></strong>
+                        			</td>
+                        		</tr>
  							</table>
  						</div>
  					</div>
