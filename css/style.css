@@ -37,3 +37,7 @@ h1 {
 h2 {
 	color: #009933;
 }
+
+td[colspan="3"]{
+	text-align: right;
+}

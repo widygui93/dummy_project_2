@@ -82,7 +82,7 @@ foreach($items as $item){
                         		<?php endforeach; ?>
                         		<tr>
                         			<td colspan="3"> 
-										<strong> Total : <?= $total; ?></strong>
+										<strong> Total : Rp <?= $total; ?></strong>
                         			</td>
                         		</tr>
  							</table>
