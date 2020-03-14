@@ -56,6 +56,34 @@ foreach($items as $item){
  							<h2>Daftar Orderan</h2>
  						</div>
  					</div>
+ 					<div class="row">
+ 						<div class="col-sm">
+ 							<table border="1" cellpadding="10" cellspacing="0">
+ 								<tr>
+ 									<th>No</th>
+ 									<th>Menu</th>
+ 									<th>Harga</th>
+ 								</tr>
+ 								<?php $no = 1; ?>
+ 								<?php foreach( $items as $item ) : ?>
+ 									<tr>
+ 										<td><?= $no; ?></td>
+ 										<td>
+											<?php
+ 												if($item["harga_item_tambahan"] == 0){
+ 													echo $item["nama_menu"];
+ 												} else {
+ 													echo $item["nama_menu"] . " extra " . $item["item_tambahan"] . " (+ Rp" . $item["harga_item_tambahan"] . ")";
+ 												}
+ 											?>
+ 										</td>
+ 										<td><?= $item["total_harga_menu"]; ?></td>
+ 									</tr>
+ 									<?php $no++; ?>
+                        		<?php endforeach; ?>
+ 							</table>
+ 						</div>
+ 					</div>
  				</div>
  			</div>
  		</div>
