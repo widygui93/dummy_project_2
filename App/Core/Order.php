@@ -51,7 +51,6 @@ if($type == "chinese"){
 
 function cekOrder($jlhRec){
 	if($jlhRec > 0){
-		// echo "orderan sukses masuk ke cart";
 		$cart = new Cart();
 		echo $cart->getJumlahItems();
 	} else {

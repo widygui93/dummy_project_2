@@ -1,5 +1,9 @@
 <?php 
 
+require_once 'App/init.php';
+use App\Db\Cart as Cart;
+
+$cart = new Cart();
 
  ?>
 
@@ -30,7 +34,7 @@
  					<li><a href="index.php">menu</a></li>
  					<li>
  						<a href="App/Core/cart.php">cart</a>
-						<span class="badge badge-success">0</span>
+						<span class="badge badge-success"><?= $cart->getJumlahItems(); ?></span>
  					</li>
  					<li><a href="#">account</a></li>
  				</ul>
