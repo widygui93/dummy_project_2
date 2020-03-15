@@ -40,7 +40,10 @@ $total = $cart->getTotalHargaItems();
  				<strong>dashboard</strong>
  				<ul>
  					<li><a href="../../index.php">menu</a></li>
- 					<li><a href="cart.php">cart</a></li>
+ 					<li>
+ 						<a href="cart.php">cart</a>
+ 						<span class="badge badge-success"><?= $cart->getJumlahItems(); ?></span>
+ 					</li>
  					<li><a href="">account</a></li>
  				</ul>
  			</div>
@@ -82,6 +85,15 @@ $total = $cart->getTotalHargaItems();
                         			</td>
                         		</tr>
  							</table>
+ 							<form action="" method="post">
+							  <div class="form-group">
+							    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC for delivery order to <strong>address street xxx no 12.</strong> </label>
+							  </div>
+							  <div class="form-group">
+							    <input type="file">
+							    <button type="submit" class="btn btn-primary">Pay</button>
+							  </div>
+							</form>
  						</div>
  					</div>
  				</div>
