@@ -1,12 +1,13 @@
 <?php namespace App\Db;
 
 class Cart extends Db {
-	private $items, $totalHargaItems;
+	private $items, $totalHargaItems, $jumlahItems;
 
 	public function __construct(){
 		parent::__construct();
 		$this->items = [];
 		$this->totalHargaItems = 0;
+		$this->jumlahItems = 0;
 	}
 
 	public function getItems(){
@@ -27,6 +28,15 @@ class Cart extends Db {
 		}
 
 		return $this->totalHargaItems;
+	}
+
+	public function getJumlahItems(){
+		$conn = mysqli_connect($this->getServerName(), $this->getUserName(), $this->getPassword(), $this->getDbName());
+		$query = "SELECT COUNT(order_id) as total FROM order_menu WHERE user_name = 'user123'";
+		$result = mysqli_query($conn, $query);
+		$data = mysqli_fetch_assoc($result);
+		$this->jumlahItems = $data['total'];
+		return $this->jumlahItems;
 	}
 
 }

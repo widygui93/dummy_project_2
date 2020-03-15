@@ -45,7 +45,12 @@ $(document).ready(function(){
             isExtraHam: isExtraHam
 		},
 		function(data, status){
-			alert(data);
+			if(data == "orderan gagal masuk ke cart"){
+				alert(data);
+			} else{
+				alert("orderan sukses masuk ke cart");
+				$("span.badge-success").text(data);
+			}
 			
 		});
 	});

@@ -6,18 +6,8 @@ use App\Menu\ChineseMainCourse as Chinese;
 use App\Menu\WesternMainCourse as Western;
 
 use App\Db\OrderMenu as TabelOrderMenu;
+use App\Db\Cart as Cart;
 
-// $tipeOrder = $_GET["q"];
-
-// if($tipeOrder == "chinese"){
-// 	$order = new OrderChinese("Kwetiau Goreng",35000,"y");
-// 	echo $order->order();
-// } elseif($tipeOrder == "western") {
-// 	$order = new OrderWestern("Hamburger Deluxe",35000,"n");
-// 	echo $order->order();
-// } else {
-// 	echo "tipe menu tidak ditemukan";
-// }
 
 $type = $_POST['tipe'];
 $name = $_POST['nama'];
@@ -61,7 +51,9 @@ if($type == "chinese"){
 
 function cekOrder($jlhRec){
 	if($jlhRec > 0){
-		echo "orderan sukses masuk ke cart";
+		// echo "orderan sukses masuk ke cart";
+		$cart = new Cart();
+		echo $cart->getJumlahItems();
 	} else {
 		echo "orderan gagal masuk ke cart";
 	}
