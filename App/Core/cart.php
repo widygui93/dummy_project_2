@@ -8,11 +8,7 @@ $cart = new Cart();
 
 $items = $cart->getItems();
 
-$total = 0;
-
-foreach($items as $item){
-	$total = $item["total_harga_menu"] + $total;
-}
+$total = $cart->getTotalHargaItems();
 
 
 
