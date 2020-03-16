@@ -11,100 +11,25 @@ $items = $cart->getItems();
 
 $total = $cart->getTotalHargaItems();
 
-// cek apakah tombol submit sudah ditekan atau belum
+// cek apakah tombol pay sudah ditekan atau belum
 if( isset($_POST["submit"]) ) {
 	
 	// cek apakah data berhasil di tambahkan atau tidak
-	if( tambah($_POST) > 0 ) {
+	if( $cart->doPayment($_POST) > 0 ) {
 		echo "
 			<script>
-				alert('data berhasil ditambahkan!');
+				alert('Payment berhasil!');
 			</script>
 		";
 	} else {
 		echo "
 			<script>
-				alert('data gagal ditambahkan!');
+				alert('Payment gagal!');
 			</script>
 		";
 	}
-
-
 }
 
-
-
-function tambah($data) {
-	$conn = mysqli_connect("localhost", "root", "", "dummy_project_2");
-	global $total, $items;
-
-	$tglTransfer = date("d-M-Y");
-	$daftar_order_id = '';
-
-	foreach ($items as $item) {
-		$daftar_order_id = $daftar_order_id . $item["order_id"] . ",";
-	}
-
-	// upload gambar
-	$gambar = upload();
-	if( !$gambar ) {
-		return false;
-	}
-
-	$query = "INSERT INTO transfer
-				VALUES
-			  ('', '$gambar', 'user123', '20100460461', '$total', '$tglTransfer', '$daftar_order_id', 'address street xxx no 12')
-			";
-	mysqli_query($conn, $query);
-
-	return mysqli_affected_rows($conn);
-}
-
-
-function upload() {
-
-	$namaFile = $_FILES['gambar']['name'];
-	$ukuranFile = $_FILES['gambar']['size'];
-	$error = $_FILES['gambar']['error'];
-	$tmpName = $_FILES['gambar']['tmp_name'];
-
-	// cek apakah tidak ada gambar yang diupload
-	if( $error === 4 ) {
-		echo "<script>
-				alert('pilih gambar terlebih dahulu!');
-			  </script>";
-		return false;
-	}
-
-	// cek apakah yang diupload adalah gambar
-	$ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
-	$ekstensiGambar = explode('.', $namaFile);
-	$ekstensiGambar = strtolower(end($ekstensiGambar));
-	if( !in_array($ekstensiGambar, $ekstensiGambarValid) ) {
-		echo "<script>
-				alert('yang anda upload bukan gambar!');
-			  </script>";
-		return false;
-	}
-
-	// cek jika ukurannya terlalu besar
-	if( $ukuranFile > 1000000 ) {
-		echo "<script>
-				alert('ukuran gambar terlalu besar!');
-			  </script>";
-		return false;
-	}
-
-	// lolos pengecekan, gambar siap diupload
-	// generate nama gambar baru
-	$namaFileBaru = uniqid();
-	$namaFileBaru .= '.';
-	$namaFileBaru .= $ekstensiGambar;
-
-	move_uploaded_file($tmpName, 'img-transfer/' . $namaFileBaru);
-
-	return $namaFileBaru;
-}
 
 
  ?>
