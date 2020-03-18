@@ -36,7 +36,13 @@ $cart = new Cart();
  						<a href="App/Core/cart.php">cart</a>
 						<span class="badge badge-success"><?= $cart->getJumlahItems(); ?></span>
  					</li>
- 					<li><a href="#">account</a></li>
+ 					<li>
+ 						<a href="#">account</a>
+ 						<ul>
+ 							<li><a href="#">profile</a></li>
+ 							<li><a href="#">history</a></li>
+ 						</ul>
+ 					</li>
  				</ul>
  			</div>
  			<div class="col-10">
