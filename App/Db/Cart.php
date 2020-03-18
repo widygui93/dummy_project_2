@@ -38,7 +38,6 @@ class Cart extends Db {
 	}
 
 	public function doPayment($data){
-		// $conn = mysqli_connect($this->getServerName(), $this->getUserName(), $this->getPassword(), $this->getDbName());
 		$tglTransfer = date("d-M-Y");
 		$daftar_order_id = '';
 
@@ -56,11 +55,8 @@ class Cart extends Db {
 				  ('', '$gambar', 'user123', '20100460461', '$this->totalHargaItems', '$tglTransfer', '$daftar_order_id', 'address street xxx no 12')
 				";
 		$result = $this->executeQuery($query);
-		// mysqli_query($conn,$query);
 
-		// return mysqli_affected_rows($conn);
 		return $result[1];
-
 	}
 
 	private function upload(){

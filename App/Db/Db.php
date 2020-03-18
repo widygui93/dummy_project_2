@@ -27,6 +27,10 @@ class Db {
 		return $this->dbName;
 	}
 
+	protected function connect(){
+		return mysqli_connect($this->serverName, $this->userName, $this->password, $this->dbName);
+	}
+
 	protected function executeQuery($q){
 		$conn = $this->connect();
 		$result = mysqli_query($conn,$q);
@@ -37,12 +41,7 @@ class Db {
 		return $data;
 	}
 
-	protected function connect(){
-		return mysqli_connect($this->serverName, $this->userName, $this->password, $this->dbName);
-	}
-
-
-
+	
 }
 
 

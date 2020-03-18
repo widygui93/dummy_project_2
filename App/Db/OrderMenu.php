@@ -7,17 +7,16 @@ class OrderMenu extends Db {
 	}
 
 	public function createOrder($typeMenu, $namaMenu, $hargaMenu, $userName, $itemTambahan, $hargaItemTambahan, $totalHarga){
-		$conn = mysqli_connect($this->getServerName(), $this->getUserName(), $this->getPassword(), $this->getDbName());
-
+		
 		// query insert data
 	    $query = " INSERT INTO order_menu
 	                VALUES
 	            ('', '$typeMenu', '$namaMenu','$hargaMenu', '$userName', '$itemTambahan', '$hargaItemTambahan', '$totalHarga') 
 	    ";
 
-	    mysqli_query($conn,$query);
+	    $result = $this->executeQuery($query);
 
-	    return mysqli_affected_rows($conn);
+		return $result[1];
 	}
 }
 
