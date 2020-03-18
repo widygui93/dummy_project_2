@@ -70,7 +70,7 @@ if( isset($_POST["submit"]) ) {
  				<div class="container-fluid">
  					<div class="row">
  						<div class="col-sm">
- 							<h2>Daftar Orderan</h2>
+ 							<h2>Order List</h2>
  						</div>
  					</div>
  					<div class="row">
