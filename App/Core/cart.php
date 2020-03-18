@@ -106,7 +106,12 @@ if( isset($_POST["submit"]) ) {
  							</table>
  							<form action="" method="post" enctype="multipart/form-data">
 							  <div class="form-group">
-							    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC for delivery order to <strong>address street xxx no 12.</strong> </label>
+							    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC </label>
+							  </div>
+							  <div class="form-group">
+							    <label>
+							    	<p>For delivery order to <strong>address street xxx no 12.</strong></p>
+							    </label>
 							  </div>
 							  <div class="form-group">
 							    <input type="file" name="gambar">
