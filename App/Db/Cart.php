@@ -11,12 +11,11 @@ class Cart extends Db {
 	}
 
 	public function getItems(){
-		$conn = mysqli_connect($this->getServerName(), $this->getUserName(), $this->getPassword(), $this->getDbName());
 		$query = "SELECT * FROM order_menu WHERE user_name = 'user123'";
-		$result = mysqli_query($conn, $query);
+		$result = $this->executeQuery($query);
 		// $this->items = [];
     
-	    while ( $row = mysqli_fetch_assoc($result) ) {
+	    while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->items[] = $row;
 	    }
 	    return $this->items;
@@ -31,17 +30,15 @@ class Cart extends Db {
 	}
 
 	public function getJumlahItems(){
-		$conn = mysqli_connect($this->getServerName(), $this->getUserName(), $this->getPassword(), $this->getDbName());
 		$query = "SELECT COUNT(order_id) as total FROM order_menu WHERE user_name = 'user123'";
-		$result = mysqli_query($conn, $query);
-		$data = mysqli_fetch_assoc($result);
+		$result = $this->executeQuery($query);
+		$data = mysqli_fetch_assoc($result[0]);
 		$this->jumlahItems = $data['total'];
 		return $this->jumlahItems;
 	}
 
 	public function doPayment($data){
-		$conn = mysqli_connect($this->getServerName(), $this->getUserName(), $this->getPassword(), $this->getDbName());
-		
+		// $conn = mysqli_connect($this->getServerName(), $this->getUserName(), $this->getPassword(), $this->getDbName());
 		$tglTransfer = date("d-M-Y");
 		$daftar_order_id = '';
 
@@ -58,9 +55,11 @@ class Cart extends Db {
 					VALUES
 				  ('', '$gambar', 'user123', '20100460461', '$this->totalHargaItems', '$tglTransfer', '$daftar_order_id', 'address street xxx no 12')
 				";
-		mysqli_query($conn, $query);
+		$result = $this->executeQuery($query);
+		// mysqli_query($conn,$query);
 
-		return mysqli_affected_rows($conn);
+		// return mysqli_affected_rows($conn);
+		return $result[1];
 
 	}
 

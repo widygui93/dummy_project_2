@@ -27,6 +27,20 @@ class Db {
 		return $this->dbName;
 	}
 
+	protected function executeQuery($q){
+		$conn = $this->connect();
+		$result = mysqli_query($conn,$q);
+		$totalRows = mysqli_affected_rows($conn);
+		$data = [];
+		$data[0] = $result;
+		$data[1] = $totalRows;
+		return $data;
+	}
+
+	protected function connect(){
+		return mysqli_connect($this->serverName, $this->userName, $this->password, $this->dbName);
+	}
+
 
 
 }
