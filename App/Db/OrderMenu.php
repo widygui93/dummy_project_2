@@ -6,17 +6,17 @@ class OrderMenu extends Db {
 		parent::__construct();
 	}
 
-	public function createOrder($typeMenu, $namaMenu, $hargaMenu, $userName, $itemTambahan, $hargaItemTambahan, $totalHarga){
-		
+	public function createOrder($typeMenu, $namaMenu, $tglOrder, $hargaMenu, $userName, $itemTambahan, $hargaItemTambahan, $totalHarga){
 		// query insert data
 	    $query = " INSERT INTO order_menu
 	                VALUES
-	            ('', '$typeMenu', '$namaMenu','$hargaMenu', '$userName', '$itemTambahan', '$hargaItemTambahan', '$totalHarga') 
+	            ('', '' , '$typeMenu', '$namaMenu', '$tglOrder', '$hargaMenu', '$userName', '$itemTambahan', '$hargaItemTambahan', '$totalHarga') 
 	    ";
 
 	    $result = $this->executeQuery($query);
 
 		return $result[1];
+
 	}
 }
 

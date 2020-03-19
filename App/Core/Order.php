@@ -1,4 +1,5 @@
 <?php 
+date_default_timezone_set("Asia/Jakarta");
 
 require_once '../init.php';
 
@@ -23,6 +24,7 @@ if($type == "chinese"){
 	cekOrder($addMenuChinese->createOrder(
 		$menuChinese->getTypeMenu(),
 		$menuChinese->getNamaMenu(),
+		$menuChinese->getTglOrder(),
 		$menuChinese->getHargaMenu(),
 		"user123",
 		($isExtraSeafood == "y") ? "seafood" : "tanpa extra item",
@@ -38,6 +40,7 @@ if($type == "chinese"){
 	cekOrder($addMenuWestern->createOrder(
 		$menuWestern->getTypeMenu(),
 		$menuWestern->getNamaMenu(),
+		$menuWestern->getTglOrder(),
 		$menuWestern->getHargaMenu(),
 		"user123",
 		($isExtraHam == "y") ? "ham" : "tanpa extra item",

@@ -26,6 +26,13 @@ class Menu {
 		return $this->totalPrice;
 	}
 
+	public function getTglOrder(){
+		$tglOrder = date("d-M-Y");
+		return $tglOrder;
+	}
+
+	
+
 	protected function cekUseAdditionalItem($isAdditionalItem){
 		if($isAdditionalItem == 'y'){
 			$priceAddtionalItem = 10000;

@@ -11,23 +11,23 @@ class Db {
 		$this->dbName = "dummy_project_2";
 	}
 
-	protected function getServerName(){
-		return $this->serverName;
-	}
+	// protected function getServerName(){
+	// 	return $this->serverName;
+	// }
 
-	protected function getUserName(){
-		return $this->userName;
-	}
+	// protected function getUserName(){
+	// 	return $this->userName;
+	// }
 
-	protected function getPassword(){
-		return $this->password;
-	}
+	// protected function getPassword(){
+	// 	return $this->password;
+	// }
 
-	protected function getDbName(){
-		return $this->dbName;
-	}
+	// protected function getDbName(){
+	// 	return $this->dbName;
+	// }
 
-	protected function connect(){
+	private function connect(){
 		return mysqli_connect($this->serverName, $this->userName, $this->password, $this->dbName);
 	}
 

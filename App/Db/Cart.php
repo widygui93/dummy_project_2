@@ -40,6 +40,8 @@ class Cart extends Db {
 	public function doPayment($data){
 		$tglTransfer = date("d-M-Y");
 		$daftar_order_id = '';
+		$query = '';
+
 
 		foreach ($this->items as $item) {
 			$daftar_order_id = $daftar_order_id . $item["order_id"] . ",";
@@ -54,9 +56,31 @@ class Cart extends Db {
 					VALUES
 				  ('', '$gambar', 'user123', '20100460461', '$this->totalHargaItems', '$tglTransfer', '$daftar_order_id', 'address street xxx no 12')
 				";
-		$result = $this->executeQuery($query);
+		$resultInsert = $this->executeQuery($query);
 
-		return $result[1];
+
+		$query = "SELECT id_transfer FROM transfer WHERE daftar_order_id LIKE '%133%'";
+
+		$resultSelect = $this->executeQuery($query);
+
+		$id_transfers = [];
+
+		while ( $row = mysqli_fetch_assoc($resultSelect[0]) ) {
+	        $id_transfers[] = $row;
+	    }
+
+	    $id_trf = 0;
+	    foreach ($id_transfers as $item) {
+			$id_trf = $item["id_transfer"];
+		}
+
+		foreach ($this->items as $item) {
+			$ord_ids = $item["order_id"];
+			$query = "UPDATE order_menu SET id_transfer = '$id_trf' WHERE order_id = '$ord_ids'";
+			$resultUpdate = $this->executeQuery($query);
+		}
+
+		return $resultInsert[1];
 	}
 
 	private function upload(){
