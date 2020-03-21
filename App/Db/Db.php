@@ -25,22 +25,10 @@ class Db {
 		return $data;
 	}
 
-	protected function updateID_TransferFromTableOrder_Menu($items){
-		$order_ids = [];
-		foreach ($items as $item) {
-			array_push($order_ids,$item["order_id"]);
-		}
-
-		$query = "SELECT id_transfer FROM transfer WHERE daftar_order_id LIKE '%$order_ids[0]%'";
-
-		// $order_ids = [];
-
-		$resultSelect = $this->executeQuery($query);
-
-	    $id_transfer = mysqli_fetch_assoc($resultSelect[0]);
+	protected function updateID_TransferFromTableOrder_Menu($items,$idTrf){
 
 		foreach ($items as $item) {
-			$query = "UPDATE order_menu SET id_transfer = '".$id_transfer["id_transfer"]."' WHERE order_id = '".$item["order_id"]."'";
+			$query = "UPDATE order_menu SET id_transfer = '$idTrf' WHERE order_id = '".$item["order_id"]."'";
 			$resultUpdate = $this->executeQuery($query);
 		}
 	}

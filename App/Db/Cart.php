@@ -39,28 +39,51 @@ class Cart extends Db {
 
 	public function doPayment($data){
 		$tglTransfer = date("d-M-Y");
-		$daftar_order_id = '';
 		$query = '';
+		$idTrf = '';
 
-
-		foreach ($this->items as $item) {
-			$daftar_order_id = $daftar_order_id . $item["order_id"] . ",";
-		}
 
 		$gambar = $this->upload();
 		if( !$gambar ){
 			return false;
 		}
 
+		$idTrf = $this->generateRandomIDTransfer();
+
 		$query = "INSERT INTO transfer
 					VALUES
-				  ('', '$gambar', 'user123', '20100460461', '$this->totalHargaItems', '$tglTransfer', '$daftar_order_id', 'address street xxx no 12')
+				  ('$idTrf', '$gambar', 'user123', '20100460461', '$this->totalHargaItems', '$tglTransfer', 'address street xxx no 12')
 				";
 		$resultInsert = $this->executeQuery($query);
 
-		$this->updateID_TransferFromTableOrder_Menu($this->items);
-
+		if($resultInsert[0]){
+			$this->updateID_TransferFromTableOrder_Menu($this->items,$idTrf);
+		}
+		
 		return $resultInsert[1];
+	}
+
+	private function generateRandomIDTransfer() {
+	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $charactersLength = strlen($characters);
+	    $randomString = '';
+	    for ($i = 0; $i < 20; $i++) {
+	        $randomString .= $characters[rand(0, $charactersLength - 1)];
+	    }
+
+	    $query = "SELECT id_transfer FROM transfer";
+	    $result = $this->executeQuery($query);
+	    $idTrfs = [];
+	    while ( $row = mysqli_fetch_assoc($result[0]) ) {
+	        $idTrfs = $row;
+	    }
+	    
+	    for($i = 0; $i < count($idTrfs); $i++){
+	    	if($randomString == $idTrfs[$i]){
+	    		$this->generateRandomIDTransfer();
+	    	}
+	    }
+	    return $randomString;
 	}
 
 
