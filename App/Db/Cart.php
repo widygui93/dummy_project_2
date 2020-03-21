@@ -11,7 +11,7 @@ class Cart extends Db {
 	}
 
 	public function getItems(){
-		$query = "SELECT * FROM order_menu WHERE user_name = 'user123'";
+		$query = "SELECT * FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
 		$result = $this->executeQuery($query);
 		// $this->items = [];
     
@@ -30,7 +30,7 @@ class Cart extends Db {
 	}
 
 	public function getJumlahItems(){
-		$query = "SELECT COUNT(order_id) as total FROM order_menu WHERE user_name = 'user123'";
+		$query = "SELECT COUNT(order_id) as total FROM order_menu WHERE user_name = 'user123'AND id_transfer = ''";
 		$result = $this->executeQuery($query);
 		$data = mysqli_fetch_assoc($result[0]);
 		$this->jumlahItems = $data['total'];
@@ -73,7 +73,7 @@ class Cart extends Db {
 	    $query = "SELECT id_transfer FROM transfer";
 	    $result = $this->executeQuery($query);
 	    $idTrfs = [];
-	    while ( $row = mysqli_fetch_assoc($result[0]) ) {
+	    while ( $row = mysqli_fetch_row($result[0]) ) {
 	        $idTrfs = $row;
 	    }
 
