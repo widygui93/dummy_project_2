@@ -26,7 +26,6 @@ class Db {
 	}
 
 	protected function updateID_TransferFromTableOrder_Menu($items,$idTrf){
-
 		foreach ($items as $item) {
 			$query = "UPDATE order_menu SET id_transfer = '$idTrf' WHERE order_id = '".$item["order_id"]."'";
 			$resultUpdate = $this->executeQuery($query);

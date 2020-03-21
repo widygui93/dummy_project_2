@@ -42,7 +42,6 @@ class Cart extends Db {
 		$query = '';
 		$idTrf = '';
 
-
 		$gambar = $this->upload();
 		if( !$gambar ){
 			return false;
@@ -77,7 +76,7 @@ class Cart extends Db {
 	    while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $idTrfs = $row;
 	    }
-	    
+
 	    for($i = 0; $i < count($idTrfs); $i++){
 	    	if($randomString == $idTrfs[$i]){
 	    		$this->generateRandomIDTransfer();
