@@ -8,25 +8,42 @@ use App\Db\Cart as Cart;
 $cart = new Cart();
 
 $items = $cart->getItems();
-
 $total = $cart->getTotalHargaItems();
+$jlhItems = $cart->getJumlahItems();
+
+$showResult = false;
 
 // cek apakah tombol pay sudah ditekan atau belum
 if( isset($_POST["submit"]) ) {
 	
 	// cek apakah data berhasil di tambahkan atau tidak
 	if( $cart->doPayment($_POST) > 0 ) {
-		echo "
-			<script>
-				alert('Payment berhasil!');
-			</script>
+
+		$paySuccess = "
+			<div class=\"alert alert-success\" role=\"alert\">
+			  <p>Payment success!</p>
+			</div>
 		";
+		$showResult = true;
+		$isPaySuccess = true;
+
+		$items = [];
+		$total = 0;
+		$jlhItems = 0;
+
 	} else {
-		echo "
-			<script>
-				alert('Payment gagal!');
-			</script>
+		// echo "
+		// 	<script>
+		// 		alert('Payment failed!');
+		// 	</script>
+		// ";
+		$payFailed = "
+			<div class=\"alert alert-danger\" role=\"alert\">
+			  <p>Payment failed!</p>
+			</div>
 		";
+		$showResult = true;
+		$isPaySuccess = false;
 	}
 }
 
@@ -61,7 +78,7 @@ if( isset($_POST["submit"]) ) {
  					<li><a href="../../index.php">menu</a></li>
  					<li>
  						<a href="cart.php">cart</a>
- 						<span class="badge badge-success"><?= $cart->getJumlahItems(); ?></span>
+ 						<span class="badge badge-success"><?= $jlhItems; ?></span>
  					</li>
  					<li>
 						<a href="#">account</a>
@@ -124,11 +141,22 @@ if( isset($_POST["submit"]) ) {
 							    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
 							  </div>
 							</form>
+							<?php
+								if($showResult){
+									if($isPaySuccess){
+										echo $paySuccess;
+									}else{
+										echo $payFailed;
+									}
+								}
+							?>
  						</div>
  					</div>
  				</div>
  			</div>
  		</div>
  	</div>
+ 	<script src="../../js/jquery-3.4.1.min.js"></script>
+ 	<script src="../../js/script.js"></script>
  </body>
  </html>
