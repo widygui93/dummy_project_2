@@ -19,11 +19,6 @@ if( isset($_POST["submit"]) ) {
 	// cek apakah data berhasil di tambahkan atau tidak
 	if( $cart->doPayment($_POST) > 0 ) {
 
-		$paySuccess = "
-			<div class=\"alert alert-success\" role=\"alert\">
-			  <p>Payment success!</p>
-			</div>
-		";
 		$showResult = true;
 		$isPaySuccess = true;
 
@@ -32,16 +27,7 @@ if( isset($_POST["submit"]) ) {
 		$jlhItems = 0;
 
 	} else {
-		// echo "
-		// 	<script>
-		// 		alert('Payment failed!');
-		// 	</script>
-		// ";
-		$payFailed = "
-			<div class=\"alert alert-danger\" role=\"alert\">
-			  <p>Payment failed!</p>
-			</div>
-		";
+
 		$showResult = true;
 		$isPaySuccess = false;
 	}
@@ -127,29 +113,34 @@ if( isset($_POST["submit"]) ) {
                         			</td>
                         		</tr>
  							</table>
- 							<form action="" method="post" enctype="multipart/form-data">
-							  <div class="form-group">
-							    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC </label>
-							  </div>
-							  <div class="form-group">
-							    <label>
-							    	<p>For delivery order to <strong>address street xxx no 12.</strong></p>
-							    </label>
-							  </div>
-							  <div class="form-group">
-							    <input type="file" name="gambar">
-							    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
-							  </div>
-							</form>
-							<?php
-								if($showResult){
-									if($isPaySuccess){
-										echo $paySuccess;
-									}else{
-										echo $payFailed;
-									}
-								}
-							?>
+ 							<?php if($total != 0): ?>
+	 							<form action="" method="post" enctype="multipart/form-data">
+								  <div class="form-group">
+								    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC </label>
+								  </div>
+								  <div class="form-group">
+								    <label>
+								    	<p>For delivery order to <strong>address street xxx no 12.</strong></p>
+								    </label>
+								  </div>
+								  <div class="form-group">
+								    <input type="file" name="gambar">
+								    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
+								  </div>
+								</form>
+
+							<?php endif; ?>
+
+							<?php if($showResult): ?>
+								<?php if($isPaySuccess): ?>
+									<div class="alert alert-success" role="alert"><h3>Payment success!</h3></div>
+								<?php else: ?>
+									<div class="alert alert-danger" role="alert"><h3>Payment failed!</h3></div>
+								<?php endif; ?>
+							<?php elseif($showResult == false && $total == 0): ?>
+								<div class="alert alert-primary" role="alert"><h3>You don't have any order yet. Please go to menu to order.</h3></div>
+							<?php endif; ?>
+							
  						</div>
  					</div>
  				</div>
