@@ -84,36 +84,36 @@ if( isset($_POST["submit"]) ) {
  					</div>
  					<div class="row">
  						<div class="col-sm">
- 							<table border="1" cellpadding="10" cellspacing="0">
- 								<tr>
- 									<th>No</th>
- 									<th>Menu</th>
- 									<th>Harga</th>
- 								</tr>
- 								<?php $no = 1; ?>
- 								<?php foreach( $items as $item ) : ?>
- 									<tr>
- 										<td><?= $no; ?></td>
- 										<td>
-											<?php
- 												if($item["harga_item_tambahan"] == 0){
- 													echo $item["nama_menu"];
- 												} else {
- 													echo $item["nama_menu"] . " extra " . $item["item_tambahan"] . " (+ Rp" . $item["harga_item_tambahan"] . ")";
- 												}
- 											?>
- 										</td>
- 										<td><?= $item["total_harga_menu"]; ?></td>
- 									</tr>
- 									<?php $no++; ?>
-                        		<?php endforeach; ?>
-                        		<tr>
-                        			<td colspan="3"> 
-										<strong> Total : Rp <?= $total; ?></strong>
-                        			</td>
-                        		</tr>
- 							</table>
  							<?php if($total != 0): ?>
+	 							<table border="1" cellpadding="10" cellspacing="0">
+	 								<tr>
+	 									<th>No</th>
+	 									<th>Menu</th>
+	 									<th>Harga</th>
+	 								</tr>
+	 								<?php $no = 1; ?>
+	 								<?php foreach( $items as $item ) : ?>
+	 									<tr>
+	 										<td><?= $no; ?></td>
+	 										<td>
+												<?php
+	 												if($item["harga_item_tambahan"] == 0){
+	 													echo $item["nama_menu"];
+	 												} else {
+	 													echo $item["nama_menu"] . " extra " . $item["item_tambahan"] . " (+ Rp" . $item["harga_item_tambahan"] . ")";
+	 												}
+	 											?>
+	 										</td>
+	 										<td><?= $item["total_harga_menu"]; ?></td>
+	 									</tr>
+	 									<?php $no++; ?>
+	                        		<?php endforeach; ?>
+	                        		<tr>
+	                        			<td colspan="3"> 
+											<strong> Total : Rp <?= $total; ?></strong>
+	                        			</td>
+	                        		</tr>
+	 							</table>
 	 							<form action="" method="post" enctype="multipart/form-data">
 								  <div class="form-group">
 								    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC </label>
@@ -128,7 +128,6 @@ if( isset($_POST["submit"]) ) {
 								    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
 								  </div>
 								</form>
-
 							<?php endif; ?>
 
 							<?php if($showResult): ?>
