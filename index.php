@@ -40,7 +40,7 @@ $cart = new Cart();
  						<a href="#">account</a>
  						<ul>
  							<li><a href="#">profile</a></li>
- 							<li><a href="#">history</a></li>
+ 							<li><a href="App/Core/history.php">history</a></li>
  						</ul>
  					</li>
  				</ul>
