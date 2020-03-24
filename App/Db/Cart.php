@@ -85,6 +85,12 @@ class Cart extends Db {
 	    return $randomString;
 	}
 
+	public function removeItem($data){
+		$query = "DELETE FROM order_menu WHERE order_id = '".$data["order_id"]."'";
+		$result = $this->executeQuery($query);
+		return  $result[1];
+	}
+
 
 
 }

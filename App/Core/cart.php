@@ -7,6 +7,16 @@ use App\Db\Cart as Cart;
 
 $cart = new Cart();
 
+if( isset($_POST["delete"]) ){
+	if( $cart->removeItem($_POST) < 0 ){
+		echo "
+	        <script>
+	            alert('data gagal dihapus');
+	        </script>
+	    ";
+	}
+}
+
 $items = $cart->getItems();
 $total = $cart->getTotalHargaItems();
 $jlhItems = $cart->getJumlahItems();
@@ -32,6 +42,8 @@ if( isset($_POST["submit"]) ) {
 		$isPaySuccess = false;
 	}
 }
+
+
 
 
 
@@ -89,7 +101,8 @@ if( isset($_POST["submit"]) ) {
 	 								<tr>
 	 									<th>No</th>
 	 									<th>Menu</th>
-	 									<th>Harga</th>
+	 									<th>Price</th>
+	 									<th>Action</th>
 	 								</tr>
 	 								<?php $no = 1; ?>
 	 								<?php foreach( $items as $item ) : ?>
@@ -105,11 +118,17 @@ if( isset($_POST["submit"]) ) {
 	 											?>
 	 										</td>
 	 										<td><?= $item["total_harga_menu"]; ?></td>
+	 										<td>
+	 											<form action="" method="post">
+	 												<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
+		 											<button type="submit" name="delete" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
+	 											</form>
+	 										</td>
 	 									</tr>
 	 									<?php $no++; ?>
 	                        		<?php endforeach; ?>
 	                        		<tr>
-	                        			<td colspan="3"> 
+	                        			<td colspan="4"> 
 											<strong> Total : Rp <?= $total; ?></strong>
 	                        			</td>
 	                        		</tr>
