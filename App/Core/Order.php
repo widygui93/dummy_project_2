@@ -3,9 +3,9 @@ date_default_timezone_set("Asia/Jakarta");
 
 require_once '../init.php';
 
+use App\Menu\Menu as Menu;
 use App\Menu\ChineseMainCourse as Chinese;
 use App\Menu\WesternMainCourse as Western;
-
 use App\Db\OrderMenu as TabelOrderMenu;
 use App\Db\Cart as Cart;
 
@@ -13,44 +13,27 @@ use App\Db\Cart as Cart;
 $type = $_POST['tipe'];
 $name = $_POST['nama'];
 $cost = $_POST['harga'];
+$idMenu = $_POST['idMenu'];
+$quantity = $_POST['quantity'];
+
+$menu = new Menu($name, $cost, $type, $idMenu, $quantity);
+
+$order = new TabelOrderMenu();
 
 
 
-if($type == "chinese"){
-	$isExtraSeafood = $_POST['isExtraSeafood'];
-	$menuChinese = new Chinese($name,$cost,$isExtraSeafood,$type);
+cekOrder($order->createOrder(
+	$menu->getTypeMenu(),
+	$menu->getIdMenu(),
+	$menu->getNamaMenu(),
+	$menu->getTglOrder(),
+	$menu->getHargaMenu(),
+	"user123",
+	$menu->getQuantity(),
+	$menu->getTotalPrice()
+	)
+);
 
-	$addMenuChinese = new TabelOrderMenu();
-	cekOrder($addMenuChinese->createOrder(
-		$menuChinese->getTypeMenu(),
-		$menuChinese->getNamaMenu(),
-		$menuChinese->getTglOrder(),
-		$menuChinese->getHargaMenu(),
-		"user123",
-		($isExtraSeafood == "y") ? "seafood" : "tanpa extra item",
-		$menuChinese->getPriceOfExtraSeafood(),
-		$menuChinese->getTotalPrice()
-		)
-	);
-} elseif($type == "western"){
-	$isExtraHam = $_POST['isExtraHam'];
-	$menuWestern = new Western($name,$cost,$isExtraHam,$type);
-
-	$addMenuWestern = new TabelOrderMenu();
-	cekOrder($addMenuWestern->createOrder(
-		$menuWestern->getTypeMenu(),
-		$menuWestern->getNamaMenu(),
-		$menuWestern->getTglOrder(),
-		$menuWestern->getHargaMenu(),
-		"user123",
-		($isExtraHam == "y") ? "ham" : "tanpa extra item",
-		$menuWestern->getPriceOfExtraHam(),
-		$menuWestern->getTotalPrice()
-		)
-	);
-} else {
-	echo "tipe menu tidak ditemukan";
-}
 
 function cekOrder($jlhRec){
 	if($jlhRec > 0){

@@ -2,12 +2,14 @@
 
 class Menu {
 
-	private $namaMenu,$hargaMenu,$typeMenu,$totalPrice;
+	private $namaMenu,$hargaMenu,$typeMenu,$totalPrice,$idMenu,$quantity;
 
-	protected function __construct($namaMenu,$hargaMenu,$type){
+	public function __construct($namaMenu,$hargaMenu,$type,$idMenu,$quantity){
 		$this->namaMenu = $namaMenu;
 		$this->hargaMenu = $hargaMenu;
 		$this->typeMenu = $type;
+		$this->idMenu = $idMenu;
+		$this->quantity = $quantity;
 	}
 
 	public function getNamaMenu(){
@@ -23,7 +25,16 @@ class Menu {
 	}
 
 	public function getTotalPrice(){
+		$this->totalPrice = $this->hargaMenu * $this->quantity;
 		return $this->totalPrice;
+	}
+
+	public function getIdMenu(){
+		return $this->idMenu;
+	}
+
+	public function getQuantity(){
+		return $this->quantity;
 	}
 
 	public function getTglOrder(){
@@ -31,19 +42,6 @@ class Menu {
 		return $tglOrder;
 	}
 
-	
-
-	protected function cekUseAdditionalItem($isAdditionalItem){
-		if($isAdditionalItem == 'y'){
-			$priceAddtionalItem = 10000;
-			$this->totalPrice = $this->hargaMenu + $priceAddtionalItem;
-			return $priceAddtionalItem;
-		} else {
-			$priceAddtionalItem = 0;
-			$this->totalPrice = $this->hargaMenu;
-			return $priceAddtionalItem;
-		}
-	}
 
 }
 
