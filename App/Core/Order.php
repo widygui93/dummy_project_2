@@ -4,8 +4,6 @@ date_default_timezone_set("Asia/Jakarta");
 require_once '../init.php';
 
 use App\Menu\Menu as Menu;
-use App\Menu\ChineseMainCourse as Chinese;
-use App\Menu\WesternMainCourse as Western;
 use App\Db\OrderMenu as TabelOrderMenu;
 use App\Db\Cart as Cart;
 
@@ -38,7 +36,7 @@ cekOrder($order->createOrder(
 function cekOrder($jlhRec){
 	if($jlhRec > 0){
 		$cart = new Cart();
-		echo $cart->getJumlahItems();
+		echo $cart->getJumlahQuantity();
 	} else {
 		echo "orderan gagal masuk ke cart";
 	}

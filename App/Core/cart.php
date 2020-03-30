@@ -17,9 +17,10 @@ if( isset($_POST["delete"]) ){
 	}
 }
 
-$items = $cart->getItems();
+$duplicateItems = $cart->getDuplicateItems();
+$nonDuplicateItems = $cart->getNonDuplicateItems();
 $total = $cart->getTotalHargaItems();
-$jlhItems = $cart->getJumlahItems();
+$jlhQuantity = $cart->getJumlahQuantity();
 
 $showResult = false;
 
@@ -32,9 +33,10 @@ if( isset($_POST["submit"]) ) {
 		$showResult = true;
 		$isPaySuccess = true;
 
-		$items = [];
+		$duplicateItems = array(array());
+		$nonDuplicateItems = array(array());
 		$total = 0;
-		$jlhItems = 0;
+		$jlhQuantity = 0;
 
 	} else {
 
@@ -76,7 +78,7 @@ if( isset($_POST["submit"]) ) {
  					<li><a href="../../index.php">menu</a></li>
  					<li>
  						<a href="cart.php">cart</a>
- 						<span class="badge badge-success"><?= $jlhItems; ?></span>
+ 						<span class="badge badge-success" id="cart"><?= $jlhQuantity; ?></span>
  					</li>
  					<li>
 						<a href="#">account</a>
@@ -102,33 +104,60 @@ if( isset($_POST["submit"]) ) {
 	 									<th>No</th>
 	 									<th>Menu</th>
 	 									<th>Price</th>
-	 									<th>Action</th>
+	 									<th>Quantity</th>
+	 									<th>Total Price</th>
+	 									<th>Delete</th>
+	 									<th>Edit</th>
 	 								</tr>
 	 								<?php $no = 1; ?>
-	 								<?php foreach( $items as $item ) : ?>
+	 								<?php for( $i=0; $i < count($duplicateItems); $i++ ) : ?>
 	 									<tr>
 	 										<td><?= $no; ?></td>
-	 										<td>
-												<?php
-	 												if($item["harga_item_tambahan"] == 0){
-	 													echo $item["nama_menu"];
-	 												} else {
-	 													echo $item["nama_menu"] . " extra " . $item["item_tambahan"] . " (+ Rp" . $item["harga_item_tambahan"] . ")";
-	 												}
-	 											?>
-	 										</td>
-	 										<td><?= $item["total_harga_menu"]; ?></td>
+	 										<td><?= $duplicateItems[$i]["menu"]; ?></td>
+	 										<td><?= $duplicateItems[$i]["price"]; ?></td>
+	 										<td><?= $duplicateItems[$i]["quantity"]; ?></td>
+	 										<td><?= $duplicateItems[$i]["total_price"]; ?></td>
 	 										<td>
 	 											<form action="" method="post">
-	 												<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
+	 												<input style="display: none;" type="text" name="id_menu" value=<?= $duplicateItems[$i]["id_menu"]; ?> >
 		 											<button type="submit" name="delete" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
 	 											</form>
 	 										</td>
+	 										<td>
+	 											<div class="quantity-container">
+													<label>Quantity:</label>
+													<button type="button" class="btn btn-outline-primary btn-sm edit-plus">+</button>
+													<button type="button" class="btn btn-outline-primary btn-sm edit-minus">-</button>
+												</div>
+	 										</td>
 	 									</tr>
 	 									<?php $no++; ?>
-	                        		<?php endforeach; ?>
+	                        		<?php endfor; ?>
+	                        		<?php for( $i=0; $i < count($nonDuplicateItems); $i++ ) : ?>
+	 									<tr>
+	 										<td><?= $no; ?></td>
+	 										<td><?= $nonDuplicateItems[$i]["menu"]; ?></td>
+	 										<td><?= $nonDuplicateItems[$i]["price"]; ?></td>
+	 										<td><?= $nonDuplicateItems[$i]["quantity"]; ?></td>
+	 										<td><?= $nonDuplicateItems[$i]["total_price"]; ?></td>
+	 										<td>
+	 											<form action="" method="post">
+	 												<input style="display: none;" type="text" name="id_menu" value=<?= $nonDuplicateItems[$i]["id_menu"]; ?> >
+		 											<button type="submit" name="delete" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
+	 											</form>
+	 										</td>
+	 										<td>
+	 											<div class="quantity-container">
+													<label>Quantity:</label>
+													<button type="button" class="btn btn-outline-primary btn-sm edit-plus">+</button>
+													<button type="button" class="btn btn-outline-primary btn-sm edit-minus">-</button>
+												</div>
+	 										</td>
+	 									</tr>
+	 									<?php $no++; ?>
+	                        		<?php endfor; ?>
 	                        		<tr>
-	                        			<td colspan="4"> 
+	                        			<td colspan="7"> 
 											<strong> Total : Rp <?= $total; ?></strong>
 	                        			</td>
 	                        		</tr>
@@ -158,7 +187,6 @@ if( isset($_POST["submit"]) ) {
 							<?php elseif($showResult == false && $total == 0): ?>
 								<div class="alert alert-primary" role="alert"><h3>You don't have any order yet. Please go to menu to order.</h3></div>
 							<?php endif; ?>
-							
  						</div>
  					</div>
  				</div>

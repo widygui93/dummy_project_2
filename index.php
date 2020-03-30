@@ -34,7 +34,7 @@ $cart = new Cart();
  					<li><a href="index.php">menu</a></li>
  					<li>
  						<a href="App/Core/cart.php">cart</a>
-						<span class="badge badge-success" id="cart"><?= $cart->getJumlahItems(); ?></span>
+						<span class="badge badge-success" id="cart"><?= $cart->getJumlahQuantity(); ?></span>
  					</li>
  					<li>
  						<a href="#">account</a>

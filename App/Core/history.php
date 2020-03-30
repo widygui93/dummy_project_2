@@ -7,7 +7,6 @@ use App\Db\Cart as Cart;
 
 $cart = new Cart();
 
-$jlhItems = $cart->getJumlahItems();
 
 
 
@@ -45,7 +44,7 @@ $jlhItems = $cart->getJumlahItems();
  					<li><a href="../../index.php">menu</a></li>
  					<li>
  						<a href="cart.php">cart</a>
- 						<span class="badge badge-success"><?= $jlhItems; ?></span>
+ 						<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
  					</li>
  					<li>
 						<a href="#">account</a>
