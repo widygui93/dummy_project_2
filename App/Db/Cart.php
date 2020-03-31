@@ -16,6 +16,12 @@ class Cart extends Db {
 		// $query = "SELECT * FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
 		$query = "SELECT id_menu, COUNT(*) as total FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' GROUP BY id_menu HAVING COUNT(*) > 1";
 		$result = $this->executeQuery($query);
+		
+		if($result[1] == 0){
+			return array();
+		}
+
+
 		$datas = [];
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $datas[] = $row;
@@ -25,7 +31,6 @@ class Cart extends Db {
 	    foreach ($datas as $data) {
 	    	$IDMenus[] = $data["id_menu"];
 	    }
-
 
 	    $quantity = [];
 	    for($i = 0; $i < count($IDMenus); $i++){
@@ -68,7 +73,6 @@ class Cart extends Db {
 		    }
 	    }
 
-	    // $itemMenuDuplicate = array(array());
 	    for($i = 0; $i < count($IDMenus); $i++){
 	    	$this->duplicateItems[$i]['id_menu'] = $IDMenus[$i];
 	    	$this->duplicateItems[$i]['menu'] = $namaMenu[$i];
@@ -76,10 +80,6 @@ class Cart extends Db {
 		    $this->duplicateItems[$i]['quantity'] = $quantity[$i];
 		    $this->duplicateItems[$i]['total_price'] = $totalHargaMenu[$i];
 	    }
-	    
-
-
-
 
 		return $this->duplicateItems;
     
@@ -92,6 +92,11 @@ class Cart extends Db {
 	public function getNonDuplicateItems(){
 		$query = "SELECT id_menu, COUNT(*) as total FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' GROUP BY id_menu HAVING COUNT(*) = 1";
 		$result = $this->executeQuery($query);
+
+		if($result[1] == 0){
+			return array();
+		}
+
 		$datas = [];
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $datas[] = $row;
@@ -101,7 +106,6 @@ class Cart extends Db {
 	    foreach ($datas as $data) {
 	    	$IDMenus[] = $data["id_menu"];
 	    }
-
 
 	    $quantity = [];
 	    for($i = 0; $i < count($IDMenus); $i++){
@@ -140,11 +144,9 @@ class Cart extends Db {
 	    	$result = $this->executeQuery($query);
 	    	while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	    		array_push($this->orderID, $row['order_id']);
-		        // $this->orderID[] = $row['order_id'];
 		    }
 	    }
 
-	    // $itemMenuDuplicate = array(array());
 	    for($i = 0; $i < count($IDMenus); $i++){
 	    	$this->nonDuplicateItems[$i]['id_menu'] = $IDMenus[$i];
 	    	$this->nonDuplicateItems[$i]['menu'] = $namaMenu[$i];
