@@ -21,6 +21,39 @@ $cart = new Cart();
 	<link rel="stylesheet" type="text/css" href="css/style.css">
  </head>
  <body>
+ 	<!-- The Modal -->
+	  <div class="modal fade" id="quantityModal" role="dialog">
+	    <div class="modal-dialog modal-sm" role="document">
+	      <div class="modal-content">
+	      
+	        <!-- Modal Header -->
+	        <div class="modal-header">
+	          <h4 class="modal-title">Select Quantity</h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        
+	        <!-- Modal body -->
+	        <div class="modal-body">
+	        	<input style="display: none;" type="text" id="nama" value="">
+				<input style="display: none;" type="text" id="harga" value="">
+				<input style="display: none;" type="text" id="idMenu" value="">
+				<input style="display: none;" type="text" id="tipe" value="">
+	          	<div class="quantity-container">
+					<label>Quantity:</label>
+					<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
+					<span class="badge badge-success">1</span>
+					<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
+				</div>
+	        </div>
+	        
+	        <!-- Modal footer -->
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="submit-order">Submit</button>
+	        </div>
+	        
+	      </div>
+	    </div>
+	  </div>
  	<div class="container-fluid">
  		<div class="row">
  			<div class="col">
@@ -59,13 +92,14 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Kwetiau Goreng Extra Seafood</h5>
 							    <h3><span class="badge badge-primary">Rp 45.000</span></h3>
-							    <div class="quantity-container">
+							    <!-- <div class="quantity-container">
 									<label>Quantity:</label>
 									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
 									<span class="badge badge-success">1</span>
 									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div>
-								<input type="submit" value="Order Now" class="btn btn-success">
+								</div> -->
+								<!-- <input type="submit" value="Order Now" class="btn btn-success"> -->
+								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng Extra Seafood">
 								<input style="display: none;" type="text" name="harga" value=45000>
 								<input style="display: none;" type="text" name="idMenu" value=1>
@@ -79,13 +113,14 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Kwetiau Goreng</h5>
 							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-								<div class="quantity-container">
+								<!-- <div class="quantity-container">
 									<label>Quantity:</label>
 									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
 									<span class="badge badge-success">1</span>
 									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div>
-								<input type="submit" value="Order Now" class="btn btn-success">
+								</div> -->
+								<!-- <input type="submit" value="Order Now" class="btn btn-success"> -->
+								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng">
 								<input style="display: none;" type="text" name="harga" value=35000>
 								<input style="display: none;" type="text" name="idMenu" value=2>
@@ -99,13 +134,13 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Bihun Goreng Extra Seafood</h5>
 							    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-							    <div class="quantity-container">
+							    <!-- <div class="quantity-container">
 									<label>Quantity:</label>
 									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
 									<span class="badge badge-success">1</span>
 									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div>
-								<input type="submit" value="Order Now" class="btn btn-success">
+								</div> -->
+								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Bihun Goreng Extra Seafood">
 								<input style="display: none;" type="text" name="harga" value=45000>
 								<input style="display: none;" type="text" name="idMenu" value=3>
@@ -126,13 +161,13 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Hamburger Deluxe Extra Ham</h5>
 							    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-							    <div class="quantity-container">
+							    <!-- <div class="quantity-container">
 									<label>Quantity:</label>
 									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
 									<span class="badge badge-success">1</span>
 									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div>
-								<input type="submit" value="Order Now" class="btn btn-success">
+								</div> -->
+								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe Extra Ham">
 								<input style="display: none;" type="text" name="harga" value=45000>
 								<input style="display: none;" type="text" name="idMenu" value=4>
@@ -146,13 +181,13 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Hamburger Deluxe</h5>
 							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-							    <div class="quantity-container">
+							    <!-- <div class="quantity-container">
 									<label>Quantity:</label>
 									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
 									<span class="badge badge-success">1</span>
 									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div>
-								<input type="submit" value="Order Now" class="btn btn-success">
+								</div> -->
+								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
 								<input style="display: none;" type="text" name="harga" value=35000>
 								<input style="display: none;" type="text" name="idMenu" value=5>
@@ -166,13 +201,13 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Hotdog Deluxe Extra Cheese</h5>
 							    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-							    <div class="quantity-container">
+							    <!-- <div class="quantity-container">
 									<label>Quantity:</label>
 									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
 									<span class="badge badge-success">1</span>
 									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div>
-								<input type="submit" value="Order Now" class="btn btn-success">
+								</div> -->
+								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Hotdog Deluxe Extra Cheese">
 								<input style="display: none;" type="text" name="harga" value=45000>
 								<input style="display: none;" type="text" name="idMenu" value=6>

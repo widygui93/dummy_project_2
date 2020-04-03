@@ -1,11 +1,21 @@
 $(document).ready(function(){
 
-	$(".btn-success").on('click',function(){
-		const tipe = $(this).next().next().next().next().val();
-		const nama = $(this).next().val();
-		const harga = parseInt($(this).next().next().val());
-		const idMenu = parseInt($(this).next().next().next().val());
-		const quantity = parseInt($(this).prev().find("span").text());
+	$(document).on("click", ".btn-success.order", function () {
+	     // ambil nilai nama,harga,idMenu dan tipe dengan DOM 
+	     // masukkan nilai-nilai tersebut ke masing-masing id di dalam modal
+	    $(".modal-body #nama").val($(this).next().val());
+	    $(".modal-body #harga").val(parseInt($(this).next().next().val()));
+	    $(".modal-body #idMenu").val(parseInt($(this).next().next().next().val()));
+	    $(".modal-body #tipe").val($(this).next().next().next().next().val());
+
+	});
+
+	$("#submit-order").on('click', function(){
+		const nama = $(".modal-body #nama").val();
+		const harga = $(".modal-body #harga").val();
+		const idMenu = $(".modal-body #idMenu").val();
+		const tipe = $(".modal-body #tipe").val();
+		const quantity = $(".modal-body .badge-success").text();
 
 		$.post("App/Core/Order.php",
 		{
@@ -26,6 +36,7 @@ $(document).ready(function(){
 		});
 
 	});
+	
 
 	$(".btn-sm.plus").on('click',function(){
 		let quantity = parseInt($(this).next().text());
