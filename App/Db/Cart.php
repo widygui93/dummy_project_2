@@ -1,14 +1,11 @@
 <?php namespace App\Db;
 
 class Cart extends Db {
-	private $items, $duplicateItems, $nonDuplicateItems, $totalHargaItems, $jumlahQuantity, $jumlahQuantityByIdMenu, $orderID;
+	private $items, $totalHargaItems, $jumlahQuantity, $jumlahQuantityByIdMenu;
 
 	public function __construct(){
 		parent::__construct();
 		$this->items = array();
-		$this->duplicateItems = array(array());
-		$this->nonDuplicateItems = array(array());
-		$this->orderID = array();
 		$this->totalHargaItems = 0;
 		$this->jumlahQuantity = 0;
 		$this->jumlahQuantityByIdMenu = 0;
@@ -78,7 +75,7 @@ class Cart extends Db {
 		$resultInsert = $this->executeQuery($query);
 
 		if($resultInsert[0]){
-			$this->updateID_TransferFromTableOrder_Menu($this->orderID,$idTrf);
+			$this->updateID_TransferFromTableOrder_Menu($this->items,$idTrf);
 		}
 		
 		return $resultInsert[1];
@@ -108,7 +105,7 @@ class Cart extends Db {
 	}
 
 	public function removeItem($data){
-		$query = "DELETE FROM order_menu WHERE id_menu = '" .$data["id_menu"]. "'" . "AND user_name = 'user123' AND id_transfer = ''";
+		$query = "DELETE FROM order_menu WHERE order_id = '" .$data["order_id"]. "'";
 		$result = $this->executeQuery($query);
 		return  $result[1];
 	}

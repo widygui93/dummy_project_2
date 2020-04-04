@@ -32,8 +32,7 @@ if( isset($_POST["submit"]) ) {
 		$showResult = true;
 		$isPaySuccess = true;
 
-		$duplicateItems = array(array());
-		$nonDuplicateItems = array(array());
+		$items = array();
 		$total = 0;
 		$jlhQuantity = 0;
 
@@ -118,7 +117,7 @@ if( isset($_POST["submit"]) ) {
 	 										<td><?= $item["total_harga_menu"]; ?></td>
 	 										<td>
 	 											<form action="" method="post">
-	 												<input style="display: none;" type="text" name="id_menu" value=<?= $item["id_menu"]; ?> >
+	 												<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
 		 											<button type="submit" name="delete" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
 	 											</form>
 	 										</td>
