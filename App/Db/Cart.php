@@ -1,161 +1,26 @@
 <?php namespace App\Db;
 
 class Cart extends Db {
-	private $duplicateItems, $nonDuplicateItems, $totalHargaItems, $jumlahQuantity, $orderID;
+	private $items, $duplicateItems, $nonDuplicateItems, $totalHargaItems, $jumlahQuantity, $jumlahQuantityByIdMenu, $orderID;
 
 	public function __construct(){
 		parent::__construct();
+		$this->items = array();
 		$this->duplicateItems = array(array());
 		$this->nonDuplicateItems = array(array());
 		$this->orderID = array();
 		$this->totalHargaItems = 0;
 		$this->jumlahQuantity = 0;
+		$this->jumlahQuantityByIdMenu = 0;
 	}
 
-	public function getDuplicateItems(){
-		// $query = "SELECT * FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
-		$query = "SELECT id_menu, COUNT(*) as total FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' GROUP BY id_menu HAVING COUNT(*) > 1";
+	public function getItems(){
+		$query = "SELECT * FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
 		$result = $this->executeQuery($query);
-		
-		if($result[1] == 0){
-			return array();
-		}
-
-
-		$datas = [];
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
-	        $datas[] = $row;
+	        $this->items[] = $row;
 	    }
-
-	    $IDMenus = [];
-	    foreach ($datas as $data) {
-	    	$IDMenus[] = $data["id_menu"];
-	    }
-
-	    $quantity = [];
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT SUM(quantity) AS quantity FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$IDMenus[$i]' ";
-	    	$result = $this->executeQuery($query);
-	    	$dataQuantity = mysqli_fetch_assoc($result[0]);
-			$quantity[$i] = $dataQuantity['quantity'];
-	    }
-
-	    $totalHargaMenu = [];
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT SUM(total_harga_menu) AS total_harga_menu FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$IDMenus[$i]' ";
-	    	$result = $this->executeQuery($query);
-	    	$dataTotalHargaMenu = mysqli_fetch_assoc($result[0]);
-			$totalHargaMenu[$i] = $dataTotalHargaMenu['total_harga_menu'];
-	    }
-
-	    $namaMenu = [];
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT DISTINCT(nama_menu) AS nama_menu FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$IDMenus[$i]'";
-	    	$result = $this->executeQuery($query);
-	    	$dataNamaMenu = mysqli_fetch_assoc($result[0]);
-	    	$namaMenu[$i] = $dataNamaMenu['nama_menu'];
-	    }
-
-	    $price = [];
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT DISTINCT(harga_menu) AS harga_menu FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$IDMenus[$i]'";
-	    	$result = $this->executeQuery($query);
-	    	$dataPrice = mysqli_fetch_assoc($result[0]);
-	    	$price[$i] = $dataPrice['harga_menu'];
-	    }
-
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT order_id FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu ='$IDMenus[$i]' ";
-	    	$result = $this->executeQuery($query);
-	    	while ( $row = mysqli_fetch_assoc($result[0]) ) {
-	    		array_push($this->orderID, $row['order_id']);
-		        // $this->orderID[] = $row['order_id'];
-		    }
-	    }
-
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$this->duplicateItems[$i]['id_menu'] = $IDMenus[$i];
-	    	$this->duplicateItems[$i]['menu'] = $namaMenu[$i];
-		    $this->duplicateItems[$i]['price'] = $price[$i];
-		    $this->duplicateItems[$i]['quantity'] = $quantity[$i];
-		    $this->duplicateItems[$i]['total_price'] = $totalHargaMenu[$i];
-	    }
-
-		return $this->duplicateItems;
-    
-	    // while ( $row = mysqli_fetch_assoc($result[0]) ) {
-	    //     $this->items[] = $row;
-	    // }
-	    // return $this->items;
-	}
-
-	public function getNonDuplicateItems(){
-		$query = "SELECT id_menu, COUNT(*) as total FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' GROUP BY id_menu HAVING COUNT(*) = 1";
-		$result = $this->executeQuery($query);
-
-		if($result[1] == 0){
-			return array();
-		}
-
-		$datas = [];
-		while ( $row = mysqli_fetch_assoc($result[0]) ) {
-	        $datas[] = $row;
-	    }
-
-	    $IDMenus = [];
-	    foreach ($datas as $data) {
-	    	$IDMenus[] = $data["id_menu"];
-	    }
-
-	    $quantity = [];
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT quantity FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$IDMenus[$i]' ";
-	    	$result = $this->executeQuery($query);
-	    	$dataQuantity = mysqli_fetch_assoc($result[0]);
-			$quantity[$i] = $dataQuantity['quantity'];
-	    }
-
-	    $totalHargaMenu = [];
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT total_harga_menu FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$IDMenus[$i]' ";
-	    	$result = $this->executeQuery($query);
-	    	$dataTotalHargaMenu = mysqli_fetch_assoc($result[0]);
-			$totalHargaMenu[$i] = $dataTotalHargaMenu['total_harga_menu'];
-	    }
-
-	    $namaMenu = [];
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT nama_menu FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$IDMenus[$i]'";
-	    	$result = $this->executeQuery($query);
-	    	$dataNamaMenu = mysqli_fetch_assoc($result[0]);
-	    	$namaMenu[$i] = $dataNamaMenu['nama_menu'];
-	    }
-
-	    $price = [];
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT harga_menu FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$IDMenus[$i]'";
-	    	$result = $this->executeQuery($query);
-	    	$dataPrice = mysqli_fetch_assoc($result[0]);
-	    	$price[$i] = $dataPrice['harga_menu'];
-	    }
-
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$query = "SELECT order_id FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu ='$IDMenus[$i]' ";
-	    	$result = $this->executeQuery($query);
-	    	while ( $row = mysqli_fetch_assoc($result[0]) ) {
-	    		array_push($this->orderID, $row['order_id']);
-		    }
-	    }
-
-	    for($i = 0; $i < count($IDMenus); $i++){
-	    	$this->nonDuplicateItems[$i]['id_menu'] = $IDMenus[$i];
-	    	$this->nonDuplicateItems[$i]['menu'] = $namaMenu[$i];
-		    $this->nonDuplicateItems[$i]['price'] = $price[$i];
-		    $this->nonDuplicateItems[$i]['quantity'] = $quantity[$i];
-		    $this->nonDuplicateItems[$i]['total_price'] = $totalHargaMenu[$i];
-	    }
-
-	    return $this->nonDuplicateItems;
+	    return $this->items;
 	}
 
 	public function getTotalHargaItems(){
@@ -180,6 +45,18 @@ class Cart extends Db {
 			$this->jumlahQuantity = 0;
 		}
 		return $this->jumlahQuantity;
+	}
+
+	public function getJumlahQuantityByIdMenu($idMenu){
+		$query = "SELECT quantity FROM order_menu WHERE user_name = 'user123'AND id_transfer = '' and id_menu = '$idMenu'";
+		$result = $this->executeQuery($query);
+		$data = mysqli_fetch_assoc($result[0]);
+		$this->jumlahQuantityByIdMenu = $data['quantity'];
+
+		if(is_null($this->jumlahQuantityByIdMenu)){
+			$this->jumlahQuantityByIdMenu = 0;
+		}
+		return $this->jumlahQuantityByIdMenu;
 	}
 
 	public function doPayment($data){

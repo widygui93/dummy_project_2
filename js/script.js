@@ -1,12 +1,13 @@
 $(document).ready(function(){
 
 	$(document).on("click", ".btn-success.order", function () {
-	     // ambil nilai nama,harga,idMenu dan tipe dengan DOM 
+	     // ambil nilai nama,harga,idMenu,tipe dan quantity dengan DOM 
 	     // masukkan nilai-nilai tersebut ke masing-masing id di dalam modal
 	    $(".modal-body #nama").val($(this).next().val());
 	    $(".modal-body #harga").val(parseInt($(this).next().next().val()));
 	    $(".modal-body #idMenu").val(parseInt($(this).next().next().next().val()));
 	    $(".modal-body #tipe").val($(this).next().next().next().next().val());
+	    $(".modal-body .badge-success").text(parseInt($(this).next().next().next().next().next().val()))
 
 	});
 
@@ -17,23 +18,23 @@ $(document).ready(function(){
 		const tipe = $(".modal-body #tipe").val();
 		const quantity = $(".modal-body .badge-success").text();
 
-		$.post("App/Core/Order.php",
-		{
-			tipe: tipe,
-            nama: nama,
-            harga: harga,
-            idMenu: idMenu,
-            quantity: quantity
-		},
-		function(data, status){
-			if(data == "orderan gagal masuk ke cart"){
+		if(quantity != 0){
+			$.post("App/Core/Order.php",
+			{
+				tipe: tipe,
+	            nama: nama,
+	            harga: harga,
+	            idMenu: idMenu,
+	            quantity: $(".modal-body .badge-success").text()
+			},
+			function(data, status){
 				alert(data);
-			} else{
-				alert("orderan sukses masuk ke cart");
-				$("#cart").text(data);
-			}
-			
-		});
+				location.reload();
+			});
+		} else {
+			alert("Your Quantity can't 0");
+		}
+		
 
 	});
 	

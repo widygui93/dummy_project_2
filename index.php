@@ -41,14 +41,14 @@ $cart = new Cart();
 	          	<div class="quantity-container">
 					<label>Quantity:</label>
 					<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
-					<span class="badge badge-success">1</span>
+					<span class="badge badge-success"></span>
 					<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
 				</div>
 	        </div>
 	        
 	        <!-- Modal footer -->
 	        <div class="modal-footer">
-	          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="submit-order">Submit</button>
+	          <button type="button" class="btn btn-success" data-dismiss="modal" id="submit-order">Submit</button>
 	        </div>
 	        
 	      </div>
@@ -67,7 +67,7 @@ $cart = new Cart();
  					<li><a href="index.php">menu</a></li>
  					<li>
  						<a href="App/Core/cart.php">cart</a>
-						<span class="badge badge-success" id="cart"><?= $cart->getJumlahQuantity(); ?></span>
+						<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
  					</li>
  					<li>
  						<a href="#">account</a>
@@ -92,18 +92,12 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Kwetiau Goreng Extra Seafood</h5>
 							    <h3><span class="badge badge-primary">Rp 45.000</span></h3>
-							    <!-- <div class="quantity-container">
-									<label>Quantity:</label>
-									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
-									<span class="badge badge-success">1</span>
-									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div> -->
-								<!-- <input type="submit" value="Order Now" class="btn btn-success"> -->
 								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng Extra Seafood">
 								<input style="display: none;" type="text" name="harga" value=45000>
 								<input style="display: none;" type="text" name="idMenu" value=1>
 								<input style="display: none;" type="text" name="tipe" value="chinese">
+								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(1);?>>
 							  </div>
 							</div>
 	 					</div>
@@ -113,18 +107,12 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Kwetiau Goreng</h5>
 							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-								<!-- <div class="quantity-container">
-									<label>Quantity:</label>
-									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
-									<span class="badge badge-success">1</span>
-									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div> -->
-								<!-- <input type="submit" value="Order Now" class="btn btn-success"> -->
 								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng">
 								<input style="display: none;" type="text" name="harga" value=35000>
 								<input style="display: none;" type="text" name="idMenu" value=2>
 								<input style="display: none;" type="text" name="tipe" value="chinese">
+								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(2);?>>
 							  </div>
 							</div>
 	 					</div>
@@ -134,17 +122,12 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Bihun Goreng Extra Seafood</h5>
 							    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-							    <!-- <div class="quantity-container">
-									<label>Quantity:</label>
-									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
-									<span class="badge badge-success">1</span>
-									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div> -->
 								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Bihun Goreng Extra Seafood">
 								<input style="display: none;" type="text" name="harga" value=45000>
 								<input style="display: none;" type="text" name="idMenu" value=3>
 								<input style="display: none;" type="text" name="tipe" value="chinese">
+								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(3);?>>
 							  </div>
 							</div>
 	 					</div>
@@ -161,17 +144,12 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Hamburger Deluxe Extra Ham</h5>
 							    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-							    <!-- <div class="quantity-container">
-									<label>Quantity:</label>
-									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
-									<span class="badge badge-success">1</span>
-									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div> -->
 								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe Extra Ham">
 								<input style="display: none;" type="text" name="harga" value=45000>
 								<input style="display: none;" type="text" name="idMenu" value=4>
 								<input style="display: none;" type="text" name="tipe" value="western">
+								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(4);?>>
 							  </div>
 							</div>
 	 					</div>
@@ -181,17 +159,12 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Hamburger Deluxe</h5>
 							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-							    <!-- <div class="quantity-container">
-									<label>Quantity:</label>
-									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
-									<span class="badge badge-success">1</span>
-									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div> -->
 								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
 								<input style="display: none;" type="text" name="harga" value=35000>
 								<input style="display: none;" type="text" name="idMenu" value=5>
 								<input style="display: none;" type="text" name="tipe" value="western">
+								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(5);?>>
 							  </div>
 							</div>
 	 					</div>
@@ -201,17 +174,12 @@ $cart = new Cart();
 							  <div class="card-body">
 							    <h5 class="card-title">Hotdog Deluxe Extra Cheese</h5>
 							    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-							    <!-- <div class="quantity-container">
-									<label>Quantity:</label>
-									<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
-									<span class="badge badge-success">1</span>
-									<button type="button" class="btn btn-outline-primary btn-sm minus">-</button>
-								</div> -->
 								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
 								<input style="display: none;" type="text" name="nama" value="Hotdog Deluxe Extra Cheese">
 								<input style="display: none;" type="text" name="harga" value=45000>
 								<input style="display: none;" type="text" name="idMenu" value=6>
 								<input style="display: none;" type="text" name="tipe" value="western">
+								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(6);?>>
 							  </div>
 							</div>
 	 					</div>

@@ -5,7 +5,6 @@ require_once '../init.php';
 
 use App\Menu\Menu as Menu;
 use App\Db\OrderMenu as TabelOrderMenu;
-use App\Db\Cart as Cart;
 
 
 $type = $_POST['tipe'];
@@ -13,6 +12,7 @@ $name = $_POST['nama'];
 $cost = $_POST['harga'];
 $idMenu = $_POST['idMenu'];
 $quantity = $_POST['quantity'];
+
 
 $menu = new Menu($name, $cost, $type, $idMenu, $quantity);
 
@@ -35,8 +35,7 @@ cekOrder($order->createOrder(
 
 function cekOrder($jlhRec){
 	if($jlhRec > 0){
-		$cart = new Cart();
-		echo $cart->getJumlahQuantity();
+		echo "orderan berhasil masuk ke cart";
 	} else {
 		echo "orderan gagal masuk ke cart";
 	}
