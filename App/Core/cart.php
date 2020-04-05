@@ -17,6 +17,10 @@ if( isset($_POST["delete"]) ){
 	}
 }
 
+if( isset($_POST["edit"]) ){
+	var_dump($_POST);
+}
+
 $items = $cart->getItems();
 $total = $cart->getTotalHargaItems();
 $jlhQuantity = $cart->getJumlahQuantity();
@@ -122,11 +126,14 @@ if( isset($_POST["submit"]) ) {
 	 											</form>
 	 										</td>
 	 										<td>
-	 											<div class="quantity-container">
-													<label>Quantity:</label>
-													<button type="button" class="btn btn-outline-primary btn-sm edit-plus">+</button>
-													<button type="button" class="btn btn-outline-primary btn-sm edit-minus">-</button>
-												</div>
+												<form action="" method="post">
+													<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
+													<input style="display: none;" type="text" name="quantity" value=<?= $item["quantity"]; ?>>
+													<button type="button" class="btn btn-outline-primary btn-sm plus-edit">+</button>
+													<span class="badge badge-success"><?= $item["quantity"]; ?></span>
+													<button type="button" class="btn btn-outline-primary btn-sm minus-edit">-</button>
+													<button type="submit" name="edit" class="btn btn-success">Edit</button>
+	 											</form>
 	 										</td>
 	 									</tr>
 	 									<?php $no++; ?>

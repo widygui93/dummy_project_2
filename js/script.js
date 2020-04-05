@@ -54,6 +54,26 @@ $(document).ready(function(){
 		$(this).prev().text(quantity);
 	});
 
+	$(".plus-edit").on('click',function(){
+		let quantity = parseInt($(this).next().text());
+		quantity += 1;
+		$(this).next().text(quantity);
+		$(this).prev().attr("value", quantity);
+	});
+
+	$(".minus-edit").on('click',function(){
+		let quantity = parseInt($(this).prev().text());
+		if(quantity > 1){
+			quantity -= 1;
+		}
+		
+		$(this).prev().text(quantity);
+		$(this).prev().prev().prev().attr("value", quantity);
+	});
+
+	
+
+
 
 
 
