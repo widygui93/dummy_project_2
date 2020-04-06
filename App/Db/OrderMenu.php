@@ -12,6 +12,10 @@ class OrderMenu extends Db {
 			$query = "UPDATE order_menu SET quantity = '$quantity' WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$idMenu'";
 			$result = $this->executeQuery($query);
 
+			$newTotalHargaMenu = $quantity * $hargaMenu;
+			$query = "UPDATE order_menu SET total_harga_menu = '$newTotalHargaMenu' WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$idMenu'";
+			$result = $this->executeQuery($query);
+
 			return $result[1];
 		} else {
 			// query insert data
