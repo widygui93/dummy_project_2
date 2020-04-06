@@ -58,7 +58,7 @@ $(document).ready(function(){
 		let quantity = parseInt($(this).next().text());
 		quantity += 1;
 		$(this).next().text(quantity);
-		$(this).prev().attr("value", quantity);
+		$(this).prev().prev().attr("value", quantity);
 	});
 
 	$(".minus-edit").on('click',function(){
@@ -68,7 +68,7 @@ $(document).ready(function(){
 		}
 		
 		$(this).prev().text(quantity);
-		$(this).prev().prev().prev().attr("value", quantity);
+		$(this).prev().prev().prev().prev().attr("value", quantity);
 	});
 
 	

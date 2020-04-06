@@ -18,7 +18,14 @@ if( isset($_POST["delete"]) ){
 }
 
 if( isset($_POST["edit"]) ){
-	var_dump($_POST);
+	// var_dump($_POST);
+	if( $cart->editQuantity($_POST) < 0 || $cart->editTotalHargaMenu($_POST) < 0 ){
+		echo "
+	        <script>
+	            alert('data gagal diedit');
+	        </script>
+	    ";
+	}
 }
 
 $items = $cart->getItems();
@@ -129,6 +136,7 @@ if( isset($_POST["submit"]) ) {
 												<form action="" method="post">
 													<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
 													<input style="display: none;" type="text" name="quantity" value=<?= $item["quantity"]; ?>>
+													<input style="display: none;" type="text" name="harga_menu" value=<?= $item["harga_menu"]; ?>>
 													<button type="button" class="btn btn-outline-primary btn-sm plus-edit">+</button>
 													<span class="badge badge-success"><?= $item["quantity"]; ?></span>
 													<button type="button" class="btn btn-outline-primary btn-sm minus-edit">-</button>
