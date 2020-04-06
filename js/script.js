@@ -7,7 +7,8 @@ $(document).ready(function(){
 	    $(".modal-body #harga").val(parseInt($(this).next().next().val()));
 	    $(".modal-body #idMenu").val(parseInt($(this).next().next().next().val()));
 	    $(".modal-body #tipe").val($(this).next().next().next().next().val());
-	    $(".modal-body .badge-success").text(parseInt($(this).next().next().next().next().next().val()))
+	    $(".modal-body #quantity").val(parseInt($(this).next().next().next().next().next().val()));
+	    $(".modal-body .badge-success").text(parseInt($(this).next().next().next().next().next().val()));
 
 	});
 
@@ -16,25 +17,29 @@ $(document).ready(function(){
 		const harga = $(".modal-body #harga").val();
 		const idMenu = $(".modal-body #idMenu").val();
 		const tipe = $(".modal-body #tipe").val();
-		const quantity = $(".modal-body .badge-success").text();
+		const oldQuantity = $(".modal-body #quantity").val();
+		const newQuantity = $(".modal-body .badge-success").text();
 
-		if(quantity != 0){
+		if(oldQuantity == newQuantity) {
+			alert("Quantity maynot be same");
+		} 
+		else if (newQuantity == 0) {
+			alert("Your Quantity can't 0");
+		} 
+		else {
 			$.post("App/Core/Order.php",
 			{
 				tipe: tipe,
 	            nama: nama,
 	            harga: harga,
 	            idMenu: idMenu,
-	            quantity: $(".modal-body .badge-success").text()
+	            quantity: newQuantity//$(".modal-body .badge-success").text()
 			},
 			function(data, status){
 				alert(data);
 				location.reload();
 			});
-		} else {
-			alert("Your Quantity can't 0");
-		}
-		
+		}	
 
 	});
 	

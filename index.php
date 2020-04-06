@@ -34,10 +34,11 @@ $cart = new Cart();
 	        
 	        <!-- Modal body -->
 	        <div class="modal-body">
-	        	<input style="display: none;" type="text" id="nama" value="">
-				<input style="display: none;" type="text" id="harga" value="">
-				<input style="display: none;" type="text" id="idMenu" value="">
-				<input style="display: none;" type="text" id="tipe" value="">
+	        	<input type="text" style="display: none;" id="nama" value="">
+				<input type="text" style="display: none;" id="harga" value="">
+				<input type="text" style="display: none;" id="idMenu" value="">
+				<input type="text" style="display: none;" id="tipe" value="">
+				<input type="text" style="display: none;" id="quantity" value="">
 	          	<div class="quantity-container">
 					<label>Quantity:</label>
 					<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
