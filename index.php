@@ -56,6 +56,135 @@ $cart = new Cart();
 	    </div>
 	  </div>
  	<div class="container-fluid">
+ 		<div class="row min-vh-100">
+ 			<div class="col-12">
+ 				<header class="row">
+                     <div class="col-12 bg-dark py-2 d-md-block d-none">
+                        <div class="row">
+                            <div class="col-auto mr-auto">
+                                <ul class="top-nav">
+                                    <li>
+                                        <a href="tel:+123-456-7890"><i class="fa fa-phone-square mr-2"></i>+123-456-7890</a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:mail@ecom.com"><i class="fa fa-envelope mr-2"></i>mail@ecom.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-auto">
+                                <ul class="top-nav">
+                                    <li>
+                                        <a href="register.html"><i class="fas fa-user-edit mr-2"></i>Register</a>
+                                    </li>
+                                    <li>
+                                        <a href="login.html"><i class="fas fa-sign-in-alt mr-2"></i>Login</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Header -->
+                    <div class="col-12 bg-white pt-4">
+                        <div class="row">
+                            <div class="col-lg-auto">
+                                <div class="site-logo text-center text-lg-left">
+                                    <a href="index.html">E-Commerce</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 mx-auto mt-4 mt-lg-0">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="search" class="form-control border-dark" placeholder="Search..." required>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-dark"><i class="fas fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-lg-auto text-center text-lg-left header-item-holder">
+                                <a href="#" class="header-item">
+                                    <i class="fas fa-heart mr-2"></i><span id="header-favorite">0</span>
+                                </a>
+                                <a href="cart.html" class="header-item">
+                                    <i class="fas fa-shopping-bag mr-2"></i><span id="header-qty" class="mr-3">2</span>
+                                    <i class="fas fa-money-bill-wave mr-2"></i><span id="header-price">$4,000</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Nav -->
+                        <div class="row">
+                            <nav class="navbar navbar-expand-lg navbar-light bg-white col-12">
+                                <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="mainNav">
+                                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+                                            <div class="dropdown-menu" aria-labelledby="menu">
+                                                <a class="dropdown-item" href="#">Chinese</a>
+                                                <a class="dropdown-item" href="#">Western</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Cart</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                                            <div class="dropdown-menu" aria-labelledby="setting">
+                                                <a class="dropdown-item" href="#">Profile</a>
+                                                <a class="dropdown-item" href="#">history</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Nav -->
+                    </div>
+                    <!-- Header -->
+ 				</header>
+ 			</div>
+ 			<div class="col-12">
+ 				<main class="row">
+ 					<div class="col-12 px-0">
+                        <div id="slider" class="carousel slide w-100" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#slider" data-slide-to="0" class="active"></li>
+                                <li data-target="#slider" data-slide-to="1"></li>
+                                <li data-target="#slider" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <img src="App/Menu/Images/slider-1.jpg" class="slider-img">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="App/Menu/Images/slider-2.jpg" class="slider-img">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="App/Menu/Images/slider-3.jpg" class="slider-img">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+ 					</div>
+ 					<div class="col-12"></div>
+ 					<div class="col-12"></div>
+ 					<div class="col-12"></div>
+ 				</main>
+ 			</div>
+ 			<div class="col-12 align-self-end"></div>
+ 		</div>
  		<div class="row">
  			<div class="col">
  				<h1>Your Brand</h1>
