@@ -178,9 +178,149 @@ $cart = new Cart();
                             </a>
                         </div>
  					</div>
- 					<div class="col-12"></div>
- 					<div class="col-12"></div>
- 					<div class="col-12"></div>
+ 					<div class="col-12">
+ 						<div class="row">
+ 							<div class="col-12 py-3">
+ 								<div class="row">
+ 									<div class="col-12 text-center text-uppercase">
+                                        <h2>Chinese Main Course</h2>
+                                    </div>
+ 								</div>
+ 								<div class="row">
+ 									<div class="col-lg-4 col-sm-6 my-3">
+ 										<div class="col-12 bg-white text-center h-100 product-item">
+ 											<div class="row h-100">
+ 												<div class="card" style="width: 18rem;">
+												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+												  <div class="card-body">
+												    <h5 class="card-title">Kwetiau Goreng Extra Seafood</h5>
+												    <h3><span class="badge badge-primary">Rp 45.000</span></h3>
+													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+													<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng Extra Seafood">
+													<input style="display: none;" type="text" name="harga" value=45000>
+													<input style="display: none;" type="text" name="idMenu" value=1>
+													<input style="display: none;" type="text" name="tipe" value="chinese">
+													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(1);?>>
+												  </div>
+												</div>
+ 											</div>
+ 										</div>
+ 									</div>
+ 									<div class="col-lg-4 col-sm-6 my-3">
+ 										<div class="col-12 bg-white text-center h-100 product-item">
+ 											<div class="row h-100">
+						 						<div class="card" style="width: 18rem;">
+												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+												  <div class="card-body">
+												    <h5 class="card-title">Kwetiau Goreng</h5>
+												    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
+													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+													<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng">
+													<input style="display: none;" type="text" name="harga" value=35000>
+													<input style="display: none;" type="text" name="idMenu" value=2>
+													<input style="display: none;" type="text" name="tipe" value="chinese">
+													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(2);?>>
+												  </div>
+												</div>
+ 											</div>
+ 										</div>
+ 									</div>
+ 									<div class="col-lg-4 col-sm-6 my-3">
+ 										<div class="col-12 bg-white text-center h-100 product-item">
+ 											<div class="row h-100">
+ 												<div class="card" style="width: 18rem;">
+												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+												  <div class="card-body">
+												    <h5 class="card-title">Bihun Goreng Extra Seafood</h5>
+												    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
+													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+													<input style="display: none;" type="text" name="nama" value="Bihun Goreng Extra Seafood">
+													<input style="display: none;" type="text" name="harga" value=45000>
+													<input style="display: none;" type="text" name="idMenu" value=3>
+													<input style="display: none;" type="text" name="tipe" value="chinese">
+													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(3);?>>
+												  </div>
+												</div>
+ 											</div>
+ 										</div>
+ 									</div>
+ 								</div>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<div class="col-12">
+ 						<hr>
+ 					</div>
+ 					<div class="col-12">
+ 						<div class="row">
+ 							<div class="col-12 py-3">
+ 								<div class="row">
+ 									<div class="col-12 text-center text-uppercase">
+                                        <h2>Western Main Course</h2>
+                                    </div>
+ 								</div>
+ 								<div class="row">
+ 									<div class="col-lg-4 col-sm-6 my-3">
+ 										<div class="col-12 bg-white text-center h-100 product-item">
+ 											<div class="row h-100">
+ 												<div class="card" style="width: 18rem;">
+												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+												  <div class="card-body">
+												    <h5 class="card-title">Hamburger Deluxe Extra Ham</h5>
+												    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
+													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+													<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe Extra Ham">
+													<input style="display: none;" type="text" name="harga" value=45000>
+													<input style="display: none;" type="text" name="idMenu" value=4>
+													<input style="display: none;" type="text" name="tipe" value="western">
+													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(4);?>>
+												  </div>
+												</div>
+ 											</div>
+ 										</div>
+ 									</div>
+ 									<div class="col-lg-4 col-sm-6 my-3">
+ 										<div class="col-12 bg-white text-center h-100 product-item">
+ 											<div class="row h-100">
+ 												<div class="card" style="width: 18rem;">
+												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+												  <div class="card-body">
+												    <h5 class="card-title">Hamburger Deluxe</h5>
+												    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
+													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+													<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
+													<input style="display: none;" type="text" name="harga" value=35000>
+													<input style="display: none;" type="text" name="idMenu" value=5>
+													<input style="display: none;" type="text" name="tipe" value="western">
+													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(5);?>>
+												  </div>
+												</div>
+ 											</div>
+ 										</div>
+ 									</div>
+ 									<div class="col-lg-4 col-sm-6 my-3">
+ 										<div class="col-12 bg-white text-center h-100 product-item">
+ 											<div class="row h-100">
+ 												<div class="card" style="width: 18rem;">
+												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+												  <div class="card-body">
+												    <h5 class="card-title">Hotdog Deluxe Extra Cheese</h5>
+												    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
+													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+													<input style="display: none;" type="text" name="nama" value="Hotdog Deluxe Extra Cheese">
+													<input style="display: none;" type="text" name="harga" value=45000>
+													<input style="display: none;" type="text" name="idMenu" value=6>
+													<input style="display: none;" type="text" name="tipe" value="western">
+													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(6);?>>
+												  </div>
+												</div>
+ 											</div>
+ 										</div>
+ 									</div>
+ 								</div>
+ 							</div>
+ 						</div>
+ 					</div>
  				</main>
  			</div>
  			<div class="col-12 align-self-end"></div>
