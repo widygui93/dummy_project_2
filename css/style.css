@@ -2,10 +2,6 @@ body {
 	font-family: "Times New Roman", Times, serif;
 }
 
-.row .col-2 {
-	background-color: #ccf2ff;
-}
-
 .row .col {
 	background-color: lightblue;
 }
