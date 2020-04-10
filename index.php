@@ -104,12 +104,11 @@ $cart = new Cart();
                                 </form>
                             </div>
                             <div class="col-lg-auto text-center text-lg-left header-item-holder">
-                                <a href="#" class="header-item">
-                                    <i class="fas fa-heart mr-2"></i><span id="header-favorite">0</span>
+                                <a href="App/Core/cart.php" class="header-item">
+                                    Cart <span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
                                 </a>
-                                <a href="cart.html" class="header-item">
-                                    <i class="fas fa-shopping-bag mr-2"></i><span id="header-qty" class="mr-3">2</span>
-                                    <i class="fas fa-money-bill-wave mr-2"></i><span id="header-price">$4,000</span>
+                                <a href="#" class="header-item">
+                                	<i class="fas fa-money-bill-wave mr-2"></i><span id="header-price">$4,000</span>
                                 </a>
                             </div>
                         </div>
@@ -123,20 +122,20 @@ $cart = new Cart();
                                 <div class="collapse navbar-collapse" id="mainNav">
                                     <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+                                            <a class="nav-link dropdown-toggle" href="index.php" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                                             <div class="dropdown-menu" aria-labelledby="menu">
                                                 <a class="dropdown-item" href="#">Chinese</a>
                                                 <a class="dropdown-item" href="#">Western</a>
                                             </div>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Cart</a>
-                                        </li>
+                                        <!-- <li class="nav-item">
+                                            <a class="nav-link" href="App/Core/cart.php">Cart</a>
+                                        </li> -->
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" id="setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
                                             <div class="dropdown-menu" aria-labelledby="setting">
                                                 <a class="dropdown-item" href="#">Profile</a>
-                                                <a class="dropdown-item" href="#">history</a>
+                                                <a class="dropdown-item" href="App/Core/history.php">history</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -431,138 +430,6 @@ $cart = new Cart();
  						</div>
  					</div>
  				</footer>
- 			</div>
- 		</div>
- 		<div class="row">
- 			<div class="col">
- 				<h1>Your Brand</h1>
- 			</div>
- 		</div>
- 		<div class="row">
- 			<div class="col-2">
- 				<strong>dashboard</strong>
- 				<ul>
- 					<li><a href="index.php">menu</a></li>
- 					<li>
- 						<a href="App/Core/cart.php">cart</a>
-						<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
- 					</li>
- 					<li>
- 						<a href="#">account</a>
- 						<ul>
- 							<li><a href="#">profile</a></li>
- 							<li><a href="App/Core/history.php">history</a></li>
- 						</ul>
- 					</li>
- 				</ul>
- 			</div>
- 			<div class="col-10">
- 				<div class="container-fluid">
-	 				<div class="row">
-	 					<div class="col-sm">
-	 						<h2>Chinese Main Course</h2>
-	 					</div>
-	 				</div>
-	 				<div class="row">
-	 					<div class="col-sm">
-	 						<div class="card" style="width: 18rem;">
-							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-							  <div class="card-body">
-							    <h5 class="card-title">Kwetiau Goreng Extra Seafood</h5>
-							    <h3><span class="badge badge-primary">Rp 45.000</span></h3>
-								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-								<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng Extra Seafood">
-								<input style="display: none;" type="text" name="harga" value=45000>
-								<input style="display: none;" type="text" name="idMenu" value=1>
-								<input style="display: none;" type="text" name="tipe" value="chinese">
-								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(1);?>>
-							  </div>
-							</div>
-	 					</div>
-	 					<div class="col-sm">
-	 						<div class="card" style="width: 18rem;">
-							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-							  <div class="card-body">
-							    <h5 class="card-title">Kwetiau Goreng</h5>
-							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-								<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng">
-								<input style="display: none;" type="text" name="harga" value=35000>
-								<input style="display: none;" type="text" name="idMenu" value=2>
-								<input style="display: none;" type="text" name="tipe" value="chinese">
-								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(2);?>>
-							  </div>
-							</div>
-	 					</div>
-	 					<div class="col-sm">
-	 						<div class="card" style="width: 18rem;">
-							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-							  <div class="card-body">
-							    <h5 class="card-title">Bihun Goreng Extra Seafood</h5>
-							    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-								<input style="display: none;" type="text" name="nama" value="Bihun Goreng Extra Seafood">
-								<input style="display: none;" type="text" name="harga" value=45000>
-								<input style="display: none;" type="text" name="idMenu" value=3>
-								<input style="display: none;" type="text" name="tipe" value="chinese">
-								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(3);?>>
-							  </div>
-							</div>
-	 					</div>
-	 				</div>
-	 				<div class="row">
-	 					<div class="col-sm">
-	 						<h2>Western Main Course</h2>
-	 					</div>
-	 				</div>
-	 				<div class="row">
-	 					<div class="col-sm">
-	 						<div class="card" style="width: 18rem;">
-							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-							  <div class="card-body">
-							    <h5 class="card-title">Hamburger Deluxe Extra Ham</h5>
-							    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe Extra Ham">
-								<input style="display: none;" type="text" name="harga" value=45000>
-								<input style="display: none;" type="text" name="idMenu" value=4>
-								<input style="display: none;" type="text" name="tipe" value="western">
-								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(4);?>>
-							  </div>
-							</div>
-	 					</div>
-	 					<div class="col-sm">
-	 						<div class="card" style="width: 18rem;">
-							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-							  <div class="card-body">
-							    <h5 class="card-title">Hamburger Deluxe</h5>
-							    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-								<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
-								<input style="display: none;" type="text" name="harga" value=35000>
-								<input style="display: none;" type="text" name="idMenu" value=5>
-								<input style="display: none;" type="text" name="tipe" value="western">
-								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(5);?>>
-							  </div>
-							</div>
-	 					</div>
-	 					<div class="col-sm">
-	 						<div class="card" style="width: 18rem;">
-							  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-							  <div class="card-body">
-							    <h5 class="card-title">Hotdog Deluxe Extra Cheese</h5>
-							    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-								<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-								<input style="display: none;" type="text" name="nama" value="Hotdog Deluxe Extra Cheese">
-								<input style="display: none;" type="text" name="harga" value=45000>
-								<input style="display: none;" type="text" name="idMenu" value=6>
-								<input style="display: none;" type="text" name="tipe" value="western">
-								<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(6);?>>
-							  </div>
-							</div>
-	 					</div>
-	 				</div>
- 				</div>
  			</div>
  		</div>
  	</div>
