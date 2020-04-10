@@ -2,15 +2,6 @@ body {
 	font-family: "Times New Roman", Times, serif;
 }
 
-.col-10 .container-fluid{
-	background-color: #e4ede6;
-}
-
-.col-10 {
-	border-left: 2px solid white;
-	background-color: #e4ede6;
-}
-
 .card {
 	background-color: lightblue;
 }
