@@ -41,7 +41,6 @@ td[colspan="3"]{
     padding: 0;
     list-style: none;
     font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .top-nav li {
@@ -66,7 +65,6 @@ td[colspan="3"]{
 .site-logo {
     font-size: 2rem;
     line-height: 1;
-    font-family: 'Righteous', cursive;
 }
 
 .site-logo img {
