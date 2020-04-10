@@ -10,10 +10,6 @@ h2 {
 	color: #009933;
 }
 
-td[colspan="3"]{
-	text-align: right;
-}
-
 .top-nav {
     margin: 0;
     padding: 0;
