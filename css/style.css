@@ -1,5 +1,4 @@
 body {
-	font-family: "Times New Roman", Times, serif;
 	background-color: #eaeaea;
 }
 
@@ -40,6 +39,7 @@ body {
 .site-logo {
     font-size: 2rem;
     line-height: 1;
+    font-family: georgia, serif;
 }
 
 .site-logo img {
