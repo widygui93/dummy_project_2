@@ -88,10 +88,10 @@ $cart = new Cart();
                         <div class="row">
                             <div class="col-lg-auto">
                                 <div class="site-logo text-center text-lg-left">
-                                    <a href="index.html">E-Commerce</a>
+                                    <a href="index.html">Sunny Cafe</a>
                                 </div>
                             </div>
-                            <div class="col-lg-5 mx-auto mt-4 mt-lg-0">
+                           <!--  <div class="col-lg-5 mx-auto mt-4 mt-lg-0">
                                 <form action="#">
                                     <div class="form-group">
                                         <div class="input-group">
@@ -102,7 +102,7 @@ $cart = new Cart();
                                         </div>
                                     </div>
                                 </form>
-                            </div>
+                            </div> -->
                             <div class="col-lg-auto text-center text-lg-left header-item-holder">
                             	<strong id="username">Hi,user123</strong>
                                 <a href="App/Core/cart.php" class="header-item">
