@@ -104,7 +104,7 @@ $cart = new Cart();
                                 </form>
                             </div>
                             <div class="col-lg-auto text-center text-lg-left header-item-holder">
-                            	<strong>Hi,user123</strong>
+                            	<strong id="username">Hi,user123</strong>
                                 <a href="App/Core/cart.php" class="header-item">
                                     Cart <span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
                                 </a>

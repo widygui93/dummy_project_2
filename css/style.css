@@ -11,6 +11,10 @@ h2 {
 	color: #009933;
 }
 
+#username {
+	text-decoration: underline;
+}
+
 .top-nav {
     margin: 0;
     padding: 0;
