@@ -339,13 +339,6 @@ $cart = new Cart();
                                             London, England
                                         </address>
                                     </div>
-                                    <div class="col-12">
-                                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-                                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-8 text-center text-sm-left mb-sm-0 mb-3">
