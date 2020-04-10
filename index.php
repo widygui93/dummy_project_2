@@ -330,7 +330,7 @@ $cart = new Cart();
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="footer-logo">
-                                            <a href="index.html">E-Commerce</a>
+                                            <a href="index.php">E-Commerce</a>
                                         </div>
                                     </div>
                                     <div class="col-12">
