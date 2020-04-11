@@ -66,9 +66,10 @@ body {
     max-height: 55px;
 }
 
-.header-item-holder .header-item:hover, .header-item-holder  .header-item:focus {
-    color: #000;
+.header-item-holder .header-item:hover{
+    color: white;
     text-decoration: none;
+    background-color: green;
 }
 
 .nav-item {
