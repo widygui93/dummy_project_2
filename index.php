@@ -86,24 +86,12 @@ $cart = new Cart();
                     <!-- Header -->
                     <div class="col-12 bg-white pt-4">
                         <div class="row">
-                            <div class="col-lg-auto">
+                            <div class="col-lg-6">
                                 <div class="site-logo text-center text-lg-left">
                                     <a href="index.html">Sunny Cafe</a>
                                 </div>
                             </div>
-                           <!--  <div class="col-lg-5 mx-auto mt-4 mt-lg-0">
-                                <form action="#">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <input type="search" class="form-control border-dark" placeholder="Search..." required>
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-dark"><i class="fas fa-search"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div> -->
-                            <div class="col-lg-auto text-center text-lg-left header-item-holder">
+                            <div class="col-lg-6 header-item-holder text-center text-lg-right">
                             	<strong id="username">Hi,user123</strong>
                                 <a href="App/Core/cart.php" class="header-item">
                                     Cart <span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
