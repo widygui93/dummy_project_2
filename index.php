@@ -88,7 +88,7 @@ $cart = new Cart();
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="site-logo text-center text-lg-left">
-                                    <a href="index.html">Sunny Cafe</a>
+                                    <a href="index.php">Sunny Cafe</a>
                                 </div>
                             </div>
                             <div class="col-lg-6 header-item-holder text-center text-lg-right">
