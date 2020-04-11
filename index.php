@@ -97,7 +97,7 @@ $cart = new Cart();
                                     Cart <span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
                                 </a>
                                 <a href="#" class="header-item">
-                                	<i class="fas fa-money-bill-wave mr-2"></i><span id="header-price">$4,000</span>
+                                	<span id="header-price">$4,000</span>
                                 </a>
                             </div>
                         </div>
