@@ -51,7 +51,7 @@ body {
     color: #404040;
 }
 
-.site-logo a:hover, .site-logo a:focus {
+.site-logo a:hover {
     text-decoration: none;
     color: #000;
 }
