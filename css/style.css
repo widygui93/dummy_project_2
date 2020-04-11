@@ -27,6 +27,10 @@ body {
     border-right: 0;
 }
 
+.top-nav li span {
+	color: white;
+}
+
 .top-nav li a {
     color: #e0e0e0;
     text-decoration: none;

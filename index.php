@@ -64,20 +64,20 @@ $cart = new Cart();
                             <div class="col-auto mr-auto">
                                 <ul class="top-nav">
                                     <li>
-                                        <a href="tel:+123-456-7890"><i class="fa fa-phone-square mr-2"></i>+123-456-7890</a>
+                                        <span>+123-456-7890</span>
                                     </li>
                                     <li>
-                                        <a href="mailto:mail@ecom.com"><i class="fa fa-envelope mr-2"></i>mail@ecom.com</a>
+                                        <span>mail@ecom.com</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-auto">
                                 <ul class="top-nav">
                                     <li>
-                                        <a href="register.html"><i class="fas fa-user-edit mr-2"></i>Register</a>
+                                        <a href="register.html">Register</a>
                                     </li>
                                     <li>
-                                        <a href="login.html"><i class="fas fa-sign-in-alt mr-2"></i>Login</a>
+                                        <a href="login.html">Login</a>
                                     </li>
                                 </ul>
                             </div>
