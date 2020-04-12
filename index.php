@@ -178,7 +178,7 @@ $cart = new Cart();
  									<div class="col-lg-4 col-sm-6 my-3">
  										<div class="col-12 bg-white text-center h-100 product-item">
  											<div class="row h-100">
- 												<div class="card" style="width: 18rem;">
+ 												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 												  <div class="card-body">
 												    <h5 class="card-title">Kwetiau Goreng Extra Seafood</h5>
@@ -197,7 +197,7 @@ $cart = new Cart();
  									<div class="col-lg-4 col-sm-6 my-3">
  										<div class="col-12 bg-white text-center h-100 product-item">
  											<div class="row h-100">
-						 						<div class="card" style="width: 18rem;">
+						 						<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 												  <div class="card-body">
 												    <h5 class="card-title">Kwetiau Goreng</h5>
@@ -216,7 +216,7 @@ $cart = new Cart();
  									<div class="col-lg-4 col-sm-6 my-3">
  										<div class="col-12 bg-white text-center h-100 product-item">
  											<div class="row h-100">
- 												<div class="card" style="width: 18rem;">
+ 												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 												  <div class="card-body">
 												    <h5 class="card-title">Bihun Goreng Extra Seafood</h5>
@@ -251,7 +251,7 @@ $cart = new Cart();
  									<div class="col-lg-4 col-sm-6 my-3">
  										<div class="col-12 bg-white text-center h-100 product-item">
  											<div class="row h-100">
- 												<div class="card" style="width: 18rem;">
+ 												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 												  <div class="card-body">
 												    <h5 class="card-title">Hamburger Deluxe Extra Ham</h5>
@@ -270,7 +270,7 @@ $cart = new Cart();
  									<div class="col-lg-4 col-sm-6 my-3">
  										<div class="col-12 bg-white text-center h-100 product-item">
  											<div class="row h-100">
- 												<div class="card" style="width: 18rem;">
+ 												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 												  <div class="card-body">
 												    <h5 class="card-title">Hamburger Deluxe</h5>
@@ -289,7 +289,7 @@ $cart = new Cart();
  									<div class="col-lg-4 col-sm-6 my-3">
  										<div class="col-12 bg-white text-center h-100 product-item">
  											<div class="row h-100">
- 												<div class="card" style="width: 18rem;">
+ 												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 												  <div class="card-body">
 												    <h5 class="card-title">Hotdog Deluxe Extra Cheese</h5>
