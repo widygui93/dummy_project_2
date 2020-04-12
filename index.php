@@ -92,7 +92,7 @@ $cart = new Cart();
                                 </div>
                             </div>
                             <div class="col-lg-6 header-item-holder text-center text-lg-right">
-                            	<strong id="username">Hi,user123</strong>
+                            	<strong>Hi,user123</strong>
                                 <a href="App/Core/cart.php" class="header-item">
                                     Cart <span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
                                 </a>

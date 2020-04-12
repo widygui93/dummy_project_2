@@ -10,8 +10,10 @@ body {
 	box-shadow: 2px 2px 5px grey;
 }
 
-#username {
+.col-12 .bg-white .col-lg-6 strong {
 	text-decoration: underline;
+	border-right-style: solid;
+	padding-right: 10px;
 }
 
 .top-nav {
