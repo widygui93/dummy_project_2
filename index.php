@@ -176,7 +176,7 @@ $cart = new Cart();
  								</div>
  								<div class="row">
  									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 bg-white text-center h-100 product-item">
+ 										<div class="col-12 text-center h-100 product-item">
  											<div class="row h-100">
  												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
@@ -195,7 +195,7 @@ $cart = new Cart();
  										</div>
  									</div>
  									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 bg-white text-center h-100 product-item">
+ 										<div class="col-12 text-center h-100 product-item">
  											<div class="row h-100">
 						 						<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
@@ -214,7 +214,7 @@ $cart = new Cart();
  										</div>
  									</div>
  									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 bg-white text-center h-100 product-item">
+ 										<div class="col-12 text-center h-100 product-item">
  											<div class="row h-100">
  												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
@@ -249,7 +249,7 @@ $cart = new Cart();
  								</div>
  								<div class="row">
  									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 bg-white text-center h-100 product-item">
+ 										<div class="col-12 text-center h-100 product-item">
  											<div class="row h-100">
  												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
@@ -268,7 +268,7 @@ $cart = new Cart();
  										</div>
  									</div>
  									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 bg-white text-center h-100 product-item">
+ 										<div class="col-12 text-center h-100 product-item">
  											<div class="row h-100">
  												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
@@ -287,7 +287,7 @@ $cart = new Cart();
  										</div>
  									</div>
  									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 bg-white text-center h-100 product-item">
+ 										<div class="col-12 text-center h-100 product-item">
  											<div class="row h-100">
  												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">

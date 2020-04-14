@@ -106,3 +106,7 @@ body {
 .carousel.slide.w-100 {
 	margin-top: 145px;
 }
+
+.col-lg-4.col-sm-6.my-3 .col-12.product-item {
+	background-color: #eaeaea;
+}
