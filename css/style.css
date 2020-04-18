@@ -11,8 +11,18 @@ body {
 	box-shadow: 2px 2px 5px grey;
 }
 
+.user-photo {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-image: url(../App/Menu/Images/user-photo.png);
+	background-color: grey;
+	background-size: cover;
+	vertical-align: middle;
+}
+
 .col-12 .bg-white .col-lg-6 strong {
-	text-decoration: underline;
 	border-right-style: solid;
 	padding-right: 10px;
 }
