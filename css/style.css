@@ -93,6 +93,7 @@ body {
     padding: .25rem .4rem;
     cursor: pointer;
     color: #656565;
+    -webkit-transition: color .2s linear 0s;
     transition: color .2s linear 0s;
     font-weight: bold;
     line-height: 2.5;
