@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Kaushan Script";
+	src: url('../font-face/KaushanScript-Regular.otf');
+}
+
 body {
 	background-color: #eaeaea;
 }
@@ -60,7 +65,8 @@ body {
 .site-logo {
     font-size: 2rem;
     line-height: 1;
-    font-family: georgia, serif;
+    /*font-family: georgia, serif;*/
+    font-family: "Kaushan Script", arial;
     font-variant: small-caps;
 }
 
