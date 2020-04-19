@@ -1,6 +1,9 @@
 @font-face {
-	font-family: "Kaushan Script";
-	src: url('../font-face/KaushanScript-Regular.otf');
+    font-family: 'kaushan_scriptregular';
+    src: url('../font-face/kaushanscript-regular-webfont.woff2') format('woff2'),
+         url('../font-face/kaushanscript-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -66,7 +69,7 @@ body {
     font-size: 2rem;
     line-height: 1;
     /*font-family: georgia, serif;*/
-    font-family: "Kaushan Script", arial;
+    font-family: "kaushan_scriptregular", arial;
     font-variant: small-caps;
 }
 
