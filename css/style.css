@@ -16,7 +16,8 @@ body {
 }
 
 .card:hover {
-	box-shadow: 2px 2px 5px rgba(116,116,106,.75);
+	box-shadow: 2px 2px 5px rgba(116,116,106,.75), 
+			   -2px -2px 5px rgba(116,116,106,.75);
 }
 
 .user-photo {
