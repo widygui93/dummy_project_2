@@ -20,6 +20,10 @@ body {
 			   -2px -2px 5px rgba(116,116,106,.75);
 }
 
+.card-img-top {
+	filter: saturate(200%);
+}
+
 .user-photo {
 	display: inline-block;
 	width: 40px;
@@ -122,6 +126,7 @@ body {
 .slider-img {
 	width: 100%;
 	height: auto;
+	filter: saturate(200%);
 }
 
 .carousel.slide.w-100 {
