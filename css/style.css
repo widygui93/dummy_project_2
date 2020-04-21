@@ -13,11 +13,14 @@ body {
 .card {
 	background-color: #C8D6B9;
 	margin: auto;
+	transition: 0.5s;
 }
 
 .card:hover {
 	box-shadow: 2px 2px 5px rgba(116,116,106,.75), 
 			   -2px -2px 5px rgba(116,116,106,.75);
+
+	transform: scale(1.05);
 }
 
 .card-img-top {
