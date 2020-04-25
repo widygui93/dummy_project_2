@@ -95,7 +95,16 @@ $cart = new Cart();
                                 </div>
                             </div>
                             <div class="col-lg-6 header-item-holder text-center text-lg-right">
-                            	<strong><span class="user-photo"></span>  user123</strong>
+                            	<div class="dropdown">
+                            		<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            			<strong><span class="user-photo"></span>  user123</strong>
+                            		</button>
+                            		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <a class="dropdown-item" href="#">Profile</a>
+									    <a class="dropdown-item" href="App/Core/history.php">History</a>
+									</div>
+                            		<!-- <strong><span class="user-photo"></span>  user123</strong> -->
+                            	</div>
                                 <a href="App/Core/cart.php" class="header-item">
                                     Cart <span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
                                 </a>
@@ -123,13 +132,13 @@ $cart = new Cart();
                                         <!-- <li class="nav-item">
                                             <a class="nav-link" href="App/Core/cart.php">Cart</a>
                                         </li> -->
-                                        <li class="nav-item dropdown">
+                                        <!-- <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" id="setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
                                             <div class="dropdown-menu" aria-labelledby="setting">
                                                 <a class="dropdown-item" href="#">Profile</a>
                                                 <a class="dropdown-item" href="App/Core/history.php">history</a>
                                             </div>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </nav>

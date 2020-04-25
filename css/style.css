@@ -39,8 +39,12 @@ body {
 }
 
 .col-12 .bg-white .col-lg-6 strong {
-	border-right-style: solid;
-	padding-right: 10px;
+	/*border-right-style: solid;
+	padding-right: 10px;*/
+}
+
+.col-lg-6 .dropdown {
+	display: inline-block;
 }
 
 .top-nav {
