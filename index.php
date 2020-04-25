@@ -89,12 +89,20 @@ $cart = new Cart();
                     <!-- Header -->
                     <div class="col-12 bg-white pt-4">
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="site-logo text-center text-lg-left">
                                     <a href="index.php">Sunny Cafe</a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 header-item-holder text-center text-lg-right">
+                            <div class="col-lg-4">
+                            	<div class="menu text-center">
+	                            	<a href="#">Chinese</a>
+	                            	<a href="#">Western</a>
+	                            	<a href="#">Indonesian</a>
+	                            	<a href="#">Japanese</a>
+                            	</div>
+                            </div>
+                            <div class="col-lg-4 header-item-holder text-center text-lg-right">
                             	<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong><span class="user-photo"></span>  user123</strong></a>
@@ -114,7 +122,7 @@ $cart = new Cart();
                         </div>
 
                         <!-- Nav -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <nav class="navbar navbar-expand-lg navbar-light bg-white col-12">
                                 <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
                                     <span class="navbar-toggler-icon"></span>
@@ -122,11 +130,11 @@ $cart = new Cart();
                                 <div class="collapse navbar-collapse" id="mainNav">
                                     <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                                         <li class="nav-item dropdown">
-                                            <!-- <a class="nav-link dropdown-toggle" href="index.php" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+                                            <a class="nav-link dropdown-toggle" href="index.php" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                                             <div class="dropdown-menu" aria-labelledby="menu">
                                                 <a class="dropdown-item" href="#">Chinese</a>
                                                 <a class="dropdown-item" href="#">Western</a>
-                                            </div> -->
+                                            </div>
                                             <a href="#">Chinese</a>
                                             <a href="#">Western</a>
                                             <a href="#">Japanese</a>
@@ -135,7 +143,7 @@ $cart = new Cart();
                                     </ul>
                                 </div>
                             </nav>
-                        </div>
+                        </div> -->
                         <!-- Nav -->
                     </div>
                     <!-- Header -->
