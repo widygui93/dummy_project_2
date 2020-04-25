@@ -38,11 +38,6 @@ body {
 	vertical-align: middle;
 }
 
-.col-12 .bg-white .col-lg-6 strong {
-	/*border-right-style: solid;
-	padding-right: 10px;*/
-}
-
 .col-lg-6 ul {
 	display: inline-block;
 }

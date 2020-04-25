@@ -95,15 +95,6 @@ $cart = new Cart();
                                 </div>
                             </div>
                             <div class="col-lg-6 header-item-holder text-center text-lg-right">
-                            	<!-- <div class="dropdown">
-                            		<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            			<strong><span class="user-photo"></span>  user123</strong>
-                            		</button>
-                            		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									    <a class="dropdown-item" href="#">Profile</a>
-									    <a class="dropdown-item" href="App/Core/history.php">History</a>
-									</div>
-                            	</div> -->
                             	<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong><span class="user-photo"></span>  user123</strong></a>
