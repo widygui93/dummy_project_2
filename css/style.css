@@ -38,10 +38,6 @@ body {
 	vertical-align: middle;
 }
 
-.col-lg-6 ul {
-	display: inline-block;
-}
-
 .top-nav {
     margin: 0;
     padding: 0;
@@ -110,6 +106,10 @@ body {
     color: white;
     text-decoration: none;
     background-color: green;
+}
+
+.header-item-holder ul {
+	display: inline-block;
 }
 
 .nav-item {
