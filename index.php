@@ -73,11 +73,14 @@ $cart = new Cart();
                             </div>
                             <div class="col-auto">
                                 <ul class="top-nav">
-                                    <li>
+                                    <!-- <li>
                                         <a href="register.html">Register</a>
                                     </li>
                                     <li>
                                         <a href="login.html">Login</a>
+                                    </li> -->
+                                    <li>
+                                    	<a href="logout.php">Log Out</a>
                                     </li>
                                 </ul>
                             </div>
