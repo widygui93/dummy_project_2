@@ -122,22 +122,16 @@ $cart = new Cart();
                                 <div class="collapse navbar-collapse" id="mainNav">
                                     <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="index.php" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+                                            <!-- <a class="nav-link dropdown-toggle" href="index.php" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                                             <div class="dropdown-menu" aria-labelledby="menu">
                                                 <a class="dropdown-item" href="#">Chinese</a>
                                                 <a class="dropdown-item" href="#">Western</a>
-                                            </div>
+                                            </div> -->
+                                            <a href="#">Chinese</a>
+                                            <a href="#">Western</a>
+                                            <a href="#">Japanese</a>
+                                            <a href="#">Indonesian</a>
                                         </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link" href="App/Core/cart.php">Cart</a>
-                                        </li> -->
-                                        <!-- <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
-                                            <div class="dropdown-menu" aria-labelledby="setting">
-                                                <a class="dropdown-item" href="#">Profile</a>
-                                                <a class="dropdown-item" href="App/Core/history.php">history</a>
-                                            </div>
-                                        </li> -->
                                     </ul>
                                 </div>
                             </nav>

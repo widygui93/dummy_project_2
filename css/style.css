@@ -125,6 +125,16 @@ body {
     padding-bottom: .3rem;
 }
 
+.navbar-collapse ul li a {
+	text-decoration: none;
+	color: #666;
+	padding-right: 20px;
+}
+
+.navbar-collapse ul li a:hover {
+	color: #000;
+}
+
 .slider-img {
 	width: 100%;
 	height: auto;
