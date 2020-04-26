@@ -123,31 +123,6 @@ $cart = new Cart();
                                 <!-- </a> -->
                             </div>
                         </div>
-
-                        <!-- Nav -->
-                        <!-- <div class="row">
-                            <nav class="navbar navbar-expand-lg navbar-light bg-white col-12">
-                                <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="mainNav">
-                                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="index.php" id="menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
-                                            <div class="dropdown-menu" aria-labelledby="menu">
-                                                <a class="dropdown-item" href="#">Chinese</a>
-                                                <a class="dropdown-item" href="#">Western</a>
-                                            </div>
-                                            <a href="#">Chinese</a>
-                                            <a href="#">Western</a>
-                                            <a href="#">Japanese</a>
-                                            <a href="#">Indonesian</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div> -->
-                        <!-- Nav -->
                     </div>
                     <!-- Header -->
  				</header>
