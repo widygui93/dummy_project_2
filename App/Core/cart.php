@@ -135,7 +135,87 @@ if( isset($_POST["submit"]) ) {
  				</header>
  			</div>
  			<div class="col-12">
- 				
+ 				<div class="container-fluid">
+ 					<div class="row">
+ 						<div class="col-sm">
+ 							<h2>Order List</h2>
+ 						</div>
+ 					</div>
+ 					<div class="row">
+ 						<div class="col-sm">
+ 							<?php if($total != 0): ?>
+	 							<table border="1" cellpadding="10" cellspacing="0">
+	 								<tr>
+	 									<th>No</th>
+	 									<th>Menu</th>
+	 									<th>Price</th>
+	 									<th>Quantity</th>
+	 									<th>Total Price</th>
+	 									<th>Delete</th>
+	 									<th>Edit</th>
+	 								</tr>
+	 								<?php $no = 1; ?>
+	 								<?php foreach($items as $item) : ?>
+	 									<tr>
+	 										<td><?= $no; ?></td>
+	 										<td><?= $item["nama_menu"]; ?></td>
+	 										<td><?= $item["harga_menu"]; ?></td>
+	 										<td><?= $item["quantity"]; ?></td>
+	 										<td><?= $item["total_harga_menu"]; ?></td>
+	 										<td>
+	 											<form action="" method="post">
+	 												<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
+		 											<button type="submit" name="delete" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
+	 											</form>
+	 										</td>
+	 										<td>
+												<form action="" method="post">
+													<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
+													<input style="display: none;" type="text" name="quantity" value=<?= $item["quantity"]; ?>>
+													<input style="display: none;" type="text" name="harga_menu" value=<?= $item["harga_menu"]; ?>>
+													<button type="button" class="btn btn-outline-primary btn-sm plus-edit">+</button>
+													<span class="badge badge-success"><?= $item["quantity"]; ?></span>
+													<button type="button" class="btn btn-outline-primary btn-sm minus-edit">-</button>
+													<button type="submit" name="edit" class="btn btn-success">Edit</button>
+	 											</form>
+	 										</td>
+	 									</tr>
+	 									<?php $no++; ?>
+	 								<?php endforeach; ?>
+	                        		<tr>
+	                        			<td colspan="7"> 
+											<strong> Total : Rp <?= $total; ?></strong>
+	                        			</td>
+	                        		</tr>
+	 							</table>
+	 							<form action="" method="post" enctype="multipart/form-data">
+								  <div class="form-group">
+								    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC </label>
+								  </div>
+								  <div class="form-group">
+								    <label>
+								    	<p>For delivery order to <strong>address street xxx no 12.</strong></p>
+								    </label>
+								  </div>
+								  <div class="form-group">
+								    <input type="file" name="gambar">
+								    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
+								  </div>
+								</form>
+							<?php endif; ?>
+
+							<?php if($showResult): ?>
+								<?php if($isPaySuccess): ?>
+									<div class="alert alert-success" role="alert"><h3>Payment success!</h3></div>
+								<?php else: ?>
+									<div class="alert alert-danger" role="alert"><h3>Payment failed!</h3></div>
+								<?php endif; ?>
+							<?php elseif($showResult == false && $total == 0): ?>
+								<div class="alert alert-primary" role="alert"><h3>You don't have any order yet. Please go to menu to order.</h3></div>
+							<?php endif; ?>
+ 						</div>
+ 					</div>
+ 				</div>
  			</div>
  			<div class="col-12 align-self-end">
  				<footer class="row">
@@ -226,23 +306,6 @@ if( isset($_POST["submit"]) ) {
  			</div>
  		</div>
  		<div class="row">
- 			<div class="col-2">
- 				<strong>dashboard</strong>
- 				<ul>
- 					<li><a href="../../index.php">menu</a></li>
- 					<li>
- 						<a href="cart.php">cart</a>
- 						<span class="badge badge-success"><?= $jlhQuantity; ?></span>
- 					</li>
- 					<li>
-						<a href="#">account</a>
- 						<ul>
- 							<li><a href="#">profile</a></li>
- 							<li><a href="history.php">history</a></li>
- 						</ul>
- 					</li>
- 				</ul>
- 			</div>
  			<div class="col-10">
  				<div class="container-fluid">
  					<div class="row">
