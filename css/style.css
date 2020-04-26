@@ -134,6 +134,7 @@ body {
 
 .menu a:hover {
 	color: #000;
+	text-shadow: 2px 2px 2px rgba(233,224,40,.75);
 }
 
 .slider-img {
