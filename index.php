@@ -116,7 +116,7 @@ $cart = new Cart();
                                     </li>
                                 </ul>
                                 <a href="App/Core/cart.php" class="header-item">
-                                    Cart <span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
+                                    Cart<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
                                 </a>
                                 <!-- <a href="#" class="header-item"> -->
                                 <span id="header-price">Rp.4,000,000</span>

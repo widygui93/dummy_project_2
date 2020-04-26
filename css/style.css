@@ -102,6 +102,10 @@ body {
     line-height: 2.5;
 }
 
+.header-item span {
+	margin-left: 2px;
+}
+
 .header-item-holder .header-item:hover{
     color: white;
     text-decoration: none;
