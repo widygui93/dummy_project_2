@@ -126,7 +126,7 @@ if( isset($_POST["submit"]) ) {
  									</li>
  								</ul>
  								<a href="cart.php" class="header-item">
- 									Cart<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
+ 									Cart<span class="badge badge-success"><?= $jlhQuantity; ?></span>
  								</a>
  								<span id="header-price">Rp.4,000,000</span>
  							</div>
@@ -223,11 +223,6 @@ if( isset($_POST["submit"]) ) {
  						</div>
  					</div>
  				</footer>
- 			</div>
- 		</div>
- 		<div class="row">
- 			<div class="col">
- 				<h1>Your Brand</h1>
  			</div>
  		</div>
  		<div class="row">
