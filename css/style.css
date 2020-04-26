@@ -113,11 +113,11 @@ body {
 }
 
 .nav-item {
-    margin-right: 5px;
+    /*margin-right: 5px;*/
 }
 
 .nav-item:last-of-type {
-    margin-right: 0;
+    /*margin-right: 0;*/
 }
 
 .nav-item .nav-link {
