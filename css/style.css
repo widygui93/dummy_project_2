@@ -159,3 +159,7 @@ body {
 .dropdown-menu {
 	margin-top: -2px;
 }
+
+.dropdown-toggle::after {
+    content: none;
+}
