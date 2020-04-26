@@ -75,6 +75,72 @@ if( isset($_POST["submit"]) ) {
  </head>
  <body>
  	<div class="container-fluid">
+ 		<div class="row min-vh-100">
+ 			<div class="col-12">
+ 				<header class="row">
+ 					<div class="col-12 bg-dark py-2 d-md-block">
+ 						<div class="row">
+ 							<div class="col-auto mr-auto">
+ 								<ul class="top-nav">
+ 									<li>
+ 										<span>+123-456-7890</span>
+ 									</li>
+ 									<li>
+ 										<span>mail@ecom.com</span>
+ 									</li>
+ 								</ul>
+ 							</div>
+ 							<div class="col-auto">
+ 								<ul class="top-nav">
+ 									<li><a href="logout.php">Log Out</a></li>
+ 								</ul>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<div class="col-12 bg-white pt-4">
+ 						<div class="row">
+ 							<div class="col-lg-4">
+ 								<div class="site-logo text-center text-lg-left">
+ 									<a href="../../index.php">Sunny Cafe</a>
+ 								</div>
+ 							</div>
+ 							<div class="col-lg-4">
+ 								<div class="menu text-center">
+ 									<a href="#">Chinese</a>
+ 									<a href="#">Western</a>
+ 									<a href="#">Indonesian</a>
+ 									<a href="#">Japanese</a>
+ 								</div>
+ 							</div>
+ 							<div class="col-lg-4 header-item-holder text-center text-lg-right">
+ 								<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+ 									<li class="nav-item dropdown">
+ 										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ 											<span class="user-photo"></span>
+ 											<strong>user123</strong>
+ 										</a>
+ 										<div class="dropdown-menu" aria-labelledby="user">
+ 											<a href="#" class="dropdown-item">Profile</a>
+ 											<a href="history.php" class="dropdown-item">History</a>
+ 										</div>
+ 									</li>
+ 								</ul>
+ 								<a href="cart.php" class="header-item">
+ 									Cart<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
+ 								</a>
+ 								<span id="header-price">Rp.4,000,000</span>
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</header>
+ 			</div>
+ 			<div class="col-12">
+ 				
+ 			</div>
+ 			<div class="col-12 align-self-end">
+ 				
+ 			</div>
+ 		</div>
  		<div class="row">
  			<div class="col">
  				<h1>Your Brand</h1>
