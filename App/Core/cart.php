@@ -144,7 +144,7 @@ if( isset($_POST["submit"]) ) {
  					<div class="row">
  						<div class="col-sm">
  							<?php if($total != 0): ?>
-	 							<table border="1" cellpadding="10" cellspacing="0">
+	 							<table border="1" cellpadding="10" cellspacing="0" class="table table-dark table-hover">
 	 								<tr>
 	 									<th>No</th>
 	 									<th>Menu</th>
