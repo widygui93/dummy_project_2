@@ -161,5 +161,10 @@ body {
 
 /* core/cart.php */
 .main-content {
-	margin-top: 100px;
+	margin-top: 170px;
 }
+
+@media screen and (min-width: 780px) {
+  .main-content {
+    margin-top: 110px;
+ }
