@@ -148,7 +148,7 @@ body {
 }
 
 .carousel.slide.w-100 {
-	margin-top: 107px;
+	margin-top: 173px;
 }
 
 .dropdown-menu {
@@ -167,4 +167,8 @@ body {
 @media screen and (min-width: 780px) {
   .main-content {
     margin-top: 110px;
- }
+    }
+ .carousel.slide.w-100 {
+	margin-top: 107px;
+	}
+}
