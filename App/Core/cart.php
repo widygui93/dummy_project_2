@@ -128,7 +128,7 @@ if( isset($_POST["submit"]) ) {
  								<a href="cart.php" class="header-item">
  									Cart<span class="badge badge-success"><?= $jlhQuantity; ?></span>
  								</a>
- 								<span id="header-price">Rp.4,000,000</span>
+ 								<!-- <span id="header-price">Rp.4,000,000</span> -->
  							</div>
  						</div>
  					</div>

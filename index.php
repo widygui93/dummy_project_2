@@ -119,7 +119,7 @@ $cart = new Cart();
                                     Cart<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
                                 </a>
                                 <!-- <a href="#" class="header-item"> -->
-                                <span id="header-price">Rp.4,000,000</span>
+                                <!-- <span id="header-price">Rp.4,000,000</span> -->
                                 <!-- </a> -->
                             </div>
                         </div>
