@@ -144,50 +144,52 @@ if( isset($_POST["submit"]) ) {
  					<div class="row">
  						<div class="col-sm">
  							<?php if($total != 0): ?>
-	 							<table border="1" cellpadding="10" cellspacing="0" class="table table-dark table-hover">
-	 								<tr>
-	 									<th>No</th>
-	 									<th>Menu</th>
-	 									<th>Price</th>
-	 									<th>Quantity</th>
-	 									<th>Total Price</th>
-	 									<th>Delete</th>
-	 									<th>Edit</th>
-	 								</tr>
-	 								<?php $no = 1; ?>
-	 								<?php foreach($items as $item) : ?>
-	 									<tr>
-	 										<td><?= $no; ?></td>
-	 										<td><?= $item["nama_menu"]; ?></td>
-	 										<td><?= $item["harga_menu"]; ?></td>
-	 										<td><?= $item["quantity"]; ?></td>
-	 										<td><?= $item["total_harga_menu"]; ?></td>
-	 										<td>
-	 											<form action="" method="post">
-	 												<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
-		 											<button type="submit" name="delete" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
-	 											</form>
-	 										</td>
-	 										<td>
-												<form action="" method="post">
-													<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
-													<input style="display: none;" type="text" name="quantity" value=<?= $item["quantity"]; ?>>
-													<input style="display: none;" type="text" name="harga_menu" value=<?= $item["harga_menu"]; ?>>
-													<button type="button" class="btn btn-outline-primary btn-sm plus-edit">+</button>
-													<span class="badge badge-success"><?= $item["quantity"]; ?></span>
-													<button type="button" class="btn btn-outline-primary btn-sm minus-edit">-</button>
-													<button type="submit" name="edit" class="btn btn-success">Edit</button>
-	 											</form>
-	 										</td>
-	 									</tr>
-	 									<?php $no++; ?>
-	 								<?php endforeach; ?>
-	                        		<tr>
-	                        			<td colspan="7"> 
-											<strong> Total : Rp <?= $total; ?></strong>
-	                        			</td>
-	                        		</tr>
-	 							</table>
+ 								<div class="table-responsive">
+		 							<table border="1" cellpadding="10" cellspacing="0" class="table table-dark table-hover">
+		 								<tr>
+		 									<th>No</th>
+		 									<th>Menu</th>
+		 									<th>Price</th>
+		 									<th>Quantity</th>
+		 									<th>Total Price</th>
+		 									<th>Delete</th>
+		 									<th>Edit</th>
+		 								</tr>
+		 								<?php $no = 1; ?>
+		 								<?php foreach($items as $item) : ?>
+		 									<tr>
+		 										<td><?= $no; ?></td>
+		 										<td><?= $item["nama_menu"]; ?></td>
+		 										<td><?= $item["harga_menu"]; ?></td>
+		 										<td><?= $item["quantity"]; ?></td>
+		 										<td><?= $item["total_harga_menu"]; ?></td>
+		 										<td>
+		 											<form action="" method="post">
+		 												<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
+			 											<button type="submit" name="delete" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
+		 											</form>
+		 										</td>
+		 										<td>
+													<form action="" method="post">
+														<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
+														<input style="display: none;" type="text" name="quantity" value=<?= $item["quantity"]; ?>>
+														<input style="display: none;" type="text" name="harga_menu" value=<?= $item["harga_menu"]; ?>>
+														<button type="button" class="btn btn-outline-primary btn-sm plus-edit">+</button>
+														<span class="badge badge-success"><?= $item["quantity"]; ?></span>
+														<button type="button" class="btn btn-outline-primary btn-sm minus-edit">-</button>
+														<button type="submit" name="edit" class="btn btn-success">Edit</button>
+		 											</form>
+		 										</td>
+		 									</tr>
+		 									<?php $no++; ?>
+		 								<?php endforeach; ?>
+		                        		<tr>
+		                        			<td colspan="7"> 
+												<strong> Total : Rp <?= $total; ?></strong>
+		                        			</td>
+		                        		</tr>
+		 							</table>
+	 							</div>
 	 							<form action="" method="post" enctype="multipart/form-data">
 								  <div class="form-group">
 								    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC </label>
