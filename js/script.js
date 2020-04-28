@@ -20,7 +20,7 @@ $(document).ready(function(){
 		const oldQuantity = $(".modal-body #quantity").val();
 		const newQuantity = $(".modal-body .badge-success").text();
 
-		if(oldQuantity == 0){
+		if(oldQuantity == 0 && newQuantity == 0){
 			alert("You must input quantity");
 		}
 		else if(oldQuantity == newQuantity) {
