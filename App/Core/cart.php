@@ -190,16 +190,18 @@ if( isset($_POST["submit"]) ) {
 		                        		</tr>
 		 							</table>
 	 							</div>
-	 							<form action="" method="post" enctype="multipart/form-data">
-								  <div class="form-group">
-								    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC. </label>
-								    <label>For delivery order to <strong>address street xxx no 12.</strong></label>
-								  </div>
-								  <div class="form-group">
-								  	<input type="file" name="gambar">
-								    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
-								  </div>
-								</form>
+	 							<div class="container-payment">
+		 							<form action="" method="post" enctype="multipart/form-data">
+									  <div class="form-group">
+									    <label for="norek">Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC. </label>
+									    <label>For delivery order to <strong>address street xxx no 12.</strong></label>
+									  </div>
+									  <div class="form-group">
+									  	<input type="file" name="gambar">
+									    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
+									  </div>
+									</form>
+								</div>
 							<?php endif; ?>
 
 							<?php if($showResult): ?>
