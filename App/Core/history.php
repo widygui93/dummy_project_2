@@ -84,7 +84,34 @@ $jlhQuantity = $cart->getJumlahQuantity();
  					</div>
  				</header>
  			</div>
- 			<div class="col-12"></div>
+ 			<div class="col-12">
+ 				<div class="container-fluid">
+ 					<div class="row">
+ 						<div class="col-sm">
+ 							<h2>History Transaction</h2>
+ 						</div>
+ 					</div>
+ 					<div class="row">
+ 						<div class="col-sm">
+ 							<table border="1" cellpadding="10" cellspacing="0">
+ 								<tr>
+ 									<th>No</th>
+ 									<th>Menu</th>
+ 									<th>Type Menu</th>
+ 									<th>Price</th>
+ 									<th>Order Date</th>
+ 									<th>Payment Date</th>
+ 									<th>Extra Item</th>
+ 									<th>Extra Item Price</th>
+ 									<th>Total Price</th>
+ 									<th>Destination Account Number</th>
+ 									<th>Delivery Address</th>
+ 								</tr>
+ 							</table>
+ 						</div>
+ 					</div>
+ 				</div>
+ 			</div>
  			<div class="col-12 align-self-end">
  				<footer class="row">
  					<div class="col-12 bg-dark text-white pb-3 pt-5">
@@ -171,58 +198,6 @@ $jlhQuantity = $cart->getJumlahQuantity();
  						</div>
  					</div>
  				</footer>
- 			</div>
- 		</div>
- 		<div class="row">
- 			<div class="col">
- 				<h1>Your Brand</h1>
- 			</div>
- 		</div>
- 		<div class="row">
- 			<div class="col-2">
- 				<strong>dashboard</strong>
- 				<ul>
- 					<li><a href="../../index.php">menu</a></li>
- 					<li>
- 						<a href="cart.php">cart</a>
- 						<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
- 					</li>
- 					<li>
-						<a href="#">account</a>
- 						<ul>
- 							<li><a href="#">profile</a></li>
- 							<li><a href="history.php">history</a></li>
- 						</ul>
- 					</li>
- 				</ul>
- 			</div>
- 			<div class="col-10">
- 				<div class="container-fluid">
- 					<div class="row">
- 						<div class="col-sm">
- 							<h2>History Transaction</h2>
- 						</div>
- 					</div>
- 					<div class="row">
- 						<div class="col-sm">
- 							<table border="1" cellpadding="10" cellspacing="0">
- 								<tr>
- 									<th>No</th>
- 									<th>Menu</th>
- 									<th>Type Menu</th>
- 									<th>Price</th>
- 									<th>Order Date</th>
- 									<th>Payment Date</th>
- 									<th>Extra Item</th>
- 									<th>Extra Item Price</th>
- 									<th>Total Price</th>
- 									<th>Destination Account Number</th>
- 									<th>Delivery Address</th>
- 								</tr>
- 							</table>
- 						</div>
- 					</div>
- 				</div>
  			</div>
  		</div>
  	</div>
