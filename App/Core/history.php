@@ -93,99 +93,101 @@ $jlhQuantity = $cart->getJumlahQuantity();
  					</div>
  					<div class="row">
  						<div class="col-sm">
- 							<table border="1" cellpadding="10" cellspacing="0" class="table table-dark table-hover">
- 								<tr>
- 									<th>No</th>
- 									<th>Menu</th>
- 									<th>Type Menu</th>
- 									<th>Price</th>
- 									<th>Order Date</th>
- 									<th>Payment Date</th>
- 									<th>Extra Item</th>
- 									<th>Extra Item Price</th>
- 									<th>Total Price</th>
- 									<th>Destination Account Number</th>
- 									<th>Delivery Address</th>
- 								</tr>
- 								<tr>
- 									<td>1</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 								</tr>
- 								<tr>
- 									<td>1</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 								</tr>
- 								<tr>
- 									<td>1</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 								</tr>
- 								<tr>
- 									<td>1</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 								</tr>
- 								<tr>
- 									<td>1</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 								</tr>
- 								<tr>
- 									<td>1</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 									<td>xxxxxxxxxxxxx</td>
- 								</tr>
- 							</table>
+ 							<div class="table-responsive">
+	 							<table border="1" cellpadding="10" cellspacing="0" class="table table-dark table-hover">
+	 								<tr>
+	 									<th>No</th>
+	 									<th>Menu</th>
+	 									<th>Type Menu</th>
+	 									<th>Price</th>
+	 									<th>Order Date</th>
+	 									<th>Payment Date</th>
+	 									<th>Extra Item</th>
+	 									<th>Extra Item Price</th>
+	 									<th>Total Price</th>
+	 									<th>Destination Account Number</th>
+	 									<th>Delivery Address</th>
+	 								</tr>
+	 								<tr>
+	 									<td>1</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
+	 								<tr>
+	 									<td>1</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
+	 								<tr>
+	 									<td>1</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
+	 								<tr>
+	 									<td>1</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
+	 								<tr>
+	 									<td>1</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
+	 								<tr>
+	 									<td>1</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
+	 							</table>
+ 							</div>
  						</div>
  					</div>
  				</div>
