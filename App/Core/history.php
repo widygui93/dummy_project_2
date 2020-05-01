@@ -186,6 +186,32 @@ $jlhQuantity = $cart->getJumlahQuantity();
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 								</tr>
+	 								<tr>
+	 									<td>1</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
+	 								<tr>
+	 									<td>1</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
 	 							</table>
  							</div>
  						</div>
