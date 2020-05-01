@@ -97,37 +97,14 @@ $jlhQuantity = $cart->getJumlahQuantity();
 	 							<table border="1" cellpadding="10" cellspacing="0" class="table table-dark table-hover">
 	 								<tr>
 	 									<th>No</th>
-	 									<th>Menu</th>
-	 									<th>Type Menu</th>
-	 									<th>Price</th>
-	 									<th>Order Date</th>
 	 									<th>Payment Date</th>
-	 									<th>Extra Item</th>
-	 									<th>Extra Item Price</th>
-	 									<th>Total Price</th>
+	 									<th>Total Transaction</th>
 	 									<th>Destination Account Number</th>
 	 									<th>Delivery Address</th>
+	 									<th>Detail</th>
 	 								</tr>
 	 								<tr>
 	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
@@ -141,6 +118,9 @@ $jlhQuantity = $cart->getJumlahQuantity();
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
+	 								<tr>
+	 									<td>1</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
@@ -154,6 +134,9 @@ $jlhQuantity = $cart->getJumlahQuantity();
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
+	 								</tr>
+	 								<tr>
+	 									<td>1</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
@@ -167,11 +150,6 @@ $jlhQuantity = $cart->getJumlahQuantity();
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
 	 								</tr>
 	 								<tr>
 	 									<td>1</td>
@@ -180,32 +158,9 @@ $jlhQuantity = $cart->getJumlahQuantity();
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
 	 								</tr>
 	 								<tr>
 	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
 	 									<td>xxxxxxxxxxxxx</td>
