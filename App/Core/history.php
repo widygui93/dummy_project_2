@@ -4,10 +4,13 @@ date_default_timezone_set("Asia/Jakarta");
 require_once '../init.php';
 
 use App\Db\Cart as Cart;
+use App\Db\History as History;
 
 $cart = new Cart();
+$history = new History();
 
 $jlhQuantity = $cart->getJumlahQuantity();
+$items = $history->getHistory();
 
 
 
@@ -98,75 +101,23 @@ $jlhQuantity = $cart->getJumlahQuantity();
 	 								<tr>
 	 									<th>No</th>
 	 									<th>Payment Date</th>
-	 									<th>Total Transaction</th>
 	 									<th>Destination Account Number</th>
+	 									<th>Total Transaction</th>
 	 									<th>Delivery Address</th>
 	 									<th>Detail</th>
 	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
-	 								<tr>
-	 									<td>1</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 									<td>xxxxxxxxxxxxx</td>
-	 								</tr>
+	 								<?php $no=1; ?>
+	 								<?php foreach($items as $item) : ?>
+		 								<tr>
+		 									<td><?= $no; ?></td>
+		 									<td><?= $item["tgl_transfer"] ?></td>
+		 									<td><?= $item["no_rek_tujuan"] ?></td>
+		 									<td><?= $item["total_transfer"] ?></td>
+		 									<td><?= $item["alamat_order"] ?></td>
+		 									<td><?= $item["id_transfer"] ?></td>
+		 								</tr>
+		 								<?php $no++; ?>
+	 								<?php endforeach; ?>
 	 							</table>
  							</div>
  						</div>
