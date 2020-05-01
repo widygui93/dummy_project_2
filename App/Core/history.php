@@ -85,7 +85,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
  				</header>
  			</div>
  			<div class="col-12">
- 				<div class="container-fluid">
+ 				<div class="container-fluid main-content">
  					<div class="row">
  						<div class="col-sm">
  							<h2>History Transaction</h2>
