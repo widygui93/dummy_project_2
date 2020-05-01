@@ -114,7 +114,12 @@ $items = $history->getHistory();
 		 									<td><?= $item["no_rek_tujuan"] ?></td>
 		 									<td><?= $item["total_transfer"] ?></td>
 		 									<td><?= $item["alamat_order"] ?></td>
-		 									<td><?= $item["id_transfer"] ?></td>
+		 									<td>
+		 										<form action="" method="post">
+		 											<input type="text" style="display: none;" name="id_transfer" value=<?= $item["id_transfer"]; ?> >
+		 											<button type="submit" name="detail" class="btn btn-success">View Detail</button>
+		 										</form>
+		 									</td>
 		 								</tr>
 		 								<?php $no++; ?>
 	 								<?php endforeach; ?>
