@@ -36,6 +36,22 @@ $items = $history->getHistory();
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
 </head>
 <body>
+	<div class="modal fade" id="modalDetailTransaction" tabindex="-1" role="dialog" aria-labelledby="detailTransaction" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="detailTransaction">Detail Transaction</h5>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body"></div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
  	<div class="container-fluid">
  		<div class="row min-vh-100">
  			<div class="col-12">
@@ -115,10 +131,10 @@ $items = $history->getHistory();
 		 									<td><?= $item["total_transfer"] ?></td>
 		 									<td><?= $item["alamat_order"] ?></td>
 		 									<td>
-		 										<form action="" method="post">
-		 											<input type="text" style="display: none;" name="id_transfer" value=<?= $item["id_transfer"]; ?> >
-		 											<button type="submit" name="detail" class="btn btn-success">View Detail</button>
-		 										</form>
+		 										<!-- <form action="" method="post"> -->
+		 											
+		 											<button type="button" name="detail" class="btn btn-success" data-toggle="modal" data-target="#modalDetailTransaction">View Detail</button>
+		 										<!-- </form> -->
 		 									</td>
 		 								</tr>
 		 								<?php $no++; ?>
