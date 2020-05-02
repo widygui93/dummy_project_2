@@ -9,7 +9,7 @@ class History extends Db {
 	}
 
 	public function getHistory(){
-		$query = "SELECT tgl_transfer, no_rek_tujuan, total_transfer, alamat_order, id_transfer FROM transfer WHERE user_name = 'user123' ORDER BY tgl_transfer DESC";
+		$query = "SELECT tgl_transfer, no_rek_tujuan, FORMAT(total_transfer,0) AS total_transfer, alamat_order, id_transfer FROM transfer WHERE user_name = 'user123' ORDER BY tgl_transfer DESC";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 			$this->items[] = $row;
