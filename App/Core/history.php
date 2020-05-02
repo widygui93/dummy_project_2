@@ -132,7 +132,7 @@ $items = $history->getHistory();
 		 									<td><?= $item["alamat_order"] ?></td>
 		 									<td>
 		 										<!-- <form action="" method="post"> -->
-		 											
+		 											<input type="text" style="display: none;" name="id_transfer" value=<?= $item["id_transfer"]; ?> >
 		 											<button type="button" name="detail" class="btn btn-success" data-toggle="modal" data-target="#modalDetailTransaction">View Detail</button>
 		 										<!-- </form> -->
 		 									</td>
