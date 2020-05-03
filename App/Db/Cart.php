@@ -57,7 +57,8 @@ class Cart extends Db {
 	}
 
 	public function doPayment($data){
-		$tglTransfer = date("d-M-Y");
+		$tglTransfer = date("Y-M-d");
+		$tglTransfer=date("Y-m-d",strtotime($tglTransfer));
 		$query = '';
 		$idTrf = '';
 
