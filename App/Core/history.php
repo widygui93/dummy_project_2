@@ -9,6 +9,21 @@ use App\Db\History as History;
 $cart = new Cart();
 $history = new History();
 
+if( isset($_POST["detail"]) ){
+ 	$details = $history->getDetailHistory($_POST["id_transfer"]);
+
+	echo '
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script>
+			$(window).load(function() {
+			    $("#modalDetailTransaction").modal("show");
+			});
+		</script>
+	';
+
+}
+
+
 $jlhQuantity = $cart->getJumlahQuantity();
 $items = $history->getHistory();
 
@@ -27,12 +42,7 @@ $items = $history->getHistory();
 <head>
 	<meta charset="UTF-8">
 	<title>History</title>
-	<!-- CDN bootstrap 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+	
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
 </head>
 <body>
@@ -45,7 +55,34 @@ $items = $history->getHistory();
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body"></div>
+				<div class="modal-body">
+					
+					<div class="table-responsive">
+						<table border="1" cellpadding="10" cellspacing="0" class="table table-dark table-hover">
+							<tr>
+								<th>No</th>
+								<th>Menu</th>
+								<th>Type Menu</th>
+								<th>Price</th>
+								<th>Quantity</th>
+								<th>Total Price</th>
+							</tr>
+							<?php $no=1; ?>
+							<?php foreach($details as $detail) : ?>
+								<tr>
+									<td><?= $no; ?></td>
+									<td><?= $detail["nama_menu"] ?></td>
+									<td><?= $detail["tipe_menu"] ?></td>
+									<td><?= $detail["harga_menu"] ?></td>
+									<td><?= $detail["quantity"] ?></td>
+									<td><?= $detail["total_harga_menu"] ?></td>
+								</tr>
+								<?php $no++; ?>
+							<?php endforeach; ?>
+						</table>
+					</div>
+
+				</div>
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
 				</div>
@@ -131,10 +168,10 @@ $items = $history->getHistory();
 		 									<td><?= $item["total_transfer"] ?></td>
 		 									<td><?= $item["alamat_order"] ?></td>
 		 									<td>
-		 										<!-- <form action="" method="post"> -->
+		 										<form action="" method="post">
 		 											<input type="text" style="display: none;" name="id_transfer" value=<?= $item["id_transfer"]; ?> >
-		 											<button type="button" name="detail" class="btn btn-success" data-toggle="modal" data-target="#modalDetailTransaction">View Detail</button>
-		 										<!-- </form> -->
+		 											<button type="submit" name="detail" class="btn btn-success">View Detail</button>
+		 										</form>
 		 									</td>
 		 								</tr>
 		 								<?php $no++; ?>
@@ -236,5 +273,10 @@ $items = $history->getHistory();
  	</div>
  	<script src="../../js/jquery-3.4.1.min.js"></script>
  	<script src="../../js/script.js"></script>
+ 	<!-- CDN bootstrap 4 -->
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
