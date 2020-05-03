@@ -38,7 +38,8 @@ class Menu {
 	}
 
 	public function getTglOrder(){
-		$tglOrder = date("d-M-Y");
+		$tglOrder = date("Y-M-d");
+		$tglOrder=date("Y-m-d",strtotime($tglOrder));
 		return $tglOrder;
 	}
 
