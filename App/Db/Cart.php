@@ -21,7 +21,7 @@ class Cart extends Db {
 	}
 
 	public function getTotalHargaItems(){
-		$query = "SELECT SUM(total_harga_menu) as total FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
+		$query = "SELECT FORMAT(SUM(total_harga_menu),0) AS total FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
 		$result = $this->executeQuery($query);
 		$data = mysqli_fetch_assoc($result[0]);
 		$this->totalHargaItems = $data['total'];
