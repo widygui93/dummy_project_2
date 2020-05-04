@@ -160,7 +160,7 @@ if( isset($_POST["submit"]) ) {
 		 									<tr>
 		 										<td><?= $no; ?></td>
 		 										<td><?= $item["nama_menu"]; ?></td>
-		 										<td><?= $item["harga_menu"]; ?></td>
+		 										<td><?= $item["harga_menu_2"]; ?></td>
 		 										<td><?= $item["quantity"]; ?></td>
 		 										<td><?= $item["total_harga_menu"]; ?></td>
 		 										<td>

@@ -12,7 +12,7 @@ class Cart extends Db {
 	}
 
 	public function getItems(){
-		$query = "SELECT * FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
+		$query = "SELECT order_id, nama_menu, harga_menu, quantity, FORMAT(total_harga_menu,0) AS total_harga_menu, FORMAT(harga_menu,0) AS harga_menu_2 FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->items[] = $row;
