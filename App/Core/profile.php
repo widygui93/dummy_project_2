@@ -112,7 +112,12 @@ $jlhQuantity = $cart->getJumlahQuantity();
  					</div>
  					<div class="row">
  						<div class="col-sm">
- 							
+ 							<ul class="list-group list-group-flush">
+ 							  <li class="list-group-item">Username</li>
+ 							  <li class="list-group-item">Email</li>
+ 							  <li class="list-group-item">Address</li>
+ 							  <li class="list-group-item">Profile picture</li>
+ 							</ul>
  						</div>
  					</div>
  				</div>
