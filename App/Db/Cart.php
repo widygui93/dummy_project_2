@@ -21,7 +21,7 @@ class Cart extends Db {
 	}
 
 	public function getTotalHargaItems(){
-		$query = "SELECT FORMAT(SUM(total_harga_menu),0) AS total FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
+		$query = "SELECT  SUM(total_harga_menu) AS total, FORMAT(SUM(total_harga_menu),0) AS total_2 FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
 		$result = $this->executeQuery($query);
 		$data = mysqli_fetch_assoc($result[0]);
 		$this->totalHargaItems = $data['total'];
@@ -29,7 +29,7 @@ class Cart extends Db {
 		// 	$this->totalHargaItems = $item["total_harga_menu"] + $this->totalHargaItems;
 		// }
 
-		return $this->totalHargaItems;
+		return $data['total_2'];
 	}
 
 	public function getJumlahQuantity(){
