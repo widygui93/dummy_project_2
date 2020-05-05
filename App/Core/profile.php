@@ -117,6 +117,8 @@ $jlhQuantity = $cart->getJumlahQuantity();
  							  <li class="list-group-item">Email</li>
  							  <li class="list-group-item">Address</li>
  							  <li class="list-group-item">Profile picture</li>
+ 							  <li class="list-group-item">Password</li>
+ 							  <a href="#">change password</a>
  							</ul>
  						</div>
  					</div>
