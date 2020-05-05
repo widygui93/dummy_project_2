@@ -149,35 +149,39 @@ $items = $history->getHistory();
  					</div>
  					<div class="row">
  						<div class="col-sm">
- 							<div class="table-responsive">
-	 							<table border="1" cellpadding="10" cellspacing="0" class="table table-dark table-hover">
-	 								<tr>
-	 									<th>No</th>
-	 									<th>Payment Date</th>
-	 									<th>Destination Account Number</th>
-	 									<th>Total Transaction</th>
-	 									<th>Delivery Address</th>
-	 									<th>Detail</th>
-	 								</tr>
-	 								<?php $no=1; ?>
-	 								<?php foreach($items as $item) : ?>
+ 							<?php if(!empty($items)): ?>
+	 							<div class="table-responsive">
+		 							<table border="1" cellpadding="10" cellspacing="0" class="table table-dark table-hover">
 		 								<tr>
-		 									<td><?= $no; ?></td>
-		 									<td><?= $item["tgl_transfer"] ?></td>
-		 									<td><?= $item["no_rek_tujuan"] ?></td>
-		 									<td><?= $item["total_transfer"] ?></td>
-		 									<td><?= $item["alamat_order"] ?></td>
-		 									<td>
-		 										<form action="" method="post">
-		 											<input type="text" style="display: none;" name="id_transfer" value=<?= $item["id_transfer"]; ?> >
-		 											<button type="submit" name="detail" class="btn btn-success">View Detail</button>
-		 										</form>
-		 									</td>
+		 									<th>No</th>
+		 									<th>Payment Date</th>
+		 									<th>Destination Account Number</th>
+		 									<th>Total Transaction</th>
+		 									<th>Delivery Address</th>
+		 									<th>Detail</th>
 		 								</tr>
-		 								<?php $no++; ?>
-	 								<?php endforeach; ?>
-	 							</table>
- 							</div>
+		 								<?php $no=1; ?>
+		 								<?php foreach($items as $item) : ?>
+			 								<tr>
+			 									<td><?= $no; ?></td>
+			 									<td><?= $item["tgl_transfer"] ?></td>
+			 									<td><?= $item["no_rek_tujuan"] ?></td>
+			 									<td><?= $item["total_transfer"] ?></td>
+			 									<td><?= $item["alamat_order"] ?></td>
+			 									<td>
+			 										<form action="" method="post">
+			 											<input type="text" style="display: none;" name="id_transfer" value=<?= $item["id_transfer"]; ?> >
+			 											<button type="submit" name="detail" class="btn btn-success">View Detail</button>
+			 										</form>
+			 									</td>
+			 								</tr>
+			 								<?php $no++; ?>
+		 								<?php endforeach; ?>
+		 							</table>
+	 							</div>
+ 							<?php else: ?>
+ 								<div class="alert alert-primary" role="alert"><h3>You don't have any history yet. Please go to menu to order.</h3></div>
+ 							<?php endif; ?>
  						</div>
  					</div>
  				</div>
