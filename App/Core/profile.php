@@ -107,19 +107,25 @@ $jlhQuantity = $cart->getJumlahQuantity();
  				<div class="container-fluid main-content">
  					<div class="row">
  						<div class="col-sm">
- 							  <!-- <img src="profile-picture/widy.jfif" class="profile-pic"> -->
- 							  <!-- <span>widy</span> -->
  							<div class="profile-wrapper">
  								<div class="container">
  									<div class="row profile-header">
  										<div class="col">
- 											<!-- <div class="profile-header"> -->
- 												<img src="profile-picture/widy.jfif" class="profile-pic">
- 											<!-- </div> -->
+ 											<img src="profile-picture/widy.jfif" class="profile-pic">
+ 											<a href="#" class="badge badge-primary">edit picture</a>
  										</div>
  									</div>
  									<div class="row">
  										<div class="col">
+ 											<ul class="list-group">
+ 											  <li class="list-group-item list-group-item-success">user123</li>
+ 											  <li class="list-group-item">Register on 02/02/2020</li>
+ 											  <li class="list-group-item">Jalan Pulo Raya V No.14, Kebayoran Baru, Jakarta Selatan</li>
+ 											  <li class="list-group-item">+0839849893</li>
+ 											  <li class="list-group-item">johndoe@mail.com</li>
+ 											</ul>
+ 											<a href="#" class="badge badge-primary">edit profile</a>
+ 											<a href="#" class="badge badge-warning">Change password</a>
  											
  										</div>
  									</div>
