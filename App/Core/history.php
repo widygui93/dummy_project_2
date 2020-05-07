@@ -129,7 +129,7 @@ $items = $history->getHistory();
  											<strong>user123</strong>
  										</a>
  										<div class="dropdown-menu" aria-labelledby="user">
- 											<a href="#" class="dropdown-item">Profile</a>
+ 											<a href="profile.php" class="dropdown-item">Profile</a>
  											<a href="history.php" class="dropdown-item">History</a>
  										</div>
  									</li>

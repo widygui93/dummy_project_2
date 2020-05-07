@@ -110,7 +110,7 @@ $cart = new Cart();
                                         	<strong>user123</strong>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="user">
-                                            <a class="dropdown-item" href="#">Profile</a>
+                                            <a class="dropdown-item" href="App/Core/profile.php">Profile</a>
 									    	<a class="dropdown-item" href="App/Core/history.php">History</a>
                                         </div>
                                     </li>
