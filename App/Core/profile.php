@@ -107,22 +107,38 @@ $jlhQuantity = $cart->getJumlahQuantity();
  				<div class="container-fluid main-content">
  					<div class="row">
  						<div class="col-sm">
- 							<h2>Profile</h2>
+ 							  <!-- <img src="profile-picture/widy.jfif" class="profile-pic"> -->
+ 							  <!-- <span>widy</span> -->
+ 							<div class="profile-wrapper">
+ 								<div class="container">
+ 									<div class="row">
+ 										<div class="col">
+ 											<div class="profile-header">
+ 												<img src="profile-picture/widy.jfif" class="profile-pic">
+ 											</div>
+ 										</div>
+ 									</div>
+ 									<div class="row">
+ 										<div class="col">
+ 											
+ 										</div>
+ 									</div>
+ 								</div>
+ 							</div>
+ 							
  						</div>
- 					</div>
- 					<div class="row">
- 						<div class="col-sm">
- 							<ul class="list-group list-group-flush">
- 							  <li class="list-group-item">Username</li>
+ 						<!-- <div class="col-sm-8">
+ 							<ul class="list-group">
  							  <li class="list-group-item">Email</li>
  							  <li class="list-group-item">Address</li>
  							  <li class="list-group-item">Phone No</li>
  							  <li class="list-group-item">Register on</li>
  							  <li class="list-group-item">Profile picture</li>
  							  <li class="list-group-item">Password</li>
- 							  <a href="#">change password</a>
+ 							  
  							</ul>
- 						</div>
+ 							<a href="#">change password</a>
+ 						</div> -->
  					</div>
  				</div>
  			</div>

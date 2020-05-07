@@ -193,3 +193,33 @@ body {
 		margin-top: 107px;
 	}
 }
+
+/* core/profile.php */
+
+.profile-pic {
+	display: block;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+
+.profile-wrapper {
+	width: 500px;
+	height: 500px;
+	border: 1px solid black;
+	margin: 10px auto;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px rgba(116,116,106,.75), 
+			   -2px -2px 5px rgba(116,116,106,.75);
+}
+
+.profile-header {
+	/*border-bottom: 1px solid black;*/
+
+	margin-top: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #FFDFD3;
+}
