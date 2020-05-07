@@ -111,11 +111,11 @@ $jlhQuantity = $cart->getJumlahQuantity();
  							  <!-- <span>widy</span> -->
  							<div class="profile-wrapper">
  								<div class="container">
- 									<div class="row">
+ 									<div class="row profile-header">
  										<div class="col">
- 											<div class="profile-header">
+ 											<!-- <div class="profile-header"> -->
  												<img src="profile-picture/widy.jfif" class="profile-pic">
- 											</div>
+ 											<!-- </div> -->
  										</div>
  									</div>
  									<div class="row">
