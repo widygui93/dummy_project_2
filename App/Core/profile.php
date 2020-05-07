@@ -111,14 +111,23 @@ $jlhQuantity = $cart->getJumlahQuantity();
  								<div class="container">
  									<div class="row profile-header">
  										<div class="col">
- 											<img src="profile-picture/widy.jfif" class="profile-pic">
- 											<a href="#" class="badge badge-primary">edit picture</a>
+ 											<!-- <a href="#"> -->
+ 												<img src="profile-picture/widy.jfif" class="profile-pic">
+ 										 		<span><a href="#" class="badge badge-primary">edit</a></span>
+ 										 		<!-- <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">edit</button></span> -->
+ 										 	<!-- </a> -->
+				 							<!-- <form action="" method="post" enctype="multipart/form-data">
+											  <div class="form-group">
+											  	<input type="file" name="gambar">
+											  	<button type="submit" name="submit" class="btn btn-primary">edit</button>
+											  </div>
+											</form> -->
  										</div>
  									</div>
- 									<div class="row">
+ 									<div class="row profile-body">
  										<div class="col">
  											<ul class="list-group">
- 											  <li class="list-group-item list-group-item-success">user123</li>
+ 											  <li class="list-group-item">user123</li>
  											  <li class="list-group-item">Register on 02/02/2020</li>
  											  <li class="list-group-item">Jalan Pulo Raya V No.14, Kebayoran Baru, Jakarta Selatan</li>
  											  <li class="list-group-item">+0839849893</li>
