@@ -37,11 +37,13 @@ $jlhQuantity = $cart->getJumlahQuantity();
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
 </head>
 <body>
+	<!-- MODAL SECTION -->
+	<!-- MODAL EDIT PROFILE PIC -->
 	<div class="modal fade" id="modalEditProfilePic" tabindex="-1" role="dialog" aria-labelledby="editProfilePicture" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="editProfilePicture"></h5>
+					<h5 class="modal-title" id="editProfilePicture">Profile Picture</h5>
 					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -51,7 +53,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
 					  <div class="form-group">
 					    <label for="profilePicture">Edit your profile picture</label>
 					    <input type="file" class="form-control-file" id="profilePicture" name="gambar">
-					    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
+					    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 					  </div>
 					</form>
 				</div>
@@ -61,6 +63,81 @@ $jlhQuantity = $cart->getJumlahQuantity();
 			</div>
 		</div>
 	</div>
+	<!--END MODAL EDIT PROFILE PIC -->
+	<!-- MODAL EDIT PROFILE DATA -->
+	<div class="modal fade" id="modalEditProfileData" tabindex="-1" role="dialog" aria-labelledby="editProfileData" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editProfileData">Profile Data</h5>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+					  <div class="form-group">
+					  	<label for="InputAddress">Address</label>
+    					<input type="text" class="form-control" id="InputAddress" aria-describedby="addressHelp" placeholder="Enter address">
+					  </div>
+					  <div class="form-group">
+					  	<label for="InputPhoneNo">Phone No</label>
+    					<input type="text" class="form-control" id="InputPhoneNo" aria-describedby="phoneHelp" placeholder="Enter phone no">
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputEmail1">Email address</label>
+					    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+					    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					  </div>
+					  <div class="form-group">
+					    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+					  </div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END MODAL EDIT PROFILE DATA -->
+	<!-- MODAL EDIT PASSWORD -->
+	<div class="modal fade" id="modalEditPassword" tabindex="-1" role="dialog" aria-labelledby="editPassword" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editPassword">Change Password</h5>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+					  <div class="form-group">
+					    <label for="oldPassword">Current Password</label>
+					    <input type="password" class="form-control" id="oldPassword" placeholder="Current Password">
+					  </div>
+					  <div class="form-group">
+					    <label for="newPassword">New Password</label>
+					    <input type="password" class="form-control" id="newPassword" placeholder="New Password">
+					  </div>
+					  <div class="form-group">
+					    <label for="confirmNewPassword">Confirm New Password</label>
+					    <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm New Password">
+					  </div>
+					  <div class="form-group">
+					    <button type="submit" name="submit" class="btn btn-primary">Change</button>
+					  </div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END MODAL EDIT PASSWORD -->
+	<!-- END MODAL SECTION -->
  	<div class="container-fluid">
  		<div class="row min-vh-100">
  			<div class="col-12">
@@ -142,8 +219,8 @@ $jlhQuantity = $cart->getJumlahQuantity();
  											  <li class="list-group-item">+0839849893</li>
  											  <li class="list-group-item">johndoe@mail.com</li>
  											</ul>
- 											<a href="#" class="badge badge-primary">edit profile</a>
- 											<a href="#" class="badge badge-warning">Change password</a>
+ 											<a href="#" class="badge badge-primary" data-toggle="modal" data-target="#modalEditProfileData">edit profile</a>
+ 											<a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalEditPassword">Change password</a>
  											
  										</div>
  									</div>
