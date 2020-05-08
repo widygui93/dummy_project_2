@@ -37,19 +37,23 @@ $jlhQuantity = $cart->getJumlahQuantity();
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
 </head>
 <body>
-	<div class="modal fade" id="modalDetailTransaction" tabindex="-1" role="dialog" aria-labelledby="detailTransaction" aria-hidden="true">
+	<div class="modal fade" id="modalEditProfilePic" tabindex="-1" role="dialog" aria-labelledby="editProfilePicture" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="detailTransaction"></h5>
+					<h5 class="modal-title" id="editProfilePicture"></h5>
 					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					
-					
-
+					<form>
+					  <div class="form-group">
+					    <label for="profilePicture">Edit your profile picture</label>
+					    <input type="file" class="form-control-file" id="profilePicture" name="gambar">
+					    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
+					  </div>
+					</form>
 				</div>
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
@@ -118,7 +122,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
  										<div class="col">
  											<!-- <a href="#"> -->
  												<img src="profile-picture/widy.jfif" class="profile-pic">
- 										 		<span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">edit</button></span>
+ 										 		<span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditProfilePic">edit</button></span>
  										 		<!-- <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">edit</button></span> -->
  										 	<!-- </a> -->
 				 							<!-- <form action="" method="post" enctype="multipart/form-data">
