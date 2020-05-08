@@ -240,7 +240,7 @@ body {
 	opacity: 0;
 }
 
-.profile-header:hover span {
+.profile-header span:hover {
 	opacity: 1;
 }
 

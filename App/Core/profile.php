@@ -118,7 +118,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
  										<div class="col">
  											<!-- <a href="#"> -->
  												<img src="profile-picture/widy.jfif" class="profile-pic">
- 										 		<span><a href="#" class="badge badge-primary">edit</a></span>
+ 										 		<span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">edit</button></span>
  										 		<!-- <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">edit</button></span> -->
  										 	<!-- </a> -->
 				 							<!-- <form action="" method="post" enctype="multipart/form-data">
