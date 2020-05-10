@@ -151,7 +151,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
  										<span>+123-456-7890</span>
  									</li>
  									<li>
- 										<img src="svg/mail-white-18dp.svg" alt="icon phone">
+ 										<img src="svg/mail-white-18dp.svg" alt="icon mail">
  										<span>mail@ecom.com</span>
  									</li>
  								</ul>
@@ -189,7 +189,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
  										</div>
  									</li>
  								</ul>
- 								<a href="cart.php" class="header-item">Cart<span class="badge badge-success"><?= $jlhQuantity; ?></span></a>
+ 								<a href="cart.php" class="header-item"><img src="svg/shopping_cart-black-24dp.svg" alt="icon cart"><span class="badge badge-success"><?= $jlhQuantity; ?></span></a>
  							</div>
  						</div>
  					</div>
