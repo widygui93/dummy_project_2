@@ -197,17 +197,8 @@ $jlhQuantity = $cart->getJumlahQuantity();
  								<div class="container">
  									<div class="row profile-header">
  										<div class="col">
- 											<!-- <a href="#"> -->
- 												<img src="profile-picture/widy.jfif" class="profile-pic">
- 										 		<span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditProfilePic">edit</button></span>
- 										 		<!-- <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">edit</button></span> -->
- 										 	<!-- </a> -->
-				 							<!-- <form action="" method="post" enctype="multipart/form-data">
-											  <div class="form-group">
-											  	<input type="file" name="gambar">
-											  	<button type="submit" name="submit" class="btn btn-primary">edit</button>
-											  </div>
-											</form> -->
+											<img src="profile-picture/widy.jfif" class="profile-pic">
+									 		<span><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalEditProfilePic">edit</button></span>
  										</div>
  									</div>
  									<div class="row profile-body">
