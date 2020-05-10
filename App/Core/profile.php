@@ -146,8 +146,14 @@ $jlhQuantity = $cart->getJumlahQuantity();
  						<div class="row">
  							<div class="col-auto mr-auto">
  								<ul class="top-nav">
- 									<li><span>+123-456-7890</span></li>
- 									<li><span>mail@ecom.com</span></li>
+ 									<li>
+ 										<img src="svg/smartphone-white-18dp.svg" alt="icon phone">
+ 										<span>+123-456-7890</span>
+ 									</li>
+ 									<li>
+ 										<img src="svg/mail-white-18dp.svg" alt="icon phone">
+ 										<span>mail@ecom.com</span>
+ 									</li>
  								</ul>
  							</div>
  							<div class="col-auto">

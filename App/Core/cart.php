@@ -83,9 +83,11 @@ if( isset($_POST["submit"]) ) {
  							<div class="col-auto mr-auto">
  								<ul class="top-nav">
  									<li>
+ 										<img src="svg/smartphone-white-18dp.svg" alt="icon phone">
  										<span>+123-456-7890</span>
  									</li>
  									<li>
+ 										<img src="svg/mail-white-18dp.svg" alt="icon phone">
  										<span>mail@ecom.com</span>
  									</li>
  								</ul>
