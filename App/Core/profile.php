@@ -205,10 +205,22 @@ $jlhQuantity = $cart->getJumlahQuantity();
  										<div class="col">
  											<ul class="list-group">
  											  <li class="list-group-item list-group-item-primary"><h3>user123</h3></li>
- 											  <li class="list-group-item">Register on 02/02/2020</li>
- 											  <li class="list-group-item">Jalan Pulo Raya V No.14, Kebayoran Baru, Jakarta Selatan</li>
- 											  <li class="list-group-item">+0839849893</li>
- 											  <li class="list-group-item">johndoe@mail.com</li>
+ 											  <li class="list-group-item">
+ 											  	<img src="svg/today-black-18dp.svg" alt="icon date">
+ 											  	<span>Register on 02/02/2020</span>
+ 											  </li>
+ 											  <li class="list-group-item">
+ 											  	<img src="svg/home-black-18dp.svg" alt="icon address">
+ 											  	<span>Jalan Pulo Raya V No.14, Kebayoran Baru, Jakarta Selatan</span>
+ 											  </li>
+ 											  <li class="list-group-item">
+ 											  	<img src="svg/phone-black-18dp.svg" alt="icon phone">
+ 											  	<span>+0839849893</span>
+ 											  </li>
+ 											  <li class="list-group-item">
+ 											  	<img src="svg/mail-black-18dp.svg" alt="icon mail">
+ 											  	<span>johndoe@mail.com</span>
+ 											  </li>
  											</ul>
  											<a href="#" class="badge badge-primary" data-toggle="modal" data-target="#modalEditProfileData">edit profile</a>
  											<a href="#" class="badge badge-warning" data-toggle="modal" data-target="#modalEditPassword">Change password</a>

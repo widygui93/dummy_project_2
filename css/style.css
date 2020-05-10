@@ -246,5 +246,9 @@ body {
 .profile-body {
 	padding-top: 5px;
 	padding-bottom: 5px;
+	/*text-align: center;*/
+}
+
+.profile-body h3 {
 	text-align: center;
 }
