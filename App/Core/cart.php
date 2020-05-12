@@ -118,7 +118,8 @@ if( isset($_POST["submit"]) ) {
  								<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
  									<li class="nav-item dropdown">
  										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
- 											<span class="user-photo"></span>
+ 											<!-- <span class="user-photo"></span> -->
+ 											<img src="profile-picture/user-photo.png" class="user-photo">
  											<strong>user123</strong>
  										</a>
  										<div class="dropdown-menu" aria-labelledby="user">
