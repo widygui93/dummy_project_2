@@ -49,11 +49,13 @@ $jlhQuantity = $cart->getJumlahQuantity();
 					</button>
 				</div>
 				<div class="modal-body">
-					<form>
+					<form action="" method="post" enctype="multipart/form-data">
 					  <div class="form-group">
 					    <label for="profilePicture">Edit your profile picture</label>
-					    <input type="file" class="form-control-file" id="profilePicture" name="gambar">
-					    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+					  </div>
+					  <div class="form-group">
+					  	<input type="file" id="profilePicture" name="gambar">
+					    <button type="submit" name="submitEditProfilePic" class="btn btn-primary">Submit</button>
 					  </div>
 					</form>
 				</div>
