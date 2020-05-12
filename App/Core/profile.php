@@ -77,7 +77,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
 					</button>
 				</div>
 				<div class="modal-body">
-					<form>
+					<form action="" method="post">
 					  <div class="form-group">
 					  	<label for="InputAddress">Address</label>
     					<input type="text" class="form-control" id="InputAddress" aria-describedby="addressHelp" placeholder="Enter address">
@@ -89,10 +89,10 @@ $jlhQuantity = $cart->getJumlahQuantity();
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Email address</label>
 					    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-					    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					    <small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
 					  </div>
 					  <div class="form-group">
-					    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+					    <button type="submit" name="submitEditProfileData" class="btn btn-primary">Submit</button>
 					  </div>
 					</form>
 				</div>
