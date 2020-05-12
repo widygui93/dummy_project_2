@@ -4,13 +4,14 @@ date_default_timezone_set("Asia/Jakarta");
 require_once '../init.php';
 
 use App\Db\Cart as Cart;
+use App\Db\Profile as Profile;
 
 $cart = new Cart();
-
-
-
+$profile = new Profile();
 
 $jlhQuantity = $cart->getJumlahQuantity();
+
+$userName = $profile->getUserName();
 
 
 
@@ -213,7 +214,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
  									<div class="row profile-body">
  										<div class="col">
  											<ul class="list-group">
- 											  <li class="list-group-item list-group-item-primary"><h3>user123</h3></li>
+ 											  <li class="list-group-item list-group-item-primary"><h3><?= $userName; ?></h3></li>
  											  <li class="list-group-item">
  											  	<img src="svg/today-black-18dp.svg" alt="icon date">
  											  	<span>Register on 02/02/2020</span>
