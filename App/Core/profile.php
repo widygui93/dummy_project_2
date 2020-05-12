@@ -12,7 +12,10 @@ $profile = new Profile();
 $jlhQuantity = $cart->getJumlahQuantity();
 
 $userName = $profile->getUserName();
-
+$registerDate = $profile->getRegisterDate();
+$address = $profile->getAddress();
+$phoneNo = $profile->getPhoneNo();
+$email = $profile->getEmail();
 
 
 
@@ -217,19 +220,19 @@ $userName = $profile->getUserName();
  											  <li class="list-group-item list-group-item-primary"><h3><?= $userName; ?></h3></li>
  											  <li class="list-group-item">
  											  	<img src="svg/today-black-18dp.svg" alt="icon date">
- 											  	<span>Register on 02/02/2020</span>
+ 											  	<span>Register on <?= $registerDate; ?></span>
  											  </li>
  											  <li class="list-group-item">
  											  	<img src="svg/home-black-18dp.svg" alt="icon address">
- 											  	<span>Jalan Pulo Raya V No.14, Kebayoran Baru, Jakarta Selatan</span>
+ 											  	<span><?= $address; ?></span>
  											  </li>
  											  <li class="list-group-item">
  											  	<img src="svg/phone-black-18dp.svg" alt="icon phone">
- 											  	<span>+0839849893</span>
+ 											  	<span>+<?= $phoneNo; ?></span>
  											  </li>
  											  <li class="list-group-item">
  											  	<img src="svg/mail-black-18dp.svg" alt="icon mail">
- 											  	<span>johndoe@mail.com</span>
+ 											  	<span><?= $email; ?></span>
  											  </li>
  											</ul>
  											<a href="#" class="badge badge-primary" data-toggle="modal" data-target="#modalEditProfileData">edit profile</a>
