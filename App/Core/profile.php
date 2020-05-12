@@ -203,7 +203,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
  								<div class="container">
  									<div class="row profile-header">
  										<div class="col">
-											<img src="profile-picture/widy.jfif" class="profile-pic">
+											<img src="profile-picture/user-photo.png" class="profile-pic">
 									 		<span><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalEditProfilePic">edit</button></span>
  										</div>
  									</div>
