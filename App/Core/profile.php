@@ -114,7 +114,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
 					</button>
 				</div>
 				<div class="modal-body">
-					<form>
+					<form action="" method="post">
 					  <div class="form-group">
 					    <label for="oldPassword">Current Password</label>
 					    <input type="password" class="form-control" id="oldPassword" placeholder="Current Password">
@@ -128,7 +128,7 @@ $jlhQuantity = $cart->getJumlahQuantity();
 					    <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm New Password">
 					  </div>
 					  <div class="form-group">
-					    <button type="submit" name="submit" class="btn btn-primary">Change</button>
+					    <button type="submit" name="submitEditPassword" class="btn btn-primary">Change</button>
 					  </div>
 					</form>
 				</div>
