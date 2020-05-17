@@ -204,7 +204,7 @@ $email = $profile->getEmail();
  				</header>
  			</div>
  			<div class="col-12">
- 				<div class="container-fluid main-content">
+ 				<div class="container main-content">
  					<div class="row">
  						<div class="col-sm">
  							<div class="profile-wrapper">
