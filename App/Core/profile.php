@@ -146,7 +146,7 @@ $email = $profile->getEmail();
 	<!--END MODAL EDIT PASSWORD -->
 	<!-- END MODAL SECTION -->
  	<div class="container-fluid">
- 		<div class="row min-vh-100">
+ 		<div class="row">
  			<div class="col-12">
  				<header class="row">
  					<div class="col-12 bg-dark py-2 d-md-block">
@@ -212,7 +212,9 @@ $email = $profile->getEmail();
  									<div class="row profile-header">
  										<div class="col">
 											<img src="profile-picture/user-photo.png" class="profile-pic">
-									 		<span><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalEditProfilePic">edit</button></span>
+ 										</div>
+ 										<div class="col profile-pic-blurrer">
+ 											<span><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalEditProfilePic">edit</button></span>
  										</div>
  									</div>
  									<div class="row profile-body">
@@ -245,18 +247,6 @@ $email = $profile->getEmail();
  							</div>
  							
  						</div>
- 						<!-- <div class="col-sm-8">
- 							<ul class="list-group">
- 							  <li class="list-group-item">Email</li>
- 							  <li class="list-group-item">Address</li>
- 							  <li class="list-group-item">Phone No</li>
- 							  <li class="list-group-item">Register on</li>
- 							  <li class="list-group-item">Profile picture</li>
- 							  <li class="list-group-item">Password</li>
- 							  
- 							</ul>
- 							<a href="#">change password</a>
- 						</div> -->
  					</div>
  				</div>
  			</div>
