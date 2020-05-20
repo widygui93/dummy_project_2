@@ -13,6 +13,20 @@ $jlhQuantity = $cart->getJumlahQuantity();
 
 $userName = $profile->getUserName();
 $registerDate = $profile->getRegisterDate();
+
+if( isset($_POST["submitEditProfileData"]) ) {
+
+	if( $profile->editProfileData($_POST, $userName) > 0 ) {
+		echo "
+	        <script>
+	            alert('Edit data successfully');
+	        </script>
+	    ";
+	} 
+
+}
+
+
 $address = $profile->getAddress();
 $phoneNo = $profile->getPhoneNo();
 $email = $profile->getEmail();
@@ -85,15 +99,15 @@ $email = $profile->getEmail();
 					<form action="" method="post">
 					  <div class="form-group">
 					  	<label for="InputAddress">Address</label>
-    					<input type="text" class="form-control" id="InputAddress" aria-describedby="addressHelp" placeholder="Enter address">
+    					<input type="text" name="address" class="form-control" id="InputAddress" aria-describedby="addressHelp" placeholder="Enter address" value="<?= $address; ?>" required>
 					  </div>
 					  <div class="form-group">
 					  	<label for="InputPhoneNo">Phone No</label>
-    					<input type="text" class="form-control" id="InputPhoneNo" aria-describedby="phoneHelp" placeholder="Enter phone no">
+    					<input type="text" name="phoneno" class="form-control" id="InputPhoneNo" aria-describedby="phoneHelp" placeholder="Enter phone no" value="<?= $phoneNo; ?>" required>
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Email address</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+					    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="<?= $email; ?>" required>
 					    <small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
 					  </div>
 					  <div class="form-group">

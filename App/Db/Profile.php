@@ -52,6 +52,16 @@ class Profile extends Db {
 		return $this->email;
 	}
 
+	public function editProfileData($data, $userName){
+		$dataAddress = htmlspecialchars($data["address"]);
+		$dataPhoneNo = htmlspecialchars($data["phoneno"]);
+		$dataEmail = htmlspecialchars($data["email"]);
+
+		$query = "UPDATE user SET address = '$dataAddress', email = '$dataEmail', phone_no = '$dataPhoneNo' WHERE username = '$userName' ";
+		$result = $this->executeQuery($query);
+		return $result[1];
+	}
+
 
 
 
