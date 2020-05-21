@@ -52,20 +52,26 @@ $registerDate = $profile->getRegisterDate();
 
 			if( $profile->editProfileData($_POST, $userName) > 0 ) {
 				
-				echo "
-			        <script>
-
-			           swal('Success!', 'Edit data successfully', 'success');
-			        </script>
-			    ";
+				echo "<script>swal('Success!', 'Edit data successfully', 'success');</script>";
 			} 
 
 		}
 
+		if( isset($_POST["submitEditProfilePic"]) ){
+			
+
+			if( $profile->editProfilePic($userName) > 0 ){
+				echo "<script>swal('Success!', 'Edit profile picture successfully', 'success');</script>";
+			} else {
+				echo "<script>swal('Failed!', 'Edit profile picture failed', 'error');</script>";
+			}
+			
+		}
 
 		$address = $profile->getAddress();
 		$phoneNo = $profile->getPhoneNo();
 		$email = $profile->getEmail();
+		$profilePic = $profile->getProfilePic();
 	?>
 	<!-- MODAL SECTION -->
 	<!-- MODAL EDIT PROFILE PIC -->
@@ -236,7 +242,7 @@ $registerDate = $profile->getRegisterDate();
  								<div class="container">
  									<div class="row profile-header">
  										<div class="col">
-											<img src="profile-picture/user-photo.png" class="profile-pic">
+											<img src="profile-picture/<?= $profilePic; ?>" class="profile-pic">
  										</div>
  										<div class="col profile-pic-blurrer">
  											<span><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalEditProfilePic">edit</button></span>

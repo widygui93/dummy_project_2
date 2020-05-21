@@ -32,7 +32,7 @@ class Db {
 		}
 	}
 
-	protected function upload(){
+	protected function upload($folder){
 		$namaFile = $_FILES['gambar']['name'];
 		$ukuranFile = $_FILES['gambar']['size'];
 		$error = $_FILES['gambar']['error'];
@@ -71,7 +71,7 @@ class Db {
 		$namaFileBaru .= '.';
 		$namaFileBaru .= $ekstensiGambar;
 
-		move_uploaded_file($tmpName, 'img-transfer/' . $namaFileBaru);
+		move_uploaded_file($tmpName, $folder . $namaFileBaru);
 
 		return $namaFileBaru;
 	}
