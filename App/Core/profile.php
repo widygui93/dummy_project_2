@@ -219,7 +219,7 @@ $registerDate = $profile->getRegisterDate();
  									<li class="nav-item dropdown">
  										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  											<!-- <span class="user-photo"></span> -->
- 											<img src="profile-picture/user-photo.png" class="user-photo">
+ 											<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
  											<strong>user123</strong>
  										</a>
  										<div class="dropdown-menu" aria-labelledby="user">
