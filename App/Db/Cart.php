@@ -62,7 +62,8 @@ class Cart extends Db {
 		$query = '';
 		$idTrf = '';
 
-		$gambar = $this->upload();
+		$pictureFolder = "img-transfer/";
+		$gambar = $this->upload($pictureFolder);
 		if( !$gambar ){
 			return false;
 		}
