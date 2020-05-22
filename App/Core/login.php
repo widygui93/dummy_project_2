@@ -45,10 +45,12 @@
  					</div>
  					<div class="col-12 bg-white pt-4">
  						<div class="row">
- 							<div class="col-lg" style="border: 1px solid black">
- 								<div class="site-logo text-center text-lg-left"><a href="../../index.php">Sunny Cafe</a></div>
+ 							<div class="col-lg">
+ 								<div class="site-logo text-center"><a href="../../index.php">Sunny Cafe</a></div>
  							</div>
- 							<div class="col-lg" style="border: 1px solid black">
+ 						</div>
+ 						<div class="row">
+ 							<div class="col-lg">
  								<div class="menu text-center">
  									<a href="#">Chinese</a>
  									<a href="#">Western</a>
