@@ -2,8 +2,12 @@
 
 require_once 'App/init.php';
 use App\Db\Cart as Cart;
+use App\Db\Profile as Profile;
 
 $cart = new Cart();
+$profile = new Profile();
+
+$profilePic = $profile->getProfilePic();
 
  ?>
 
@@ -111,7 +115,7 @@ $cart = new Cart();
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         	<!-- <span class="user-photo"></span> -->
-                                        	<img src="App/Core/profile-picture/user-photo.png" class="user-photo">
+                                        	<img src="App/Core/profile-picture/<?= $profilePic; ?>" class="user-photo">
                                         	<strong>user123</strong>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="user">
