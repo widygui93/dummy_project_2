@@ -51,7 +51,7 @@ body {
 
 .top-nav li {
     display: inline;
-    padding: .1rem .5rem;
+    /*padding: .1rem .5rem;*/
     border-right: 1px solid #fff;
 }
 
@@ -70,6 +70,14 @@ body {
 
 .top-nav li a:hover, .top-nav li a:focus {
     color: #fff;
+}
+
+img[alt$="mail"] {
+	margin-left: 3px;
+}
+
+a[href="register.php"] {
+	margin-right: 3px;
 }
 
 .site-logo {
