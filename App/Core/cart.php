@@ -4,8 +4,12 @@ date_default_timezone_set("Asia/Jakarta");
 require_once '../init.php';
 
 use App\Db\Cart as Cart;
+use App\Db\Profile as Profile;
 
 $cart = new Cart();
+$profile = new Profile();
+
+$profilePic = $profile->getProfilePic();
 
 if( isset($_POST["delete"]) ){
 	if( $cart->removeItem($_POST) < 0 ){
@@ -120,7 +124,7 @@ if( isset($_POST["submit"]) ) {
  									<li class="nav-item dropdown">
  										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  											<!-- <span class="user-photo"></span> -->
- 											<img src="profile-picture/user-photo.png" class="user-photo">
+ 											<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
  											<strong>user123</strong>
  										</a>
  										<div class="dropdown-menu" aria-labelledby="user">

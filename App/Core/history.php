@@ -5,9 +5,11 @@ require_once '../init.php';
 
 use App\Db\Cart as Cart;
 use App\Db\History as History;
+use App\Db\Profile as Profile;
 
 $cart = new Cart();
 $history = new History();
+$profile = new Profile();
 
 if( isset($_POST["detail"]) ){
  	$details = $history->getDetailHistory($_POST["id_transfer"]);
@@ -26,6 +28,7 @@ if( isset($_POST["detail"]) ){
 
 $jlhQuantity = $cart->getJumlahQuantity();
 $items = $history->getHistory();
+$profilePic = $profile->getProfilePic();
 
 
 
@@ -133,7 +136,7 @@ $items = $history->getHistory();
  									<li class="nav-item dropdown">
  										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  											<!-- <span class="user-photo"></span> -->
- 											<img src="profile-picture/user-photo.png" class="user-photo">
+ 											<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
  											<strong>user123</strong>
  										</a>
  										<div class="dropdown-menu" aria-labelledby="user">
