@@ -4,17 +4,18 @@ date_default_timezone_set("Asia/Jakarta");
 
 require_once '../init.php';
 
-// use App\Db\Cart as Cart;
-use App\Db\Profile as Profile;
-
-// $cart = new Cart();
-$profile = new Profile();
 
 if( isset($_SESSION["login"]) ) {
 	//arahkan balik ke index.php
 	header('Location: ../../index.php');
 	exit;
 }
+
+// use App\Db\Cart as Cart;
+use App\Db\Profile as Profile;
+
+// $cart = new Cart();
+$profile = new Profile();
 
 
 
