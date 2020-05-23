@@ -229,6 +229,9 @@ $registerDate = $profile->getRegisterDate();
  									</li>
  								</ul>
  								<a href="cart.php" class="header-item"><img src="svg/shopping_cart-black-24dp.svg" alt="icon cart"><span class="badge badge-success"><?= $jlhQuantity; ?></span></a>
+ 								<a href="history.php" class="header-item">
+ 									<img src="svg/receipt-black-24dp.svg" alt="icon history">
+ 								</a>
  							</div>
  						</div>
  					</div>
