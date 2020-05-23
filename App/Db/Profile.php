@@ -83,6 +83,10 @@ class Profile extends Db {
 		return $result[1];
 	}
 
+	public function register($data){
+		return 1 ;
+	}
+
 
 
 

@@ -1,11 +1,22 @@
 <?php 
 session_start();
+date_default_timezone_set("Asia/Jakarta");
+
+require_once '../init.php';
+
+// use App\Db\Cart as Cart;
+use App\Db\Profile as Profile;
+
+// $cart = new Cart();
+$profile = new Profile();
 
 if( isset($_SESSION["login"]) ) {
 	//arahkan balik ke index.php
 	header('Location: ../../index.php');
 	exit;
 }
+
+
 
 
 
@@ -30,6 +41,14 @@ if( isset($_SESSION["login"]) ) {
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
+	<?php 
+		if( isset($_POST["register"]) ) {
+			if( $profile->register($_POST) > 0 ) {
+				
+				echo "<script>swal('Success!', 'Register successfully', 'success');</script>";
+			} 
+		}
+	?>
  	<div class="container-fluid">
  		<div class="row">
  			<div class="col-12">
@@ -110,7 +129,7 @@ if( isset($_SESSION["login"]) ) {
  						<div class="col-lg-4 col-md-6 col-sm-8 mx-auto bg-white py-3 mb-4">
  							<div class="row">
  								<div class="col-12">
- 									<form action="">
+ 									<form action="" method="post">
  										<div class="form-group">
  											<label for="username">Username</label>
  											<input type="text" name="username" id="username" class="form-control" required>
@@ -136,7 +155,7 @@ if( isset($_SESSION["login"]) ) {
  											<input type="password" name="password-confirm" id="password-confirm" class="form-control" required></input>
  										</div>
  										<div class="form-group">
- 											<button type="submit" class="btn btn-outline-dark">Submit</button>
+ 											<button type="submit" name="register" class="btn btn-outline-dark">Submit</button>
  										</div>
  									</form>
  								</div>
