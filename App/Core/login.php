@@ -1,3 +1,16 @@
+<?php 
+session_start();
+
+if( isset($_SESSION["login"]) ) {
+	//arahkan balik ke index.php
+	header('Location: ../../index.php');
+	exit;
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,18 +58,42 @@
  					</div>
  					<div class="col-12 bg-white pt-4">
  						<div class="row">
- 							<div class="col-lg">
- 								<div class="site-logo text-center"><a href="../../index.php">Sunny Cafe</a></div>
+ 							<div class="col-lg-4">
+ 								<div class="site-logo text-center text-center-left"><a href="../../index.php">Sunny Cafe</a></div>
  							</div>
- 						</div>
- 						<div class="row">
- 							<div class="col-lg">
+ 							<div class="col-lg-4">
  								<div class="menu text-center">
  									<a href="#">Chinese</a>
  									<a href="#">Western</a>
  									<a href="#">Indonesian</a>
  									<a href="#">Japanese</a>
  								</div>
+ 							</div>
+ 							<div class="col-lg-4 header-item-holder text-center text-lg-right">
+ 								<?php if( isset($_SESSION["login"]) ) : ?>
+	 								<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+	 									<li class="nav-item dropdown">
+	 										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	 											<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
+	 											<strong>user123</strong>
+	 										</a>
+	 										<div class="dropdown-menu" aria-labelledby="user">
+	 											<a href="profile.php" class="dropdown-item">Profile</a>
+	 											<a href="history.php" class="dropdown-item">History</a>
+	 										</div>
+	 									</li>
+	 								</ul>
+ 								<?php endif; ?>
+ 								<a href="cart.php" class="header-item">
+ 									<img src="svg/shopping_cart-black-24dp.svg" alt="icon cart">
+ 									<?php if( isset($_SESSION["login"]) ) : ?>
+ 										<span class="badge badge-success"><?= $jlhQuantity; ?></span>
+ 									<?php endif; ?>
+ 									<span class="badge badge-success">0</span>
+ 								</a>
+ 								<a href="history.php" class="header-item">
+ 									<img src="svg/receipt-black-24dp.svg" alt="icon history">
+ 								</a>
  							</div>
  						</div>
  					</div>
