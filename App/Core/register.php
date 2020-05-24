@@ -133,7 +133,8 @@ $profile = new Profile();
  									<form action="" method="post">
  										<div class="form-group">
  											<label for="username">Username</label>
- 											<input type="text" name="username" id="username" minlength="6" maxlength="12" class="form-control" required>
+ 											<input type="text" name="username" id="username" minlength="6" maxlength="12" pattern="^[a-zA-Z0-9]*$" class="form-control" required>
+ 											<small>Format: Alphanumeric only</small>
  										</div>
  										<div class="form-group">
  											<label for="email">Email</label>
