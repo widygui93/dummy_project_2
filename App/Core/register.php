@@ -149,11 +149,11 @@ $profile = new Profile();
  										</div>
  										<div class="form-group">
  											<labe for="password">Password</label>
- 											<input type="password" name="password" id="password" class="form-control" required></input>
+ 											<input type="password" name="password" id="password" minlength="8" maxlength="12" class="form-control" required></input>
  										</div>
  										<div class="form-group">
  											<labe for="password-confirm">Confirm Password</label>
- 											<input type="password" name="password-confirm" id="password-confirm" class="form-control" required></input>
+ 											<input type="password" name="password-confirm" id="password-confirm" minlength="8" maxlength="12" class="form-control" required></input>
  										</div>
  										<div class="form-group">
  											<button type="submit" name="register" class="btn btn-outline-dark">Submit</button>
