@@ -84,7 +84,47 @@ class Profile extends Db {
 	}
 
 	public function register($data){
-		return 1 ;
+
+		$username = strtolower(stripslashes($data["username"]));
+		$email = strtolower(stripslashes($data["email"]));
+		$address = strtolower(stripslashes($data["address"]));
+		$phone = stripslashes($data["phone"]);
+		$password = $this->escapeStr($data["password"]);
+		$passwordConfirm = $this->escapeStr($data["password-confirm"]);
+		$tglDaftar=date("Y-m-d",strtotime(date("Y-M-d")));
+
+		// cek username sudah ada atau belum
+		$query = "SELECT username FROM user WHERE username = '$username'";
+		$result = $this->executeQuery($query);
+
+		if( mysqli_fetch_assoc($result[0]) ){
+			echo "
+			    <script>swal('Failed!', 'Username already existed', 'error');</script>
+			";
+		    return -1;
+		}
+
+
+		// cek konfirmasi password
+		if ( $password !== $passwordConfirm ) {
+			echo "
+				<script>swal('Failed!', 'Password does not match with Confirm Password', 'error');</script>
+			";
+		    return -1;
+		}
+
+		// enkripsi password
+		$password = password_hash($password, PASSWORD_DEFAULT);
+
+		// tambahkan user baru ke database
+		$query = "INSERT INTO user
+					VALUES
+				  ('', '$username', '$password', '$address', 'user-photo.png', '$email', '$phone', '$tglDaftar')
+				";
+		$result = $this->executeQuery($query);
+		return $result[1];
+
+
 	}
 
 

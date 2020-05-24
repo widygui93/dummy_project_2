@@ -76,6 +76,10 @@ class Db {
 		return $namaFileBaru;
 	}
 
+	protected function escapeStr($str){
+		return mysqli_real_escape_string($this->connect(), $str);
+	}
+
 	
 }
 
