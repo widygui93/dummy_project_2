@@ -114,6 +114,14 @@ class Profile extends Db {
 	        return -1;
 		}
 
+		// cek panjang karakter username diantara 6 s/d 12
+		if(preg_match('/^[a-z0-9]{6,12}$/', $username) === 0 ){
+		    echo "
+				<script>swal('Failed!', 'Range length of username is 6 - 12', 'error');</script>
+		    ";
+		    return -1;
+		} 
+
 		// cek konfirmasi password
 		if ( $password !== $passwordConfirm ) {
 			echo "

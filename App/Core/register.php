@@ -134,7 +134,7 @@ $profile = new Profile();
  										<div class="form-group">
  											<label for="username">Username</label>
  											<input type="text" name="username" id="username" minlength="6" maxlength="12" pattern="^[a-zA-Z0-9]*$" class="form-control" required>
- 											<small>Format: Alphanumeric only</small>
+ 											<small>Format: Alphanumeric only, Length: 6 - 12</small>
  										</div>
  										<div class="form-group">
  											<label for="email">Email</label>
