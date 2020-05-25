@@ -104,6 +104,15 @@ class Profile extends Db {
 		    return -1;
 		}
 
+		// cek username hanya alphanumeric
+		// jika terdapat character selain a-z dan A-Z dan 0-9
+		// maka return 1
+		if (preg_match('/[^a-z0-9]/', $username) === 1  ) {
+	        echo "
+	    		<script>swal('Failed!', 'Username must be alphanumeric only', 'error');</script>
+	        ";
+	        return -1;
+		}
 
 		// cek konfirmasi password
 		if ( $password !== $passwordConfirm ) {
