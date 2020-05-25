@@ -122,6 +122,14 @@ class Profile extends Db {
 		    return -1;
 		} 
 
+		// cek username mesti harus ada alphabet dan numeric
+		if(preg_match('/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/', $username) === 0 ){
+		    echo "
+				<script>swal('Failed!', 'Username must contain both alphanumeric', 'error');</script>
+		    ";
+		    return -1;
+		}
+
 		// cek konfirmasi password
 		if ( $password !== $passwordConfirm ) {
 			echo "
