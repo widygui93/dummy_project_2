@@ -138,6 +138,14 @@ class Profile extends Db {
 		    return -1;
 		}
 
+		// cek phone no dengan length antara 10 - 12 digit
+		if(preg_match('/^\d{10,12}$/', $phone) === 0){
+		    echo "
+				<script>swal('Failed!', 'Phone no length 10 - 12 digit', 'error');</script>
+		    ";
+		    return -1;
+		}
+
 		// cek konfirmasi password
 		if ( $password !== $passwordConfirm ) {
 			echo "
