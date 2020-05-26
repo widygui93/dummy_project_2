@@ -130,6 +130,14 @@ class Profile extends Db {
 		    return -1;
 		}
 
+		// cek email dengan format yourname@domain.com(.id)
+		if(preg_match('/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/', $email) === 0){
+		    echo "
+				<script>swal('Failed!', 'Email must follow this format: yourname@domain.com(.id)', 'error');</script>
+		    ";
+		    return -1;
+		}
+
 		// cek konfirmasi password
 		if ( $password !== $passwordConfirm ) {
 			echo "
