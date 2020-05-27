@@ -110,17 +110,17 @@ if( isset($_SESSION["login"]) ) {
  						<div class="col-lg-4 col-md-6 col-sm-8 mx-auto bg-white py-3 mb-4">
  							<div class="row">
  								<div class="col-12">
- 									<form action="">
+ 									<form action="" method="post">
  										<div class="form-group">
  											<label for="username">Username</label>
- 											<input type="text" name="username" id="username" class="form-control" required>
+ 											<input type="text" name="username" id="username" minlength="6" maxlength="12" pattern="^[a-zA-Z0-9]*$" class="form-control" required>
  										</div>
  										<div class="form-group">
  											<labe for="password">Password</label>
- 											<input type="password" name="password" id="password" class="form-control" required></input>
+ 											<input type="password" name="password" id="password" minlength="8" maxlength="12" class="form-control" required></input>
  										</div>
  										<div class="form-group">
- 											<button type="submit" class="btn btn-outline-dark">Login</button>
+ 											<button type="submit" name="login" class="btn btn-outline-dark">Login</button>
  										</div>
  									</form>
  								</div>
