@@ -146,6 +146,14 @@ class Profile extends Db {
 		    return -1;
 		}
 
+		// cek password dengan length antara 8 -12 characters
+		if(preg_match('/^.{8,12}$/', $password) === 0 ){
+		    echo "
+				<script>swal('Failed!', 'Password length 8 - 12 characters', 'error');</script>
+		    ";
+		    return -1;
+		}
+
 		// cek konfirmasi password
 		if ( $password !== $passwordConfirm ) {
 			echo "

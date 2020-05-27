@@ -143,6 +143,7 @@ $profile = new Profile();
  										<div class="form-group">
  											<label for="phone">Phone No</label>
  											<input type="tel" id="phone" name="phone" minlength="10" maxlength="12" class="form-control" required>
+ 											<small>Length: 10 - 12 digit</small>
  										</div>
  										<div class="form-group">
  											<label for="address">Address</label>
@@ -151,6 +152,7 @@ $profile = new Profile();
  										<div class="form-group">
  											<labe for="password">Password</label>
  											<input type="password" name="password" id="password" minlength="8" maxlength="12" class="form-control" required></input>
+ 											<small>Length: 8 - 12 characters</small>
  										</div>
  										<div class="form-group">
  											<labe for="password-confirm">Confirm Password</label>
