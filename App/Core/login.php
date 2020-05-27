@@ -1,10 +1,36 @@
 <?php 
 session_start();
+date_default_timezone_set("Asia/Jakarta");
+
+require_once '../init.php';
 
 if( isset($_SESSION["login"]) ) {
 	//arahkan balik ke index.php
 	header('Location: ../../index.php');
 	exit;
+}
+
+// use App\Db\Cart as Cart;
+use App\Db\Profile as Profile;
+
+// $cart = new Cart();
+$profile = new Profile();
+
+if( isset($_POST["login"]) ) {
+
+	if( $profile->login($_POST)){
+
+			$_SESSION["login"] = true;
+			$_SESSION["username"] = $_POST["username"];
+
+			header('Location: ../../index.php');
+			exit;
+		}
+
+	$error = true;
+
+    
+
 }
 
 
@@ -30,6 +56,20 @@ if( isset($_SESSION["login"]) ) {
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
+	<?php 
+		if( isset($error) ){
+			echo "
+				<script>
+					swal({
+					  icon: 'error',
+					  title: 'Oops...',
+					  text: 'Username/password is incorrect',
+					  type: 'error'
+					})
+				</script>
+			";
+		}
+	?>
  	<div class="container-fluid">
  		<div class="row">
  			<div class="col-12">
