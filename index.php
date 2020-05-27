@@ -1,13 +1,17 @@
 <?php 
-
+session_start();
 require_once 'App/init.php';
 use App\Db\Cart as Cart;
 use App\Db\Profile as Profile;
 
+$user = $_SESSION["username"];
+
 $cart = new Cart();
 $profile = new Profile();
 
-$profilePic = $profile->getProfilePic();
+$profilePic = $profile->getProfilePic($user);
+
+
 
  ?>
 
@@ -116,7 +120,7 @@ $profilePic = $profile->getProfilePic();
                                         <a class="nav-link dropdown-toggle" href="#" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         	<!-- <span class="user-photo"></span> -->
                                         	<img src="App/Core/profile-picture/<?= $profilePic; ?>" class="user-photo">
-                                        	<strong>user123</strong>
+                                        	<strong><?= $user; ?></strong>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="user">
                                             <a class="dropdown-item" href="App/Core/profile.php">Profile</a>

@@ -53,8 +53,8 @@ class Profile extends Db {
 		return $this->email;
 	}
 
-	public function getProfilePic(){
-		$query = "SELECT profile_picture FROM user WHERE username = 'user123'";
+	public function getProfilePic($userName){
+		$query = "SELECT profile_picture FROM user WHERE username = '$userName'";
 		$result = $this->executeQuery($query);
 		$data = mysqli_fetch_assoc($result[0]);
 		$this->profilePic = $data['profile_picture'];
