@@ -46,7 +46,18 @@ $profile = new Profile();
 		if( isset($_POST["register"]) ) {
 			if( $profile->register($_POST) > 0 ) {
 				
-				echo "<script>swal('Success!', 'Register successfully', 'success');</script>";
+				echo "<script>
+					
+					swal({
+						icon: 'success',
+					    title: 'Success',
+					    text: 'Register successfully',
+					    type: 'success'
+					}).then(function() {
+					    window.location = 'login.php';
+					});
+
+				</script>";
 			} 
 		}
 	?>
