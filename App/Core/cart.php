@@ -1,4 +1,12 @@
 <?php 
+session_start();
+
+if ( !isset($_SESSION["login"]) ) {
+    // arahkan user balik ke login
+    header('Location: login.php');
+    exit;
+}
+
 date_default_timezone_set("Asia/Jakarta");
 
 require_once '../init.php';
