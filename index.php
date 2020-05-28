@@ -142,7 +142,7 @@ if( isset($_SESSION["login"]) ) {
                                 <a href="App/Core/cart.php" class="header-item">
                                     <img src="App/Core/svg/shopping_cart-black-24dp.svg" alt="icon cart">
                                     <?php if( isset($_SESSION["login"]) ) : ?>
-                                    	<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
+                                    	<span class="badge badge-success"><?= $cart->getJumlahQuantity($user); ?></span>
                                     <?php else: ?>
                                     	<span class="badge badge-success">0</span>
                                     <?php endif; ?>

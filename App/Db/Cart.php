@@ -11,8 +11,8 @@ class Cart extends Db {
 		$this->jumlahQuantityByIdMenu = 0;
 	}
 
-	public function getItems(){
-		$query = "SELECT order_id, nama_menu, harga_menu, quantity, FORMAT(total_harga_menu,0) AS total_harga_menu, FORMAT(harga_menu,0) AS harga_menu_2 FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
+	public function getItems($userName){
+		$query = "SELECT order_id, nama_menu, harga_menu, quantity, FORMAT(total_harga_menu,0) AS total_harga_menu, FORMAT(harga_menu,0) AS harga_menu_2 FROM order_menu WHERE user_name = '$userName' AND id_transfer = ''";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->items[] = $row;
@@ -20,8 +20,8 @@ class Cart extends Db {
 	    return $this->items;
 	}
 
-	public function getTotalHargaItems(){
-		$query = "SELECT  SUM(total_harga_menu) AS total, FORMAT(SUM(total_harga_menu),0) AS total_2 FROM order_menu WHERE user_name = 'user123' AND id_transfer = ''";
+	public function getTotalHargaItems($userName){
+		$query = "SELECT  SUM(total_harga_menu) AS total, FORMAT(SUM(total_harga_menu),0) AS total_2 FROM order_menu WHERE user_name = '$userName' AND id_transfer = ''";
 		$result = $this->executeQuery($query);
 		$data = mysqli_fetch_assoc($result[0]);
 		$this->totalHargaItems = $data['total'];
@@ -32,8 +32,8 @@ class Cart extends Db {
 		return $data['total_2'];
 	}
 
-	public function getJumlahQuantity(){
-		$query = "SELECT SUM(quantity) as total FROM order_menu WHERE user_name = 'user123'AND id_transfer = ''";
+	public function getJumlahQuantity($userName){
+		$query = "SELECT SUM(quantity) as total FROM order_menu WHERE user_name = '$userName'AND id_transfer = ''";
 		$result = $this->executeQuery($query);
 		$data = mysqli_fetch_assoc($result[0]);
 		$this->jumlahQuantity = $data['total'];

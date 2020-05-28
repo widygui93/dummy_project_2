@@ -7,6 +7,8 @@ if ( !isset($_SESSION["login"]) ) {
     exit;
 }
 
+$user = $_SESSION["username"];
+
 date_default_timezone_set("Asia/Jakarta");
 
 require_once '../init.php';
@@ -17,7 +19,7 @@ use App\Db\Profile as Profile;
 $cart = new Cart();
 $profile = new Profile();
 
-$profilePic = $profile->getProfilePic();
+$profilePic = $profile->getProfilePic($user);
 
 if( isset($_POST["delete"]) ){
 	if( $cart->removeItem($_POST) < 0 ){
@@ -40,9 +42,9 @@ if( isset($_POST["edit"]) ){
 	}
 }
 
-$items = $cart->getItems();
-$total = $cart->getTotalHargaItems();
-$jlhQuantity = $cart->getJumlahQuantity();
+$items = $cart->getItems($user);
+$total = $cart->getTotalHargaItems($user);
+$jlhQuantity = $cart->getJumlahQuantity($user);
 
 $showResult = false;
 
@@ -133,7 +135,7 @@ if( isset($_POST["submit"]) ) {
  										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  											<!-- <span class="user-photo"></span> -->
  											<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
- 											<strong>user123</strong>
+ 											<strong><?= $user; ?></strong>
  										</a>
  										<div class="dropdown-menu" aria-labelledby="user">
  											<a href="profile.php" class="dropdown-item">Profile</a>
