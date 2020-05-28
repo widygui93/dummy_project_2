@@ -1,11 +1,11 @@
 <?php namespace App\Db;
 
 class Profile extends Db {
-	private $username, $registerDate, $address, $email, $phoneNo, $profilePic;
+	private $registerDate, $address, $email, $phoneNo, $profilePic;
 
 	public function __construct(){
 		parent::__construct();
-		$this->username = "";
+		// $this->username = "";
 		$this->registerDate = "";
 		$this->address = "";
 		$this->email = "";
@@ -13,13 +13,13 @@ class Profile extends Db {
 		$this->profilePic = "";
 	}
 
-	public function getUserName(){
-		$query = "SELECT username FROM user WHERE username = 'user123'";
-		$result = $this->executeQuery($query);
-		$data = mysqli_fetch_assoc($result[0]);
-		$this->username = $data['username'];
-		return $this->username;
-	}
+	// public function getUserName(){
+	// 	$query = "SELECT username FROM user WHERE username = 'user123'";
+	// 	$result = $this->executeQuery($query);
+	// 	$data = mysqli_fetch_assoc($result[0]);
+	// 	$this->username = $data['username'];
+	// 	return $this->username;
+	// }
 
 	public function getRegisterDate($userName){
 		$query = "SELECT register_date FROM user WHERE username = '$userName'";
