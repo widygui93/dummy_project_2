@@ -1,15 +1,21 @@
 <?php 
 session_start();
+
 require_once 'App/init.php';
 use App\Db\Cart as Cart;
 use App\Db\Profile as Profile;
 
-$user = $_SESSION["username"];
+
 
 $cart = new Cart();
 $profile = new Profile();
 
-$profilePic = $profile->getProfilePic($user);
+if( isset($_SESSION["login"]) ) {
+	$user = $_SESSION["username"];
+	$profilePic = $profile->getProfilePic($user);
+}
+
+
 
 
 
@@ -85,15 +91,18 @@ $profilePic = $profile->getProfilePic($user);
                             </div>
                             <div class="col-auto">
                                 <ul class="top-nav">
-                                    <!-- <li>
-                                        <a href="register.html">Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="login.html">Login</a>
-                                    </li> -->
-                                    <li>
-                                    	<a href="logout.php">Log Out</a>
-                                    </li>
+                                	<?php if(isset($_SESSION["login"])): ?>
+                                		<li>
+                                			<a href="logout.php">Log Out</a>
+                                		</li>
+	                                <?php else: ?>
+	                                	<li>
+	                                	    <a href="App/Core/register.php">Register</a>
+	                                	</li>
+	                                	<li>
+	                                	    <a href="App/Core/login.php">Login</a>
+	                                	</li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                         </div>
@@ -115,21 +124,28 @@ $profilePic = $profile->getProfilePic($user);
                             	</div>
                             </div>
                             <div class="col-lg-4 header-item-holder text-center text-lg-right">
-                            	<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        	<!-- <span class="user-photo"></span> -->
-                                        	<img src="App/Core/profile-picture/<?= $profilePic; ?>" class="user-photo">
-                                        	<strong><?= $user; ?></strong>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="user">
-                                            <a class="dropdown-item" href="App/Core/profile.php">Profile</a>
-									    	<a class="dropdown-item" href="App/Core/history.php">History</a>
-                                        </div>
-                                    </li>
-                                </ul>
+                            	<?php if( isset($_SESSION["login"]) ) : ?>
+	                            	<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+	                                    <li class="nav-item dropdown">
+	                                        <a class="nav-link dropdown-toggle" href="#" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                                        	<!-- <span class="user-photo"></span> -->
+	                                        	<img src="App/Core/profile-picture/<?= $profilePic; ?>" class="user-photo">
+	                                        	<strong><?= $user; ?></strong>
+	                                        </a>
+	                                        <div class="dropdown-menu" aria-labelledby="user">
+	                                            <a class="dropdown-item" href="App/Core/profile.php">Profile</a>
+										    	<a class="dropdown-item" href="App/Core/history.php">History</a>
+	                                        </div>
+	                                    </li>
+	                                </ul>
+                                <?php endif; ?>
                                 <a href="App/Core/cart.php" class="header-item">
-                                    <img src="App/Core/svg/shopping_cart-black-24dp.svg" alt="icon cart"><span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
+                                    <img src="App/Core/svg/shopping_cart-black-24dp.svg" alt="icon cart">
+                                    <?php if( isset($_SESSION["login"]) ) : ?>
+                                    	<span class="badge badge-success"><?= $cart->getJumlahQuantity(); ?></span>
+                                    <?php else: ?>
+                                    	<span class="badge badge-success">0</span>
+                                    <?php endif; ?>
                                 </a>
                                 <a href="App/Core/history.php" class="header-item">
  									<img src="App/Core/svg/receipt-black-24dp.svg" alt="icon history">
@@ -190,12 +206,14 @@ $profilePic = $profile->getProfilePic($user);
 												  <div class="card-body">
 												    <h5 class="card-title">Kwetiau Goreng Extra Seafood</h5>
 												    <h3><span class="badge badge-primary">Rp 45.000</span></h3>
-													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-													<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng Extra Seafood">
-													<input style="display: none;" type="text" name="harga" value=45000>
-													<input style="display: none;" type="text" name="idMenu" value=1>
-													<input style="display: none;" type="text" name="tipe" value="chinese">
-													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(1);?>>
+												    <?php if( isset($_SESSION["login"]) ) : ?>
+														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+														<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng Extra Seafood">
+														<input style="display: none;" type="text" name="harga" value=45000>
+														<input style="display: none;" type="text" name="idMenu" value=1>
+														<input style="display: none;" type="text" name="tipe" value="chinese">
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(1);?>>
+													<?php endif; ?>
 												  </div>
 												</div>
  											</div>
@@ -209,12 +227,14 @@ $profilePic = $profile->getProfilePic($user);
 												  <div class="card-body">
 												    <h5 class="card-title">Kwetiau Goreng</h5>
 												    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-													<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng">
-													<input style="display: none;" type="text" name="harga" value=35000>
-													<input style="display: none;" type="text" name="idMenu" value=2>
-													<input style="display: none;" type="text" name="tipe" value="chinese">
-													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(2);?>>
+												    <?php if( isset($_SESSION["login"]) ) : ?>
+														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+														<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng">
+														<input style="display: none;" type="text" name="harga" value=35000>
+														<input style="display: none;" type="text" name="idMenu" value=2>
+														<input style="display: none;" type="text" name="tipe" value="chinese">
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(2);?>>
+													<?php endif; ?>
 												  </div>
 												</div>
  											</div>
@@ -228,12 +248,14 @@ $profilePic = $profile->getProfilePic($user);
 												  <div class="card-body">
 												    <h5 class="card-title">Bihun Goreng Extra Seafood</h5>
 												    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-													<input style="display: none;" type="text" name="nama" value="Bihun Goreng Extra Seafood">
-													<input style="display: none;" type="text" name="harga" value=45000>
-													<input style="display: none;" type="text" name="idMenu" value=3>
-													<input style="display: none;" type="text" name="tipe" value="chinese">
-													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(3);?>>
+												    <?php if( isset($_SESSION["login"]) ) : ?>
+														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+														<input style="display: none;" type="text" name="nama" value="Bihun Goreng Extra Seafood">
+														<input style="display: none;" type="text" name="harga" value=45000>
+														<input style="display: none;" type="text" name="idMenu" value=3>
+														<input style="display: none;" type="text" name="tipe" value="chinese">
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(3);?>>
+													<?php endif; ?>
 												  </div>
 												</div>
  											</div>
@@ -263,12 +285,14 @@ $profilePic = $profile->getProfilePic($user);
 												  <div class="card-body">
 												    <h5 class="card-title">Hamburger Deluxe Extra Ham</h5>
 												    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-													<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe Extra Ham">
-													<input style="display: none;" type="text" name="harga" value=45000>
-													<input style="display: none;" type="text" name="idMenu" value=4>
-													<input style="display: none;" type="text" name="tipe" value="western">
-													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(4);?>>
+												    <?php if( isset($_SESSION["login"]) ) : ?>
+														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+														<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe Extra Ham">
+														<input style="display: none;" type="text" name="harga" value=45000>
+														<input style="display: none;" type="text" name="idMenu" value=4>
+														<input style="display: none;" type="text" name="tipe" value="western">
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(4);?>>
+													<?php endif; ?>
 												  </div>
 												</div>
  											</div>
@@ -282,12 +306,14 @@ $profilePic = $profile->getProfilePic($user);
 												  <div class="card-body">
 												    <h5 class="card-title">Hamburger Deluxe</h5>
 												    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-													<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
-													<input style="display: none;" type="text" name="harga" value=35000>
-													<input style="display: none;" type="text" name="idMenu" value=5>
-													<input style="display: none;" type="text" name="tipe" value="western">
-													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(5);?>>
+												    <?php if( isset($_SESSION["login"]) ) : ?>
+														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+														<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
+														<input style="display: none;" type="text" name="harga" value=35000>
+														<input style="display: none;" type="text" name="idMenu" value=5>
+														<input style="display: none;" type="text" name="tipe" value="western">
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(5);?>>
+													<?php endif; ?>
 												  </div>
 												</div>
  											</div>
@@ -301,12 +327,14 @@ $profilePic = $profile->getProfilePic($user);
 												  <div class="card-body">
 												    <h5 class="card-title">Hotdog Deluxe Extra Cheese</h5>
 												    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-													<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-													<input style="display: none;" type="text" name="nama" value="Hotdog Deluxe Extra Cheese">
-													<input style="display: none;" type="text" name="harga" value=45000>
-													<input style="display: none;" type="text" name="idMenu" value=6>
-													<input style="display: none;" type="text" name="tipe" value="western">
-													<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(6);?>>
+												    <?php if( isset($_SESSION["login"]) ) : ?>
+														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
+														<input style="display: none;" type="text" name="nama" value="Hotdog Deluxe Extra Cheese">
+														<input style="display: none;" type="text" name="harga" value=45000>
+														<input style="display: none;" type="text" name="idMenu" value=6>
+														<input style="display: none;" type="text" name="tipe" value="western">
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(6);?>>
+													<?php endif; ?>
 												  </div>
 												</div>
  											</div>
