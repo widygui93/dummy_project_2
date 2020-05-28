@@ -147,7 +147,7 @@ $profilePic = $profile->getProfilePic($user);
  										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  											<!-- <span class="user-photo"></span> -->
  											<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
- 											<strong>$user</strong>
+ 											<strong><?= $user; ?></strong>
  										</a>
  										<div class="dropdown-menu" aria-labelledby="user">
  											<a href="profile.php" class="dropdown-item">Profile</a>
