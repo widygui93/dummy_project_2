@@ -1,4 +1,14 @@
 <?php 
+session_start();
+
+if ( !isset($_SESSION["login"]) ) {
+    // arahkan user balik ke login
+    header('Location: login.php');
+    exit;
+}
+
+$user = $_SESSION["username"];
+
 date_default_timezone_set("Asia/Jakarta");
 
 require_once '../init.php';
@@ -9,10 +19,10 @@ use App\Db\Profile as Profile;
 $cart = new Cart();
 $profile = new Profile();
 
-$jlhQuantity = $cart->getJumlahQuantity();
+$jlhQuantity = $cart->getJumlahQuantity($user);
 
-$userName = $profile->getUserName();
-$registerDate = $profile->getRegisterDate();
+// $userName = $profile->getUserName();
+$registerDate = $profile->getRegisterDate($user);
 
 
 
@@ -50,7 +60,7 @@ $registerDate = $profile->getRegisterDate();
 	<?php 
 		if( isset($_POST["submitEditProfileData"]) ) {
 
-			if( $profile->editProfileData($_POST, $userName) > 0 ) {
+			if( $profile->editProfileData($_POST, $user) > 0 ) {
 				
 				echo "<script>swal('Success!', 'Edit data successfully', 'success');</script>";
 			} 
@@ -60,7 +70,7 @@ $registerDate = $profile->getRegisterDate();
 		if( isset($_POST["submitEditProfilePic"]) ){
 			
 
-			if( $profile->editProfilePic($userName) > 0 ){
+			if( $profile->editProfilePic($user) > 0 ){
 				echo "<script>swal('Success!', 'Edit profile picture successfully', 'success');</script>";
 			} else {
 				echo "<script>swal('Failed!', 'Edit profile picture failed', 'error');</script>";
@@ -68,10 +78,10 @@ $registerDate = $profile->getRegisterDate();
 			
 		}
 
-		$address = $profile->getAddress();
-		$phoneNo = $profile->getPhoneNo();
-		$email = $profile->getEmail();
-		$profilePic = $profile->getProfilePic();
+		$address = $profile->getAddress($user);
+		$phoneNo = $profile->getPhoneNo($user);
+		$email = $profile->getEmail($user);
+		$profilePic = $profile->getProfilePic($user);
 	?>
 	<!-- MODAL SECTION -->
 	<!-- MODAL EDIT PROFILE PIC -->
@@ -220,7 +230,7 @@ $registerDate = $profile->getRegisterDate();
  										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  											<!-- <span class="user-photo"></span> -->
  											<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
- 											<strong>user123</strong>
+ 											<strong><?= $user; ?></strong>
  										</a>
  										<div class="dropdown-menu" aria-labelledby="user">
  											<a href="profile.php" class="dropdown-item">Profile</a>
@@ -254,7 +264,7 @@ $registerDate = $profile->getRegisterDate();
  									<div class="row profile-body">
  										<div class="col">
  											<ul class="list-group">
- 											  <li class="list-group-item list-group-item-primary"><h3><?= $userName; ?></h3></li>
+ 											  <li class="list-group-item list-group-item-primary"><h3><?= $user; ?></h3></li>
  											  <li class="list-group-item">
  											  	<img src="svg/today-black-18dp.svg" alt="icon date">
  											  	<span>Register on <?= $registerDate; ?></span>
