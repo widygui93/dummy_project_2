@@ -1,4 +1,14 @@
 <?php 
+session_start();
+
+if ( !isset($_SESSION["login"]) ) {
+    // arahkan user balik ke login
+    header('Location: login.php');
+    exit;
+}
+
+$user = $_SESSION["username"];
+
 date_default_timezone_set("Asia/Jakarta");
 
 require_once '../init.php';
@@ -26,9 +36,9 @@ if( isset($_POST["detail"]) ){
 }
 
 
-$jlhQuantity = $cart->getJumlahQuantity();
-$items = $history->getHistory();
-$profilePic = $profile->getProfilePic();
+$jlhQuantity = $cart->getJumlahQuantity($user);
+$items = $history->getHistory($user);
+$profilePic = $profile->getProfilePic($user);
 
 
 
@@ -137,7 +147,7 @@ $profilePic = $profile->getProfilePic();
  										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
  											<!-- <span class="user-photo"></span> -->
  											<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
- 											<strong>user123</strong>
+ 											<strong>$user</strong>
  										</a>
  										<div class="dropdown-menu" aria-labelledby="user">
  											<a href="profile.php" class="dropdown-item">Profile</a>
