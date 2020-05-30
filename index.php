@@ -93,7 +93,7 @@ if( isset($_SESSION["login"]) ) {
                                 <ul class="top-nav">
                                 	<?php if(isset($_SESSION["login"])): ?>
                                 		<li>
-                                			<a href="logout.php">Log Out</a>
+                                			<a href="App/Core/logout.php">Log Out</a>
                                 		</li>
 	                                <?php else: ?>
 	                                	<li>
