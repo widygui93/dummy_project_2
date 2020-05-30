@@ -8,12 +8,12 @@ class OrderMenu extends Db {
 
 	public function createOrder($typeMenu, $idMenu, $namaMenu, $tglOrder, $hargaMenu, $userName, $quantity, $totalHarga){
 
-		if($this->isMenuAlreadyExist($idMenu)){
-			$query = "UPDATE order_menu SET quantity = '$quantity' WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$idMenu'";
+		if($this->isMenuAlreadyExist($idMenu, $userName)){
+			$query = "UPDATE order_menu SET quantity = '$quantity' WHERE user_name = '$userName' AND id_transfer = '' AND id_menu = '$idMenu'";
 			$result = $this->executeQuery($query);
 
 			$newTotalHargaMenu = $quantity * $hargaMenu;
-			$query = "UPDATE order_menu SET total_harga_menu = '$newTotalHargaMenu' WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$idMenu'";
+			$query = "UPDATE order_menu SET total_harga_menu = '$newTotalHargaMenu' WHERE user_name = '$userName' AND id_transfer = '' AND id_menu = '$idMenu'";
 			$result = $this->executeQuery($query);
 
 			return $result[1];
@@ -31,8 +31,8 @@ class OrderMenu extends Db {
 
 	}
 
-	private function isMenuAlreadyExist($idMenu){
-		$query = "SELECT order_id FROM order_menu WHERE user_name = 'user123' AND id_transfer = '' AND id_menu = '$idMenu'";
+	private function isMenuAlreadyExist($idMenu, $userName){
+		$query = "SELECT order_id FROM order_menu WHERE user_name = '$userName' AND id_transfer = '' AND id_menu = '$idMenu'";
 		$result = $this->executeQuery($query);
 		$data = mysqli_fetch_assoc($result[0]);
 

@@ -7,6 +7,8 @@ if ( !isset($_SESSION["login"]) ) {
     exit;
 }
 
+$user = $_SESSION["username"];
+
 date_default_timezone_set("Asia/Jakarta");
 
 require_once '../init.php';
@@ -28,15 +30,16 @@ $order = new TabelOrderMenu();
 
 
 
-cekOrder($order->createOrder(
-	$menu->getTypeMenu(),
-	$menu->getIdMenu(),
-	$menu->getNamaMenu(),
-	$menu->getTglOrder(),
-	$menu->getHargaMenu(),
-	"user123",
-	$menu->getQuantity(),
-	$menu->getTotalPrice()
+cekOrder(
+	$order->createOrder(
+			$menu->getTypeMenu(),
+			$menu->getIdMenu(),
+			$menu->getNamaMenu(),
+			$menu->getTglOrder(),
+			$menu->getHargaMenu(),
+			$user,
+			$menu->getQuantity(),
+			$menu->getTotalPrice()
 	)
 );
 
