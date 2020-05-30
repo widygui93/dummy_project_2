@@ -56,7 +56,7 @@ class Cart extends Db {
 		return $this->jumlahQuantityByIdMenu;
 	}
 
-	public function doPayment($data){
+	public function doPayment($data, $userName){
 		$tglTransfer = date("Y-M-d");
 		$tglTransfer=date("Y-m-d",strtotime($tglTransfer));
 		$query = '';
@@ -72,7 +72,7 @@ class Cart extends Db {
 
 		$query = "INSERT INTO transfer
 					VALUES
-				  ('$idTrf', '$gambar', 'user123', '20100460461', '$this->totalHargaItems', '$tglTransfer', 'address street xxx no 12')
+				  ('$idTrf', '$gambar', '$userName', '20100460461', '$this->totalHargaItems', '$tglTransfer', 'address street xxx no 12')
 				";
 		$resultInsert = $this->executeQuery($query);
 

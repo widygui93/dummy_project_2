@@ -52,7 +52,7 @@ $showResult = false;
 if( isset($_POST["submit"]) ) {
 	
 	// cek apakah data berhasil di tambahkan atau tidak
-	if( $cart->doPayment($_POST) > 0 ) {
+	if( $cart->doPayment($_POST, $user) > 0 ) {
 
 		$showResult = true;
 		$isPaySuccess = true;
