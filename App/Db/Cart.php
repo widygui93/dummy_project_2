@@ -44,8 +44,8 @@ class Cart extends Db {
 		return $this->jumlahQuantity;
 	}
 
-	public function getJumlahQuantityByIdMenu($idMenu){
-		$query = "SELECT quantity FROM order_menu WHERE user_name = 'user123'AND id_transfer = '' and id_menu = '$idMenu'";
+	public function getJumlahQuantityByIdMenu($idMenu, $userName){
+		$query = "SELECT quantity FROM order_menu WHERE user_name = '$userName'AND id_transfer = '' and id_menu = '$idMenu'";
 		$result = $this->executeQuery($query);
 		$data = mysqli_fetch_assoc($result[0]);
 		$this->jumlahQuantityByIdMenu = $data['quantity'];

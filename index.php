@@ -212,7 +212,7 @@ if( isset($_SESSION["login"]) ) {
 														<input style="display: none;" type="text" name="harga" value=45000>
 														<input style="display: none;" type="text" name="idMenu" value=1>
 														<input style="display: none;" type="text" name="tipe" value="chinese">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(1);?>>
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(1,$user);?>>
 													<?php endif; ?>
 												  </div>
 												</div>
@@ -233,7 +233,7 @@ if( isset($_SESSION["login"]) ) {
 														<input style="display: none;" type="text" name="harga" value=35000>
 														<input style="display: none;" type="text" name="idMenu" value=2>
 														<input style="display: none;" type="text" name="tipe" value="chinese">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(2);?>>
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(2,$user);?>>
 													<?php endif; ?>
 												  </div>
 												</div>
@@ -254,7 +254,7 @@ if( isset($_SESSION["login"]) ) {
 														<input style="display: none;" type="text" name="harga" value=45000>
 														<input style="display: none;" type="text" name="idMenu" value=3>
 														<input style="display: none;" type="text" name="tipe" value="chinese">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(3);?>>
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(3,$user);?>>
 													<?php endif; ?>
 												  </div>
 												</div>
@@ -291,7 +291,7 @@ if( isset($_SESSION["login"]) ) {
 														<input style="display: none;" type="text" name="harga" value=45000>
 														<input style="display: none;" type="text" name="idMenu" value=4>
 														<input style="display: none;" type="text" name="tipe" value="western">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(4);?>>
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(4,$user);?>>
 													<?php endif; ?>
 												  </div>
 												</div>
@@ -312,7 +312,7 @@ if( isset($_SESSION["login"]) ) {
 														<input style="display: none;" type="text" name="harga" value=35000>
 														<input style="display: none;" type="text" name="idMenu" value=5>
 														<input style="display: none;" type="text" name="tipe" value="western">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(5);?>>
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(5,$user);?>>
 													<?php endif; ?>
 												  </div>
 												</div>
@@ -333,7 +333,7 @@ if( isset($_SESSION["login"]) ) {
 														<input style="display: none;" type="text" name="harga" value=45000>
 														<input style="display: none;" type="text" name="idMenu" value=6>
 														<input style="display: none;" type="text" name="tipe" value="western">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(6);?>>
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(6,$user);?>>
 													<?php endif; ?>
 												  </div>
 												</div>
