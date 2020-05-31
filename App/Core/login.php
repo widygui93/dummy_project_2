@@ -110,25 +110,8 @@ if( isset($_POST["login"]) ) {
  								</div>
  							</div>
  							<div class="col-lg-4 header-item-holder text-center text-lg-right">
- 								<?php if( isset($_SESSION["login"]) ) : ?>
-	 								<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-	 									<li class="nav-item dropdown">
-	 										<a href="#" class="nav-link dropdown-toggle" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	 											<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
-	 											<strong>user123</strong>
-	 										</a>
-	 										<div class="dropdown-menu" aria-labelledby="user">
-	 											<a href="profile.php" class="dropdown-item">Profile</a>
-	 											<a href="history.php" class="dropdown-item">History</a>
-	 										</div>
-	 									</li>
-	 								</ul>
- 								<?php endif; ?>
  								<a href="cart.php" class="header-item">
  									<img src="svg/shopping_cart-black-24dp.svg" alt="icon cart">
- 									<?php if( isset($_SESSION["login"]) ) : ?>
- 										<span class="badge badge-success"><?= $jlhQuantity; ?></span>
- 									<?php endif; ?>
  									<span class="badge badge-success">0</span>
  								</a>
  								<a href="history.php" class="header-item">
