@@ -155,8 +155,11 @@ $profilePic = $profile->getProfilePic($user);
  										</div> -->
  									</li>
  								</ul>
- 								<a href="cart.php" class="header-item"><img src="svg/shopping_cart-black-24dp.svg" alt="icon cart"><span class="badge badge-success"><?= $jlhQuantity; ?></span></a>
- 								<a href="history.php" class="header-item">
+ 								<a href="cart.php" class="header-item" data-toggle="tooltip" data-placement="top" title="Cart">
+ 									<img src="svg/shopping_cart-black-24dp.svg" alt="icon cart">
+ 									<span class="badge badge-success"><?= $jlhQuantity; ?></span>
+ 								</a>
+ 								<a href="history.php" class="header-item" data-toggle="tooltip" data-placement="top" title="History">
  									<img src="svg/receipt-black-24dp.svg" alt="icon history">
  								</a>
  							</div>

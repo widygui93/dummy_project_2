@@ -135,7 +135,7 @@ if( isset($_SESSION["login"]) ) {
 	                                    </li>
 	                                </ul>
                                 <?php endif; ?>
-                                <a href="App/Core/cart.php" class="header-item">
+                                <a href="App/Core/cart.php" class="header-item" data-toggle="tooltip" data-placement="top" title="Cart">
                                     <img src="App/Core/svg/shopping_cart-black-24dp.svg" alt="icon cart">
                                     <?php if( isset($_SESSION["login"]) ) : ?>
                                     	<span class="badge badge-success"><?= $cart->getJumlahQuantity($user); ?></span>
@@ -143,7 +143,7 @@ if( isset($_SESSION["login"]) ) {
                                     	<span class="badge badge-success">0</span>
                                     <?php endif; ?>
                                 </a>
-                                <a href="App/Core/history.php" class="header-item">
+                                <a href="App/Core/history.php" class="header-item" data-toggle="tooltip" data-placement="top" title="History">
  									<img src="App/Core/svg/receipt-black-24dp.svg" alt="icon history">
  								</a>
                                 <!-- <a href="#" class="header-item"> -->

@@ -143,10 +143,11 @@ if( isset($_POST["submit"]) ) {
  										</div> -->
  									</li>
  								</ul>
- 								<a href="cart.php" class="header-item">
- 									<img src="svg/shopping_cart-black-24dp.svg" alt="icon cart"><span class="badge badge-success"><?= $jlhQuantity; ?></span>
+ 								<a href="cart.php" class="header-item" data-toggle="tooltip" data-placement="top" title="Cart">
+ 									<img src="svg/shopping_cart-black-24dp.svg" alt="icon cart">
+ 									<span class="badge badge-success"><?= $jlhQuantity; ?></span>
  								</a>
- 								<a href="history.php" class="header-item">
+ 								<a href="history.php" class="header-item" data-toggle="tooltip" data-placement="top" title="History">
  									<img src="svg/receipt-black-24dp.svg" alt="icon history">
  								</a>
  								<!-- <span id="header-price">Rp.4,000,000</span> -->
