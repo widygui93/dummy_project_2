@@ -123,15 +123,15 @@ if( isset($_SESSION["login"]) ) {
                             	<?php if( isset($_SESSION["login"]) ) : ?>
 	                            	<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
 	                                    <li class="nav-item dropdown">
-	                                        <a class="nav-link dropdown-toggle" href="#" id="user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                                        <a class="nav-link dropdown-toggle" href="App/Core/profile.php" id="user">
 	                                        	<!-- <span class="user-photo"></span> -->
 	                                        	<img src="App/Core/profile-picture/<?= $profilePic; ?>" class="user-photo">
 	                                        	<strong><?= $user; ?></strong>
 	                                        </a>
-	                                        <div class="dropdown-menu" aria-labelledby="user">
+	                                        <!-- <div class="dropdown-menu" aria-labelledby="user">
 	                                            <a class="dropdown-item" href="App/Core/profile.php">Profile</a>
 										    	<a class="dropdown-item" href="App/Core/history.php">History</a>
-	                                        </div>
+	                                        </div> -->
 	                                    </li>
 	                                </ul>
                                 <?php endif; ?>
