@@ -76,7 +76,7 @@ img[alt$="mail"] {
 	margin-left: 3px;
 }
 
-a[href="register.php"] {
+a[href="register.php"], a[href="App/Core/register.php"] {
 	margin-right: 3px;
 }
 

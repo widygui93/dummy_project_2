@@ -96,12 +96,8 @@ if( isset($_SESSION["login"]) ) {
                                 			<a href="App/Core/logout.php">Log Out</a>
                                 		</li>
 	                                <?php else: ?>
-	                                	<li>
-	                                	    <a href="App/Core/register.php">Register</a>
-	                                	</li>
-	                                	<li>
-	                                	    <a href="App/Core/login.php">Login</a>
-	                                	</li>
+	                                	<li><a href="App/Core/register.php">Register</a></li>
+	                                	<li><a href="App/Core/login.php">Log In</a></li>
                                     <?php endif; ?>
                                 </ul>
                             </div>
