@@ -22,13 +22,12 @@ $(document).ready(function(){
 
 		if(oldQuantity == 0 && newQuantity == 0){
 			swal('Failed!', 'You must input quantity', 'error');
-			// alert("You must input quantity");
 		}
 		else if(oldQuantity == newQuantity) {
-			alert("Quantity maynot be same");
+			swal('Failed!', 'Quantity maynot be same', 'error');
 		} 
 		else if (newQuantity == 0) {
-			alert("Your Quantity can't 0");
+			swal('Failed!', 'Your Quantity must at least 1', 'error');
 		} 
 		else {
 			$.post("App/Core/Order.php",
