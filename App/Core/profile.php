@@ -102,7 +102,7 @@ $registerDate = $profile->getRegisterDate($user);
 					echo "<script>swal('Failed!', 'current password can not same with new password', 'error');</script>";
 				}
 			} else {
-				echo "<script>swal('Failed!', 'username and/or password do not exist in database', 'error');</script>";
+				echo "<script>swal('Failed!', 'invalid current password', 'error');</script>";
 			}
 		}
 
