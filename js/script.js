@@ -21,7 +21,8 @@ $(document).ready(function(){
 		const newQuantity = $(".modal-body .badge-success").text();
 
 		if(oldQuantity == 0 && newQuantity == 0){
-			alert("You must input quantity");
+			swal('Failed!', 'You must input quantity', 'error');
+			// alert("You must input quantity");
 		}
 		else if(oldQuantity == newQuantity) {
 			alert("Quantity maynot be same");
