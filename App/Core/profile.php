@@ -69,12 +69,43 @@ $registerDate = $profile->getRegisterDate($user);
 
 		if( isset($_POST["submitEditProfilePic"]) ){
 			
-
 			if( $profile->editProfilePic($user) > 0 ){
 				echo "<script>swal('Success!', 'Edit profile picture successfully', 'success');</script>";
 			} else {
 				echo "<script>swal('Failed!', 'Edit profile picture failed', 'error');</script>";
 			}
+			
+		}
+
+		if( isset($_POST["submitEditPassword"]) ){
+
+			$oldPassword = $profile->purifyStr($_POST["oldPassword"]);
+			$newPassword = $profile->purifyStr($_POST["newPassword"]);
+			$confirmPassword = $profile->purifyStr($_POST["confirmNewPassword"]);
+
+			if( $profile->verifyUserAndPassword($oldPassword, $user) ){
+				if( $profile->isUnduplicatePassword($oldPassword, $newPassword) ){
+					if( $profile->validateLengthPassword($newPassword) ){
+						if( $profile->isDuplicatePassword($newPassword, $confirmPassword) ){
+							if( $profile->editPassword($newPassword, $user) > 0 ){
+								echo "<script>swal('Success!', 'Edit password success', 'success');</script>";
+							} else {
+								echo "<script>swal('Failed!', 'Edit password failed', 'error');</script>";
+							}
+						} else {
+							echo "<script>swal('Failed!', 'new password must be same with confirm password', 'error');</script>";
+						}
+					} else {
+						echo "<script>swal('Failed!', 'new password length should beetween 8-12 characters', 'error');</script>";
+					}
+				} else {
+					echo "<script>swal('Failed!', 'current password can not same with new password', 'error');</script>";
+				}
+			} else {
+				echo "<script>swal('Failed!', 'username and/or password do not exist in database', 'error');</script>";
+			}
+
+			
 			
 		}
 
@@ -163,15 +194,15 @@ $registerDate = $profile->getRegisterDate($user);
 					<form action="" method="post">
 					  <div class="form-group">
 					    <label for="oldPassword">Current Password</label>
-					    <input type="password" class="form-control" id="oldPassword" placeholder="Current Password">
+					    <input type="password" class="form-control" id="oldPassword" name="oldPassword" placeholder="Current Password">
 					  </div>
 					  <div class="form-group">
 					    <label for="newPassword">New Password</label>
-					    <input type="password" class="form-control" id="newPassword" placeholder="New Password">
+					    <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New Password">
 					  </div>
 					  <div class="form-group">
 					    <label for="confirmNewPassword">Confirm New Password</label>
-					    <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm New Password">
+					    <input type="password" class="form-control" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm New Password">
 					  </div>
 					  <div class="form-group">
 					    <button type="submit" name="submitEditPassword" class="btn btn-primary">Change</button>

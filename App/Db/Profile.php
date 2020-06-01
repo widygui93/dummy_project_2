@@ -83,6 +83,16 @@ class Profile extends Db {
 		return $result[1];
 	}
 
+	public function editPassword(string $newPassword, string $userName):int {
+
+		// enkripsi password
+		$newPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+		$query = "UPDATE user SET password = '$newPassword' WHERE username = '$userName'";
+		$result = $this->executeQuery($query);
+		return $result[1];
+	}
+
 	public function register($data){
 
 		$username = strtolower(stripslashes($data["username"]));
@@ -193,6 +203,55 @@ class Profile extends Db {
 			} else {
 				return false;
 			}
+		}
+	}
+
+	public function verifyUserAndPassword(string $password, string $userName):bool{
+		$query = "SELECT * FROM user WHERE username = '$userName'";
+		$result = $this->executeQuery($query);
+
+		// cek username ada di db atau tidak
+		if( mysqli_num_rows($result[0]) === 1 ){
+			// cek password sama atau tidak
+			$row = mysqli_fetch_assoc($result[0]);
+			if( password_verify($password, $row["password"]) ){
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+
+	public function purifyStr(string $str):string{
+		$str = $this->escapeStr($str);
+		return $str;
+	}
+
+	public function isUnduplicatePassword(string $oldPassword, string $newPassword):bool{
+		if( $oldPassword === $newPassword){
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public function isDuplicatePassword(string $newPassword, string $confirmPassword):bool{
+		// cek konfirmasi password
+		if ( $newPassword === $confirmPassword ) {
+		    return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function validateLengthPassword(string $newPassword):bool{
+		// cek password dengan length antara 8 -12 characters
+		if(preg_match('/^.{8,12}$/', $newPassword) === 0 ){
+		    return false;
+		} else {
+			return true;
 		}
 	}
 
