@@ -39,8 +39,9 @@ $(document).ready(function(){
 	            quantity: newQuantity//$(".modal-body .badge-success").text()
 			},
 			function(data, status){
-				alert(data);
-				location.reload();
+				swal('Success!', data, 'success').then(function(){
+					location.reload();
+				});
 			});
 		}	
 
