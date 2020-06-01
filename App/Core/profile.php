@@ -104,9 +104,6 @@ $registerDate = $profile->getRegisterDate($user);
 			} else {
 				echo "<script>swal('Failed!', 'username and/or password do not exist in database', 'error');</script>";
 			}
-
-			
-			
 		}
 
 		$address = $profile->getAddress($user);
@@ -194,15 +191,16 @@ $registerDate = $profile->getRegisterDate($user);
 					<form action="" method="post">
 					  <div class="form-group">
 					    <label for="oldPassword">Current Password</label>
-					    <input type="password" class="form-control" id="oldPassword" name="oldPassword" placeholder="Current Password">
+					    <input type="password" class="form-control" id="oldPassword" name="oldPassword" minlength="8" maxlength="12" placeholder="Current Password" required>
 					  </div>
 					  <div class="form-group">
 					    <label for="newPassword">New Password</label>
-					    <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New Password">
+					    <input type="password" class="form-control" id="newPassword" name="newPassword" minlength="8" maxlength="12" placeholder="New Password" required>
+					    <small>Length: 8 - 12 characters</small>
 					  </div>
 					  <div class="form-group">
 					    <label for="confirmNewPassword">Confirm New Password</label>
-					    <input type="password" class="form-control" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm New Password">
+					    <input type="password" class="form-control" id="confirmNewPassword" name="confirmNewPassword" minlength="8" maxlength="12" placeholder="Confirm New Password" required>
 					  </div>
 					  <div class="form-group">
 					    <button type="submit" name="submitEditPassword" class="btn btn-primary">Change</button>
