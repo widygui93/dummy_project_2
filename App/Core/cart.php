@@ -59,11 +59,9 @@ $profile = new Profile();
  		if( isset($_POST["edit"]) ){
  			// var_dump($_POST);
  			if( $cart->editQuantity($_POST) < 0 || $cart->editTotalHargaMenu($_POST) < 0 ){
- 				echo "
- 			        <script>
- 			            alert('data gagal diedit');
- 			        </script>
- 			    ";
+ 				echo "<script>swal('Failed!', 'data gagal diedit', 'error');</script>";
+ 			} else {
+ 				echo "<script>swal('Success!', 'data berhasil diedit', 'success');</script>";
  			}
  		}
 
