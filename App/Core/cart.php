@@ -19,54 +19,7 @@ use App\Db\Profile as Profile;
 $cart = new Cart();
 $profile = new Profile();
 
-$profilePic = $profile->getProfilePic($user);
 
-if( isset($_POST["delete"]) ){
-	if( $cart->removeItem($_POST) < 0 ){
-		echo "
-	        <script>
-	            alert('data gagal dihapus');
-	        </script>
-	    ";
-	}
-}
-
-if( isset($_POST["edit"]) ){
-	// var_dump($_POST);
-	if( $cart->editQuantity($_POST) < 0 || $cart->editTotalHargaMenu($_POST) < 0 ){
-		echo "
-	        <script>
-	            alert('data gagal diedit');
-	        </script>
-	    ";
-	}
-}
-
-$items = $cart->getItems($user);
-$total = $cart->getTotalHargaItems($user);
-$jlhQuantity = $cart->getJumlahQuantity($user);
-
-$showResult = false;
-
-// cek apakah tombol pay sudah ditekan atau belum
-if( isset($_POST["submit"]) ) {
-	
-	// cek apakah data berhasil di tambahkan atau tidak
-	if( $cart->doPayment($_POST, $user) > 0 ) {
-
-		$showResult = true;
-		$isPaySuccess = true;
-
-		$items = array();
-		$total = 0;
-		$jlhQuantity = 0;
-
-	} else {
-
-		$showResult = true;
-		$isPaySuccess = false;
-	}
-}
 
 
 
@@ -87,8 +40,59 @@ if( isset($_POST["submit"]) ) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+	<!-- CDN sweetalert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  </head>
  <body>
+ 	<?php 
+ 		$profilePic = $profile->getProfilePic($user);
+
+ 		if( isset($_POST["delete"]) ){
+ 			if( $cart->removeItem($_POST) > 0 ){
+ 				echo "<script>swal('Success!', 'data berhasil dihapus', 'success');</script>";
+ 			} else {
+ 				echo "<script>swal('Failed!', 'data gagal dihapus', 'error');</script>";
+ 			}
+ 		}
+
+ 		if( isset($_POST["edit"]) ){
+ 			// var_dump($_POST);
+ 			if( $cart->editQuantity($_POST) < 0 || $cart->editTotalHargaMenu($_POST) < 0 ){
+ 				echo "
+ 			        <script>
+ 			            alert('data gagal diedit');
+ 			        </script>
+ 			    ";
+ 			}
+ 		}
+
+ 		$items = $cart->getItems($user);
+ 		$total = $cart->getTotalHargaItems($user);
+ 		$jlhQuantity = $cart->getJumlahQuantity($user);
+
+ 		$showResult = false;
+
+ 		// cek apakah tombol pay sudah ditekan atau belum
+ 		if( isset($_POST["submit"]) ) {
+ 			
+ 			// cek apakah data berhasil di tambahkan atau tidak
+ 			if( $cart->doPayment($_POST, $user) > 0 ) {
+
+ 				$showResult = true;
+ 				$isPaySuccess = true;
+
+ 				$items = array();
+ 				$total = 0;
+ 				$jlhQuantity = 0;
+
+ 			} else {
+
+ 				$showResult = true;
+ 				$isPaySuccess = false;
+ 			}
+ 		}
+ 	?>
  	<div class="container-fluid">
  		<div class="row min-vh-100">
  			<div class="col-12">
