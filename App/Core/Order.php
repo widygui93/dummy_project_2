@@ -46,9 +46,17 @@ cekOrder(
 
 function cekOrder($jlhRec){
 	if($jlhRec > 0){
-		echo "orderan berhasil masuk ke cart";
+		$result = array("title"=>"Success!", "text"=>"orderan berhasil masuk ke cart", "icon"=>"success");
+
+		$resultJSON = json_encode($result);
+
+		echo $resultJSON;
 	} else {
-		echo "orderan gagal masuk ke cart";
+		$result = array("title"=>"Failed!", "text"=>"orderan gagal masuk ke cart", "icon"=>"error");
+
+		$resultJSON = json_encode($result);
+
+		echo $resultJSON;
 	}
 }
 

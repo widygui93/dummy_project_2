@@ -39,9 +39,11 @@ $(document).ready(function(){
 	            quantity: newQuantity//$(".modal-body .badge-success").text()
 			},
 			function(data, status){
-				swal('Success!', data, 'success').then(function(){
+				const result = JSON.parse(data);
+				swal(result.title, result.text, result.icon).then(function(){
 					location.reload();
 				});
+				
 			});
 		}	
 
