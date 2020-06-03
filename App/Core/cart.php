@@ -217,7 +217,7 @@ $profile = new Profile();
 	 							<div class="container-payment">
 		 							<form action="" method="post" enctype="multipart/form-data">
 									  <div class="form-group">
-									    <p>Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC. For delivery order to <strong>address street xxx no 12.</strong></p>
+									    <p>Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC. For delivery order to <strong><?= $profile->getAddress($user); ?></strong></p>
 									  </div>
 									  <div class="form-group">
 									  	<input type="file" name="gambar">
