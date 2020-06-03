@@ -47,6 +47,7 @@ $profile = new Profile();
  <body>
  	<?php 
  		$profilePic = $profile->getProfilePic($user);
+ 		$address = $profile->getAddress($user);
 
  		if( isset($_POST["delete"]) ){
  			if( $cart->removeItem($_POST) > 0 ){
@@ -217,10 +218,11 @@ $profile = new Profile();
 	 							<div class="container-payment">
 		 							<form action="" method="post" enctype="multipart/form-data">
 									  <div class="form-group">
-									    <p>Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC. For delivery order to <strong><?= $profile->getAddress($user); ?></strong></p>
+									    <p>Please attach Transfer receipt below to account number <strong>12345678 (XXX)</strong>  Bank ABC. For delivery order to <strong><?= $address; ?></strong></p>
 									  </div>
 									  <div class="form-group">
 									  	<input type="file" name="gambar">
+									  	<input style="display: none;" type="text" name="address" value="<?= $address; ?>" >
 									    <button type="submit" name="submit" class="btn btn-primary">Pay</button>
 									  </div>
 									</form>

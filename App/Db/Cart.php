@@ -61,6 +61,7 @@ class Cart extends Db {
 		$tglTransfer=date("Y-m-d",strtotime($tglTransfer));
 		$query = '';
 		$idTrf = '';
+		$address = $data["address"];
 
 		$pictureFolder = "img-transfer/";
 		$gambar = $this->upload($pictureFolder);
@@ -72,7 +73,7 @@ class Cart extends Db {
 
 		$query = "INSERT INTO transfer
 					VALUES
-				  ('$idTrf', '$gambar', '$userName', '20100460461', '$this->totalHargaItems', '$tglTransfer', 'address street xxx no 12')
+				  ('$idTrf', '$gambar', '$userName', '20100460461', '$this->totalHargaItems', '$tglTransfer', '$address')
 				";
 		$resultInsert = $this->executeQuery($query);
 
