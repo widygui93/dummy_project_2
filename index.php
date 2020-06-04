@@ -199,10 +199,10 @@ if( isset($_SESSION["login"]) ) {
  							<div class="col-12 py-3">
  								<div class="row">
  									<div class="col-12 text-center text-uppercase">
-                                        <h2><?= $type["tipe"]; ?></h2>
+                                        <h2><?= $type["tipe_menu"]; ?></h2>
                                     </div>
  								</div>
- 								<?php $Menus = $menu->getMenuByIdTipeMenu($type["id"]); ?>
+ 								<?php $Menus = $menu->getMenuByIdTipeMenu($type["id_tipe_menu"]); ?>
  								<div class="row">
  									<?php foreach($Menus as $Menu) : ?>
  									<div class="col-lg-4 col-sm-6 my-3">

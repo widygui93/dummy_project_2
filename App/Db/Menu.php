@@ -13,7 +13,7 @@ class Menu extends Db {
 	}
 
 	public function getTipeMenu(){
-		$query = "SELECT * FROM tipe_menu";
+		$query = "SELECT DISTINCT id_tipe_menu, tipe_menu FROM menu";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->tipeMenu[] = $row;
@@ -24,7 +24,7 @@ class Menu extends Db {
 	public function getMenuByIdTipeMenu($idTipeMenu){
 		// clear array menu then ready to be inserted
 		$this->menu = array();
-		
+
 		$query = "SELECT nama_menu, harga_menu , FORMAT(harga_menu,0) AS harga_menu_2, id_menu, tipe_menu FROM menu WHERE id_tipe_menu = $idTipeMenu";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
