@@ -4,11 +4,16 @@ session_start();
 require_once 'App/init.php';
 use App\Db\Cart as Cart;
 use App\Db\Profile as Profile;
+use App\Db\Menu as Menu;
 
 
 
 $cart = new Cart();
 $profile = new Profile();
+$menu = new Menu();
+
+$types = $menu->getTipeMenu();
+
 
 if( isset($_SESSION["login"]) ) {
 	$user = $_SESSION["username"];
@@ -188,78 +193,40 @@ if( isset($_SESSION["login"]) ) {
                             </a>
                         </div>
  					</div>
+ 					<?php foreach($types as $type) : ?>
  					<div class="col-12">
  						<div class="row">
  							<div class="col-12 py-3">
  								<div class="row">
  									<div class="col-12 text-center text-uppercase">
-                                        <h2>Chinese Main Course</h2>
+                                        <h2><?= $type["tipe"]; ?></h2>
                                     </div>
  								</div>
+ 								<?php $Menus = $menu->getMenuByIdTipeMenu($type["id"]); ?>
  								<div class="row">
+ 									<?php foreach($Menus as $Menu) : ?>
  									<div class="col-lg-4 col-sm-6 my-3">
  										<div class="col-12 text-center h-100 product-item">
  											<div class="row h-100">
  												<div class="card">
 												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
 												  <div class="card-body">
-												    <h5 class="card-title">Kwetiau Goreng Extra Seafood</h5>
-												    <h3><span class="badge badge-primary">Rp 45.000</span></h3>
+												    <h5 class="card-title"><?= $Menu["nama_menu"]; ?></h5>
+												    <h3><span class="badge badge-primary">Rp <?= $Menu["harga_menu_2"]; ?></span></h3>
 												    <?php if( isset($_SESSION["login"]) ) : ?>
 														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-														<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng Extra Seafood">
-														<input style="display: none;" type="text" name="harga" value=45000>
-														<input style="display: none;" type="text" name="idMenu" value=1>
-														<input style="display: none;" type="text" name="tipe" value="chinese">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(1,$user);?>>
+														<input style="display: none;" type="text" name="nama" value="<?= $Menu['nama_menu']; ?>">
+														<input style="display: none;" type="text" name="harga" value=<?= $Menu['harga_menu']; ?>>
+														<input style="display: none;" type="text" name="idMenu" value=<?= $Menu['id_menu']; ?>>
+														<input style="display: none;" type="text" name="tipe" value="<?= $Menu['tipe_menu']; ?>">
+														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu($Menu['id_menu'],$user);?>>
 													<?php endif; ?>
 												  </div>
 												</div>
  											</div>
  										</div>
  									</div>
- 									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 text-center h-100 product-item">
- 											<div class="row h-100">
-						 						<div class="card">
-												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-												  <div class="card-body">
-												    <h5 class="card-title">Kwetiau Goreng</h5>
-												    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-												    <?php if( isset($_SESSION["login"]) ) : ?>
-														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-														<input style="display: none;" type="text" name="nama" value="Kwetiau Goreng">
-														<input style="display: none;" type="text" name="harga" value=35000>
-														<input style="display: none;" type="text" name="idMenu" value=2>
-														<input style="display: none;" type="text" name="tipe" value="chinese">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(2,$user);?>>
-													<?php endif; ?>
-												  </div>
-												</div>
- 											</div>
- 										</div>
- 									</div>
- 									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 text-center h-100 product-item">
- 											<div class="row h-100">
- 												<div class="card">
-												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-												  <div class="card-body">
-												    <h5 class="card-title">Bihun Goreng Extra Seafood</h5>
-												    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-												    <?php if( isset($_SESSION["login"]) ) : ?>
-														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-														<input style="display: none;" type="text" name="nama" value="Bihun Goreng Extra Seafood">
-														<input style="display: none;" type="text" name="harga" value=45000>
-														<input style="display: none;" type="text" name="idMenu" value=3>
-														<input style="display: none;" type="text" name="tipe" value="chinese">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(3,$user);?>>
-													<?php endif; ?>
-												  </div>
-												</div>
- 											</div>
- 										</div>
- 									</div>
+ 									<?php endforeach; ?>	
  								</div>
  							</div>
  						</div>
@@ -267,82 +234,8 @@ if( isset($_SESSION["login"]) ) {
  					<div class="col-12">
  						<hr>
  					</div>
- 					<div class="col-12">
- 						<div class="row">
- 							<div class="col-12 py-3">
- 								<div class="row">
- 									<div class="col-12 text-center text-uppercase">
-                                        <h2>Western Main Course</h2>
-                                    </div>
- 								</div>
- 								<div class="row">
- 									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 text-center h-100 product-item">
- 											<div class="row h-100">
- 												<div class="card">
-												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-												  <div class="card-body">
-												    <h5 class="card-title">Hamburger Deluxe Extra Ham</h5>
-												    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-												    <?php if( isset($_SESSION["login"]) ) : ?>
-														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-														<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe Extra Ham">
-														<input style="display: none;" type="text" name="harga" value=45000>
-														<input style="display: none;" type="text" name="idMenu" value=4>
-														<input style="display: none;" type="text" name="tipe" value="western">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(4,$user);?>>
-													<?php endif; ?>
-												  </div>
-												</div>
- 											</div>
- 										</div>
- 									</div>
- 									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 text-center h-100 product-item">
- 											<div class="row h-100">
- 												<div class="card">
-												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-												  <div class="card-body">
-												    <h5 class="card-title">Hamburger Deluxe</h5>
-												    <h3><span class="badge badge-primary">Rp.35.000</span></h3>
-												    <?php if( isset($_SESSION["login"]) ) : ?>
-														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-														<input style="display: none;" type="text" name="nama" value="Hamburger Deluxe">
-														<input style="display: none;" type="text" name="harga" value=35000>
-														<input style="display: none;" type="text" name="idMenu" value=5>
-														<input style="display: none;" type="text" name="tipe" value="western">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(5,$user);?>>
-													<?php endif; ?>
-												  </div>
-												</div>
- 											</div>
- 										</div>
- 									</div>
- 									<div class="col-lg-4 col-sm-6 my-3">
- 										<div class="col-12 text-center h-100 product-item">
- 											<div class="row h-100">
- 												<div class="card">
-												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
-												  <div class="card-body">
-												    <h5 class="card-title">Hotdog Deluxe Extra Cheese</h5>
-												    <h3><span class="badge badge-primary">Rp.45.000</span></h3>
-												    <?php if( isset($_SESSION["login"]) ) : ?>
-														<button type="button" class="btn btn-success order" data-toggle="modal" data-target="#quantityModal">Order Now</button>
-														<input style="display: none;" type="text" name="nama" value="Hotdog Deluxe Extra Cheese">
-														<input style="display: none;" type="text" name="harga" value=45000>
-														<input style="display: none;" type="text" name="idMenu" value=6>
-														<input style="display: none;" type="text" name="tipe" value="western">
-														<input style="display: none;" type="text" name="quantity" value=<?= $cart->getJumlahQuantityByIdMenu(6,$user);?>>
-													<?php endif; ?>
-												  </div>
-												</div>
- 											</div>
- 										</div>
- 									</div>
- 								</div>
- 							</div>
- 						</div>
- 					</div>
+ 					<?php endforeach; ?>
+ 					
  				</main>
  			</div>
  			<div class="col-12 align-self-end">
