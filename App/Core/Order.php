@@ -29,7 +29,6 @@ $menu = new Menu($name, $cost, $type, $idMenu, $quantity);
 $order = new TabelOrderMenu();
 
 
-
 cekOrder(
 	$order->createOrder(
 			$menu->getTypeMenu(),

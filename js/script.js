@@ -43,7 +43,7 @@ $(document).ready(function(){
 				swal(result.title, result.text, result.icon).then(function(){
 					location.reload();
 				});
-				
+
 			});
 		}	
 
