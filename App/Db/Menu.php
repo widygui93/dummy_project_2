@@ -1,7 +1,7 @@
 <?php namespace App\Db;
 
 class Menu extends Db {
-	private $id, $tipeMenu, $menu;
+	private $tipeMenu, $menu;
 
 	public function __construct(){
 		parent::__construct();
