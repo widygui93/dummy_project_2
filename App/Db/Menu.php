@@ -7,9 +7,6 @@ class Menu extends Db {
 		parent::__construct();
 		$this->tipeMenu = array();
 		$this->menu = array();
-		// $this->totalHargaItems = 0;
-		// $this->jumlahQuantity = 0;
-		// $this->jumlahQuantityByIdMenu = 0;
 	}
 
 	public function getTipeMenu(){
