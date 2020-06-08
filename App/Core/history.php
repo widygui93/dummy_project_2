@@ -140,7 +140,7 @@ $profilePic = $profile->getProfilePic($user);
  							<div class="col-lg-4">
  								<div class="menu text-center">
  									<?php foreach($types as $type) : ?>
-		                            	<a href="#"><?= $type["tipe_menu"]; ?></a>
+		                            	<a href="menu.php?id=<?= $type['id_tipe_menu']; ?>&tipe=<?= $type['tipe_menu']; ?>"><?= $type["tipe_menu"]; ?></a>
 	                            	<?php endforeach; ?>
  								</div>
  							</div>
