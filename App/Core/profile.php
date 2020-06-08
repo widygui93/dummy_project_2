@@ -15,9 +15,13 @@ require_once '../init.php';
 
 use App\Db\Cart as Cart;
 use App\Db\Profile as Profile;
+use App\Db\Menu as Menu;
 
 $cart = new Cart();
 $profile = new Profile();
+$menu = new Menu();
+
+$types = $menu->getTipeMenu();
 
 $jlhQuantity = $cart->getJumlahQuantity($user);
 
@@ -247,10 +251,9 @@ $registerDate = $profile->getRegisterDate($user);
  							</div>
  							<div class="col-lg-4">
  								<div class="menu text-center">
- 									<a href="#">Chinese</a>
- 									<a href="#">Western</a>
- 									<a href="#">Indonesian</a>
- 									<a href="#">Japanese</a>
+ 									<?php foreach($types as $type) : ?>
+		                            	<a href="#"><?= $type["tipe_menu"]; ?></a>
+	                            	<?php endforeach; ?>
  								</div>
  							</div>
  							<div class="col-lg-4 header-item-holder text-center text-lg-right">

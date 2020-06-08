@@ -121,10 +121,9 @@ if( isset($_SESSION["login"]) ) {
                             </div>
                             <div class="col-lg-4">
                             	<div class="menu text-center">
-	                            	<a href="#">Chinese</a>
-	                            	<a href="#">Western</a>
-	                            	<a href="#">Indonesian</a>
-	                            	<a href="#">Japanese</a>
+                            		<?php foreach($types as $type) : ?>
+		                            	<a href="#"><?= $type["tipe_menu"]; ?></a>
+	                            	<?php endforeach; ?>
                             	</div>
                             </div>
                             <div class="col-lg-4 header-item-holder text-center text-lg-right">
