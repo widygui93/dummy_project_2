@@ -66,6 +66,7 @@ $tipeMenu = $_GET["tipe"];
 				<input type="text" style="display: none;" id="idMenu" value="">
 				<input type="text" style="display: none;" id="tipe" value="">
 				<input type="text" style="display: none;" id="quantity" value="">
+                <input type="text" style="display: none;" id="direktori" value="Order.php">
 	          	<div class="quantity-container">
 					<label>Quantity:</label>
 					<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>
@@ -341,7 +342,7 @@ $tipeMenu = $_GET["tipe"];
  			</div>
  		</div>
  	</div>
- 	<script src="js/jquery-3.4.1.min.js"></script>
+ 	<script src="../../js/jquery-3.4.1.min.js"></script>
  	<script src="../../js/script.js"></script>
  </body>
  </html>

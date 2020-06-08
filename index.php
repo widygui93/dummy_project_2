@@ -63,6 +63,7 @@ if( isset($_SESSION["login"]) ) {
 				<input type="text" style="display: none;" id="idMenu" value="">
 				<input type="text" style="display: none;" id="tipe" value="">
 				<input type="text" style="display: none;" id="quantity" value="">
+				<input type="text" style="display: none;" id="direktori" value="App/Core/Order.php">
 	          	<div class="quantity-container">
 					<label>Quantity:</label>
 					<button type="button" class="btn btn-outline-primary btn-sm plus">+</button>

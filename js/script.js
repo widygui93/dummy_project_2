@@ -18,6 +18,7 @@ $(document).ready(function(){
 		const idMenu = $(".modal-body #idMenu").val();
 		const tipe = $(".modal-body #tipe").val();
 		const oldQuantity = $(".modal-body #quantity").val();
+		const direktori = $(".modal-body #direktori").val();
 		const newQuantity = $(".modal-body .badge-success").text();
 
 		if(oldQuantity == 0 && newQuantity == 0){
@@ -30,7 +31,7 @@ $(document).ready(function(){
 			swal('Failed!', 'Your Quantity must at least 1', 'error');
 		} 
 		else {
-			$.post("App/Core/Order.php",
+			$.post(direktori,
 			{
 				tipe: tipe,
 	            nama: nama,
