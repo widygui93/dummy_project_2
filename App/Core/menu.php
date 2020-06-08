@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-require_once 'App/init.php';
+require_once '../init.php';
 use App\Db\Cart as Cart;
 use App\Db\Profile as Profile;
 use App\Db\Menu as Menu;
@@ -19,6 +19,9 @@ if( isset($_SESSION["login"]) ) {
 	$user = $_SESSION["username"];
 	$profilePic = $profile->getProfilePic($user);
 }
+
+$idTipeMenu = $_GET["id"];
+$tipeMenu = $_GET["tipe"];
 
 
 
@@ -39,7 +42,7 @@ if( isset($_SESSION["login"]) ) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 
 	<!-- CDN sweetalert -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -88,11 +91,11 @@ if( isset($_SESSION["login"]) ) {
                             <div class="col-auto mr-auto">
                                 <ul class="top-nav">
                                     <li>
-                                        <img src="App/Core/svg/smartphone-white-18dp.svg" alt="icon phone">
+                                        <img src="svg/smartphone-white-18dp.svg" alt="icon phone">
                                         <span>+123-456-7890</span>
                                     </li>
                                     <li>
-                                    	<img src="App/Core/svg/mail-white-18dp.svg" alt="icon mail">
+                                    	<img src="svg/mail-white-18dp.svg" alt="icon mail">
                                         <span>mail@ecom.com</span>
                                     </li>
                                 </ul>
@@ -101,11 +104,11 @@ if( isset($_SESSION["login"]) ) {
                                 <ul class="top-nav">
                                 	<?php if(isset($_SESSION["login"])): ?>
                                 		<li>
-                                			<a href="App/Core/logout.php">Log Out</a>
+                                			<a href="logout.php">Log Out</a>
                                 		</li>
 	                                <?php else: ?>
-	                                	<li><a href="App/Core/register.php">Register</a></li>
-	                                	<li><a href="App/Core/login.php">Log In</a></li>
+	                                	<li><a href="register.php">Register</a></li>
+	                                	<li><a href="login.php">Log In</a></li>
                                     <?php endif; ?>
                                 </ul>
                             </div>
@@ -116,13 +119,13 @@ if( isset($_SESSION["login"]) ) {
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="site-logo text-center text-lg-left">
-                                    <a href="index.php">Sunny Cafe</a>
+                                    <a href="../../index.php">Sunny Cafe</a>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                             	<div class="menu text-center">
                             		<?php foreach($types as $type) : ?>
-		                            	<a href="App/Core/menu.php?id=<?= $type['id_tipe_menu']; ?>&tipe=<?= $type['tipe_menu']; ?>"><?= $type["tipe_menu"]; ?></a>
+		                            	<a href="menu.php?id=<?= $type['id_tipe_menu']; ?>&tipe=<?= $type['tipe_menu']; ?>"><?= $type["tipe_menu"]; ?></a>
 	                            	<?php endforeach; ?>
                             	</div>
                             </div>
@@ -130,9 +133,9 @@ if( isset($_SESSION["login"]) ) {
                             	<?php if( isset($_SESSION["login"]) ) : ?>
 	                            	<ul class="navbar-nav mx-auto mt-2 mt-lg-0">
 	                                    <li class="nav-item dropdown">
-	                                        <a class="nav-link dropdown-toggle" href="App/Core/profile.php" id="user">
+	                                        <a class="nav-link dropdown-toggle" href="profile.php" id="user">
 	                                        	<!-- <span class="user-photo"></span> -->
-	                                        	<img src="App/Core/profile-picture/<?= $profilePic; ?>" class="user-photo">
+	                                        	<img src="profile-picture/<?= $profilePic; ?>" class="user-photo">
 	                                        	<strong><?= $user; ?></strong>
 	                                        </a>
 	                                        <!-- <div class="dropdown-menu" aria-labelledby="user">
@@ -142,16 +145,16 @@ if( isset($_SESSION["login"]) ) {
 	                                    </li>
 	                                </ul>
                                 <?php endif; ?>
-                                <a href="App/Core/cart.php" class="header-item" data-toggle="tooltip" data-placement="top" title="Cart">
-                                    <img src="App/Core/svg/shopping_cart-black-24dp.svg" alt="icon cart">
+                                <a href="cart.php" class="header-item" data-toggle="tooltip" data-placement="top" title="Cart">
+                                    <img src="svg/shopping_cart-black-24dp.svg" alt="icon cart">
                                     <?php if( isset($_SESSION["login"]) ) : ?>
                                     	<span class="badge badge-success"><?= $cart->getJumlahQuantity($user); ?></span>
                                     <?php else: ?>
                                     	<span class="badge badge-success">0</span>
                                     <?php endif; ?>
                                 </a>
-                                <a href="App/Core/history.php" class="header-item" data-toggle="tooltip" data-placement="top" title="History">
- 									<img src="App/Core/svg/receipt-black-24dp.svg" alt="icon history">
+                                <a href="history.php" class="header-item" data-toggle="tooltip" data-placement="top" title="History">
+ 									<img src="svg/receipt-black-24dp.svg" alt="icon history">
  								</a>
                                 <!-- <a href="#" class="header-item"> -->
                                 <!-- <span id="header-price">Rp.4,000,000</span> -->
@@ -166,20 +169,20 @@ if( isset($_SESSION["login"]) ) {
  				<main class="row">
  					<div class="col-12 px-0">
                         <div id="slider" class="carousel slide w-100" data-ride="carousel">
-                            <ol class="carousel-indicators">
+                            <!-- <ol class="carousel-indicators">
                                 <li data-target="#slider" data-slide-to="0" class="active"></li>
                                 <li data-target="#slider" data-slide-to="1"></li>
                                 <li data-target="#slider" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active">
-                                    <img src="App/Menu/Images/slider-1.jpg" class="slider-img">
+                                    <img src="../Menu/Images/slider-1.jpg" class="slider-img">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="App/Menu/Images/slider-2.jpg" class="slider-img">
+                                    <img src="../Menu/Images/slider-2.jpg" class="slider-img">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="App/Menu/Images/slider-3.jpg" class="slider-img">
+                                    <img src="../Menu/Images/slider-3.jpg" class="slider-img">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
@@ -189,26 +192,25 @@ if( isset($_SESSION["login"]) ) {
                             <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
-                            </a>
+                            </a> -->
                         </div>
  					</div>
- 					<?php foreach($types as $type) : ?>
  					<div class="col-12">
  						<div class="row">
  							<div class="col-12 py-3">
  								<div class="row">
  									<div class="col-12 text-center text-uppercase">
-                                        <h2><?= $type["tipe_menu"]; ?></h2>
+                                        <h2><?= $tipeMenu; ?></h2>
                                     </div>
  								</div>
- 								<?php $Menus = $menu->getMenuByIdTipeMenu($type["id_tipe_menu"]); ?>
+ 								<?php $Menus = $menu->getMenuByIdTipeMenu($idTipeMenu); ?>
  								<div class="row">
  									<?php foreach($Menus as $Menu) : ?>
  									<div class="col-lg-4 col-sm-6 my-3">
  										<div class="col-12 text-center h-100 product-item">
  											<div class="row h-100">
  												<div class="card">
-												  <img class="card-img-top" src="App/Menu/Images/kwetiau.jpg" alt="Card image cap">
+												  <img class="card-img-top" src="../Menu/Images/kwetiau.jpg" alt="Card image cap">
 												  <div class="card-body">
 												    <h5 class="card-title"><?= $Menu["nama_menu"]; ?></h5>
 												    <h3><span class="badge badge-primary">Rp <?= $Menu["harga_menu_2"]; ?></span></h3>
@@ -233,8 +235,6 @@ if( isset($_SESSION["login"]) ) {
  					<div class="col-12">
  						<hr>
  					</div>
- 					<?php endforeach; ?>
- 					
  				</main>
  			</div>
  			<div class="col-12 align-self-end">
@@ -245,7 +245,7 @@ if( isset($_SESSION["login"]) ) {
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="footer-logo">
-                                            <a href="index.php">E-Commerce</a>
+                                            <a href="../../index.php">E-Commerce</a>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -342,6 +342,6 @@ if( isset($_SESSION["login"]) ) {
  		</div>
  	</div>
  	<script src="js/jquery-3.4.1.min.js"></script>
- 	<script src="js/script.js"></script>
+ 	<script src="../../js/script.js"></script>
  </body>
  </html>
