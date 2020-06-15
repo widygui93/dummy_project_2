@@ -14,14 +14,20 @@ $menu = new Menu();
 
 $types = $menu->getTipeMenu();
 
+if( $menu->isUrlInvalid($_GET) ){
+    //arahkan balik ke index.php
+    header('Location: ../../index.php');
+    exit;
+}
+
+$idTipeMenu = $_GET["id"];
+$tipeMenu = $_GET["tipe"];
+
 
 if( isset($_SESSION["login"]) ) {
 	$user = $_SESSION["username"];
 	$profilePic = $profile->getProfilePic($user);
 }
-
-$idTipeMenu = $_GET["id"];
-$tipeMenu = $_GET["tipe"];
 
 
 

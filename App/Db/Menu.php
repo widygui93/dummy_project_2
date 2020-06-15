@@ -30,6 +30,21 @@ class Menu extends Db {
 	    return $this->menu;
 	}
 
+	public function isUrlInvalid(array $data):bool{
+
+		if( (isset($data["id"]) && isset($data["tipe"])) && (count($data) === 2) ){
+		    $idTipeMenu = $data["id"];
+		    $tipeMenu = $data["tipe"];
+
+		    foreach ($this->tipeMenu as $type) {
+		      if($idTipeMenu == $type['id_tipe_menu'] && $tipeMenu == $type['tipe_menu']){
+		        return false;
+		      }
+		    }
+		}
+		return true;
+	}
+
 
 
 
