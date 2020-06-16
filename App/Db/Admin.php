@@ -53,40 +53,7 @@ class Admin extends Db {
 		}
 	}
 
-	public function verifyUserAndPassword(string $password, string $userName):bool{
-		$query = "SELECT * FROM user WHERE username = '$userName'";
-		$result = $this->executeQuery($query);
-
-		// cek username ada di db atau tidak
-		if( mysqli_num_rows($result[0]) === 1 ){
-			// cek password sama atau tidak
-			$row = mysqli_fetch_assoc($result[0]);
-			if( password_verify($password, $row["password"]) ){
-				return true;
-			} else {
-				return false;
-			}
-		} else {
-			return false;
-		}
-	}
-
-	public function purifyStr(string $str):string{
-		$str = $this->escapeStr($str);
-		return $str;
-	}
-
 	
-	
-
-	public function validateLengthPassword(string $newPassword):bool{
-		// cek password dengan length antara 8 -12 characters
-		if(preg_match('/^.{8,12}$/', $newPassword) === 0 ){
-		    return false;
-		} else {
-			return true;
-		}
-	}
 
 
 
