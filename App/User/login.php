@@ -10,26 +10,25 @@ if( isset($_SESSION["admin"]) ) {
 	exit;
 }
 
-// use App\Db\Profile as Profile;
+use App\Db\Admin as Admin;
 
-// $profile = new Profile();
+$admin = new Admin();
 
-// if( isset($_POST["login"]) ) {
+if( isset($_POST["admin"]) ) {
 
-// 	if( $profile->login($_POST)){
+	if( $admin->login($_POST)){
 
-// 			$_SESSION["login"] = true;
-// 			$_SESSION["username"] = $_POST["username"];
+		$_SESSION["admin"] = true;
 
-// 			header('Location: ../../index.php');
-// 			exit;
-// 		}
+		header('Location: admin.php');
+		exit;
+	}
 
-// 	$error = true;
+	$error = true;
 
     
 
-// }
+}
 
 
 
@@ -91,7 +90,7 @@ if( isset($_SESSION["admin"]) ) {
  											<input type="password" name="password" id="password" class="form-control" required></input>
  										</div>
  										<div class="form-group">
- 											<button type="submit" name="login" class="btn btn-outline-dark">Login</button>
+ 											<button type="submit" name="admin" class="btn btn-outline-dark">Login</button>
  										</div>
  									</form>
  								</div>
