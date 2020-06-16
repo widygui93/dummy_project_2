@@ -84,11 +84,11 @@ if( isset($_SESSION["admin"]) ) {
  									<form action="" method="post">
  										<div class="form-group">
  											<label for="username">Username</label>
- 											<input type="text" name="username" id="username" minlength="6" maxlength="12" pattern="^[a-zA-Z0-9]*$" class="form-control" required>
+ 											<input type="text" name="username" id="username" class="form-control" required>
  										</div>
  										<div class="form-group">
  											<labe for="password">Password</label>
- 											<input type="password" name="password" id="password" minlength="8" maxlength="12" class="form-control" required></input>
+ 											<input type="password" name="password" id="password" class="form-control" required></input>
  										</div>
  										<div class="form-group">
  											<button type="submit" name="login" class="btn btn-outline-dark">Login</button>
