@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Admin-Tipe Menu</title>
+	<title>Admin-Menu</title>
 
 	<!-- CDN bootstrap 4 -->
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -100,10 +100,27 @@
 			<div class="main">
 				<!-- start content page -->
 				<div class="content-page">
-					<form action="" method="post">
+					<form action="" method="post" enctype="multipart/form-data">
 						<div class="form-group">
-							<label for="nama-menu">Nama Tipe Menu</label>
+							<label for="tipe-menu">Tipe Menu</label>
+							<select id="tipe-menu" name="tipe-menu">
+								<option value="Chinese">Chinese</option>
+								<option value="Western">Western</option>
+								<option value="Japanese">Japanese</option>
+								<option value="Indonesian">Indonesian</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="nama-menu">Nama Menu</label>
 							<input type="text" name="nama-menu" id="nama-menu" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label for="harga-menu">Harga</label>
+							<input type="text" name="harga-menu" id="harga-menu" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label for="gambar-menu">Gambar</label>
+							<input type="file" name="gambar-menu" id="gambar-menu" class="form-control" required>
 						</div>
 					</form>
 				</div>
