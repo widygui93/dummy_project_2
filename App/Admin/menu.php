@@ -124,40 +124,42 @@
 						</div>
 						<button type="submit" name="submit" class="btn btn-primary">Add</button>
 					</form>
-					<table class="table table-hover table-dark">
-					  <thead>
-					    <tr>
-					      <th scope="col">No</th>
-					      <th scope="col">Tipe Menu</th>
-					      <th scope="col">Nama Menu</th>
-					      <th scope="col">Harga</th>
-					      <th scope="col">Gambar</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					    <tr>
-					      <th scope="row">1</th>
-					      <td>Chinese</td>
-					      <td>Bihun Goreng</td>
-					      <td>Rp.35.0000</td>
-					      <td><img src="#"></td>
-					    </tr>
-					    <tr>
-					      <th scope="row">2</th>
-					      <td>Japanese</td>
-					      <td>Sushi Roll</td>
-					      <td>Rp.50.000</td>
-					      <td><img src="#"></td>
-					    </tr>
-					    <tr>
-					      <th scope="row">3</th>
-					      <td>Indonesian</td>
-					      <td>Nasi Goreng</td>
-					      <td>Rp.45.000</td>
-					      <td><img src="#"></td>
-					    </tr>
-					  </tbody>
-					</table>
+					<div class="table-responsive">
+						<table class="table table-hover table-dark">
+						  <thead>
+						    <tr>
+						      <th scope="col">No</th>
+						      <th scope="col">Tipe Menu</th>
+						      <th scope="col">Nama Menu</th>
+						      <th scope="col">Harga</th>
+						      <th scope="col">Gambar</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>Chinese</td>
+						      <td>Bihun Goreng</td>
+						      <td>Rp.35.0000</td>
+						      <td><img src="#"></td>
+						    </tr>
+						    <tr>
+						      <th scope="row">2</th>
+						      <td>Japanese</td>
+						      <td>Sushi Roll</td>
+						      <td>Rp.50.000</td>
+						      <td><img src="#"></td>
+						    </tr>
+						    <tr>
+						      <th scope="row">3</th>
+						      <td>Indonesian</td>
+						      <td>Nasi Goreng</td>
+						      <td>Rp.45.000</td>
+						      <td><img src="#"></td>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
 				</div>
 				<!-- end content page -->
 			</div>

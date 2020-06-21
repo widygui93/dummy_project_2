@@ -107,28 +107,30 @@
 						</div>
 						<button type="submit" name="submit" class="btn btn-primary">Add</button>
 					</form>
-					<table class="table table-hover table-dark">
-					  <thead>
-					    <tr>
-					      <th scope="col">No</th>
-					      <th scope="col">Tipe Menu</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					    <tr>
-					      <th scope="row">1</th>
-					      <td>Chinese</td>
-					    </tr>
-					    <tr>
-					      <th scope="row">2</th>
-					      <td>Japanese</td>
-					    </tr>
-					    <tr>
-					      <th scope="row">3</th>
-					      <td>Indonesian</td>
-					    </tr>
-					  </tbody>
-					</table>
+					<div class="table-responsive">
+						<table class="table table-hover table-dark">
+						  <thead>
+						    <tr>
+						      <th scope="col">No</th>
+						      <th scope="col">Tipe Menu</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>Chinese</td>
+						    </tr>
+						    <tr>
+						      <th scope="row">2</th>
+						      <td>Japanese</td>
+						    </tr>
+						    <tr>
+						      <th scope="row">3</th>
+						      <td>Indonesian</td>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
 				</div>
 				<!-- end content page -->
 			</div>
