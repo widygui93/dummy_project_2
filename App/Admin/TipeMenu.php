@@ -104,8 +104,8 @@
 						<div class="form-group">
 							<label for="nama-menu">Nama Tipe Menu</label>
 							<input type="text" name="nama-menu" id="nama-menu" class="form-control" required>
-							<button type="submit" name="submit" class="btn btn-primary">Add</button>
 						</div>
+						<button type="submit" name="submit" class="btn btn-primary">Add</button>
 					</form>
 					<table class="table table-hover table-dark">
 					  <thead>
@@ -125,7 +125,7 @@
 					    </tr>
 					    <tr>
 					      <th scope="row">3</th>
-					      <td colspan="2">Indonesian</td>
+					      <td>Indonesian</td>
 					    </tr>
 					  </tbody>
 					</table>
