@@ -104,8 +104,31 @@
 						<div class="form-group">
 							<label for="nama-menu">Nama Tipe Menu</label>
 							<input type="text" name="nama-menu" id="nama-menu" class="form-control" required>
+							<button type="submit" name="submit" class="btn btn-primary">Add</button>
 						</div>
 					</form>
+					<table class="table table-hover table-dark">
+					  <thead>
+					    <tr>
+					      <th scope="col">No</th>
+					      <th scope="col">Tipe Menu</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <th scope="row">1</th>
+					      <td>Chinese</td>
+					    </tr>
+					    <tr>
+					      <th scope="row">2</th>
+					      <td>Japanese</td>
+					    </tr>
+					    <tr>
+					      <th scope="row">3</th>
+					      <td colspan="2">Indonesian</td>
+					    </tr>
+					  </tbody>
+					</table>
 				</div>
 				<!-- end content page -->
 			</div>
