@@ -6,7 +6,7 @@ require_once '../init.php';
 
 if( isset($_SESSION["admin"]) ) {
 	//arahkan balik ke admin.php
-	header('Location: admin.php');
+	header('Location: TipeMenu.php');
 	exit;
 }
 
@@ -20,7 +20,7 @@ if( isset($_POST["admin"]) ) {
 
 		$_SESSION["admin"] = true;
 
-		header('Location: admin.php');
+		header('Location: TipeMenu.php');
 		exit;
 	}
 
