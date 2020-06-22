@@ -199,6 +199,28 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 	
 }
 
+@media screen and (max-width: 385px) {
+	.carousel.slide.w-100 {
+		margin-top: 180px;
+	}
+}
+
+@media screen and (max-width: 377px) {
+	.carousel.slide.w-100 {
+		margin-top: 200px;
+	}
+
+	.main-content {
+		margin-top: 215px;
+	}
+}
+
+@media screen and (max-width: 259px) {
+	.main-content {
+		margin-top: 280px;
+	}
+}
+
 /* core/profile.php */
 
 .profile-pic {
