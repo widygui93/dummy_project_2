@@ -30,6 +30,17 @@
 			grid-gap: 10px;
 		}
 
+		@media screen and (max-width: 500px) {
+			.grid-container {
+				grid-template-areas:
+					'header header header header header header'
+					'menu menu menu menu menu menu'
+					'main main main main main main'
+					'footer footer footer footer footer footer'
+				;
+			}
+		}
+
     </style>
 </head>
 <body>
@@ -71,31 +82,36 @@
 				<!-- end Topbar -->
 			</div>
 			<div class="menu">
-				<!-- start left sidebar -->
-				<div class="left-side-menu left-side-menu-detached mm-active">
-					<div class="leftbar-user">
-						<span>Menu Admin</span>
-					</div>
-					<ul class="metismenu side-nav mm-show">
-						<li class="side-nav-title side-nav-item">
-							<a href="../../index.php">Sunny Cafe App</a>
-						</li>
-						<li class="side-nav-item">
-							<a href="#"><span>Products</span></a>
-							<ul class="side-nav-second-level mm-collapse mm-show">
-								<li class="mm-active"><a href="TipeMenu.php" class="active">Tipe Menu</a></li>
-								<li><a href="menu.php">Menu</a></li>
-							</ul>
-						</li>
-						<li class="side-nav-item">
-							<a href="#"><span>Report</span></a>
-							<ul class="side-nav-second-level mm-collapse mm-show">
-								<li class="mm-active"><a href="#">Transaction Report</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<!-- end left sidebar -->
+				<!-- <div class="row"> -->
+				    <nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
+				        <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
+				            <span class="navbar-toggler-icon"></span>
+				        </button>
+				        <div class="collapse navbar-collapse" id="mainNav">
+				            <ul class="nav flex-column navbar-nav mx-auto mt-2 mt-lg-0">
+				            	<li class="nav-item">
+				                    <strong>Menu Admin</strong>
+				                </li>
+				                <li class="nav-item">
+				                    <a class="nav-link" href="../../index.php">Sunny Cafe <span class="sr-only">(current)</span></a>
+				                </li>
+				                <li class="nav-item dropdown">
+				                    <a class="nav-link dropdown-toggle" href="#" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+				                    <div class="dropdown-menu" aria-labelledby="products">
+				                        <a class="dropdown-item" href="TipeMenu.php">Tipe Menu</a>
+				                        <a class="dropdown-item" href="menu.php">Menu</a>
+				                    </div>
+				                </li>
+				                <li class="nav-item dropdown">
+				                    <a class="nav-link dropdown-toggle" href="#" id="reports" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Report</a>
+				                    <div class="dropdown-menu" aria-labelledby="reports">
+				                        <a class="dropdown-item" href="#">Transaction Report</a>
+				                    </div>
+				                </li>
+				            </ul>
+				        </div>
+				    </nav>
+				<!-- </div> -->
 			</div>
 			<div class="main">
 				<!-- start content page -->
