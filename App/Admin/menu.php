@@ -30,7 +30,7 @@
 			grid-gap: 10px;
 		}
 
-		@media screen and (max-width: 500px) {
+		@media screen and (max-width: 900px) {
 			.grid-container {
 				grid-template-areas:
 					'header header header header header header'
