@@ -26,7 +26,7 @@
 			grid-template-areas: 
 				'header header header header header header'
 				'menu main main main main main'
-				'footer footer footer footer footer footer';
+				'menu footer footer footer footer footer';
 			grid-gap: 10px;
 		}
 
@@ -182,34 +182,44 @@
 			<div class="footer">
 				<div class="col-12 align-self-end">
 	 				<footer class="row">
-	 					<div class="col-12 bg-dark text-white pb-3 pt-5">
+	 					<div class="col-12 bg-dark text-white pb-3 pt-3 mb-3">
 	 						<div class="row">
-	 							<div class="col-lg-2 col-sm-4 text-center text-sm-left mb-sm-0 mb-3">
+	 							<div class="col-lg-6 col-sm-6 text-center text-sm-left">
 	                                <div class="row">
 	                                    <div class="col-12">
 	                                        <div class="footer-logo">
-	                                            <a href="index.php">E-Commerce</a>
+	                                            <!-- <a href="index.php">E-Commerce</a> -->
+	                                            <img src="../Core/svg/wb_sunny-white-18dp.svg" alt="sunny">
+	                                            <strong>Sunny Cafe</strong>
+	                                            <img src="../Core/svg/wb_sunny-white-18dp.svg" alt="sunny">
 	                                        </div>
 	                                    </div>
-	                                    <div class="col-12">
+	                                    <!-- <div class="col-12">
 	                                        <address>
 	                                            221B Baker Street<br>
 	                                            London, England
 	                                        </address>
-	                                    </div>
+	                                    </div> -->
 	                                </div>
 	                            </div>
-	                            <div class="col-lg-3 col-sm-8 text-center text-sm-left mb-sm-0 mb-3">
+	                            <div class="col-lg-6 col-sm-6 text-center text-sm-right">
 	                                <div class="row">
-	                                    <div class="col-12 text-uppercase">
-	                                        <h4>Who are we?</h4>
+	                                    <div class="col-12">
+	                                        <!-- <h4>Who are we?</h4> -->
+	                                        <!-- <a href="#">Home</a>
+	                                        <a href="#">About</a>
+	                                        <a href="#">Support</a> -->
+	                                        <a href="https://github.com/widygui93"><img src="../Core/svg/github-white.svg" alt="github"></a>
+	                                        <a href="https://www.facebook.com"><img src="../Core/svg/facebook-white.svg" alt="facebook"></a>
+	                                        <a href="https://www.instagram.com/widygui/"><img src="../Core/svg/instagram-white.svg" alt="instagram"></a>
+	                                        <img src="../Core/svg/code-white.svg" alt="code" data-toggle="tooltip" data-placement="bottom" title="created by midymidy">
 	                                    </div>
-	                                    <div class="col-12 text-justify">
+	                                    <!-- <div class="col-12 text-justify">
 	                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam imperdiet vel ligula vel sodales. Aenean vel ullamcorper purus, ac pharetra arcu. Nam enim velit, ultricies eu orci nec, aliquam efficitur sem. Quisque in sapien a sem vestibulum volutpat at eu nibh. Suspendisse eget est metus. Maecenas mollis quis nisl ac malesuada. Donec gravida tortor massa, vitae semper leo sagittis a. Donec augue turpis, rutrum vitae augue ut, venenatis auctor nulla. Sed posuere at erat in consequat. Nunc congue justo ut ante sodales, bibendum blandit augue finibus.</p>
-	                                    </div>
+	                                    </div> -->
 	                                </div>
 	                            </div>
-	                            <div class="col-lg-2 col-sm-3 col-5 ml-lg-auto ml-sm-0 ml-auto mb-sm-0 mb-3">
+	                            <!-- <div class="col-lg-2 col-sm-3 col-5 ml-lg-auto ml-sm-0 ml-auto mb-sm-0 mb-3">
 	                                <div class="row">
 	                                    <div class="col-12 text-uppercase">
 	                                        <h4>Quick Links</h4>
@@ -277,7 +287,7 @@
 	                                        </form>
 	                                    </div>
 	                                </div>
-	                            </div>
+	                            </div> -->
 	 						</div>
 	 					</div>
 	 				</footer>
