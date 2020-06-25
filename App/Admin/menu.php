@@ -65,7 +65,7 @@
 				                    <strong>Menu Admin</strong>
 				                </li>
 				                <li class="nav-item">
-				                    <a class="nav-link" href="../../index.php">Sunny Cafe <span class="sr-only">(current)</span></a>
+				                    <a class="nav-link" href="../../index.php">Sunny Cafe</a>
 				                </li>
 				                <li class="nav-item dropdown">
 				                    <a class="nav-link dropdown-toggle" href="#" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
@@ -74,11 +74,8 @@
 				                        <a class="dropdown-item" href="menu.php">Menu</a>
 				                    </div>
 				                </li>
-				                <li class="nav-item dropdown">
-				                    <a class="nav-link dropdown-toggle" href="#" id="reports" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Report</a>
-				                    <div class="dropdown-menu" aria-labelledby="reports">
-				                        <a class="dropdown-item" href="#">Transaction Report</a>
-				                    </div>
+				                <li class="nav-item">
+				                    <a class="nav-link" href="#">Transaction Report</a>
 				                </li>
 				            </ul>
 				        </div>
