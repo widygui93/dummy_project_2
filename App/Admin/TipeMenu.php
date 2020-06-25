@@ -77,7 +77,7 @@
 			                <li class="nav-item dropdown">
 			                    <a class="nav-link dropdown-toggle" href="#" id="reports" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
 			                    <div class="dropdown-menu" aria-labelledby="reports">
-			                        <a class="dropdown-item" href="#">User Report</a>
+			                        <a class="dropdown-item" href="UserReport.php">User Report</a>
 			                        <a class="dropdown-item" href="#">Transaction Report</a>
 			                    </div>
 			                </li>
