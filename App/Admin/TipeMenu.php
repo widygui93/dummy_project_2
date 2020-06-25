@@ -98,20 +98,33 @@
 						    <tr>
 						      <th scope="col">No</th>
 						      <th scope="col">Tipe Menu</th>
+						      <th scope="col">Aksi</th>
 						    </tr>
 						  </thead>
 						  <tbody>
 						    <tr>
 						      <th scope="row">1</th>
 						      <td>Chinese</td>
+						      <td>
+						      	<a href="#">Edit</a>
+						      	<a href="#">Delete</a>
+						      </td>
 						    </tr>
 						    <tr>
 						      <th scope="row">2</th>
 						      <td>Japanese</td>
+						      <td>
+						      	<a href="#">Edit</a>
+						      	<a href="#">Delete</a>
+						      </td>
 						    </tr>
 						    <tr>
 						      <th scope="row">3</th>
 						      <td>Indonesian</td>
+						      <td>
+						      	<a href="#">Edit</a>
+						      	<a href="#">Delete</a>
+						      </td>
 						    </tr>
 						  </tbody>
 						</table>
