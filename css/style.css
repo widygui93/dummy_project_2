@@ -286,3 +286,29 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 .profile-body h3 {
 	text-align: center;
 }
+
+/* folder admin */
+.header-admin { grid-area: header; }
+.menu-admin { grid-area: menu; }
+.main-admin { grid-area: main; }
+.footer-admin { grid-area: footer; }
+
+.grid-container {
+	display: grid;
+	grid-template-areas: 
+		'header header header header header header'
+		'menu main main main main main'
+		'menu footer footer footer footer footer';
+	grid-gap: 10px;
+}
+
+@media screen and (max-width: 900px) {
+	.grid-container {
+		grid-template-areas:
+			'header header header header header header'
+			'menu menu menu menu menu menu'
+			'main main main main main main'
+			'footer footer footer footer footer footer'
+		;
+	}
+} 

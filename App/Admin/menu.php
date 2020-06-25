@@ -15,33 +15,6 @@
 
     <!-- CDN sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <style type="text/css">
-    	.header-admin { grid-area: header; }
-    	.menu-admin { grid-area: menu; }
-    	.main-admin { grid-area: main; }
-    	.footer-admin { grid-area: footer; }
-
-		.grid-container {
-			display: grid;
-			grid-template-areas: 
-				'header header header header header header'
-				'menu main main main main main'
-				'menu footer footer footer footer footer';
-			grid-gap: 10px;
-		}
-
-		@media screen and (max-width: 900px) {
-			.grid-container {
-				grid-template-areas:
-					'header header header header header header'
-					'menu menu menu menu menu menu'
-					'main main main main main main'
-					'footer footer footer footer footer footer'
-				;
-			}
-		}
-
-    </style>
 </head>
 <body>
 	
