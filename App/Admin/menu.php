@@ -121,6 +121,7 @@
 						      <th scope="col">Nama Menu</th>
 						      <th scope="col">Harga</th>
 						      <th scope="col">Gambar</th>
+						      <th scope="col">Aksi</th>
 						    </tr>
 						  </thead>
 						  <tbody>
@@ -130,6 +131,10 @@
 						      <td>Bihun Goreng</td>
 						      <td>Rp.35.0000</td>
 						      <td><img src="#"></td>
+						      <td>
+						      	<a href="#">Edit</a>
+						      	<a href="#">Delete</a>
+						      </td>
 						    </tr>
 						    <tr>
 						      <th scope="row">2</th>
@@ -137,6 +142,10 @@
 						      <td>Sushi Roll</td>
 						      <td>Rp.50.000</td>
 						      <td><img src="#"></td>
+						      <td>
+						      	<a href="#">Edit</a>
+						      	<a href="#">Delete</a>
+						      </td>
 						    </tr>
 						    <tr>
 						      <th scope="row">3</th>
@@ -144,6 +153,10 @@
 						      <td>Nasi Goreng</td>
 						      <td>Rp.45.000</td>
 						      <td><img src="#"></td>
+						      <td>
+						      	<a href="#">Edit</a>
+						      	<a href="#">Delete</a>
+						      </td>
 						    </tr>
 						  </tbody>
 						</table>
