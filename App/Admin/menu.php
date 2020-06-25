@@ -16,10 +16,10 @@
     <!-- CDN sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style type="text/css">
-    	.header { grid-area: header; }
-    	.menu { grid-area: menu; }
-    	.main { grid-area: main; }
-    	.footer { grid-area: footer; }
+    	.header-admin { grid-area: header; }
+    	.menu-admin { grid-area: menu; }
+    	.main-admin { grid-area: main; }
+    	.footer-admin { grid-area: footer; }
 
 		.grid-container {
 			display: grid;
@@ -47,7 +47,7 @@
 	
 	<div class="container-fluid">
 		<div class="grid-container">
-			<div class="header">
+			<div class="header-admin">
 				<!-- Topbar Start -->
 				<div class="row min-vh-100">
 					<div class="col-12">
@@ -80,7 +80,7 @@
 				</div>
 				<!-- end Topbar -->
 			</div>
-			<div class="menu">
+			<div class="menu-admin">
 				<!-- <div class="row"> -->
 				    <nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
 				        <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
@@ -112,7 +112,7 @@
 				    </nav>
 				<!-- </div> -->
 			</div>
-			<div class="main">
+			<div class="main-admin">
 				<!-- start content page -->
 				<div class="content-page">
 					<form action="" method="post" enctype="multipart/form-data">
@@ -178,7 +178,7 @@
 				</div>
 				<!-- end content page -->
 			</div>
-			<div class="footer">
+			<div class="footer-admin">
 				<div class="col-12 align-self-end">
 	 				<footer class="row">
 	 					<div class="col-12 bg-dark text-white pb-3 pt-3 mb-3">
