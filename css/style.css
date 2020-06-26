@@ -316,3 +316,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 .menu-admin .navbar {
 	border-radius: 10px;
 }
+
+.nav .nav-item:first-child {
+	border-bottom: 1px solid black;
+}
