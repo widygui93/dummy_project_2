@@ -312,3 +312,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 		;
 	}
 } 
+
+.menu-admin .navbar {
+	border-radius: 10px;
+}
