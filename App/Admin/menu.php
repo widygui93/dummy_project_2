@@ -55,35 +55,62 @@
 			</div>
 			<div class="menu-admin">
 				<!-- <div class="row"> -->
-				    <nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
-				        <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
-				            <span class="navbar-toggler-icon"></span>
-				        </button>
-				        <div class="collapse navbar-collapse" id="mainNav">
-				            <ul class="nav flex-column navbar-nav mx-auto mt-2 mt-lg-0">
-				            	<li class="nav-item">
-				                    <strong>Menu Admin</strong>
-				                </li>
-				                <li class="nav-item">
-				                    <a class="nav-link" href="../../index.php">Sunny Cafe</a>
-				                </li>
-				                <li class="nav-item dropdown">
-				                    <a class="nav-link dropdown-toggle" href="#" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-				                    <div class="dropdown-menu" aria-labelledby="products">
-				                        <a class="dropdown-item" href="TipeMenu.php">Tipe Menu</a>
-				                        <a class="dropdown-item" href="menu.php">Menu</a>
-				                    </div>
-				                </li>
-				                <li class="nav-item dropdown">
-				                    <a class="nav-link dropdown-toggle" href="#" id="reports" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
-				                    <div class="dropdown-menu" aria-labelledby="reports">
-				                        <a class="dropdown-item" href="UserReport.php">User Report</a>
-				                        <a class="dropdown-item" href="#">Transaction Report</a>
-				                    </div>
-				                </li>
-				            </ul>
-				        </div>
-				    </nav>
+					<!-- <div> -->
+					    <nav class="navbar navbar-expand-lg navbar-dark bg-dark col-12">
+					        <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
+					            <span class="navbar-toggler-icon"></span>
+					        </button>
+					        <div class="collapse navbar-collapse text-white" id="mainNav">
+					            <ul class="nav flex-column navbar-nav mx-auto mt-2 mt-lg-0">
+					            	<li class="nav-item">
+					                    <span>Menu Admin</span>
+					                </li>
+					                <li class="nav-item">
+					                    <a class="nav-link" href="../../index.php">Sunny Cafe</a>
+					                </li>
+					                <li class="nav-item dropdown">
+					                    <a class="nav-link dropdown-toggle" href="#collapseProducts" data-toggle="collapse" aria-controls="collapseProducts">Products</a>
+					                    <div class="collapse" id="collapseProducts">
+					                        <a class="dropdown-item" href="TipeMenu.php">Tipe Menu</a>
+					                        <a class="dropdown-item" href="menu.php">Menu</a>
+					                    </div>
+					                </li>
+					                <li class="nav-item dropdown">
+					                    <a class="nav-link dropdown-toggle" href="#collapseReports" data-toggle="collapse" aria-controls="collapseReports" aria-expanded="false">Reports</a>
+					                    <div class="collapse" id="collapseReports">
+					                        <a class="dropdown-item" href="UserReport.php">User Report</a>
+					                        <a class="dropdown-item" href="TransReport.php">Transaction Report</a>
+					                    </div>
+					                </li>
+					            </ul>
+					        </div>
+					    </nav>
+				    <!-- </div> -->
+				    <!-- <div class="py-3 text-white"> 
+				    	<div class="col-12 bg-dark">
+	                        <div class="row">
+	                            <div class="col-lg-12 col-sm-12 col-xs-12">
+	                                <div class="row">
+	                                    <div class="col-6">Best Price</div>
+	                                </div>
+	                            </div>
+	                            <div class="col-lg-12 col-sm-4">
+	                                <div class="row">
+	                                    <div class="col-4">
+	                                        Fast Order
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="col-lg-12 col-sm-4">
+	                                <div class="row">
+	                                    <div class="col-4">
+	                                        Good Food
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+				    </div> -->
 				<!-- </div> -->
 			</div>
 			<div class="main-admin">
@@ -142,6 +169,17 @@
 						      <td>Japanese</td>
 						      <td>Sushi Roll</td>
 						      <td>Rp.50.000</td>
+						      <td><img src="#"></td>
+						      <td>
+						      	<a href="#">Edit</a>
+						      	<a href="#">Delete</a>
+						      </td>
+						    </tr>
+						    <tr>
+						      <th scope="row">3</th>
+						      <td>Indonesian</td>
+						      <td>Nasi Goreng</td>
+						      <td>Rp.45.000</td>
 						      <td><img src="#"></td>
 						      <td>
 						      	<a href="#">Edit</a>
