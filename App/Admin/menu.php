@@ -20,7 +20,7 @@
 	
 	<div class="container-fluid">
 		<div class="grid-container">
-			<div class="header-admin">
+			<header class="header-admin">
 				<!-- Topbar Start -->
 				<div class="row min-vh-100">
 					<div class="col-12">
@@ -29,14 +29,17 @@
 		                        <div class="row">
 		                            <div class="col-auto mr-auto">
 		                                <ul class="top-nav">
-		                                    <li>
+		                                	<li>
+		                                		<img src="../Core/svg/menu.svg" class="menu-burger">
+		                                	</li>
+		                                    <!-- <li>
 		                                        <img src="../Core/svg/smartphone-white-18dp.svg" alt="icon phone">
 		                                        <span>+123-456-7890</span>
 		                                    </li>
 		                                    <li>
 		                                    	<img src="../Core/svg/mail-white-18dp.svg" alt="icon mail">
 		                                        <span>mail@ecom.com</span>
-		                                    </li>
+		                                    </li> -->
 		                                </ul>
 		                            </div>
 		                            <div class="col-auto">
@@ -52,68 +55,53 @@
 					</div>
 				</div>
 				<!-- end Topbar -->
-			</div>
-			<div class="menu-admin">
-				<!-- <div class="row"> -->
-					<!-- <div> -->
-					    <nav class="navbar navbar-expand-lg navbar-dark bg-dark col-12">
-					        <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
-					            <span class="navbar-toggler-icon"></span>
-					        </button>
-					        <div class="collapse navbar-collapse text-white" id="mainNav">
-					            <ul class="nav flex-column navbar-nav mx-auto mt-2 mt-lg-0">
-					            	<li class="nav-item">
-					                    <span>Menu Admin</span>
-					                </li>
-					                <li class="nav-item">
-					                    <a class="nav-link" href="../../index.php">Sunny Cafe</a>
-					                </li>
-					                <li class="nav-item dropdown">
-					                    <a class="nav-link dropdown-toggle" href="#collapseProducts" data-toggle="collapse" aria-controls="collapseProducts">Products</a>
-					                    <div class="collapse" id="collapseProducts">
-					                        <a class="dropdown-item" href="TipeMenu.php">Tipe Menu</a>
-					                        <a class="dropdown-item" href="menu.php">Menu</a>
-					                    </div>
-					                </li>
-					                <li class="nav-item dropdown">
-					                    <a class="nav-link dropdown-toggle" href="#collapseReports" data-toggle="collapse" aria-controls="collapseReports" aria-expanded="false">Reports</a>
-					                    <div class="collapse" id="collapseReports">
-					                        <a class="dropdown-item" href="UserReport.php">User Report</a>
-					                        <a class="dropdown-item" href="TransReport.php">Transaction Report</a>
-					                    </div>
-					                </li>
-					            </ul>
-					        </div>
-					    </nav>
-				    <!-- </div> -->
-				    <!-- <div class="py-3 text-white"> 
-				    	<div class="col-12 bg-dark">
-	                        <div class="row">
-	                            <div class="col-lg-12 col-sm-12 col-xs-12">
-	                                <div class="row">
-	                                    <div class="col-6">Best Price</div>
-	                                </div>
-	                            </div>
-	                            <div class="col-lg-12 col-sm-4">
-	                                <div class="row">
-	                                    <div class="col-4">
-	                                        Fast Order
-	                                    </div>
-	                                </div>
-	                            </div>
-	                            <div class="col-lg-12 col-sm-4">
-	                                <div class="row">
-	                                    <div class="col-4">
-	                                        Good Food
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-				    </div> -->
-				<!-- </div> -->
-			</div>
-			<div class="main-admin">
+			</header>
+			<aside class="menu-admin">
+				<nav>
+					<ul>
+						<li>
+							<strong>Menu Admin</strong>
+						</li>
+						<li>
+							<a 
+								href="../../index.php" 
+								class="nav-link dropdown-toggle"
+							>
+								Sunny Cafe
+							</a>
+						</li>
+						<li>
+							<a 
+								class="nav-link dropdown-toggle" 
+								href="#collapseProducts" 
+								data-toggle="collapse"
+								aria-controls="collapseProducts"
+							>
+								Products
+							</a>
+							<div class="collapse" id="collapseProducts">
+								<a href="TipeMenu.php" class="dropdown-item">Tipe Menu</a>
+								<a href="menu.php" class="dropdown-item">Menu</a>
+							</div>
+						</li>
+						<li>
+							<a 
+								class="nav-link dropdown-toggle" 
+								href="#collapseReports" 
+								data-toggle="collapse"
+								aria-controls="collapseReports"
+							>
+								Reports
+							</a>
+							<div class="collapse" id="collapseReports">
+								<a href="UserReport.php" class="dropdown-item">User Report</a>
+								<a href="TransReport.php" class="dropdown-item">Transaction Report</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</aside>
+			<main class="main-admin">
 				<!-- start content page -->
 				<div class="content-page">
 					<form action="" method="post" enctype="multipart/form-data">
@@ -138,74 +126,74 @@
 							<label for="gambar-menu">Gambar</label>
 							<input type="file" name="gambar-menu" id="gambar-menu" class="form-control" required>
 						</div>
-						<button type="submit" name="submit" class="btn btn-primary">Add</button>
+						<button type="submit" name="submit" class="btn btn-primary mb-2">Add</button>
 					</form>
-					<div class="table-responsive">
-						<table class="table table-hover table-dark">
-						  <thead>
-						    <tr>
-						      <th scope="col">No</th>
-						      <th scope="col">Tipe Menu</th>
-						      <th scope="col">Nama Menu</th>
-						      <th scope="col">Harga</th>
-						      <th scope="col">Gambar</th>
-						      <th scope="col">Aksi</th>
-						    </tr>
-						  </thead>
-						  <tbody>
-						    <tr>
-						      <th scope="row">1</th>
-						      <td>Chinese</td>
-						      <td>Bihun Goreng</td>
-						      <td>Rp.35.0000</td>
-						      <td><img src="#"></td>
-						      <td>
-						      	<a href="#">Edit</a>
-						      	<a href="#">Delete</a>
-						      </td>
-						    </tr>
-						    <tr>
-						      <th scope="row">2</th>
-						      <td>Japanese</td>
-						      <td>Sushi Roll</td>
-						      <td>Rp.50.000</td>
-						      <td><img src="#"></td>
-						      <td>
-						      	<a href="#">Edit</a>
-						      	<a href="#">Delete</a>
-						      </td>
-						    </tr>
-						    <tr>
-						      <th scope="row">3</th>
-						      <td>Indonesian</td>
-						      <td>Nasi Goreng</td>
-						      <td>Rp.45.000</td>
-						      <td><img src="#"></td>
-						      <td>
-						      	<a href="#">Edit</a>
-						      	<a href="#">Delete</a>
-						      </td>
-						    </tr>
-						    <tr>
-						      <th scope="row">3</th>
-						      <td>Indonesian</td>
-						      <td>Nasi Goreng</td>
-						      <td>Rp.45.000</td>
-						      <td><img src="#"></td>
-						      <td>
-						      	<a href="#">Edit</a>
-						      	<a href="#">Delete</a>
-						      </td>
-						    </tr>
-						  </tbody>
-						</table>
-					</div>
 				</div>
 				<!-- end content page -->
-			</div>
-			<div class="footer-admin">
+				<div class="table-responsive">
+					<table class="table table-hover table-dark">
+					  <thead>
+					    <tr>
+					      <th scope="col">No</th>
+					      <th scope="col">Tipe Menu</th>
+					      <th scope="col">Nama Menu</th>
+					      <th scope="col">Harga</th>
+					      <th scope="col">Gambar</th>
+					      <th scope="col">Aksi</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <th scope="row">1</th>
+					      <td>Chinese</td>
+					      <td>Bihun Goreng</td>
+					      <td>Rp.35.0000</td>
+					      <td><img src="#"></td>
+					      <td>
+					      	<a href="#">Edit</a>
+					      	<a href="#">Delete</a>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">2</th>
+					      <td>Japanese</td>
+					      <td>Sushi Roll</td>
+					      <td>Rp.50.000</td>
+					      <td><img src="#"></td>
+					      <td>
+					      	<a href="#">Edit</a>
+					      	<a href="#">Delete</a>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">3</th>
+					      <td>Indonesian</td>
+					      <td>Nasi Goreng</td>
+					      <td>Rp.45.000</td>
+					      <td><img src="#"></td>
+					      <td>
+					      	<a href="#">Edit</a>
+					      	<a href="#">Delete</a>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">3</th>
+					      <td>Indonesian</td>
+					      <td>Nasi Goreng</td>
+					      <td>Rp.45.000</td>
+					      <td><img src="#"></td>
+					      <td>
+					      	<a href="#">Edit</a>
+					      	<a href="#">Delete</a>
+					      </td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+			</main>
+			<footer class="footer-admin">
 				<div class="col-12 align-self-end">
-	 				<footer class="row">
+	 				<div class="row">
 	 					<div class="col-12 bg-dark text-white pb-3 pt-3 mb-3">
 	 						<div class="row">
 	 							<div class="col-lg-6 col-sm-6 text-center text-sm-left">
@@ -231,12 +219,13 @@
 	                            </div>
 	 						</div>
 	 					</div>
-	 				</footer>
+	 				</div>
  				</div>
-			</div>
+			</footer>
 		</div>
 	</div>
-	
+	<script src="../../js/jquery-3.4.1.min.js"></script>
+ 	<script src="../../js/script.js"></script>
 	
 </body>
 </html>

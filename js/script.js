@@ -83,6 +83,10 @@ $(document).ready(function(){
 		$(this).prev().prev().prev().prev().attr("value", quantity);
 	});
 
+	$(".menu-burger").on('click',function(){
+		$(".menu-admin").toggleClass("active");
+	});
+
 	
 
 
