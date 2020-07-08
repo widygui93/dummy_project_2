@@ -105,9 +105,11 @@
 				<!-- start content page -->
 				<div class="content-page">
 					<form action="" method="post" enctype="multipart/form-data">
-						<div class="form-group">
-							<label for="tipe-menu">Tipe Menu</label>
-							<select id="tipe-menu" name="tipe-menu">
+						<div class="form-group input-group">
+							<div class="input-group-prepend">
+								<label class="input-group-text" for="tipe-menu">Tipe Menu</label>
+							</div>
+							<select class="custom-select" id="tipe-menu" name="tipe-menu">
 								<option value="Chinese">Chinese</option>
 								<option value="Western">Western</option>
 								<option value="Japanese">Japanese</option>
