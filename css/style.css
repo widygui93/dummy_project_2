@@ -290,8 +290,8 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 /* folder admin */
 .header-admin { grid-area: header; }
 .menu-admin { grid-area: menu; }
-.main-admin { grid-area: main; }
-.footer-admin { grid-area: footer; }
+.main-admin { grid-area: main; padding: 10px; }
+.footer-admin { grid-area: footer; padding: 10px; }
 
 .grid-container {
 	position: relative;
@@ -311,6 +311,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 .menu-burger {
 	width: 18px; 
 	cursor: pointer;
+	margin-left: 10px;
 }
 
 .active {
@@ -318,7 +319,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 	display: block;
 	background: #fff;
 	width: 50%;
-	left: -15px;
+	left: 0;
 	top: 35px;
 	height: 100%;
 	z-index: 999;
@@ -328,7 +329,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 
 @keyframes menu-admin-animation {
 	from { left: -300px; }
-	to{ left: -15px; }
+	to { left: 0; }
 }
 
 .menu-admin nav ul {

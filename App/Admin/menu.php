@@ -18,7 +18,7 @@
 </head>
 <body>
 	
-	<div class="container-fluid">
+	<!-- <div class="container-fluid" style=""> -->
 		<div class="grid-container">
 			<header class="header-admin">
 				<!-- Topbar Start -->
@@ -223,7 +223,7 @@
  				</div>
 			</footer>
 		</div>
-	</div>
+	<!-- </div> -->
 	<script src="../../js/jquery-3.4.1.min.js"></script>
  	<script src="../../js/script.js"></script>
 	
