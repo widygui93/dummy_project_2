@@ -30,16 +30,10 @@
 		                            <div class="col-auto mr-auto">
 		                                <ul class="top-nav">
 		                                	<li>
-		                                		<img src="../Core/svg/menu.svg" class="menu-burger">
+		                                		<div class="menu-btn">
+		                                		    <div class="menu-btn__burger"></div>
+		                                		 </div>
 		                                	</li>
-		                                    <!-- <li>
-		                                        <img src="../Core/svg/smartphone-white-18dp.svg" alt="icon phone">
-		                                        <span>+123-456-7890</span>
-		                                    </li>
-		                                    <li>
-		                                    	<img src="../Core/svg/mail-white-18dp.svg" alt="icon mail">
-		                                        <span>mail@ecom.com</span>
-		                                    </li> -->
 		                                </ul>
 		                            </div>
 		                            <div class="col-auto">

@@ -308,10 +308,60 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 	display: none;
 }
 
-.menu-burger {
-	width: 18px; 
-	cursor: pointer;
-	margin-left: 10px;
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  left: 10px;
+}
+
+.menu-btn__burger {
+  width: 15px;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-6px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(6px);
+}
+
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
 }
 
 .active {
@@ -320,7 +370,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 	background: #fff;
 	width: 50%;
 	left: 0;
-	top: 35px;
+	top: 36px;
 	height: 100%;
 	z-index: 999;
 	animation-name: menu-admin-animation;
@@ -363,7 +413,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 		grid-gap: 10px;
 	}
 
-	.menu-burger {
+	.menu-btn {
 		display: none;
 	}
 
