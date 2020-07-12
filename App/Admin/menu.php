@@ -65,6 +65,7 @@
 								href="../../index.php" 
 								class="nav-link dropdown-toggle"
 							>
+								<img src="../Core/svg/home-black-18dp.svg" alt="sunny cafe">
 								Sunny Cafe
 							</a>
 						</li>
@@ -75,7 +76,8 @@
 								data-toggle="collapse"
 								aria-controls="collapseProducts"
 							>
-								Products
+								<img src="../Core/svg/menu_book-black-18dp.svg" alt="menu book">
+								Menu Book
 							</a>
 							<div class="collapse" id="collapseProducts">
 								<a href="TipeMenu.php" class="dropdown-item">Tipe Menu</a>
@@ -89,6 +91,7 @@
 								data-toggle="collapse"
 								aria-controls="collapseReports"
 							>
+								<img src="../Core/svg/content_paste-black-18dp.svg" alt="reports">
 								Reports
 							</a>
 							<div class="collapse" id="collapseReports">
