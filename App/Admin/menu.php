@@ -207,7 +207,7 @@
 				<div class="col-12 align-self-end">
 	 				<div class="row">
 	 					<div class="col-12 bg-dark text-white pb-3 pt-3 mb-3">
-	 						<div class="row">
+	 						<div class="row wrapper-footer-admin">
 	 							<div class="col-lg-6 col-sm-6 text-center text-sm-left">
 	                                <div class="row">
 	                                    <div class="col-12">
