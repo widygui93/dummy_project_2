@@ -54,6 +54,10 @@
 				<nav>
 					<ul>
 						<li>
+							<span class="site-logo">Sunny Cafe</span>
+							<hr>
+						</li>
+						<li>
 							<strong>Menu Admin</strong>
 						</li>
 						<li>

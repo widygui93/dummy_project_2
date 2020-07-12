@@ -84,7 +84,7 @@ $(document).ready(function(){
 	});
 
 	$(".menu-btn").on('click',function(){
-		$(".menu-admin").toggleClass("active");
+		$(".menu-admin").toggleClass("aktif");
 		$(".menu-btn").toggleClass("open");
 	});
 

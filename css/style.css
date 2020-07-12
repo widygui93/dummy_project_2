@@ -82,7 +82,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 
 .site-logo {
     font-size: 2rem;
-    line-height: 1;
+    /*line-height: 1;*/
     /*font-family: georgia, serif;*/
     font-family: "kaushan_scriptregular", arial;
     font-variant: small-caps;
@@ -364,7 +364,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
   transform: rotate(-45deg) translate(35px, 35px);
 }
 
-.active {
+.aktif {
 	position: absolute;
 	display: block;
 	background: #fff;
