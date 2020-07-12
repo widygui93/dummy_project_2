@@ -399,6 +399,11 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 	background-color: #eaeaea;
 }
 
+.main-admin table img {
+	width: 50px; 
+	height: 50px;
+}
+
 .wrapper-footer-admin {
 	display: flex; justify-content: center; align-items: center;
 }
