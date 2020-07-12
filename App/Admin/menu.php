@@ -212,9 +212,8 @@
 	                                <div class="row">
 	                                    <div class="col-12">
 	                                        <div class="footer-logo">
-	                                            <img src="../Core/svg/wb_sunny-white-18dp.svg" alt="sunny">
-	                                            <strong>Sunny Cafe</strong>
-	                                            <img src="../Core/svg/wb_sunny-white-18dp.svg" alt="sunny">
+	                                            <strong>Tinker Studio</strong>
+	                                            <p><small>Enhancing Your Business</small></p>
 	                                        </div>
 	                                    </div>
 	                                </div>
