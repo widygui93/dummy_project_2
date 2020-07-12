@@ -53,7 +53,7 @@
 			<aside class="menu-admin">
 				<nav>
 					<ul>
-						<li>
+						<li class="mt-2">
 							<span class="site-logo">Sunny Cafe</span>
 							<hr>
 						</li>
@@ -103,6 +103,15 @@
 				</nav>
 			</aside>
 			<main class="main-admin">
+				<div class="mb-3">
+					<h3 class="text-center">Menu</h3>
+					<hr>
+					<div class="path-menu-admin">
+						<span class="badge badge-pill badge-secondary">Menu Book</span> 
+						<span> > </span> 
+						<span class="badge badge-pill badge-secondary">Menu</span>
+					</div>
+				</div>
 				<!-- start content page -->
 				<div class="content-page">
 					<form action="" method="post" enctype="multipart/form-data">
