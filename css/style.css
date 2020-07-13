@@ -387,6 +387,24 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 	to { left: 0; }
 }
 
+.inaktif {
+	position: absolute;
+	display: block;
+	background: #fff;
+	width: 50%;
+	left: -400px;
+	top: 36px;
+	height: 100%;
+	z-index: 999;
+	animation-name: menu-admin-animation-close;
+	animation-duration: 500ms;
+}
+
+@keyframes menu-admin-animation-close {
+	from { left: 0; }
+	to { left: -400px; }
+}
+
 .menu-admin nav ul {
 	list-style-type: none;
 }
@@ -413,6 +431,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 	.menu-admin {
 		display: grid;
 		top: 0 !important;
+		left: 0 !important;
 		position: relative !important;
 		background: none !important;
 		width: 100% !important;
