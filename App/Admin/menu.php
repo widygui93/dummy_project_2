@@ -221,6 +221,7 @@
 	                            <div class="col-lg-6 col-sm-6 text-center text-sm-right">
 	                                <div class="row">
 	                                    <div class="col-12">
+	                                    	<span>&#10084;</span> <!-- html entity (decimal) -->
 	                                        <a href="https://github.com/widygui93"><img src="../Core/svg/github-white.svg" alt="github"></a>
 	                                        <a href="https://www.facebook.com"><img src="../Core/svg/facebook-white.svg" alt="facebook"></a>
 	                                        <a href="https://www.instagram.com/widygui/"><img src="../Core/svg/instagram-white.svg" alt="instagram"></a>
