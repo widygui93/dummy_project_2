@@ -18,9 +18,9 @@
 </head>
 <body>
 	
-	<div class="container-fluid">
+	<!-- <div class="container-fluid"> -->
 		<div class="grid-container">
-			<div class="header-admin">
+			<header class="header-admin">
 				<!-- Topbar Start -->
 				<div class="row min-vh-100">
 					<div class="col-12">
@@ -29,14 +29,11 @@
 		                        <div class="row">
 		                            <div class="col-auto mr-auto">
 		                                <ul class="top-nav">
-		                                    <li>
-		                                        <img src="../Core/svg/smartphone-white-18dp.svg" alt="icon phone">
-		                                        <span>+123-456-7890</span>
-		                                    </li>
-		                                    <li>
-		                                    	<img src="../Core/svg/mail-white-18dp.svg" alt="icon mail">
-		                                        <span>mail@ecom.com</span>
-		                                    </li>
+		                                	<li>
+		                                		<div class="menu-btn">
+		                                		    <div class="menu-btn__burger"></div>
+		                                		 </div>
+		                                	</li>
 		                                </ul>
 		                            </div>
 		                            <div class="col-auto">
@@ -52,41 +49,76 @@
 					</div>
 				</div>
 				<!-- end Topbar -->
-			</div>
-			<div class="menu-admin">
-				<!-- start left sidebar -->
-				<nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
-			        <button class="navbar-toggler d-lg-none border-0" type="button" data-toggle="collapse" data-target="#mainNav">
-			            <span class="navbar-toggler-icon"></span>
-			        </button>
-			        <div class="collapse navbar-collapse" id="mainNav">
-			            <ul class="nav flex-column navbar-nav mx-auto mt-2 mt-lg-0">
-			            	<li class="nav-item">
-			                    <strong>Menu Admin</strong>
-			                </li>
-			                <li class="nav-item">
-			                    <a class="nav-link" href="../../index.php">Sunny Cafe</a>
-			                </li>
-			                <li class="nav-item dropdown">
-			                    <a class="nav-link dropdown-toggle" href="#" id="products" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-			                    <div class="dropdown-menu" aria-labelledby="products">
-			                        <a class="dropdown-item" href="TipeMenu.php">Tipe Menu</a>
-			                        <a class="dropdown-item" href="menu.php">Menu</a>
-			                    </div>
-			                </li>
-			                <li class="nav-item dropdown">
-			                    <a class="nav-link dropdown-toggle" href="#" id="reports" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
-			                    <div class="dropdown-menu" aria-labelledby="reports">
-			                        <a class="dropdown-item" href="UserReport.php">User Report</a>
-			                        <a class="dropdown-item" href="#">Transaction Report</a>
-			                    </div>
-			                </li>
-			            </ul>
-			        </div>
-			    </nav>
-				<!-- end left sidebar -->
-			</div>
-			<div class="main-admin">
+			</header>
+			<aside class="menu-admin">
+				<nav>
+					<ul>
+						<li class="mt-2">
+							<span class="site-logo">Sunny Cafe</span>
+							<hr>
+						</li>
+						<li>
+							<strong>Menu Admin</strong>
+						</li>
+						<li>
+							<a 
+								href="../../index.php" 
+								class="nav-link dropdown-toggle"
+							>
+								<img src="../Core/svg/home-black-18dp.svg" alt="sunny cafe">
+								Sunny Cafe
+							</a>
+						</li>
+						<li>
+							<a 
+								class="nav-link dropdown-toggle" 
+								href="#collapseProducts" 
+								data-toggle="collapse"
+								aria-controls="collapseProducts"
+							>
+								<img src="../Core/svg/menu_book-black-18dp.svg" alt="menu book">
+								Menu Book
+							</a>
+							<div class="collapse" id="collapseProducts">
+								<a href="TipeMenu.php" class="dropdown-item">Tipe Menu</a>
+								<a href="menu.php" class="dropdown-item">Menu</a>
+							</div>
+						</li>
+						<li>
+							<a 
+								class="nav-link dropdown-toggle" 
+								href="#collapseReports" 
+								data-toggle="collapse"
+								aria-controls="collapseReports"
+							>
+								<img src="../Core/svg/content_paste-black-18dp.svg" alt="reports">
+								Reports
+							</a>
+							<div class="collapse" id="collapseReports">
+								<a href="UserReport.php" class="dropdown-item">User Report</a>
+								<a href="TransReport.php" class="dropdown-item">Transaction Report</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+				<div class="slogan-cafe">
+					<div class="slogan-cafe-wrapper">
+						<div class="text-center">Good Food</div>
+						<div class="text-center">Good Price</div>
+						<div class="text-center">Good Quality</div>
+					</div>
+				</div>
+			</aside>
+			<main class="main-admin">
+				<div class="mb-3">
+					<h3 class="text-center">Tipe Menu</h3>
+					<hr>
+					<div class="path-menu-admin">
+						<span class="badge badge-pill badge-secondary">Menu Book</span> 
+						<span> > </span> 
+						<span class="badge badge-pill badge-secondary">Tipe Menu</span>
+					</div>
+				</div>
 				<!-- start content page -->
 				<div class="content-page">
 					<form action="" method="post">
@@ -94,60 +126,59 @@
 							<label for="nama-menu">Nama Tipe Menu</label>
 							<input type="text" name="nama-menu" id="nama-menu" class="form-control" required>
 						</div>
-						<button type="submit" name="submit" class="btn btn-primary">Add</button>
+						<button type="submit" name="submit" class="btn btn-primary mb-2">Add</button>
 					</form>
-					<div class="table-responsive">
-						<table class="table table-hover table-dark">
-						  <thead>
-						    <tr>
-						      <th scope="col">No</th>
-						      <th scope="col">Tipe Menu</th>
-						      <th scope="col">Aksi</th>
-						    </tr>
-						  </thead>
-						  <tbody>
-						    <tr>
-						      <th scope="row">1</th>
-						      <td>Chinese</td>
-						      <td>
-						      	<a href="#">Edit</a>
-						      	<a href="#">Delete</a>
-						      </td>
-						    </tr>
-						    <tr>
-						      <th scope="row">2</th>
-						      <td>Japanese</td>
-						      <td>
-						      	<a href="#">Edit</a>
-						      	<a href="#">Delete</a>
-						      </td>
-						    </tr>
-						    <tr>
-						      <th scope="row">3</th>
-						      <td>Indonesian</td>
-						      <td>
-						      	<a href="#">Edit</a>
-						      	<a href="#">Delete</a>
-						      </td>
-						    </tr>
-						  </tbody>
-						</table>
-					</div>
 				</div>
 				<!-- end content page -->
-			</div>
-			<div class="footer-admin">
+				<div class="table-responsive">
+					<table class="table table-hover table-dark">
+					  <thead>
+					    <tr>
+					      <th scope="col">No</th>
+					      <th scope="col">Tipe Menu</th>
+					      <th scope="col">Aksi</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr>
+					      <th scope="row">1</th>
+					      <td>Chinese</td>
+					      <td>
+					      	<a href="#">Edit</a>
+					      	<a href="#">Delete</a>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">2</th>
+					      <td>Japanese</td>
+					      <td>
+					      	<a href="#">Edit</a>
+					      	<a href="#">Delete</a>
+					      </td>
+					    </tr>
+					    <tr>
+					      <th scope="row">3</th>
+					      <td>Indonesian</td>
+					      <td>
+					      	<a href="#">Edit</a>
+					      	<a href="#">Delete</a>
+					      </td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+			</main>
+			<footer class="footer-admin">
 				<div class="col-12 align-self-end">
-	 				<footer class="row">
+	 				<div class="row">
 	 					<div class="col-12 bg-dark text-white pb-3 pt-3 mb-3">
-	 						<div class="row">
+	 						<div class="row wrapper-footer-admin">
 	 							<div class="col-lg-6 col-sm-6 text-center text-sm-left">
 	                                <div class="row">
 	                                    <div class="col-12">
 	                                        <div class="footer-logo">
-	                                            <img src="../Core/svg/wb_sunny-white-18dp.svg" alt="sunny">
-	                                            <strong>Sunny Cafe</strong>
-	                                            <img src="../Core/svg/wb_sunny-white-18dp.svg" alt="sunny">
+	                                            <strong>Tinker Studio</strong>
+	                                            <p><small>Enhancing Your Business</small></p>
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -155,6 +186,7 @@
 	                            <div class="col-lg-6 col-sm-6 text-center text-sm-right">
 	                                <div class="row">
 	                                    <div class="col-12">
+	                                    	<span>&#10084;</span> <!-- html entity (decimal) -->
 	                                        <a href="https://github.com/widygui93"><img src="../Core/svg/github-white.svg" alt="github"></a>
 	                                        <a href="https://www.facebook.com"><img src="../Core/svg/facebook-white.svg" alt="facebook"></a>
 	                                        <a href="https://www.instagram.com/widygui/"><img src="../Core/svg/instagram-white.svg" alt="instagram"></a>
@@ -164,12 +196,13 @@
 	                            </div>
 	 						</div>
 	 					</div>
-	 				</footer>
+	 				</div>
  				</div>
-			</div>
+			</footer>
 		</div>
-	</div>
-	
+	<!-- </div> -->
+	<script src="../../js/jquery-3.4.1.min.js"></script>
+	 <script src="../../js/script.js"></script>
 	
 </body>
 </html>
