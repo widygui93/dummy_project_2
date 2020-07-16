@@ -101,6 +101,13 @@
 						</li>
 					</ul>
 				</nav>
+				<div class="slogan-cafe">
+					<div class="slogan-cafe-wrapper">
+						<div class="text-center">Good Food</div>
+						<div class="text-center">Good Price</div>
+						<div class="text-center">Good Quality</div>
+					</div>
+				</div>
 			</aside>
 			<main class="main-admin">
 				<div class="mb-3">

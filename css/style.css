@@ -426,6 +426,31 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 	display: flex; justify-content: center; align-items: center;
 }
 
+.slogan-cafe {
+	display: flex;
+	justify-content: center;
+	font-family: "kaushan_scriptregular", arial;
+}
+
+.slogan-cafe-wrapper {
+	width: 50%;
+	background-image: linear-gradient(to right, #bab2b2 , #4f4949);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	height: 150px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	margin: 5px;
+	position: absolute;
+	bottom: 50px;
+}
+
+.slogan-cafe-wrapper div {
+	color: white;
+	text-shadow: 2px 2px 4px #000000;
+}
+
 @media screen and (min-width: 768px) {
 
 	.menu-admin {
@@ -452,5 +477,15 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 
 	.menu-admin nav ul li a:hover {
 		background-color: #fff;
+	}
+
+	.slogan-cafe {
+		align-items: flex-end;
+	}
+
+	.slogan-cafe-wrapper {
+		background-image: linear-gradient(to right, #4f4949 , #bab2b2);
+		width: 75%;
+		bottom: 20px;
 	}
 } 
