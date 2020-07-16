@@ -311,6 +311,7 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 .path-menu-admin {
 	display: flex; 
 	justify-content: flex-end;
+	align-items: center;
 }
 
 .menu-btn {
