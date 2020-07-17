@@ -9,6 +9,11 @@ if ( !isset($_SESSION["admin"]) ) {
     header('Location: login.php');
     exit;
 }
+
+use App\Db\Admin as Admin;
+
+$admin = new Admin();
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +35,17 @@ if ( !isset($_SESSION["admin"]) ) {
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
-	
+	<?php
+		if( isset($_POST["submit"]) ){
+			// var_dump($_POST["namaTipeMenu"]);
+			if( $admin->insertTipeMenu($_POST) > 0 ){
+				echo "<script>swal('Success!', 'sukses ya', 'success');</script>";
+			} else {
+				echo "<script>swal('Failed!', 'gagal ya', 'error');</script>";
+			}
+			// var_dump($admin->insertTipeMenu($_POST));
+		}
+	?>
 	<!-- <div class="container-fluid"> -->
 		<div class="grid-container">
 			<header class="header-admin">
