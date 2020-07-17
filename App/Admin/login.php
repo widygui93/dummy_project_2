@@ -5,7 +5,7 @@ date_default_timezone_set("Asia/Jakarta");
 require_once '../init.php';
 
 if( isset($_SESSION["admin"]) ) {
-	//arahkan balik ke admin.php
+	//arahkan balik ke TipeMenu.php
 	header('Location: TipeMenu.php');
 	exit;
 }

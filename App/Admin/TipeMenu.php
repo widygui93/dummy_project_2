@@ -1,3 +1,16 @@
+<?php
+session_start();
+date_default_timezone_set("Asia/Jakarta");
+
+require_once '../init.php';
+
+if ( !isset($_SESSION["admin"]) ) {
+    // arahkan user balik ke login admin
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,8 +136,8 @@
 				<div class="content-page">
 					<form action="" method="post">
 						<div class="form-group">
-							<label for="nama-menu">Nama Tipe Menu</label>
-							<input type="text" name="nama-menu" id="nama-menu" class="form-control" required>
+							<label for="namaTipeMenu">Nama Tipe Menu</label>
+							<input type="text" name="namaTipeMenu" id="namaTipeMenu" class="form-control" required>
 						</div>
 						<button type="submit" name="submit" class="btn btn-primary mb-2">Add</button>
 					</form>
