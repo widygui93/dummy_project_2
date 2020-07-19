@@ -16,7 +16,6 @@ use App\Db\Admin as Admin;
 $admin = new Admin();
 
 $faker = Faker\Factory::create();
-echo $faker->randomNumber(9);
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +40,8 @@ echo $faker->randomNumber(9);
 	<?php
 		if( isset($_POST["submit"]) ){
 			// var_dump($_POST["namaTipeMenu"]);
-			if( $admin->insertTipeMenu($_POST) > 0 ){
+			$idTipeMenu = $faker->randomNumber(9);
+			if( $admin->insertTipeMenu($_POST["namaTipeMenu"],$idTipeMenu) > 0 ){
 				echo "<script>swal('Success!', 'sukses ya', 'success');</script>";
 			} else {
 				echo "<script>swal('Failed!', 'gagal ya', 'error');</script>";

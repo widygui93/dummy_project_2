@@ -53,12 +53,12 @@ class Admin extends Db {
 		}
 	}
 
-	public function insertTipeMenu(array $data):int {
-		$id_tipe_menu = $this->generateRandomIDTipeMenu();
-		$tipe_menu = $data["namaTipeMenu"];
+	public function insertTipeMenu(string $namaTipeMenu, int $idTipeMenu):int {
+		// $id_tipe_menu = $this->generateRandomIDTipeMenu();
+		// $tipe_menu = $data["namaTipeMenu"];
 		$query = "INSERT INTO tipe_menu
 					VALUES
-				  ('', '$id_tipe_menu', '$tipe_menu')
+				  ('', '$idTipeMenu', '$namaTipeMenu')
 				";
 		$result = $this->executeQuery($query);
 		return $result[1];
