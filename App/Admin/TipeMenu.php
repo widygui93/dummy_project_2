@@ -39,14 +39,12 @@ $faker = Faker\Factory::create();
 <body>
 	<?php
 		if( isset($_POST["submit"]) ){
-			// var_dump($_POST["namaTipeMenu"]);
 			$idTipeMenu = $faker->randomNumber(9);
 			if( $admin->insertTipeMenu($_POST["namaTipeMenu"],$idTipeMenu) > 0 ){
 				echo "<script>swal('Success!', 'sukses ya', 'success');</script>";
 			} else {
 				echo "<script>swal('Failed!', 'gagal ya', 'error');</script>";
 			}
-			// var_dump($admin->insertTipeMenu($_POST));
 		}
 	?>
 	<!-- <div class="container-fluid"> -->

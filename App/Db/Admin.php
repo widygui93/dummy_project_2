@@ -54,39 +54,15 @@ class Admin extends Db {
 	}
 
 	public function insertTipeMenu(string $namaTipeMenu, int $idTipeMenu):int {
-		// $id_tipe_menu = $this->generateRandomIDTipeMenu();
-		// $tipe_menu = $data["namaTipeMenu"];
 		$query = "INSERT INTO tipe_menu
 					VALUES
 				  ('', '$idTipeMenu', '$namaTipeMenu')
 				";
 		$result = $this->executeQuery($query);
 		return $result[1];
-		// return $data["namaTipeMenu"];
 	}
 
-	private function generateRandomIDTipeMenu() {
-	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	    $charactersLength = strlen($characters);
-	    $randomString = '';
-	    for ($i = 0; $i < 20; $i++) {
-	        $randomString .= $characters[rand(0, $charactersLength - 1)];
-	    }
-
-	    $query = "SELECT id_tipe_menu FROM tipe_menu";
-	    $result = $this->executeQuery($query);
-	    $idTipeMenu = [];
-	    while ( $row = mysqli_fetch_row($result[0]) ) {
-	        $idTipeMenu = $row;
-	    }
-
-	    for($i = 0; $i < count($idTipeMenu); $i++){
-	    	if($randomString == $idTipeMenu[$i]){
-	    		$this->generateRandomIDTipeMenu();
-	    	}
-	    }
-	    return $randomString;
-	}
+	
 
 
 
