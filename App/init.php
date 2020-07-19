@@ -6,7 +6,13 @@ spl_autoload_register(function ($class) {
 	
     $pathDB = __DIR__ . '/Db/' . $class . '.php';
 
-    require_once $pathDB;
+    if (file_exists($pathDB)) {
+        require $pathDB;
+
+        return true;
+    }
+
+    return false;
 
 });
 
@@ -16,7 +22,13 @@ spl_autoload_register(function ($class) {
     
     $pathMenu = __DIR__ . '/Menu/' . $class . '.php';
 
-    require_once $pathMenu;
+    if (file_exists($pathMenu)) {
+        require $pathMenu;
+
+        return true;
+    }
+
+    return false;
 
 });
 

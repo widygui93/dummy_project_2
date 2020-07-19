@@ -3,6 +3,7 @@ session_start();
 date_default_timezone_set("Asia/Jakarta");
 
 require_once '../init.php';
+require_once '../../vendor/fzaninotto/faker/src/autoload.php';
 
 if ( !isset($_SESSION["admin"]) ) {
     // arahkan user balik ke login admin
@@ -14,6 +15,8 @@ use App\Db\Admin as Admin;
 
 $admin = new Admin();
 
+$faker = Faker\Factory::create();
+echo $faker->randomNumber(9);
 ?>
 
 <!DOCTYPE html>
