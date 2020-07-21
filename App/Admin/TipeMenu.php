@@ -41,6 +41,8 @@ $faker = Faker\Factory::create();
 		if( isset($_POST["submit"]) ){
 			if( $admin->isTipeMenuDuplicate($_POST["namaTipeMenu"]) ) {
 				echo "<script>swal('Failed!', 'Tipe Menu is existed already', 'error');</script>";
+			} elseif ( $admin->isTipeMenuContainSpecialCharAndNumber($_POST["namaTipeMenu"]) ) {
+				echo "<script>swal('Failed!', 'Tipe Menu can not contain special characters and/or numbers', 'error');</script>";
 			} else {
 				$idTipeMenu = $faker->randomNumber(9);
 				if( $admin->insertTipeMenu($_POST["namaTipeMenu"],$idTipeMenu) > 0 ){
