@@ -10,7 +10,8 @@ class Menu extends Db {
 	}
 
 	public function getTipeMenu(){
-		$query = "SELECT DISTINCT id_tipe_menu, tipe_menu FROM menu";
+		// $query = "SELECT DISTINCT id_tipe_menu, tipe_menu FROM menu";
+		$query = "SELECT * FROM tipe_menu";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->tipeMenu[] = $row;

@@ -76,6 +76,8 @@ class Admin extends Db {
 	public function isTipeMenuContainSpecialCharAndNumber(string $namaTipeMenu):bool {
 		if(preg_match_all('/[0-9]|[!@#$%^&*]/', $namaTipeMenu)){
 		    return true;
+		} else {
+			return false;
 		}
 	}
 	

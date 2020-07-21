@@ -12,8 +12,10 @@ if ( !isset($_SESSION["admin"]) ) {
 }
 
 use App\Db\Admin as Admin;
+use App\Db\Menu as Menu;
 
 $admin = new Admin();
+$menu = new Menu();
 
 $faker = Faker\Factory::create();
 ?>
@@ -52,6 +54,8 @@ $faker = Faker\Factory::create();
 				}
 			}
 		}
+
+		$types = $menu->getTipeMenu();
 	?>
 	<!-- <div class="container-fluid"> -->
 		<div class="grid-container">
@@ -175,15 +179,17 @@ $faker = Faker\Factory::create();
 					    </tr>
 					  </thead>
 					  <tbody>
+					  	<?php foreach($types as $type) : ?>
 					    <tr>
 					      <th scope="row">1</th>
-					      <td>Chinese</td>
+					      <td><?= $type['tipe_menu']; ?></td>
 					      <td>
 					      	<a href="#">Edit</a>
 					      	<a href="#">Delete</a>
 					      </td>
 					    </tr>
-					    <tr>
+					    <?php endforeach; ?>
+					    <!-- <tr>
 					      <th scope="row">2</th>
 					      <td>Japanese</td>
 					      <td>
@@ -198,7 +204,7 @@ $faker = Faker\Factory::create();
 					      	<a href="#">Edit</a>
 					      	<a href="#">Delete</a>
 					      </td>
-					    </tr>
+					    </tr> -->
 					  </tbody>
 					</table>
 				</div>
