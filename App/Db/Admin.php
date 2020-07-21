@@ -62,6 +62,16 @@ class Admin extends Db {
 		return $result[1];
 	}
 
+	public function isTipeMenuDuplicate(string $namaTipeMenu):bool {
+		$lowCaseTipeMenu = strtolower($namaTipeMenu);
+		$query = "SELECT * FROM tipe_menu WHERE LOWER(tipe_menu) = '$lowCaseTipeMenu'";
+		$result = $this->executeQuery($query);
+		if( $result[1] > 0 ){
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 
 
