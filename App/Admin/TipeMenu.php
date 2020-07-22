@@ -179,15 +179,17 @@ $faker = Faker\Factory::create();
 					    </tr>
 					  </thead>
 					  <tbody>
+					  	<?php $no = 1; ?>
 					  	<?php foreach($types as $type) : ?>
 					    <tr>
-					      <th scope="row">1</th>
+					      <th scope="row"><?= $no; ?></th>
 					      <td><?= $type['tipe_menu']; ?></td>
 					      <td>
 					      	<a href="#">Edit</a>
 					      	<a href="#">Delete</a>
 					      </td>
 					    </tr>
+					    <?php $no++; ?>
 					    <?php endforeach; ?>
 					    <!-- <tr>
 					      <th scope="row">2</th>
