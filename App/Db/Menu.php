@@ -23,7 +23,7 @@ class Menu extends Db {
 		// clear array menu then ready to be inserted
 		$this->menu = array();
 
-		$query = "SELECT nama_menu, harga_menu , FORMAT(harga_menu,0) AS harga_menu_2, id_menu, tipe_menu FROM menu WHERE id_tipe_menu = $idTipeMenu";
+		$query = "SELECT A.nama_menu, A.harga_menu , FORMAT(A.harga_menu,0) AS harga_menu_2, A.id_menu, B.tipe_menu FROM menu A JOIN tipe_menu B ON A.id_tipe_menu = B.id_tipe_menu WHERE A.id_tipe_menu = $idTipeMenu";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->menu[] = $row;
