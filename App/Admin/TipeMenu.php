@@ -11,10 +11,10 @@ if ( !isset($_SESSION["admin"]) ) {
     exit;
 }
 
-use App\Db\Admin as Admin;
+// use App\Db\Admin as Admin;
 use App\Db\Menu as Menu;
 
-$admin = new Admin();
+// $admin = new Admin();
 $menu = new Menu();
 
 $faker = Faker\Factory::create();
@@ -55,6 +55,10 @@ $faker = Faker\Factory::create();
 			}
 		}
 
+		if( isset($_POST["submitEditTipeMenu"]) ){
+			var_dump($_POST);
+		}
+
 		$types = $menu->getTipeMenu();
 	?>
 	<div class="modal fade" id="modalEditTipeMenu" tabindex="-1" role="dialog" aria-labelledby="editTipeMenu" aria-hidden="true">
@@ -69,8 +73,9 @@ $faker = Faker\Factory::create();
 				<div class="modal-body">
 					<form action="" method="post">
 					  <div class="form-group">
-					  	<label for="InputTipeMenu">Tipe Menu</label>
-    					<input type="text" name="tipeMenu" class="form-control" id="InputTipeMenu" aria-describedby="tipeMenuHelp" placeholder="Enter Tipe Menu" value="" required>
+					  	<label for="EditTipeMenu">Tipe Menu</label>
+    					<input type="text" name="tipeMenu" class="form-control" id="EditTipeMenu" aria-describedby="tipeMenuHelp" placeholder="Enter Tipe Menu" value="" required>
+    					<input style="display: none;" type="text" name="idTipeMenu" value="" id="EditIDTipeMenu">
 					  </div>
 					  <div class="form-group">
 					    <button type="submit" name="submitEditTipeMenu" class="btn btn-primary">Submit</button>
@@ -211,7 +216,8 @@ $faker = Faker\Factory::create();
 					      <th scope="row"><?= $no; ?></th>
 					      <td><?= $type['tipe_menu']; ?></td>
 					      <td>
-					      	<a href="#" data-toggle="modal" data-target="#modalEditTipeMenu">Edit</a>
+					      	<input style="display: none;" type="text" name="id_tipe_menu" value="<?= $type['id_tipe_menu']; ?>">
+					      	<a href="#" data-toggle="modal" data-target="#modalEditTipeMenu" id="linkModalEditTipeMenu">Edit</a>
 					      	<a href="#">Delete</a>
 					      </td>
 					    </tr>

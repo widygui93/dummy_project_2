@@ -95,7 +95,11 @@ $(document).ready(function(){
 		$(".menu-btn").toggleClass("open");
 	});
 
-	
+	$(document).on("click", "#linkModalEditTipeMenu", function () {
+		// console.log($(this).prev().val());
+		$(".modal-body #EditIDTipeMenu").val($(this).prev().val());
+		$(".modal-body #EditTipeMenu").val($(this).parent().prev().text());
+	});
 
 
 
