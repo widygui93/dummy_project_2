@@ -41,13 +41,13 @@ $faker = Faker\Factory::create();
 <body>
 	<?php
 		if( isset($_POST["submit"]) ){
-			if( $admin->isTipeMenuDuplicate($_POST["namaTipeMenu"]) ) {
+			if( $menu->isTipeMenuDuplicate($_POST["namaTipeMenu"]) ) {
 				echo "<script>swal('Failed!', 'Tipe Menu is existed already', 'error');</script>";
-			} elseif ( $admin->isTipeMenuContainSpecialCharAndNumber($_POST["namaTipeMenu"]) ) {
+			} elseif ( $menu->isTipeMenuContainSpecialCharAndNumber($_POST["namaTipeMenu"]) ) {
 				echo "<script>swal('Failed!', 'Tipe Menu can not contain special characters and/or numbers', 'error');</script>";
 			} else {
 				$idTipeMenu = $faker->randomNumber(9);
-				if( $admin->insertTipeMenu($_POST["namaTipeMenu"],$idTipeMenu) > 0 ){
+				if( $menu->insertTipeMenu($_POST["namaTipeMenu"],$idTipeMenu) > 0 ){
 					echo "<script>swal('Success!', 'Insert Tipe Menu Successfully', 'success');</script>";
 				} else {
 					echo "<script>swal('Failed!', 'Insert Tipe Menu Failed', 'error');</script>";
@@ -57,6 +57,32 @@ $faker = Faker\Factory::create();
 
 		$types = $menu->getTipeMenu();
 	?>
+	<div class="modal fade" id="modalEditTipeMenu" tabindex="-1" role="dialog" aria-labelledby="editTipeMenu" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editTipeMenu">Edit Tipe Menu</h5>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post">
+					  <div class="form-group">
+					  	<label for="InputTipeMenu">Tipe Menu</label>
+    					<input type="text" name="tipeMenu" class="form-control" id="InputTipeMenu" aria-describedby="tipeMenuHelp" placeholder="Enter Tipe Menu" value="" required>
+					  </div>
+					  <div class="form-group">
+					    <button type="submit" name="submitEditTipeMenu" class="btn btn-primary">Submit</button>
+					  </div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- <div class="container-fluid"> -->
 		<div class="grid-container">
 			<header class="header-admin">
@@ -185,7 +211,7 @@ $faker = Faker\Factory::create();
 					      <th scope="row"><?= $no; ?></th>
 					      <td><?= $type['tipe_menu']; ?></td>
 					      <td>
-					      	<a href="#">Edit</a>
+					      	<a href="#" data-toggle="modal" data-target="#modalEditTipeMenu">Edit</a>
 					      	<a href="#">Delete</a>
 					      </td>
 					    </tr>

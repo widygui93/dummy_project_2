@@ -31,6 +31,34 @@ class Menu extends Db {
 	    return $this->menu;
 	}
 
+	public function insertTipeMenu(string $namaTipeMenu, int $idTipeMenu):int {
+		$query = "INSERT INTO tipe_menu
+					VALUES
+				  ('', '$idTipeMenu', '$namaTipeMenu')
+				";
+		$result = $this->executeQuery($query);
+		return $result[1];
+	}
+
+	public function isTipeMenuDuplicate(string $namaTipeMenu):bool {
+		$lowCaseTipeMenu = strtolower($namaTipeMenu);
+		$query = "SELECT * FROM tipe_menu WHERE LOWER(tipe_menu) = '$lowCaseTipeMenu'";
+		$result = $this->executeQuery($query);
+		if( $result[1] > 0 ){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function isTipeMenuContainSpecialCharAndNumber(string $namaTipeMenu):bool {
+		if(preg_match_all('/[0-9]|[!@#$%^&*]/', $namaTipeMenu)){
+		    return true;
+		} else {
+			return false;
+		}
+	}
+
 	public function isUrlInvalid(array $data):bool{
 
 		if( (isset($data["id"]) && isset($data["tipe"])) && (count($data) === 2) ){
