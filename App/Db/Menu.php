@@ -40,6 +40,13 @@ class Menu extends Db {
 		return $result[1];
 	}
 
+	public function editTipeMenu(int $idTipeMenu, string $namaTipeMenu):int {
+		$dataNamaTipeMenu = htmlspecialchars($namaTipeMenu);
+		$query = "UPDATE tipe_menu SET tipe_menu = '$dataNamaTipeMenu' WHERE id_tipe_menu = '$idTipeMenu' ";
+		$result = $this->executeQuery($query);
+		return $result[1];
+	}
+
 	public function isTipeMenuDuplicate(string $namaTipeMenu):bool {
 		$lowCaseTipeMenu = strtolower($namaTipeMenu);
 		$query = "SELECT * FROM tipe_menu WHERE LOWER(tipe_menu) = '$lowCaseTipeMenu'";

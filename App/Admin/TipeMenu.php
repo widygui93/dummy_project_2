@@ -56,7 +56,10 @@ $faker = Faker\Factory::create();
 		}
 
 		if( isset($_POST["submitEditTipeMenu"]) ){
-			var_dump($_POST);
+			// var_dump($_POST["idTipeMenu"]);
+			var_dump((int)$_POST["idTipeMenu"]);
+			var_dump($_POST["tipeMenu"]);
+			var_dump($menu->editTipeMenu((int)$_POST["idTipeMenu"], $_POST["tipeMenu"]));
 		}
 
 		$types = $menu->getTipeMenu();
@@ -75,7 +78,7 @@ $faker = Faker\Factory::create();
 					  <div class="form-group">
 					  	<label for="EditTipeMenu">Tipe Menu</label>
     					<input type="text" name="tipeMenu" class="form-control" id="EditTipeMenu" aria-describedby="tipeMenuHelp" placeholder="Enter Tipe Menu" value="" required>
-    					<input style="display: none;" type="text" name="idTipeMenu" value="" id="EditIDTipeMenu">
+    					<input style="display: none;" type="text" name="idTipeMenu" value id="EditIDTipeMenu">
 					  </div>
 					  <div class="form-group">
 					    <button type="submit" name="submitEditTipeMenu" class="btn btn-primary">Submit</button>
