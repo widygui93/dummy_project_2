@@ -245,22 +245,6 @@ $faker = Faker\Factory::create();
 					    </tr>
 					    <?php $no++; ?>
 					    <?php endforeach; ?>
-					    <!-- <tr>
-					      <th scope="row">2</th>
-					      <td>Japanese</td>
-					      <td>
-					      	<a href="#">Edit</a>
-					      	<a href="#">Delete</a>
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">3</th>
-					      <td>Indonesian</td>
-					      <td>
-					      	<a href="#">Edit</a>
-					      	<a href="#">Delete</a>
-					      </td>
-					    </tr> -->
 					  </tbody>
 					</table>
 				</div>
