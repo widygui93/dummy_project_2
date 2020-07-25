@@ -234,7 +234,7 @@ $faker = Faker\Factory::create();
 					      <td><?= $type['tipe_menu']; ?></td>
 					      <td>
 					      	<input style="display: none;" type="text" name="id_tipe_menu" value="<?= $type['id_tipe_menu']; ?>">
-					      	<a href="#" data-toggle="modal" data-target="#modalEditTipeMenu" id="linkModalEditTipeMenu">Edit</a>
+					      	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalEditTipeMenu" id="linkModalEditTipeMenu">Edit</button>
 					      </td>
 					      <td>
 							<form action="" method="post">
