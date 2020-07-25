@@ -32,9 +32,10 @@ class Menu extends Db {
 	}
 
 	public function insertTipeMenu(string $namaTipeMenu, int $idTipeMenu):int {
+		$dataNamaTipeMenu = htmlspecialchars($namaTipeMenu);
 		$query = "INSERT INTO tipe_menu
 					VALUES
-				  ('', '$idTipeMenu', '$namaTipeMenu')
+				  ('', '$idTipeMenu', '$dataNamaTipeMenu')
 				";
 		$result = $this->executeQuery($query);
 		return $result[1];

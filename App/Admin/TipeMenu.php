@@ -56,10 +56,15 @@ $faker = Faker\Factory::create();
 		}
 
 		if( isset($_POST["submitEditTipeMenu"]) ){
-			// var_dump($_POST["idTipeMenu"]);
-			var_dump((int)$_POST["idTipeMenu"]);
-			var_dump($_POST["tipeMenu"]);
-			var_dump($menu->editTipeMenu((int)$_POST["idTipeMenu"], $_POST["tipeMenu"]));
+			if( $menu->isTipeMenuContainSpecialCharAndNumber($_POST["tipeMenu"]) ){
+				echo "<script>swal('Failed!', 'Tipe Menu can not contain special characters and/or numbers', 'error');</script>";
+			} else {
+				if( $menu->editTipeMenu((int)$_POST["idTipeMenu"], $_POST["tipeMenu"]) > 0 ){
+					echo "<script>swal('Success!', 'Update Tipe Menu Successfully', 'success');</script>";
+				} else {
+					echo "<script>swal('Failed!', 'Update Tipe Menu Failed', 'error');</script>";
+				}
+			}
 		}
 
 		$types = $menu->getTipeMenu();
