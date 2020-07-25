@@ -67,6 +67,16 @@ class Menu extends Db {
 		}
 	}
 
+	public function isTipeMenuInsideTableMenu(int $idTipeMenu):bool{
+		$query = "SELECT * FROM menu WHERE id_tipe_menu = $idTipeMenu ";
+		$result = $this->executeQuery($query);
+		if( $result[1] > 0 ){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public function isUrlInvalid(array $data):bool{
 
 		if( (isset($data["id"]) && isset($data["tipe"])) && (count($data) === 2) ){

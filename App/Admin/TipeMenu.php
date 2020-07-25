@@ -67,6 +67,14 @@ $faker = Faker\Factory::create();
 			}
 		}
 
+		if( isset($_POST["deleteTipeMenu"]) ){
+			if( $menu->isTipeMenuInsideTableMenu( (int)$_POST["id_tipe_menu"] ) ){
+				echo "<script>swal('Failed!', 'Menu still contain Tipe menu', 'error');</script>";
+			} else {
+				echo "<script>swal('Success!', 'Menu does not contain Tipe menu', 'success');</script>";
+			}
+		}
+
 		$types = $menu->getTipeMenu();
 	?>
 	<div class="modal fade" id="modalEditTipeMenu" tabindex="-1" role="dialog" aria-labelledby="editTipeMenu" aria-hidden="true">
@@ -214,7 +222,8 @@ $faker = Faker\Factory::create();
 					    <tr>
 					      <th scope="col">No</th>
 					      <th scope="col">Tipe Menu</th>
-					      <th scope="col">Aksi</th>
+					      <th scope="col">Edit</th>
+					      <th scope="col">Delete</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -226,7 +235,12 @@ $faker = Faker\Factory::create();
 					      <td>
 					      	<input style="display: none;" type="text" name="id_tipe_menu" value="<?= $type['id_tipe_menu']; ?>">
 					      	<a href="#" data-toggle="modal" data-target="#modalEditTipeMenu" id="linkModalEditTipeMenu">Edit</a>
-					      	<a href="#">Delete</a>
+					      </td>
+					      <td>
+							<form action="" method="post">
+								<input style="display: none;" type="text" name="id_tipe_menu" value=<?= $type["id_tipe_menu"]; ?> >
+								<button type="submit" name="deleteTipeMenu" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
+							</form>
 					      </td>
 					    </tr>
 					    <?php $no++; ?>
