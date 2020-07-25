@@ -71,7 +71,11 @@ $faker = Faker\Factory::create();
 			if( $menu->isTipeMenuInsideTableMenu( (int)$_POST["id_tipe_menu"] ) ){
 				echo "<script>swal('Failed!', 'Menu still contain Tipe menu', 'error');</script>";
 			} else {
-				echo "<script>swal('Success!', 'Menu does not contain Tipe menu', 'success');</script>";
+				if( $menu->deleteTipeMenu( (int)$_POST["id_tipe_menu"] ) > 0 ){
+					echo "<script>swal('Success!', 'Delete Tipe Menu Successfully', 'success');</script>";
+				} else {
+					echo "<script>swal('Failed!', 'Delete Tipe Menu Failed', 'error');</script>";
+				}
 			}
 		}
 
