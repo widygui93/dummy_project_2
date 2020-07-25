@@ -1,12 +1,9 @@
 <?php 
 session_start();
 
-// memastikan hilang session ny
-session_unset();
-$_SESSION = [];
+// hapus session admin saja
+unset($_SESSION["admin"]);
 
-// destroy session nya
-session_destroy();
 
 
 header('Location: login.php');
