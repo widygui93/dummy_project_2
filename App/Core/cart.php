@@ -181,7 +181,7 @@ $types = $menu->getTipeMenu();
 		 									<th>Quantity</th>
 		 									<th>Total Price</th>
 		 									<th>Delete</th>
-		 									<th>Edit</th>
+		 									<th>Edit Quantity</th>
 		 								</tr>
 		 								<?php $no = 1; ?>
 		 								<?php foreach($items as $item) : ?>
