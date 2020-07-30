@@ -45,6 +45,8 @@ $faker = Faker\Factory::create();
 				echo "<script>swal('Failed!', 'Menu is existed already', 'error');</script>";
 			} elseif( $menu->isMenuContainSpecialCharAndNumber($_POST["nama-menu"]) ){
 				echo "<script>swal('Failed!', 'Menu can not contain special characters and/or numbers', 'error');</script>";
+			} elseif ( $menu->isPriceContainSpecialCharAndAlphabet($_POST["harga-menu"]) ){
+				echo "<script>swal('Failed!', 'Price can not contain special characters and/or alphabet', 'error');</script>";
 			} else {
 				echo "<script>swal('Success!', 'BOLEH INSERT', 'success');</script>";
 			}

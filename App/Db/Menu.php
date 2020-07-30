@@ -117,6 +117,14 @@ class Menu extends Db {
 		}
 	}
 
+	public function isPriceContainSpecialCharAndAlphabet(string $hargaMenu):bool{
+		if(preg_match_all('/[a-z|A-Z]|[!@#$%^&*]/', $hargaMenu)){
+		    return true;
+		} else {
+			return false;
+		}
+	}
+
 
 
 
