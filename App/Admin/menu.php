@@ -41,7 +41,9 @@ $faker = Faker\Factory::create();
 		if( isset($_POST["add-menu"]) ){
 			// var_dump($_POST);
 			// var_dump($_FILES);
-			if( $menu->isMenuDuplicate($_POST["nama-menu"]) ){
+			if( strlen($_POST["nama-menu"]) == 0 || strlen($_POST["harga-menu"]) == 0 || $_FILES['gambar-menu']['error'] === 4 ){
+				echo "<script>swal('Failed!', 'Nama Menu,Harga Menu,Gambar Menu is Mandatory', 'error');</script>";
+			} elseif( $menu->isMenuDuplicate($_POST["nama-menu"]) ){
 				echo "<script>swal('Failed!', 'Menu is existed already', 'error');</script>";
 			} elseif( $menu->isMenuContainSpecialCharAndNumber($_POST["nama-menu"]) ){
 				echo "<script>swal('Failed!', 'Menu can not contain special characters and/or numbers', 'error');</script>";
