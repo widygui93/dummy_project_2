@@ -98,6 +98,25 @@ class Menu extends Db {
 		return true;
 	}
 
+	public function isMenuDuplicate(string $namaMenu):bool{
+		$lowCaseNamaMenu = strtolower($namaMenu);
+		$query = "SELECT * FROM menu WHERE LOWER(nama_menu) = '$lowCaseNamaMenu'";
+		$result = $this->executeQuery($query);
+		if( $result[1] > 0 ){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function isMenuContainSpecialCharAndNumber(string $namaMenu):bool{
+		if(preg_match_all('/[0-9]|[!@#$%^&*]/', $namaMenu)){
+		    return true;
+		} else {
+			return false;
+		}
+	}
+
 
 
 

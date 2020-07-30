@@ -1,3 +1,23 @@
+<?php
+session_start();
+date_default_timezone_set("Asia/Jakarta");
+
+require_once '../init.php';
+require_once '../../vendor/fzaninotto/faker/src/autoload.php';
+
+if ( !isset($_SESSION["admin"]) ) {
+    // arahkan user balik ke login admin
+    header('Location: login.php');
+    exit;
+}
+
+use App\Db\Menu as Menu;
+
+$menu = new Menu();
+
+$faker = Faker\Factory::create();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +37,19 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
+	<?php
+		if( isset($_POST["add-menu"]) ){
+			// var_dump($_POST);
+			// var_dump($_FILES);
+			if( $menu->isMenuDuplicate($_POST["nama-menu"]) ){
+				echo "<script>swal('Failed!', 'Menu is existed already', 'error');</script>";
+			} elseif( $menu->isMenuContainSpecialCharAndNumber($_POST["nama-menu"]) ){
+				echo "<script>swal('Failed!', 'Menu can not contain special characters and/or numbers', 'error');</script>";
+			} else {
+				echo "<script>swal('Success!', 'BOLEH INSERT', 'success');</script>";
+			}
+		}
+	?>
 	
 	<!-- <div class="container-fluid" style=""> -->
 		<div class="grid-container">
