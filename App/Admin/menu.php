@@ -41,7 +41,7 @@ $faker = Faker\Factory::create();
 		if( isset($_POST["add-menu"]) ){
 			// var_dump($_POST);
 			// var_dump($_FILES);
-			if( strlen($_POST["nama-menu"]) == 0 || strlen($_POST["harga-menu"]) == 0 || $_FILES['gambar-menu']['error'] === 4 ){
+			if( strlen($_POST["nama-menu"]) == 0 || strlen($_POST["harga-menu"]) == 0 || $_FILES['gambar']['error'] === 4 ){
 				echo "<script>swal('Failed!', 'Nama Menu,Harga Menu,Gambar Menu is Mandatory', 'error');</script>";
 			} elseif( $menu->isMenuDuplicate($_POST["nama-menu"]) ){
 				echo "<script>swal('Failed!', 'Menu is existed already', 'error');</script>";
@@ -50,7 +50,14 @@ $faker = Faker\Factory::create();
 			} elseif ( $menu->isPriceContainSpecialCharAndAlphabet($_POST["harga-menu"]) ){
 				echo "<script>swal('Failed!', 'Price can not contain special characters and/or alphabet', 'error');</script>";
 			} else {
-				echo "<script>swal('Success!', 'BOLEH INSERT', 'success');</script>";
+				// echo "<script>swal('Success!', 'BOLEH INSERT', 'success');</script>";
+				$idMenu = $faker->randomNumber(9);
+				// var_dump($menu->insertMenu($idMenu, $_POST["tipe-menu"], $_POST["nama-menu"],$_POST["harga-menu"]));
+				if( $menu->insertMenu($idMenu, $_POST["tipe-menu"], $_POST["nama-menu"],$_POST["harga-menu"]) > 0 ){
+					echo "<script>swal('Success!', 'Insert Menu Successfully', 'success');</script>";
+				} else {
+					echo "<script>swal('Failed!', 'Insert Menu Failed', 'error');</script>";
+				}
 			}
 		}
 	?>
@@ -180,7 +187,7 @@ $faker = Faker\Factory::create();
 						</div>
 						<div class="form-group">
 							<label for="gambar-menu">Gambar</label>
-							<input type="file" name="gambar-menu" id="gambar-menu" class="form-control" required>
+							<input type="file" name="gambar" id="gambar-menu" class="form-control" required>
 						</div>
 						<button type="submit" name="add-menu" class="btn btn-primary mb-2">Add</button>
 					</form>

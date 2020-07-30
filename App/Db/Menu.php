@@ -125,6 +125,34 @@ class Menu extends Db {
 		}
 	}
 
+	public function insertMenu(int $idMenu, string $tipeMenu, string $namaMenu, string $hargaMenu):int {
+		$dataNamaMenu = htmlspecialchars($namaMenu);
+		$dataHargaMenu = htmlspecialchars($hargaMenu);
+		$dataHargaMenu = (int)$dataHargaMenu;
+		$dataIDTipeMenu = $this->getIDTipeMenuBy($tipeMenu);
+		// $dataIDTipeMenu = 617563859;
+
+		$pictureFolder = "../Menu/Images/";
+		$gambar = $this->upload($pictureFolder);
+		if( !$gambar ){
+			return false;
+		}
+
+		$query = "INSERT INTO menu
+					VALUES
+				  ('', '$idMenu', '$dataIDTipeMenu', '$dataNamaMenu', '$dataHargaMenu', '$gambar')
+				";
+		$result = $this->executeQuery($query);
+		return $result[1];
+
+	}
+
+	private function getIDTipeMenuBy($tipeMenu){
+		$query = "SELECT id_tipe_menu FROM tipe_menu WHERE tipe_menu = '$tipeMenu'";
+		$result = $this->executeQuery($query);
+		$data = mysqli_fetch_assoc($result[0]);
+		return $data['id_tipe_menu'];
+	}
 
 
 
