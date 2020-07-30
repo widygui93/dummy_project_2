@@ -145,7 +145,7 @@
 							<label for="gambar-menu">Gambar</label>
 							<input type="file" name="gambar-menu" id="gambar-menu" class="form-control" required>
 						</div>
-						<button type="submit" name="submit" class="btn btn-primary mb-2">Add</button>
+						<button type="submit" name="add-menu" class="btn btn-primary mb-2">Add</button>
 					</form>
 				</div>
 				<!-- end content page -->
