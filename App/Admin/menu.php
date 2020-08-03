@@ -16,6 +16,8 @@ use App\Db\Menu as Menu;
 $menu = new Menu();
 
 $faker = Faker\Factory::create();
+
+$types = $menu->getTipeMenu();
 ?>
 
 <!DOCTYPE html>
@@ -171,10 +173,9 @@ $faker = Faker\Factory::create();
 								<label class="input-group-text" for="tipe-menu">Tipe Menu</label>
 							</div>
 							<select class="custom-select" id="tipe-menu" name="tipe-menu">
-								<option value="Chinese">Chinese</option>
-								<option value="Western">Western</option>
-								<option value="Japanese">Japanese</option>
-								<option value="Indonesian">Indonesian</option>
+								<?php foreach($types as $type) : ?>
+								<option value="<?= $type['tipe_menu']; ?>"><?= $type['tipe_menu']; ?></option>
+								<?php endforeach; ?>
 							</select>
 						</div>
 						<div class="form-group">
