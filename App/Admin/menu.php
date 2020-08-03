@@ -62,6 +62,8 @@ $types = $menu->getTipeMenu();
 				}
 			}
 		}
+
+		$menus = $menu->getMenu();
 	?>
 	
 	<!-- <div class="container-fluid" style=""> -->
@@ -203,11 +205,33 @@ $types = $menu->getTipeMenu();
 					      <th scope="col">Nama Menu</th>
 					      <th scope="col">Harga</th>
 					      <th scope="col">Gambar</th>
-					      <th scope="col">Aksi</th>
+					      <th scope="col">Edit</th>
+					      <th scope="col">Delete</th>
 					    </tr>
 					  </thead>
 					  <tbody>
-					    <tr>
+					  	<?php $no = 1; ?>
+					  	<?php foreach($menus as $menu) : ?>
+				  		    <tr>
+				  		      <th scope="row"><?= $no; ?></th>
+				  		      <td><?= $menu['id_tipe_menu']; ?></td>
+				  		      <td><?= $menu['nama_menu']; ?></td>
+				  		      <td><?= $menu['harga_menu']; ?></td>
+				  		      <td><img src="../../App/Menu/Images/<?= $menu['image']; ?>"></td>
+				  		      <td>
+				  		      	<input style="display: none;" type="text" name="id_tipe_menu" value="<?= $menu['id_tipe_menu']; ?>">
+				  		      	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalEditMenu" id="linkModalEditMenu">Edit</button>
+				  		      </td>
+				  		      <td>
+				  				<form action="" method="post">
+				  					<input style="display: none;" type="text" name="id_tipe_menu" value=<?= $menu["id_tipe_menu"]; ?> >
+				  					<button type="submit" name="deleteMenu" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
+				  				</form>
+				  		      </td>
+				  		    </tr>
+					  	<?php $no++; ?>
+					  	<?php endforeach; ?>
+					    <!-- <tr>
 					      <th scope="row">1</th>
 					      <td>Chinese</td>
 					      <td>Bihun Goreng</td>
@@ -250,7 +274,7 @@ $types = $menu->getTipeMenu();
 					      	<a href="#">Edit</a>
 					      	<a href="#">Delete</a>
 					      </td>
-					    </tr>
+					    </tr> -->
 					  </tbody>
 					</table>
 				</div>

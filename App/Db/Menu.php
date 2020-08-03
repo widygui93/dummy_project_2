@@ -19,6 +19,15 @@ class Menu extends Db {
 	    return $this->tipeMenu;
 	}
 
+	public function getMenu(){
+		$query = "SELECT * FROM menu";
+		$result = $this->executeQuery($query);
+		while ( $row = mysqli_fetch_assoc($result[0]) ) {
+	        $this->menu[] = $row;
+	    }
+	    return $this->menu;
+	}
+
 	public function getMenuByIdTipeMenu($idTipeMenu){
 		// clear array menu then ready to be inserted
 		$this->menu = array();
