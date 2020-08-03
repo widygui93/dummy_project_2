@@ -214,67 +214,23 @@ $types = $menu->getTipeMenu();
 					  	<?php foreach($menus as $menu) : ?>
 				  		    <tr>
 				  		      <th scope="row"><?= $no; ?></th>
-				  		      <td><?= $menu['id_tipe_menu']; ?></td>
+				  		      <td><?= $menu['tipe_menu']; ?></td>
 				  		      <td><?= $menu['nama_menu']; ?></td>
-				  		      <td><?= $menu['harga_menu']; ?></td>
+				  		      <td><?= $menu['harga_menu_2']; ?></td>
 				  		      <td><img src="../../App/Menu/Images/<?= $menu['image']; ?>"></td>
 				  		      <td>
-				  		      	<input style="display: none;" type="text" name="id_tipe_menu" value="<?= $menu['id_tipe_menu']; ?>">
+				  		      	<input style="display: none;" type="text" name="id_tipe_menu" value="<?= $menu['id_menu']; ?>">
 				  		      	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalEditMenu" id="linkModalEditMenu">Edit</button>
 				  		      </td>
 				  		      <td>
 				  				<form action="" method="post">
-				  					<input style="display: none;" type="text" name="id_tipe_menu" value=<?= $menu["id_tipe_menu"]; ?> >
+				  					<input style="display: none;" type="text" name="id_tipe_menu" value=<?= $menu["id_menu"]; ?> >
 				  					<button type="submit" name="deleteMenu" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
 				  				</form>
 				  		      </td>
 				  		    </tr>
 					  	<?php $no++; ?>
 					  	<?php endforeach; ?>
-					    <!-- <tr>
-					      <th scope="row">1</th>
-					      <td>Chinese</td>
-					      <td>Bihun Goreng</td>
-					      <td>Rp.35.0000</td>
-					      <td><img src="../../App/Menu/Images/kwetiau.jpg"></td>
-					      <td>
-					      	<a href="#">Edit</a>
-					      	<a href="#">Delete</a>
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">2</th>
-					      <td>Japanese</td>
-					      <td>Sushi Roll</td>
-					      <td>Rp.50.000</td>
-					      <td><img src="../../App/Menu/Images/kwetiau.jpg"></td>
-					      <td>
-					      	<a href="#">Edit</a>
-					      	<a href="#">Delete</a>
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">3</th>
-					      <td>Indonesian</td>
-					      <td>Nasi Goreng</td>
-					      <td>Rp.45.000</td>
-					      <td><img src="../../App/Menu/Images/kwetiau.jpg"></td>
-					      <td>
-					      	<a href="#">Edit</a>
-					      	<a href="#">Delete</a>
-					      </td>
-					    </tr>
-					    <tr>
-					      <th scope="row">3</th>
-					      <td>Indonesian</td>
-					      <td>Nasi Goreng</td>
-					      <td>Rp.45.000</td>
-					      <td><img src="../../App/Menu/Images/kwetiau.jpg"></td>
-					      <td>
-					      	<a href="#">Edit</a>
-					      	<a href="#">Delete</a>
-					      </td>
-					    </tr> -->
 					  </tbody>
 					</table>
 				</div>

@@ -20,7 +20,7 @@ class Menu extends Db {
 	}
 
 	public function getMenu(){
-		$query = "SELECT * FROM menu";
+		$query = "SELECT A.nama_menu, A.harga_menu , FORMAT(A.harga_menu,0) AS harga_menu_2, A.id_menu, B.tipe_menu, A.image FROM menu A JOIN tipe_menu B ON A.id_tipe_menu = B.id_tipe_menu";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->menu[] = $row;
