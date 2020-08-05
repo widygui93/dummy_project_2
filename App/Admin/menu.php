@@ -66,6 +66,34 @@ $types = $menu->getTipeMenu();
 		$menus = $menu->getMenu();
 	?>
 	
+		<div class="modal fade" id="modalEditMenu" tabindex="-1" role="dialog" aria-labelledby="editMenu" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="editMenu">Edit Menu</h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form action="" method="post">
+						  <div class="form-group">
+						  	<label for="EditMenu">Menu</label>
+	    					<input type="text" name="Menu" class="form-control" id="EditMenu" aria-describedby="MenuHelp" placeholder="Enter Menu" value="" required>
+	    					<input style="display: none;" type="text" name="idTipeMenu" value id="EditIDMenu">
+						  </div>
+						  <div class="form-group">
+						    <button type="submit" name="submitEditMenu" class="btn btn-primary">Submit</button>
+						  </div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	<!-- <div class="container-fluid" style=""> -->
 		<div class="grid-container">
 			<header class="header-admin">
