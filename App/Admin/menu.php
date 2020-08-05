@@ -76,11 +76,20 @@ $types = $menu->getTipeMenu();
 						</button>
 					</div>
 					<div class="modal-body">
-						<form action="" method="post">
+						<form action="" method="post" enctype="multipart/form-data">
 						  <div class="form-group">
-						  	<label for="EditMenu">Menu</label>
+						  	<label for="EditMenu">Nama Menu</label>
 	    					<input type="text" name="Menu" class="form-control" id="EditMenu" aria-describedby="MenuHelp" placeholder="Enter Menu" value="" required>
 	    					<input style="display: none;" type="text" name="idTipeMenu" value id="EditIDMenu">
+						  </div>
+						  <div class="form-group">
+						  	<label for="EditHargaMenu">Harga</label>
+	    					<input type="text" name="hargaMenu" class="form-control" id="EditHargaMenu" aria-describedby="HargaHelp" placeholder="Enter Harga Menu" value="" required>
+	    					<!-- <input style="display: none;" type="text" name="idTipeMenu" value id="EditIDMenu"> -->
+						  </div>
+						  <div class="form-group">
+						  	<label for="EditGambarMenu">Gambar</label>
+						  	<input type="file" name="gambar" id="EditGambarMenu" class="form-control" required>
 						  </div>
 						  <div class="form-group">
 						    <button type="submit" name="submitEditMenu" class="btn btn-primary">Submit</button>
