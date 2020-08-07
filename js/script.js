@@ -101,6 +101,12 @@ $(document).ready(function(){
 		$(".modal-body #EditTipeMenu").val($(this).parent().prev().text());
 	});
 
+	$(document).on("click", "#linkModalEditMenu", function() {
+		$(".modal-body #EditIDMenu").val($(this).prev().prev().val());
+		$(".modal-body #EditMenu").val($(this).parent().prev().prev().prev().text());
+		$(".modal-body #EditHargaMenu").val($(this).prev().val());
+	});
+
 
 
 

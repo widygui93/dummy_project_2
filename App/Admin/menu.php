@@ -63,6 +63,10 @@ $types = $menu->getTipeMenu();
 			}
 		}
 
+		if( isset($_POST["submitEditMenu"]) ){
+
+		}
+
 		$menus = $menu->getMenu();
 	?>
 	
@@ -80,16 +84,11 @@ $types = $menu->getTipeMenu();
 						  <div class="form-group">
 						  	<label for="EditMenu">Nama Menu</label>
 	    					<input type="text" name="Menu" class="form-control" id="EditMenu" aria-describedby="MenuHelp" placeholder="Enter Menu" value="" required>
-	    					<input style="display: none;" type="text" name="idTipeMenu" value id="EditIDMenu">
+	    					<input style="display: none;" type="text" name="idMenu" value id="EditIDMenu">
 						  </div>
 						  <div class="form-group">
 						  	<label for="EditHargaMenu">Harga</label>
 	    					<input type="text" name="hargaMenu" class="form-control" id="EditHargaMenu" aria-describedby="HargaHelp" placeholder="Enter Harga Menu" value="" required>
-	    					<!-- <input style="display: none;" type="text" name="idTipeMenu" value id="EditIDMenu"> -->
-						  </div>
-						  <div class="form-group">
-						  	<label for="EditGambarMenu">Gambar</label>
-						  	<input type="file" name="gambar" id="EditGambarMenu" class="form-control" required>
 						  </div>
 						  <div class="form-group">
 						    <button type="submit" name="submitEditMenu" class="btn btn-primary">Submit</button>
@@ -256,7 +255,8 @@ $types = $menu->getTipeMenu();
 				  		      <td><?= $menu['harga_menu_2']; ?></td>
 				  		      <td><img src="../../App/Menu/Images/<?= $menu['image']; ?>"></td>
 				  		      <td>
-				  		      	<input style="display: none;" type="text" name="id_tipe_menu" value="<?= $menu['id_menu']; ?>">
+				  		      	<input style="display: none;" type="text" name="id_menu" value="<?= $menu['id_menu']; ?>">
+				  		      	<input style="display: none;" type="text" name="harga_menu" value="<?= $menu['harga_menu']; ?>">
 				  		      	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalEditMenu" id="linkModalEditMenu">Edit</button>
 				  		      </td>
 				  		      <td>
