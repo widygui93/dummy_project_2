@@ -156,12 +156,25 @@ class Menu extends Db {
 
 	}
 
+	public function editMenu(int $idMenu, string $namaMenu, int $hargaMenu):int {
+		$dataNamaMenu = htmlspecialchars($namaMenu);
+		$dataHargaMenu = htmlspecialchars($hargaMenu);
+		$query = "UPDATE menu SET nama_menu = '$dataNamaMenu', harga_menu = '$dataHargaMenu' WHERE id_menu = '$idMenu' ";
+		$result = $this->executeQuery($query);
+		// $this->updateDataDiTableOrderMenu($idMenu, $namaMenu, $hargaMenu);
+		return $result[1];
+	}
+
 	private function getIDTipeMenuBy($tipeMenu){
 		$query = "SELECT id_tipe_menu FROM tipe_menu WHERE tipe_menu = '$tipeMenu'";
 		$result = $this->executeQuery($query);
 		$data = mysqli_fetch_assoc($result[0]);
 		return $data['id_tipe_menu'];
 	}
+
+	// private function updateDataDiTableOrderMenu($idMenu, $namaMenu, $hargaMenu){
+		
+	// }
 
 
 

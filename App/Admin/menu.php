@@ -64,7 +64,20 @@ $types = $menu->getTipeMenu();
 		}
 
 		if( isset($_POST["submitEditMenu"]) ){
-
+			// var_dump($_POST);
+			if( strlen($_POST["Menu"]) == 0 || strlen($_POST["hargaMenu"]) == 0 ){
+				echo "<script>swal('Failed!', 'Nama Menu dan Harga Menu is Mandatory', 'error');</script>";
+			}  elseif( $menu->isMenuContainSpecialCharAndNumber($_POST["Menu"]) ){
+				echo "<script>swal('Failed!', 'Menu can not contain special characters and/or numbers', 'error');</script>";
+			} elseif ( $menu->isPriceContainSpecialCharAndAlphabet($_POST["hargaMenu"]) ){
+				echo "<script>swal('Failed!', 'Price can not contain special characters and/or alphabet', 'error');</script>";
+			} else {
+				if( $menu->editMenu((int)$_POST["idMenu"], $_POST["Menu"], (int)$_POST["hargaMenu"]) > 0 ){
+					echo "<script>swal('Success!', 'Edit Menu Successfully', 'success');</script>";
+				} else {
+					echo "<script>swal('Failed!', 'Edit Menu Failed', 'error');</script>";
+				}
+			}
 		}
 
 		$menus = $menu->getMenu();
