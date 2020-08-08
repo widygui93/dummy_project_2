@@ -91,9 +91,9 @@ $profilePic = $profile->getProfilePic($user);
 									<td><?= $no; ?></td>
 									<td><?= $detail["nama_menu"] ?></td>
 									<td><?= $detail["tipe_menu"] ?></td>
-									<td><?= $detail["harga_menu"] ?></td>
+									<td><?= number_format($detail["harga_menu"]) ?></td>
 									<td><?= $detail["quantity"] ?></td>
-									<td><?= $detail["total_harga_menu"] ?></td>
+									<td><?= number_format($detail["quantity"] * $detail["harga_menu"]) ?></td>
 								</tr>
 								<?php $no++; ?>
 							<?php endforeach; ?>

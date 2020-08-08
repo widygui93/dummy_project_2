@@ -19,7 +19,7 @@ class History extends Db {
 	}
 
 	public function getDetailHistory($id){
-		$query = "SELECT nama_menu, tipe_menu, FORMAT(harga_menu,0) AS harga_menu, quantity, FORMAT(total_harga_menu,0) AS total_harga_menu FROM order_menu WHERE id_transfer = '$id' ";
+		$query = "SELECT nama_menu, tipe_menu, harga_menu, quantity FROM order_menu WHERE id_transfer = '$id' ";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 			$this->details[] = $row;
