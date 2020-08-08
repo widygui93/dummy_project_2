@@ -119,13 +119,6 @@ class Cart extends Db {
 		return  $result[1];
 	}
 
-	// public function editTotalHargaMenu($data){
-	// 	$newTotalHargamenu = $data["quantity"] * $data["harga_menu"];
-	// 	$query = "UPDATE order_menu SET total_harga_menu = '$newTotalHargamenu' WHERE order_id = '" .$data["order_id"]. "'";
-	// 	$result = $this->executeQuery($query);
-	// 	return  $result[1];
-	// }
-
 
 
 }
