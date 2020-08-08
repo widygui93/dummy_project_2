@@ -190,7 +190,7 @@ $types = $menu->getTipeMenu();
 		 										<td><?= $item["nama_menu"]; ?></td>
 		 										<td><?= $item["harga_menu_2"]; ?></td>
 		 										<td><?= $item["quantity"]; ?></td>
-		 										<td><?= $item["total_harga_menu"]; ?></td>
+		 										<td><?= $item["quantity"] * $item["harga_menu"] ?></td>
 		 										<td>
 		 											<form action="" method="post">
 		 												<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >

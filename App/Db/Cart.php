@@ -12,7 +12,8 @@ class Cart extends Db {
 	}
 
 	public function getItems($userName){
-		$query = "SELECT order_id, nama_menu, harga_menu, quantity, FORMAT(total_harga_menu,0) AS total_harga_menu, FORMAT(harga_menu,0) AS harga_menu_2 FROM order_menu WHERE user_name = '$userName' AND id_transfer = ''";
+		// $query = "SELECT order_id, nama_menu, harga_menu, quantity, FORMAT(total_harga_menu,0) AS total_harga_menu, FORMAT(harga_menu,0) AS harga_menu_2 FROM order_menu WHERE user_name = '$userName' AND id_transfer = ''";
+		$query = "SELECT order_id, nama_menu, harga_menu, quantity, FORMAT(harga_menu,0) AS harga_menu_2 FROM order_menu WHERE user_name = '$userName' AND id_transfer = ''";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->items[] = $row;
@@ -21,15 +22,21 @@ class Cart extends Db {
 	}
 
 	public function getTotalHargaItems($userName){
-		$query = "SELECT  SUM(total_harga_menu) AS total, FORMAT(SUM(total_harga_menu),0) AS total_2 FROM order_menu WHERE user_name = '$userName' AND id_transfer = ''";
-		$result = $this->executeQuery($query);
-		$data = mysqli_fetch_assoc($result[0]);
-		$this->totalHargaItems = $data['total'];
-		// foreach ($this->items as $item) {
-		// 	$this->totalHargaItems = $item["total_harga_menu"] + $this->totalHargaItems;
-		// }
+		// $query = "SELECT  SUM(total_harga_menu) AS total, FORMAT(SUM(total_harga_menu),0) AS total_2 FROM order_menu WHERE user_name = '$userName' AND id_transfer = ''";
+		// $result = $this->executeQuery($query);
+		// $data = mysqli_fetch_assoc($result[0]);
+		// $this->totalHargaItems = $data['total'];
 
-		return $data['total_2'];
+		// return $data['total_2'];
+		$query = "SELECT harga_menu, quantity FROM order_menu WHERE user_name = '$userName' and id_transfer = ''";
+		$result = $this->executeQuery($query);
+		while ( $row = mysqli_fetch_assoc($result[0]) ) {
+	        $records[] = $row;
+	    }
+	    foreach($records as $record){
+	    	$this->totalHargaItems = ($record["harga_menu"] * $record["quantity"]) + $this->totalHargaItems;
+	    }
+	    return $this->totalHargaItems;
 	}
 
 	public function getJumlahQuantity($userName){
