@@ -190,7 +190,7 @@ $types = $menu->getTipeMenu();
 		 										<td><?= $item["nama_menu"]; ?></td>
 		 										<td><?= $item["harga_menu_2"]; ?></td>
 		 										<td><?= $item["quantity"]; ?></td>
-		 										<td><?= $item["quantity"] * $item["harga_menu"] ?></td>
+		 										<td><?= number_format($item["quantity"] * $item["harga_menu"]) ?></td>
 		 										<td>
 		 											<form action="" method="post">
 		 												<input style="display: none;" type="text" name="order_id" value=<?= $item["order_id"]; ?> >
@@ -213,7 +213,7 @@ $types = $menu->getTipeMenu();
 		 								<?php endforeach; ?>
 		                        		<tr>
 		                        			<td colspan="7"> 
-												<strong> Total : Rp <?= $total; ?></strong>
+												<strong> Total : Rp <?= number_format($total); ?></strong>
 		                        			</td>
 		                        		</tr>
 		 							</table>
