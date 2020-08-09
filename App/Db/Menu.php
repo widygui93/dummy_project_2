@@ -161,7 +161,7 @@ class Menu extends Db {
 		$dataHargaMenu = htmlspecialchars($hargaMenu);
 		$query = "UPDATE menu SET nama_menu = '$dataNamaMenu', harga_menu = '$dataHargaMenu' WHERE id_menu = '$idMenu' ";
 		$result = $this->executeQuery($query);
-		// $this->updateDataDiTableOrderMenu($idMenu, $namaMenu, $hargaMenu);
+		$this->updateDataDiTableOrderMenu($idMenu, $namaMenu, $hargaMenu);
 		return $result[1];
 	}
 
@@ -172,9 +172,10 @@ class Menu extends Db {
 		return $data['id_tipe_menu'];
 	}
 
-	// private function updateDataDiTableOrderMenu($idMenu, $namaMenu, $hargaMenu){
-		
-	// }
+	private function updateDataDiTableOrderMenu($idMenu, $namaMenu, $hargaMenu){
+		$query = "UPDATE order_menu SET nama_menu = '$namaMenu', harga_menu = '$hargaMenu' WHERE id_menu = '$idMenu' and id_transfer = '' ";
+		$result = $this->executeQuery($query);
+	}
 
 
 
