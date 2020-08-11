@@ -81,6 +81,14 @@ $types = $menu->getTipeMenu();
 			}
 		}
 
+		if( isset($_POST["deleteMenu"]) ){
+			if( $cart->deleteMenu( (int)$_POST["id_menu"] ) > 0 ){
+				echo "<script>swal('Success!', 'data berhasil dihapus', 'success');</script>";
+			} else {
+				echo "<script>swal('Failed!', 'data gagal dihapus', 'error');</script>";
+			}
+		}
+
 		$menus = $menu->getMenu();
 	?>
 	
@@ -301,7 +309,7 @@ $types = $menu->getTipeMenu();
 				  		      </td>
 				  		      <td>
 				  				<form action="" method="post">
-				  					<input style="display: none;" type="text" name="id_tipe_menu" value=<?= $menu["id_menu"]; ?> >
+				  					<input style="display: none;" type="text" name="id_menu" value=<?= $menu["id_menu"]; ?> >
 				  					<button type="submit" name="deleteMenu" class="btn btn-warning" onclick="return confirm('are you sure?');">Delete</button>
 				  				</form>
 				  		      </td>

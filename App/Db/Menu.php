@@ -180,6 +180,12 @@ class Menu extends Db {
 
 	}
 
+	public function deleteMenu(int $idMenu):int {
+		$query = "DELETE FROM menu WHERE id_menu = '$idMenu' ";
+		$result = $this->executeQuery($query);
+		return  $result[1];
+	}
+
 	private function getIDTipeMenuBy($tipeMenu){
 		$query = "SELECT id_tipe_menu FROM tipe_menu WHERE tipe_menu = '$tipeMenu'";
 		$result = $this->executeQuery($query);
