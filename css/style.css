@@ -490,3 +490,10 @@ a[href="register.php"], a[href="App/Core/register.php"] {
 		bottom: 20px;
 	}
 } 
+#linkModalViewMenu {
+	cursor: pointer;
+}
+
+#linkModalViewMenu:hover {
+	box-shadow: 1px 1px 3px grey, -1px -1px 3px grey;
+}

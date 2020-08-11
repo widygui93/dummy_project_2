@@ -107,6 +107,11 @@ $(document).ready(function(){
 		$(".modal-body #EditHargaMenu").val($(this).prev().val());
 	});
 
+	$(document).on("click", "#linkModalViewMenu", function() {
+		$(".img-view-menu").attr("src", $(this).attr("src"));
+		$(".modal-title-view").text($(this).parent().prev().prev().text());
+	});
+
 
 
 

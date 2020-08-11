@@ -65,6 +65,7 @@ $types = $menu->getTipeMenu();
 
 		if( isset($_POST["submitEditMenu"]) ){
 			// var_dump($_POST);
+			// var_dump($_FILES);
 			if( strlen($_POST["Menu"]) == 0 || strlen($_POST["hargaMenu"]) == 0 ){
 				echo "<script>swal('Failed!', 'Nama Menu dan Harga Menu is Mandatory', 'error');</script>";
 			}  elseif( $menu->isMenuContainSpecialCharAndNumber($_POST["Menu"]) ){
@@ -104,9 +105,33 @@ $types = $menu->getTipeMenu();
 	    					<input type="text" name="hargaMenu" class="form-control" id="EditHargaMenu" aria-describedby="HargaHelp" placeholder="Enter Harga Menu" value="" required>
 						  </div>
 						  <div class="form-group">
+						  	<label for="EditGambarMenu">Gambar</label>
+						  	<input type="file" name="gambar" id="EditGambarMenu" class="form-control">
+						  	<small>hanya browse file jika ingin edit gambar</small>
+						  </div>
+						  <div class="form-group">
 						    <button type="submit" name="submitEditMenu" class="btn btn-primary">Submit</button>
 						  </div>
 						</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalViewMenu" tabindex="-1" role="dialog" aria-labelledby="viewMenu" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title-view" id="viewMenu"></h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body mx-auto">
+						<img src="" class="img-fluid img-view-menu">
 					</div>
 					<div class="modal-footer">
 						<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
@@ -266,7 +291,9 @@ $types = $menu->getTipeMenu();
 				  		      <td><?= $menu['tipe_menu']; ?></td>
 				  		      <td><?= $menu['nama_menu']; ?></td>
 				  		      <td><?= $menu['harga_menu_2']; ?></td>
-				  		      <td><img src="../../App/Menu/Images/<?= $menu['image']; ?>"></td>
+				  		      <td>
+				  		      	<img src="../../App/Menu/Images/<?= $menu['image']; ?>" data-toggle="modal" data-target="#modalViewMenu" id="linkModalViewMenu" data-toggle="tooltip" title="click to view">
+				  		      </td>
 				  		      <td>
 				  		      	<input style="display: none;" type="text" name="id_menu" value="<?= $menu['id_menu']; ?>">
 				  		      	<input style="display: none;" type="text" name="harga_menu" value="<?= $menu['harga_menu']; ?>">

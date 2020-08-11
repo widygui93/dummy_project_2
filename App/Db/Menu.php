@@ -159,10 +159,25 @@ class Menu extends Db {
 	public function editMenu(int $idMenu, string $namaMenu, int $hargaMenu):int {
 		$dataNamaMenu = htmlspecialchars($namaMenu);
 		$dataHargaMenu = htmlspecialchars($hargaMenu);
-		$query = "UPDATE menu SET nama_menu = '$dataNamaMenu', harga_menu = '$dataHargaMenu' WHERE id_menu = '$idMenu' ";
-		$result = $this->executeQuery($query);
-		$this->updateDataDiTableOrderMenu($idMenu, $namaMenu, $hargaMenu);
-		return $result[1];
+
+		if( $_FILES['gambar']['error'] === 0 ){
+			$pictureFolder = "../Menu/Images/";
+			$gambar = $this->upload($pictureFolder);
+			if( !$gambar ){
+				return false;
+			}
+
+			$query = "UPDATE menu SET nama_menu = '$dataNamaMenu', harga_menu = '$dataHargaMenu', image = '$gambar' WHERE id_menu = '$idMenu' ";
+			$result = $this->executeQuery($query);
+			$this->updateDataDiTableOrderMenu($idMenu, $namaMenu, $hargaMenu);
+			return $result[1];
+		} else {
+			$query = "UPDATE menu SET nama_menu = '$dataNamaMenu', harga_menu = '$dataHargaMenu' WHERE id_menu = '$idMenu' ";
+			$result = $this->executeQuery($query);
+			$this->updateDataDiTableOrderMenu($idMenu, $namaMenu, $hargaMenu);
+			return $result[1];
+		}
+
 	}
 
 	private function getIDTipeMenuBy($tipeMenu){
