@@ -1,3 +1,23 @@
+<?php
+session_start();
+date_default_timezone_set("Asia/Jakarta");
+
+require_once '../init.php';
+
+if ( !isset($_SESSION["admin"]) ) {
+    // arahkan user balik ke login admin
+    header('Location: login.php');
+    exit;
+}
+
+use App\Db\Report as Report;
+
+$report = new Report();
+
+$totalUser = 0;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +37,14 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
+</body>
+	<?php
+		if( isset($_POST["search-user"]) ){
+			$userReports = $report->getUserBy( $_POST["username"], $_POST["register-date"] );
+			$totalUser = $report->getTotalUserBy( $_POST["username"], $_POST["register-date"] );
+			if( $totalUser === 0 ){echo "<script>swal('Failed!', 'Record No Found', 'error');</script>";}
+		}
+	?>
 	
 	<!-- <div class="container-fluid"> -->
 		<div class="grid-container">
@@ -128,56 +156,45 @@
 						</div>
 						<div class="form-group">
 							<label for="date">Tanggal Daftar</label>
-							<input type="date" name="date" id="date" class="form-control">
+							<input type="date" name="register-date" id="date" class="form-control">
 						</div>
-						<button type="submit" name="search" class="btn btn-primary mb-2">Search</button>
+						<button type="submit" name="search-user" class="btn btn-primary mb-2">Search</button>
 					</form>
+					<small>Leave all blanks to view all users.</small>
 				</div>
 				<!-- end content page -->
-				<div class="table-responsive">
-					<table class="table table-hover table-dark">
-					  <thead>
-					    <tr>
-					      <th scope="col">No</th>
-					      <th scope="col">Profile Picture</th>
-					      <th scope="col">Username</th>
-					      <th scope="col">Address</th>
-					      <th scope="col">Email</th>
-					      <th scope="col">Phone no</th>
-					      <th scope="col">Register date</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					    <tr>
-					      <th scope="row">1</th>
-					      <td><img src="#"></td>
-					      <td>Widygui11</td>
-					      <td>Jalan Pulo Raya V No.14, Kebayoran Baru</td>
-					      <td>johndoe@mail.com</td>
-					      <td>0839849892</td>
-					      <td>2020-05-12</td>
-					    </tr>
-					    <tr>
-					      <th scope="row">2</th>
-					      <td><img src="#"></td>
-					      <td>Widygui11</td>
-					      <td>Jalan Pulo Raya V No.14, Kebayoran Baru</td>
-					      <td>johndoe@mail.com</td>
-					      <td>0839849892</td>
-					      <td>2020-05-12</td>
-					    </tr>
-					    <tr>
-					      <th scope="row">3</th>
-					      <td><img src="#"></td>
-					      <td>Widygui11</td>
-					      <td>Jalan Pulo Raya V No.14, Kebayoran Baru</td>
-					      <td>johndoe@mail.com</td>
-					      <td>0839849892</td>
-					      <td>2020-05-12</td>
-					    </tr>
-					  </tbody>
-					</table>
-				</div>
+				<?php if($totalUser > 0): ?>
+					<div class="table-responsive">
+						<table class="table table-hover table-dark">
+						  <thead>
+						    <tr>
+						      <th scope="col">No</th>
+						      <th scope="col">Profile Picture</th>
+						      <th scope="col">Username</th>
+						      <th scope="col">Address</th>
+						      <th scope="col">Email</th>
+						      <th scope="col">Phone no</th>
+						      <th scope="col">Register date</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  	<?php $no = 1; ?>
+						  	<?php foreach($userReports as $userReport) : ?>
+							<tr>
+								<th scope="row"><?= $no; ?></th>
+								<td><img src="../Core/profile-picture/<?= $userReport['profile_picture']; ?>" ></td>
+								<td><?= $userReport['username']; ?></td>
+								<td><?= $userReport['address']; ?></td>
+								<td><?= $userReport['email']; ?></td>
+								<td><?= $userReport['phone_no']; ?></td>
+								<td><?= $userReport['register_date']; ?></td>
+							</tr>
+						  	<?php $no++; ?>
+						    <?php endforeach; ?>
+						  </tbody>
+						</table>
+					</div>
+				<?php endif; ?>
 			</main>
 			<footer class="footer-admin">
 				<div class="col-12 align-self-end">
