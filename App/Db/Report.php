@@ -11,6 +11,7 @@ class Report extends Db {
 	}
 
 	public function getUserBy(string $username, string $registerDate):array {
+		$username = strtolower(stripslashes($username));
 		$query = "SELECT * FROM user WHERE username LIKE '%$username%' AND register_date LIKE '%$registerDate%' ";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
@@ -20,6 +21,7 @@ class Report extends Db {
 	}
 
 	public function getTotalUserBy(string $username, string $registerDate):int {
+		$username = strtolower(stripslashes($username));
 		$query = "SELECT * FROM user WHERE username LIKE '%$username%' AND register_date LIKE '%$registerDate%' ";
 		$result = $this->executeQuery($query);
 		$this->totalUser = $result[1];
