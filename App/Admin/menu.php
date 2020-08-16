@@ -82,7 +82,7 @@ $types = $menu->getTipeMenu();
 		}
 
 		if( isset($_POST["deleteMenu"]) ){
-			if( $cart->deleteMenu( (int)$_POST["id_menu"] ) > 0 ){
+			if( $menu->deleteMenu( (int)$_POST["id_menu"] ) > 0 ){
 				echo "<script>swal('Success!', 'data berhasil dihapus', 'success');</script>";
 			} else {
 				echo "<script>swal('Failed!', 'data gagal dihapus', 'error');</script>";
