@@ -1,12 +1,12 @@
 <?php namespace App\Db;
 
 class Admin extends Db {
-	private $username, $account;
+	// private $username, $account;
 
 	public function __construct(){
 		parent::__construct();
-		$this->username = "admin";
-		$this->account = "1010034522";
+		// $this->username = "admin";
+		// $this->account = "1010034522";
 	}
 
 	public function login($data) {
