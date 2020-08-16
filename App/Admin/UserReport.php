@@ -43,6 +43,15 @@ $totalUser = 0;
 			$userReports = $report->getUserBy( $_POST["username"], $_POST["register-date"] );
 			$totalUser = $report->getTotalUserBy( $_POST["username"], $_POST["register-date"] );
 			if( $totalUser === 0 ){echo "<script>swal('Failed!', 'Record No Found', 'error');</script>";}
+			$totalHalaman = $report->getTotalHalaman();
+			$halamanAktif = $report->getHalamanAktif();
+		}
+
+		if ( isset($_GET["halaman"]) ) {
+		    $userReports = $report->getUserByPage((int)$_GET["halaman"]);
+		    $totalUser = $report->getTotalUser();
+		    $totalHalaman = $report->getTotalHalaman();
+			$halamanAktif = $report->getHalamanAktif();
 		}
 	?>
 	
@@ -194,6 +203,56 @@ $totalUser = 0;
 						  </tbody>
 						</table>
 					</div>
+
+					<?php if( $totalHalaman != 0 ): ?>
+					    <nav aria-label="Page navigation example">
+					        <ul class="pagination justify-content-center">
+					            <?php if( $halamanAktif == 1 ) : ?>
+					                <li class="page-item disabled">
+					                    <a class="page-link" href="#" aria-label="Previous">
+					                        <span aria-hidden="true">&laquo;</span>
+					                        <span class="sr-only">Previous</span>
+					                    </a>
+					                </li>
+					            <?php else: ?>
+					                <li class="page-item">
+					                    <a class="page-link" href="?halaman=<?= $halamanAktif - 1; ?>" aria-label="Previous">
+					                        <span aria-hidden="true">&laquo;</span>
+					                        <span class="sr-only">Previous</span>
+					                    </a>
+					                </li>
+					            <?php endif; ?>
+
+					            <?php for( $i = 1; $i <= $totalHalaman; $i++ ) : ?>
+					                <?php if( $i == $halamanAktif ) : ?>
+					                    <li class="page-item active">
+					                        <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+					                    </li>
+					                <?php else : ?>
+					                    <li class="page-item">
+					                        <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+					                    </li>
+					                <?php endif; ?>
+					            <?php endfor; ?>
+
+					            <?php if( $halamanAktif == $totalHalaman ) :  ?>
+					                <li class="page-item disabled">
+					                    <a class="page-link" href="#" aria-label="Next">
+					                        <span aria-hidden="true">&raquo;</span>
+					                        <span class="sr-only">Next</span>
+					                    </a>
+					                </li>
+					            <?php else : ?>
+					                <li class="page-item">
+					                    <a class="page-link" href="?halaman=<?= $halamanAktif + 1; ?>" aria-label="Next">
+					                        <span aria-hidden="true">&raquo;</span>
+					                        <span class="sr-only">Next</span>
+					                    </a>
+					                </li>     
+					            <?php endif; ?>
+					        </ul>
+					    </nav>
+					<?php endif; ?>
 				<?php endif; ?>
 			</main>
 			<footer class="footer-admin">
