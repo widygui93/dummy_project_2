@@ -9,25 +9,6 @@ class Admin extends Db {
 		$this->account = "1010034522";
 	}
 
-	// public function getRegisterDate($userName){
-	// 	$query = "SELECT register_date FROM user WHERE username = '$userName'";
-	// 	$result = $this->executeQuery($query);
-	// 	$data = mysqli_fetch_assoc($result[0]);
-	// 	$this->registerDate = $data['register_date'];
-	// 	return $this->registerDate;
-	// }
-
-	// public function getAddress($userName){
-	// 	$query = "SELECT address FROM user WHERE username = '$userName'";
-	// 	$result = $this->executeQuery($query);
-	// 	$data = mysqli_fetch_assoc($result[0]);
-	// 	$this->address = $data['address'];
-	// 	return $this->address;
-	// }
-
-	
-
-
 	public function login($data) {
 		$username = strtolower(stripslashes($data["username"]));
 		$password = $this->escapeStr($data["password"]);
@@ -49,42 +30,6 @@ class Admin extends Db {
 			return false;
 		}
 	}
-
-	// public function insertTipeMenu(string $namaTipeMenu, int $idTipeMenu):int {
-	// 	$query = "INSERT INTO tipe_menu
-	// 				VALUES
-	// 			  ('', '$idTipeMenu', '$namaTipeMenu')
-	// 			";
-	// 	$result = $this->executeQuery($query);
-	// 	return $result[1];
-	// }
-
-	// public function isTipeMenuDuplicate(string $namaTipeMenu):bool {
-	// 	$lowCaseTipeMenu = strtolower($namaTipeMenu);
-	// 	$query = "SELECT * FROM tipe_menu WHERE LOWER(tipe_menu) = '$lowCaseTipeMenu'";
-	// 	$result = $this->executeQuery($query);
-	// 	if( $result[1] > 0 ){
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// }
-
-	// public function isTipeMenuContainSpecialCharAndNumber(string $namaTipeMenu):bool {
-	// 	if(preg_match_all('/[0-9]|[!@#$%^&*]/', $namaTipeMenu)){
-	// 	    return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// }
-	
-
-
-
-
-
-
-
 }
 
 
