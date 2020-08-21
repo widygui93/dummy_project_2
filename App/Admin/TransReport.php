@@ -37,6 +37,18 @@ $report = new Report();
 </head>
 <body>
 </body>	
+	<?php
+		if( isset($_POST["search-trans"]) ){
+			var_dump($_POST);
+			if( $report->isEitherTransDateEmpty(strlen($_POST["from-trans-date"]), strlen($_POST["to-trans-date"])) ){
+				echo "<script>swal('Failed!', 'From Transaction Date and To Transaction Date are Mandatory', 'error');</script>";
+			} elseif( $report->isFromTransDateBigger(strtotime($_POST["from-trans-date"]), strtotime($_POST["to-trans-date"])) ){
+				echo "<script>swal('Failed!', 'From Transaction Date can not bigger than To Transaction Date', 'error');</script>";
+			} else {
+				var_dump("sukses search");
+			}
+		}
+	?>
 	<!-- <div class="container-fluid"> -->
 		<div class="grid-container">
 			<header class="header-admin">
@@ -141,10 +153,6 @@ $report = new Report();
 				<!-- start content page -->
 				<div class="content-page">
 					<form action="" method="post">
-						<div class="form-group">
-							<label for="username">Username</label>
-							<input type="text" name="username" id="username" class="form-control" value="" required>
-						</div>
 						<div class="form-group">
 							<label for="from-date">Dari Tanggal Transaksi</label>
 							<input type="date" name="from-trans-date" id="from-date" class="form-control" value="" required>

@@ -70,6 +70,14 @@ class Report extends Db {
 		return $this->totalUser;
 	}
 
+	public function isEitherTransDateEmpty(int $fromTransDate, int $toTransDate):bool{
+		return ( $fromTransDate == 0 || $toTransDate == 0 ) ?? false;
+	}
+
+	public function isFromTransDateBigger(int $fromTransDate, int $toTransDate):bool{
+		return ($fromTransDate > $toTransDate) ?? false;
+	}
+
 }
 
 
