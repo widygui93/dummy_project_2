@@ -51,13 +51,11 @@ $totalUser = 0;
 			}
 		} 
 
-		if( !isset($_POST["search-user"]) ){
-			if ( isset($_GET["halaman"]) ) {
-				$userReports = $report->searchBy( $_GET["username"], $_GET["registerdate"]);
-			    $totalUser = $report->getTotalUser();
-			    $totalHalaman = $report->getTotalHalaman();
-				$halamanAktif = $report->getHalamanAktif();
-			}
+		if( !isset($_POST["search-user"]) && isset($_GET["halaman"]) ){
+			$userReports = $report->searchBy( $_GET["username"], $_GET["registerdate"]);
+		    $totalUser = $report->getTotalUser();
+		    $totalHalaman = $report->getTotalHalaman();
+			$halamanAktif = $report->getHalamanAktif();
 		}
 	?>
 	
