@@ -14,18 +14,36 @@ class Report extends Db {
 		$this->registerDate = "";
 	}
 
-	public function getUserBy(string $username, string $registerDate):array {
-		$this->username = strtolower(stripslashes($username));
+	public function getUsername(){
+		return $this->username;
+	}
+
+	public function getRegisterDate(){
+		return $this->registerDate;
+	}
+
+	private function setUsername($username){
+		$this->username = $username;
+	}
+
+	private function setRegisterDate($registerDate){
 		$this->registerDate = $registerDate;
+	}
+
+	public function searchBy(string $username, string $registerDate):array {
+		$this->setUsername(strtolower(stripslashes($username)));
+		$this->setRegisterDate($registerDate);
+
+		$username = $this->getUsername();
+		$registerDate = $this->getRegisterDate();
 
 		$jumlahDataPerHalaman = 10;
 		$totalData = $this->getTotalUserBy($username, $registerDate);
 		$this->totalHalaman = ceil($totalData / $jumlahDataPerHalaman);
-		// $this->halamanAktif = ( isset($_GET["halaman"]) ) ? $_GET["halaman"] : 1;
-		$this->halamanAktif = 1;
+		$this->halamanAktif = $_GET["halaman"];
 		$awalData = ($jumlahDataPerHalaman * $this->halamanAktif) - $jumlahDataPerHalaman;
 
-		$query = "SELECT * FROM user WHERE username LIKE '%$this->username%' AND register_date LIKE '%$this->registerDate%' LIMIT $awalData, $jumlahDataPerHalaman ";
+		$query = "SELECT * FROM user WHERE username LIKE '%$username%' AND register_date LIKE '%$registerDate%' LIMIT $awalData, $jumlahDataPerHalaman ";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->userReport[] = $row;
@@ -34,8 +52,7 @@ class Report extends Db {
 	}
 
 	public function getTotalUserBy(string $username, string $registerDate):int {
-		// $username = strtolower(stripslashes($username));
-		$query = "SELECT * FROM user WHERE username LIKE '%$this->username%' AND register_date LIKE '%$this->registerDate%' ";
+		$query = "SELECT * FROM user WHERE username LIKE '%$username%' AND register_date LIKE '%$registerDate%' ";
 		$result = $this->executeQuery($query);
 		$this->totalUser = $result[1];
 	    return $this->totalUser;
@@ -53,20 +70,6 @@ class Report extends Db {
 		return $this->totalUser;
 	}
 
-	public function getUserByPage(int $halaman):array{
-		$jumlahDataPerHalaman = 10;
-		$totalData = $this->getTotalUserBy($this->username, $this->registerDate);
-		$this->totalHalaman = ceil($totalData / $jumlahDataPerHalaman);
-		$this->halamanAktif =   $halaman;
-		$awalData = ($jumlahDataPerHalaman * $this->halamanAktif) - $jumlahDataPerHalaman;
-
-		$query = "SELECT * FROM user WHERE username LIKE '%$this->username%' AND register_date LIKE '%$this->registerDate%' LIMIT $awalData, $jumlahDataPerHalaman ";
-		$result = $this->executeQuery($query);
-		while ( $row = mysqli_fetch_assoc($result[0]) ) {
-	        $this->userReport[] = $row;
-	    }
-	    return $this->userReport;
-	}
 }
 
 

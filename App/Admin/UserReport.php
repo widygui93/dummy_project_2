@@ -40,18 +40,24 @@ $totalUser = 0;
 </body>
 	<?php
 		if( isset($_POST["search-user"]) ){
-			$userReports = $report->getUserBy( $_POST["username"], $_POST["register-date"] );
-			$totalUser = $report->getTotalUserBy( $_POST["username"], $_POST["register-date"] );
-			if( $totalUser === 0 ){echo "<script>swal('Failed!', 'Record No Found', 'error');</script>";}
-			$totalHalaman = $report->getTotalHalaman();
-			$halamanAktif = $report->getHalamanAktif();
-		}
+			$_GET["halaman"] = 1;
+			$userReports = $report->searchBy( $_POST["username"], $_POST["register-date"]);
+			if( $report->getTotalUser() === 0 ){
+				echo "<script>swal('Failed!', 'Record No Found', 'error');</script>";
+			} else {
+				$totalUser = $report->getTotalUser();
+				$totalHalaman = $report->getTotalHalaman();
+				$halamanAktif = $report->getHalamanAktif();
+			}
+		} 
 
-		if ( isset($_GET["halaman"]) ) {
-		    $userReports = $report->getUserByPage((int)$_GET["halaman"]);
-		    $totalUser = $report->getTotalUser();
-		    $totalHalaman = $report->getTotalHalaman();
-			$halamanAktif = $report->getHalamanAktif();
+		if( !isset($_POST["search-user"]) ){
+			if ( isset($_GET["halaman"]) ) {
+				$userReports = $report->searchBy( $_GET["username"], $_GET["registerdate"]);
+			    $totalUser = $report->getTotalUser();
+			    $totalHalaman = $report->getTotalHalaman();
+				$halamanAktif = $report->getHalamanAktif();
+			}
 		}
 	?>
 	
@@ -161,11 +167,11 @@ $totalUser = 0;
 					<form action="" method="post">
 						<div class="form-group">
 							<label for="username">Username</label>
-							<input type="text" name="username" id="username" class="form-control">
+							<input type="text" name="username" id="username" class="form-control" value="<?= $report->getUsername() ?>">
 						</div>
 						<div class="form-group">
 							<label for="date">Tanggal Daftar</label>
-							<input type="date" name="register-date" id="date" class="form-control">
+							<input type="date" name="register-date" id="date" class="form-control" value="<?= $report->getRegisterDate() ?>">
 						</div>
 						<button type="submit" name="search-user" class="btn btn-primary mb-2">Search</button>
 					</form>
@@ -203,7 +209,6 @@ $totalUser = 0;
 						  </tbody>
 						</table>
 					</div>
-
 					<?php if( $totalHalaman != 0 ): ?>
 					    <nav aria-label="Page navigation example">
 					        <ul class="pagination justify-content-center">
@@ -216,7 +221,7 @@ $totalUser = 0;
 					                </li>
 					            <?php else: ?>
 					                <li class="page-item">
-					                    <a class="page-link" href="?halaman=<?= $halamanAktif - 1; ?>" aria-label="Previous">
+					                    <a class="page-link" href="?halaman=<?= $halamanAktif - 1; ?>&username=<?= $report->getUsername() ?>&registerdate=<?= $report->getRegisterDate() ?>" aria-label="Previous">
 					                        <span aria-hidden="true">&laquo;</span>
 					                        <span class="sr-only">Previous</span>
 					                    </a>
@@ -226,11 +231,11 @@ $totalUser = 0;
 					            <?php for( $i = 1; $i <= $totalHalaman; $i++ ) : ?>
 					                <?php if( $i == $halamanAktif ) : ?>
 					                    <li class="page-item active">
-					                        <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+					                        <a class="page-link" href="?halaman=<?= $i; ?>&username=<?= $report->getUsername() ?>&registerdate=<?= $report->getRegisterDate() ?>"><?= $i; ?></a>
 					                    </li>
 					                <?php else : ?>
 					                    <li class="page-item">
-					                        <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
+					                        <a class="page-link" href="?halaman=<?= $i; ?>&username=<?= $report->getUsername() ?>&registerdate=<?= $report->getRegisterDate() ?>"><?= $i; ?></a>
 					                    </li>
 					                <?php endif; ?>
 					            <?php endfor; ?>
@@ -244,7 +249,7 @@ $totalUser = 0;
 					                </li>
 					            <?php else : ?>
 					                <li class="page-item">
-					                    <a class="page-link" href="?halaman=<?= $halamanAktif + 1; ?>" aria-label="Next">
+					                    <a class="page-link" href="?halaman=<?= $halamanAktif + 1; ?>&username=<?= $report->getUsername() ?>&registerdate=<?= $report->getRegisterDate() ?>" aria-label="Next">
 					                        <span aria-hidden="true">&raquo;</span>
 					                        <span class="sr-only">Next</span>
 					                    </a>
