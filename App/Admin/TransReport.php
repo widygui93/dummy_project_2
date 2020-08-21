@@ -143,19 +143,18 @@ $report = new Report();
 					<form action="" method="post">
 						<div class="form-group">
 							<label for="username">Username</label>
-							<input type="text" name="username" id="username" class="form-control" value="">
+							<input type="text" name="username" id="username" class="form-control" value="" required>
 						</div>
 						<div class="form-group">
 							<label for="from-date">Dari Tanggal Transaksi</label>
-							<input type="date" name="from-trans-date" id="from-date" class="form-control" value="">
+							<input type="date" name="from-trans-date" id="from-date" class="form-control" value="" required>
 						</div>
 						<div class="form-group">
 							<label for="to-date">Ke Tanggal Transaksi</label>
-							<input type="date" name="to-trans-date" id="to-date" class="form-control" value="">
+							<input type="date" name="to-trans-date" id="to-date" class="form-control" value="" required>
 						</div>
 						<button type="submit" name="search-trans" class="btn btn-primary mb-2">Search</button>
 					</form>
-					<small>Leave all blanks to view all transactions.</small>
 				</div>
 				<!-- end content page -->
 				<div class="table-responsive">
