@@ -14,7 +14,7 @@ use App\Db\Report as Report;
 
 $report = new Report();
 
-
+$totalTrans = 0;
 ?>
 
 <!DOCTYPE html>
@@ -39,14 +39,29 @@ $report = new Report();
 </body>	
 	<?php
 		if( isset($_POST["search-trans"]) ){
-			var_dump($_POST);
+			// var_dump($_POST);
+			$_GET["halaman"] = 1;
 			if( $report->isEitherTransDateEmpty(strlen($_POST["from-trans-date"]), strlen($_POST["to-trans-date"])) ){
 				echo "<script>swal('Failed!', 'From Transaction Date and To Transaction Date are Mandatory', 'error');</script>";
 			} elseif( $report->isFromTransDateBigger(strtotime($_POST["from-trans-date"]), strtotime($_POST["to-trans-date"])) ){
 				echo "<script>swal('Failed!', 'From Transaction Date can not bigger than To Transaction Date', 'error');</script>";
 			} else {
-				var_dump("sukses search");
+				// var_dump("sukses search");
+				$transReports = $report->searchTransBy($_POST["from-trans-date"], $_POST["to-trans-date"]);
+				if( $report->getTotalTrans() === 0 ){
+					echo "<script>swal('Failed!', 'Record No Found', 'error');</script>";
+				} else {
+					$totalTrans = $report->getTotalTrans();
+					$totalHalaman = $report->getTotalHalaman();
+					$halamanAktif = $report->getHalamanAktif();
+				}
 			}
+		}
+		if( !isset($_POST["search-trans"]) && isset($_GET["halaman"]) ){
+			$transReports = $report->searchTransBy( $_GET["fromtransdate"], $_GET["totransdate"]);
+		    $totalTrans = $report->getTotalTrans();
+		    $totalHalaman = $report->getTotalHalaman();
+			$halamanAktif = $report->getHalamanAktif();
 		}
 	?>
 	<!-- <div class="container-fluid"> -->
@@ -155,44 +170,99 @@ $report = new Report();
 					<form action="" method="post">
 						<div class="form-group">
 							<label for="from-date">Dari Tanggal Transaksi</label>
-							<input type="date" name="from-trans-date" id="from-date" class="form-control" value="" required>
+							<input type="date" name="from-trans-date" id="from-date" class="form-control" value="<?= $report->getFromTransDate() ?>" required>
 						</div>
 						<div class="form-group">
 							<label for="to-date">Ke Tanggal Transaksi</label>
-							<input type="date" name="to-trans-date" id="to-date" class="form-control" value="" required>
+							<input type="date" name="to-trans-date" id="to-date" class="form-control" value="<?= $report->getToTransDate() ?>" required>
 						</div>
 						<button type="submit" name="search-trans" class="btn btn-primary mb-2">Search</button>
 					</form>
 				</div>
 				<!-- end content page -->
-				<div class="table-responsive">
-					<table class="table table-hover table-dark">
-					  <thead>
-					    <tr>
-					      <th scope="col">No</th>
-					      <th scope="col">Username</th>
-					      <th scope="col">Account No</th>
-					      <th scope="col">Total Transaction</th>
-					      <th scope="col">Transaction Date</th>
-					      <th scope="col">Address Order</th>
-					      <th scope="col">Transaction Receipt</th>
-					      <th scope="col">Detail</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>boruto009</td>
-							<td>20100460461</td>
-							<td>270000</td>
-							<td>2020-08-05</td>
-							<td>jalan konoha12</td>
-							<td><a href="">View receipt</a></td>
-							<td><a href="">View detail</a></td>
-						</tr>
-					  </tbody>
-					</table>
-				</div>
+				<?php if($totalTrans > 0): ?>
+					<div class="table-responsive">
+						<table class="table table-hover table-dark">
+						  <thead>
+						    <tr>
+						      <th scope="col">No</th>
+						      <th scope="col">Username</th>
+						      <th scope="col">Account No</th>
+						      <th scope="col">Total Transaction</th>
+						      <th scope="col">Transaction Date</th>
+						      <th scope="col">Address Order</th>
+						      <th scope="col">Transaction Receipt</th>
+						      <th scope="col">Detail</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  	<?php $no = 1; ?>
+						  	<?php foreach($transReports as $transReport) : ?>
+							<tr>
+								<th scope="row"><?= $no; ?></th>
+								<td><?= $transReport['user_name']; ?></td>
+								<td><?= $transReport['no_rek_tujuan']; ?></td>
+								<td><?= $transReport['total_transfer']; ?></td>
+								<td><?= $transReport['tgl_transfer']; ?></td>
+								<td><?= $transReport['alamat_order']; ?></td>
+								<td><a href="">View receipt</a></td>
+								<td><a href="">View detail</a></td>
+							</tr>
+							<?php $no++; ?>
+							<?php endforeach; ?>
+						  </tbody>
+						</table>
+					</div>
+					<?php if( $totalHalaman != 0 ): ?>
+					    <nav aria-label="Page navigation example">
+					        <ul class="pagination justify-content-center">
+					            <?php if( $halamanAktif == 1 ) : ?>
+					                <li class="page-item disabled">
+					                    <a class="page-link" href="#" aria-label="Previous">
+					                        <span aria-hidden="true">&laquo;</span>
+					                        <span class="sr-only">Previous</span>
+					                    </a>
+					                </li>
+					            <?php else: ?>
+					                <li class="page-item">
+					                    <a class="page-link" href="?halaman=<?= $halamanAktif - 1; ?>&fromtransdate=<?= $report->getFromTransDate() ?>&totransdate=<?= $report->getToTransDate() ?>" aria-label="Previous">
+					                        <span aria-hidden="true">&laquo;</span>
+					                        <span class="sr-only">Previous</span>
+					                    </a>
+					                </li>
+					            <?php endif; ?>
+
+					            <?php for( $i = 1; $i <= $totalHalaman; $i++ ) : ?>
+					                <?php if( $i == $halamanAktif ) : ?>
+					                    <li class="page-item active">
+					                        <a class="page-link" href="?halaman=<?= $i; ?>&fromtransdate=<?= $report->getFromTransDate() ?>&totransdate=<?= $report->getToTransDate() ?>"><?= $i; ?></a>
+					                    </li>
+					                <?php else : ?>
+					                    <li class="page-item">
+					                        <a class="page-link" href="?halaman=<?= $i; ?>&fromtransdate=<?= $report->getFromTransDate() ?>&totransdate=<?= $report->getToTransDate() ?>"><?= $i; ?></a>
+					                    </li>
+					                <?php endif; ?>
+					            <?php endfor; ?>
+
+					            <?php if( $halamanAktif == $totalHalaman ) :  ?>
+					                <li class="page-item disabled">
+					                    <a class="page-link" href="#" aria-label="Next">
+					                        <span aria-hidden="true">&raquo;</span>
+					                        <span class="sr-only">Next</span>
+					                    </a>
+					                </li>
+					            <?php else : ?>
+					                <li class="page-item">
+					                    <a class="page-link" href="?halaman=<?= $halamanAktif + 1; ?>&fromtransdate=<?= $report->getFromTransDate() ?>&totransdate=<?= $report->getToTransDate() ?>" aria-label="Next">
+					                        <span aria-hidden="true">&raquo;</span>
+					                        <span class="sr-only">Next</span>
+					                    </a>
+					                </li>     
+					            <?php endif; ?>
+					        </ul>
+					    </nav>
+					<?php endif; ?>
+				<?php endif; ?>
 			</main>
 			<footer class="footer-admin">
 				<div class="col-12 align-self-end">

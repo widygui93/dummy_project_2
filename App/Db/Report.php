@@ -1,17 +1,20 @@
 <?php namespace App\Db;
 
 class Report extends Db {
-	private $userReport, $transactionReport, $totalUser, $totalHalaman, $halamanAktif, $username, $registerDate;
+	private $userReport, $transactionReport, $totalUser, $totalTrans, $totalHalaman, $halamanAktif, $username, $registerDate, $fromTransDate, $toTransDate;
 
 	public function __construct(){
 		parent::__construct();
 		$this->userReport = array();
 		$this->transactionReport = array();
 		$this->totalUser = 0;
+		$this->totalTrans = 0;
 		$this->totalHalaman = 0;
 		$this->halamanAktif = 0;
 		$this->username = "";
 		$this->registerDate = "";
+		$this->fromTransDate = "";
+		$this->toTransDate = "";
 	}
 
 	public function getUsername(){
@@ -28,6 +31,23 @@ class Report extends Db {
 
 	private function setRegisterDate($registerDate){
 		$this->registerDate = $registerDate;
+	}
+
+	public function getFromTransDate(){
+		return $this->fromTransDate;
+	}
+
+	public function getToTransDate(){
+		return $this->toTransDate;
+	}
+
+	private function setFromTransDate($fromTransDate){
+		$this->fromTransDate = $fromTransDate;
+	}
+
+	private function setToTransDate($toTransDate){
+		$this->toTransDate = $toTransDate;
+
 	}
 
 	public function searchBy(string $username, string $registerDate):array {
@@ -76,6 +96,39 @@ class Report extends Db {
 
 	public function isFromTransDateBigger(int $fromTransDate, int $toTransDate):bool{
 		return ($fromTransDate > $toTransDate) ?? false;
+	}
+
+	public function searchTransBy(string $fromTransDate, string $toTransDate):array{
+		$this->setFromTransDate($fromTransDate);
+		$this->setToTransDate($toTransDate);
+
+		$fromTransDate = $this->getFromTransDate();
+		$toTransDate = $this->getToTransDate();
+
+		$jumlahDataPerHalaman = 10;
+		$totalData = $this->getTotalTransBy($fromTransDate, $toTransDate);
+		$this->totalHalaman = ceil($totalData / $jumlahDataPerHalaman);
+		$this->halamanAktif = $_GET["halaman"];
+		$awalData = ($jumlahDataPerHalaman * $this->halamanAktif) - $jumlahDataPerHalaman;
+
+		$query = "SELECT id_transfer, user_name, no_rek_tujuan, total_transfer, tgl_transfer, alamat_order FROM transfer WHERE tgl_transfer BETWEEN CAST('$fromTransDate' AS DATE) AND CAST('$toTransDate' AS DATE) LIMIT $awalData, $jumlahDataPerHalaman ";
+		$result = $this->executeQuery($query);
+		while ( $row = mysqli_fetch_assoc($result[0]) ) {
+	        $this->transactionReport[] = $row;
+	    }
+	    return $this->transactionReport;
+
+	}
+
+	private function getTotalTransBy(string $fromTransDate, string $toTransDate):int {
+		$query = "SELECT * FROM transfer WHERE tgl_transfer BETWEEN CAST('$fromTransDate' AS DATE) AND CAST('$toTransDate' AS DATE) ";
+		$result = $this->executeQuery($query);
+		$this->totalTrans = $result[1];
+	    return $this->totalTrans;
+	}
+
+	public function getTotalTrans():int {
+		return $this->totalTrans;
 	}
 
 }
