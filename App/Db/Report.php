@@ -111,7 +111,7 @@ class Report extends Db {
 		$this->halamanAktif = $_GET["halaman"];
 		$awalData = ($jumlahDataPerHalaman * $this->halamanAktif) - $jumlahDataPerHalaman;
 
-		$query = "SELECT id_transfer, user_name, no_rek_tujuan, total_transfer, tgl_transfer, alamat_order FROM transfer WHERE tgl_transfer BETWEEN CAST('$fromTransDate' AS DATE) AND CAST('$toTransDate' AS DATE) LIMIT $awalData, $jumlahDataPerHalaman ";
+		$query = "SELECT id_transfer, user_name, no_rek_tujuan, FORMAT(total_transfer,0) AS total_transfer, tgl_transfer, alamat_order FROM transfer WHERE tgl_transfer BETWEEN CAST('$fromTransDate' AS DATE) AND CAST('$toTransDate' AS DATE) ORDER BY tgl_transfer LIMIT $awalData, $jumlahDataPerHalaman ";
 		$result = $this->executeQuery($query);
 		while ( $row = mysqli_fetch_assoc($result[0]) ) {
 	        $this->transactionReport[] = $row;
