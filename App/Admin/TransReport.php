@@ -53,7 +53,7 @@ $totalTrans = 0;
 				}
 			}
 		}
-		if( !isset($_POST["detail"]) && !isset($_POST["search-trans"]) && isset($_GET["halaman"]) ){
+		if( !isset($_POST["receipt"]) && !isset($_POST["detail"]) && !isset($_POST["search-trans"]) && isset($_GET["halaman"]) ){
 			$transReports = $report->searchTransBy( $_GET["fromtransdate"], $_GET["totransdate"]);
 		    $totalTrans = $report->getTotalTrans();
 		    $totalHalaman = $report->getTotalHalaman();
@@ -77,6 +77,26 @@ $totalTrans = 0;
 		    $totalTrans = $report->getTotalTrans();
 		    $totalHalaman = $report->getTotalHalaman();
 			$halamanAktif = $report->getHalamanAktif();
+		}
+
+		if( isset($_POST["receipt"]) ){
+		 	$receipt = $report->getReceipt($_POST["id_transfer"]);
+
+			echo '
+				<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+				<script>
+					$(window).load(function() {
+					    $("#modalReceipt").modal("show");
+					});
+				</script>
+			';
+
+			$_GET["halaman"] = $_POST["halaman_aktif"];
+			$transReports = $report->searchTransBy( $_POST["from_trans_date"], $_POST["to_trans_date"]);
+		    $totalTrans = $report->getTotalTrans();
+		    $totalHalaman = $report->getTotalHalaman();
+			$halamanAktif = $report->getHalamanAktif();
+
 		}
 	?>
 	<div class="modal fade" id="modalDetailTransaction" tabindex="-1" role="dialog" aria-labelledby="detailTransaction" aria-hidden="true">
@@ -115,6 +135,24 @@ $totalTrans = 0;
 						</table>
 					</div>
 
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalReceipt" tabindex="-1" role="dialog" aria-labelledby="viewReceipt" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title-view" id="viewReceipt">Receipt</h5>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body mx-auto">
+					<img src="../Core/img-transfer/<?= $receipt; ?>" class="img-fluid">
 				</div>
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
@@ -263,7 +301,15 @@ $totalTrans = 0;
 								<td><?= $transReport['total_transfer']; ?></td>
 								<td><?= $transReport['tgl_transfer']; ?></td>
 								<td><?= $transReport['alamat_order']; ?></td>
-								<td><a href="">View receipt</a></td>
+								<td>
+									<form action="" method="post">
+										<input type="text" style="display: none;" name="id_transfer" value=<?= $transReport["id_transfer"]; ?> >
+										<input type="text" style="display: none;" name="halaman_aktif" value=<?= $halamanAktif; ?> >
+										<input type="text" style="display: none;" name="from_trans_date" value=<?= $report->getFromTransDate(); ?> >
+										<input type="text" style="display: none;" name="to_trans_date" value=<?= $report->getToTransDate(); ?> >
+										<button type="submit" name="receipt" class="btn btn-primary">View receipt</button>
+									</form>
+								</td>
 								<td>
 									<form action="" method="post">
 										<input type="text" style="display: none;" name="id_transfer" value=<?= $transReport["id_transfer"]; ?> >

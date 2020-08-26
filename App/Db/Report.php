@@ -131,6 +131,13 @@ class Report extends Db {
 		return $this->totalTrans;
 	}
 
+	public function getReceipt(string $idTransfer):string {
+		$query = "SELECT bukti_transfer FROM transfer WHERE id_transfer = '$idTransfer' ";
+		$result = $this->executeQuery($query);
+		$receipt = mysqli_fetch_assoc($result[0]);
+		return $receipt["bukti_transfer"];
+	}
+
 }
 
 
