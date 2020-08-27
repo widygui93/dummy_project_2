@@ -20,3 +20,13 @@ For back end, admin can add, edit, delete and view menu type and menu. There are
 # **_Display_**
 ### Home
 ![Capture](https://user-images.githubusercontent.com/51254100/91467320-a18aa300-e8ba-11ea-9f19-3feaf1c51b74.PNG)
+
+### Menu (Mobile view and Desktop view)
+![Capture2](https://user-images.githubusercontent.com/51254100/91468173-d0eddf80-e8bb-11ea-8b08-93c9a3cbbafd.PNG)
+![Capture3](https://user-images.githubusercontent.com/51254100/91468215-df3bfb80-e8bb-11ea-84f0-9eb15859f381.PNG)
+
+### Cart
+![Capture4](https://user-images.githubusercontent.com/51254100/91468300-fe3a8d80-e8bb-11ea-8334-4cc05b779f9d.PNG)
+
+### History Transaction
+![InkedCapture5_LI](https://user-images.githubusercontent.com/51254100/91468391-26c28780-e8bc-11ea-9cef-8411ba55c13d.jpg)
