@@ -17,6 +17,6 @@ For back end, admin can add, edit, delete and view menu type and menu. There are
 * regex,
 * responsive design
 
-**_Display_**
+# **_Display_**
 ###Home
 ![Capture](https://user-images.githubusercontent.com/51254100/91467320-a18aa300-e8ba-11ea-9f19-3feaf1c51b74.PNG)
