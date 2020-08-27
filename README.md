@@ -30,3 +30,12 @@ For back end, admin can add, edit, delete and view menu type and menu. There are
 
 ### History Transaction
 ![InkedCapture5_LI](https://user-images.githubusercontent.com/51254100/91468391-26c28780-e8bc-11ea-9cef-8411ba55c13d.jpg)
+
+### Profile
+![InkedCapture6_LI](https://user-images.githubusercontent.com/51254100/91468649-76a14e80-e8bc-11ea-872a-8794bd759ff4.jpg)
+
+### Admin Menu for menu management
+![Capture8](https://user-images.githubusercontent.com/51254100/91468750-9f294880-e8bc-11ea-92ff-e571ec9a65e5.PNG)
+
+### Admin Menu for transaction report
+![InkedCapture9_LI](https://user-images.githubusercontent.com/51254100/91468810-bbc58080-e8bc-11ea-887b-eadd94037e04.jpg)
